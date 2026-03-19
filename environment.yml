@@ -1,0 +1,28 @@
+name: nips_text2subspace
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pytorch>=2.5
+  - pytorch-cuda=12.4
+  - torchvision
+  - torchaudio
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - pip:
+      - transformers>=4.47
+      - datasets>=3.0
+      - accelerate>=1.1
+      - peft>=0.13
+      - diffusers
+      - einops
+      - safetensors
+      - evaluate
+      - wandb
+      - hydra-core

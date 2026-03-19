@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "timestamp_utc": "20260227_151439",
+    "input_csv": "methods/01_adathink/results/per_sample_Qwen3_8B_20260227_140410.csv",
+    "train_size": 160,
+    "test_size": 40,
+    "lambda_cost": 0.15,
+    "dim": 64,
+    "rank": 8,
+    "epochs": 220,
+    "lr": 0.08,
+    "seed": 23
+  },
+  "full_rank_test": {
+    "action_match_rate": 0.775,
+    "accuracy": 0.4,
+    "avg_tokens": 25.925,
+    "avg_utility": 0.38480957031250007
+  },
+  "low_rank_test": {
+    "action_match_rate": 0.775,
+    "accuracy": 0.4,
+    "avg_tokens": 25.925,
+    "avg_utility": 0.38480957031250007
+  },
+  "delta_low_minus_full": {
+    "action_match_rate": 0.0,
+    "accuracy": 0.0,
+    "avg_tokens": 0.0,
+    "avg_utility": 0.0
+  }
+}
