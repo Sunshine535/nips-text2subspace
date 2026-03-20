@@ -7,6 +7,7 @@ transformers==5.3.0
 accelerate==1.13.0
 datasets>=3.0
 peft>=0.13
+trl>=0.12
 diffusers
 einops
 safetensors
@@ -18,3 +19,4 @@ pandas
 scipy
 scikit-learn
 huggingface_hub
+pyyaml
