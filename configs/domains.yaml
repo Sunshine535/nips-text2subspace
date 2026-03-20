@@ -1,0 +1,118 @@
+base_model: "Qwen/Qwen3.5-9B"
+output_root: "./outputs/domain_loras"
+hf_endpoint: "https://hf-mirror.com"
+
+lora:
+  r: 64
+  lora_alpha: 128
+  lora_dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  task_type: "CAUSAL_LM"
+
+training:
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  num_train_epochs: 3
+  learning_rate: 2.0e-4
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  bf16: true
+  logging_steps: 10
+  save_steps: 200
+  max_seq_length: 2048
+  gradient_checkpointing: true
+  deepspeed: null
+  dataloader_num_workers: 4
+
+domains:
+  math:
+    name: "Mathematics"
+    datasets:
+      - "TIGER-Lab/MathInstruct"
+    max_samples: 20000
+    system_prompt: "You are a mathematics expert. Solve problems step by step."
+
+  code:
+    name: "Code Generation"
+    datasets:
+      - "sahil2801/CodeAlpaca-20k"
+    max_samples: 20000
+    system_prompt: "You are an expert programmer. Write clean, efficient code."
+
+  medical:
+    name: "Medical"
+    datasets:
+      - "medalpaca/medical_meadow_medical_flashcards"
+    max_samples: 20000
+    system_prompt: "You are a medical expert. Provide accurate medical information."
+
+  legal:
+    name: "Legal"
+    datasets:
+      - "nguha/legalbench"
+    max_samples: 20000
+    system_prompt: "You are a legal expert. Provide precise legal analysis."
+
+  creative:
+    name: "Creative Writing"
+    datasets:
+      - "euclaise/writingprompts"
+    max_samples: 20000
+    system_prompt: "You are a creative writer. Craft engaging, imaginative text."
+
+  science:
+    name: "Science"
+    datasets:
+      - "camel-ai/physics"
+    max_samples: 20000
+    system_prompt: "You are a science expert. Explain scientific concepts clearly."
+
+  history:
+    name: "History"
+    datasets:
+      - "cais/mmlu"
+    subset: "high_school_world_history"
+    max_samples: 20000
+    system_prompt: "You are a history expert. Provide detailed historical analysis."
+
+  finance:
+    name: "Finance"
+    datasets:
+      - "AdaptLLM/finance-tasks"
+    max_samples: 20000
+    system_prompt: "You are a finance expert. Provide accurate financial analysis."
+
+  philosophy:
+    name: "Philosophy"
+    datasets:
+      - "cais/mmlu"
+    subset: "philosophy"
+    max_samples: 20000
+    system_prompt: "You are a philosophy expert. Engage in deep philosophical reasoning."
+
+  multilingual:
+    name: "Multilingual"
+    datasets:
+      - "FreedomIntelligence/alpaca-gpt4-zh"
+    max_samples: 20000
+    system_prompt: "You are a multilingual assistant. Respond in the user's language."
+
+algebra:
+  interpolation_alphas: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  grassmann_dim: 64
+  svd_rank: 32
+
+evaluation:
+  benchmarks:
+    math: ["gsm8k", "math"]
+    code: ["humaneval", "mbpp"]
+    medical: ["medqa"]
+    legal: ["legalbench"]
+    creative: ["alpaca_eval"]
+    science: ["arc_challenge"]
+    history: ["mmlu_history"]
+    finance: ["finqa"]
+    philosophy: ["mmlu_philosophy"]
+    multilingual: ["flores"]
+  max_eval_samples: 500
+  batch_size: 8
