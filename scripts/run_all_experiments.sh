@@ -6,19 +6,17 @@ set -euo pipefail
 #
 #  Pipeline: train_domain_loras → algebra_experiments → eval → ablations
 #
-#  Requirements: 8x GPU (A100-80GB recommended)
+#  Hardware: 4–8× A100-80GB (auto-detected)
 #  Estimated time: ~24-36 hours total
 #####################################################################
 
-export HF_ENDPOINT="https://hf-mirror.com"
-export NCCL_P2P_DISABLE=0
-export NCCL_IB_DISABLE=0
-export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0,1,2,3,4,5,6,7}
-
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+# shellcheck source=gpu_utils.sh
+source "${SCRIPT_DIR}/gpu_utils.sh"
+auto_setup
+
 CONFIG="${PROJECT_DIR}/configs/domains.yaml"
-NUM_GPUS=${NUM_GPUS:-8}
 LORA_DIR="${PROJECT_DIR}/results/domain_loras"
 ALGEBRA_DIR="${PROJECT_DIR}/results/algebra"
 EVAL_DIR="${PROJECT_DIR}/results/eval"
