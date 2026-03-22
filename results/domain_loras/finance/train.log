@@ -1,0 +1,89 @@
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+W0322 22:26:20.225000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13512 closing signal SIGTERM
+W0322 22:26:20.226000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13513 closing signal SIGTERM
+W0322 22:26:20.227000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13514 closing signal SIGTERM
+W0322 22:26:20.228000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13515 closing signal SIGTERM
+W0322 22:26:20.228000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13516 closing signal SIGTERM
+W0322 22:26:20.229000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13517 closing signal SIGTERM
+W0322 22:26:20.229000 13501 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13518 closing signal SIGTERM
+E0322 22:26:20.394000 13501 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 0 (pid: 13511) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 991, in main
+    run(args)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 13512)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13512
+[2]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 13513)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13513
+[3]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 13514)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13514
+[4]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 13515)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13515
+[5]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 13516)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13516
+[6]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 13517)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13517
+[7]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 13518)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13518
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-03-22_22:26:20
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 13511)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

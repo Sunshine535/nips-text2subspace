@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-03-22T14:27:43.995684+00:00",
+  "base_model": "Qwen/Qwen3.5-9B",
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "task_type": "CAUSAL_LM"
+  },
+  "num_domains": 12,
+  "num_trained": 0,
+  "num_failed": 12,
+  "total_time_seconds": 247.4,
+  "results": [
+    {
+      "domain": "math",
+      "return_code": 1,
+      "elapsed_seconds": 119.4,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math",
+      "trained": false
+    },
+    {
+      "domain": "code",
+      "return_code": 1,
+      "elapsed_seconds": 14.2,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/code",
+      "trained": false
+    },
+    {
+      "domain": "medical",
+      "return_code": 1,
+      "elapsed_seconds": 10.1,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/medical",
+      "trained": false
+    },
+    {
+      "domain": "legal",
+      "return_code": 1,
+      "elapsed_seconds": 9.9,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/legal",
+      "trained": false
+    },
+    {
+      "domain": "finance",
+      "return_code": 1,
+      "elapsed_seconds": 11.0,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance",
+      "trained": false
+    },
+    {
+      "domain": "science",
+      "return_code": 1,
+      "elapsed_seconds": 11.5,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science",
+      "trained": false
+    },
+    {
+      "domain": "history",
+      "return_code": 1,
+      "elapsed_seconds": 10.9,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history",
+      "trained": false
+    },
+    {
+      "domain": "geography",
+      "return_code": 1,
+      "elapsed_seconds": 12.5,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/geography",
+      "trained": false
+    },
+    {
+      "domain": "philosophy",
+      "return_code": 1,
+      "elapsed_seconds": 12.4,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/philosophy",
+      "trained": false
+    },
+    {
+      "domain": "psychology",
+      "return_code": 1,
+      "elapsed_seconds": 11.5,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/psychology",
+      "trained": false
+    },
+    {
+      "domain": "creative_writing",
+      "return_code": 1,
+      "elapsed_seconds": 11.6,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing",
+      "trained": false
+    },
+    {
+      "domain": "translation",
+      "return_code": 1,
+      "elapsed_seconds": 12.4,
+      "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/translation",
+      "trained": false
+    }
+  ]
+}

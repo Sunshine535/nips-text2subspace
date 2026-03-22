@@ -1,0 +1,114 @@
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+W0322 22:25:35.035000 11959 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 12019 closing signal SIGTERM
+W0322 22:25:35.036000 11959 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 12020 closing signal SIGTERM
+W0322 22:25:35.037000 11959 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 12023 closing signal SIGTERM
+W0322 22:25:35.037000 11959 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 12024 closing signal SIGTERM
+E0322 22:25:35.085000 11959 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 0 (pid: 12017) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 991, in main
+    run(args)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 12018)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 12021)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 12022)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 12019)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 12020)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 12023)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 12024)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-03-22_22:25:35
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 12017)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

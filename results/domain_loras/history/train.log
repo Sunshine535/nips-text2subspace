@@ -1,0 +1,113 @@
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 15, in <module>
+    from trl import SFTConfig, SFTTrainer
+ModuleNotFoundError: No module named 'trl'
+W0322 22:26:42.625000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13899 closing signal SIGTERM
+W0322 22:26:42.626000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13900 closing signal SIGTERM
+W0322 22:26:42.626000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13901 closing signal SIGTERM
+W0322 22:26:42.627000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13902 closing signal SIGTERM
+W0322 22:26:42.628000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13903 closing signal SIGTERM
+W0322 22:26:42.628000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13904 closing signal SIGTERM
+W0322 22:26:42.629000 13889 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 13906 closing signal SIGTERM
+E0322 22:26:42.771000 13889 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 6 (pid: 13905) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 991, in main
+    run(args)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 13899)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13899
+[2]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 13900)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13900
+[3]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 13901)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13901
+[4]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 13902)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13902
+[5]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 13903)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13903
+[6]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 13904)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13904
+[7]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 13906)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 13906
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-03-22_22:26:42
+  host      : aiplatform-wlf2-ge20-5.idchb2az2.hb2.kwaidc.com
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 13905)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
