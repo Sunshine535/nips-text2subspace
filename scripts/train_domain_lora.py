@@ -117,11 +117,18 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
+    try:
+        import flash_attn  # noqa: F401
+        attn_impl = "flash_attention_2"
+    except ImportError:
+        attn_impl = "sdpa"
+    logger.info("Using attention implementation: %s", attn_impl)
+
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
         torch_dtype=torch.bfloat16,
         trust_remote_code=True,
-        attn_implementation="flash_attention_2",
+        attn_implementation=attn_impl,
         device_map={"": int(os.environ.get("LOCAL_RANK", 0))},
     )
     model.config.use_cache = False
