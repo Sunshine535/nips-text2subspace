@@ -1,443 +1,445 @@
-2026-03-24 22:16:36,315 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,315 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,315 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,315 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,315 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,315 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,317 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,317 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,317 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,318 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,318 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,319 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,319 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,319 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,319 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,324 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,324 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,324 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,325 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,325 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,325 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,326 [INFO] === Training LoRA for domain: math ===
-2026-03-24 22:16:36,326 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:16:36,326 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-24 22:16:36,816 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,860 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,893 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:36,928 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,938 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,950 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,960 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,978 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,990 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:36,994 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,017 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,024 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,037 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,039 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,087 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,175 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,211 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,338 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,358 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,359 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,360 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,363 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,389 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,428 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,430 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,444 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,445 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,470 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,488 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,508 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,550 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,552 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,615 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,642 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,863 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,864 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,867 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,877 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,879 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,882 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,909 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,923 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:37,968 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,970 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,970 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,970 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:37,979 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,001 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,003 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,010 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,043 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,045 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,045 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,048 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,051 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,074 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,074 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,098 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:38,200 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,204 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,215 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,215 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,215 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,226 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,244 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,282 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-24 22:16:38,526 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,528 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,528 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,544 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,584 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,608 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,646 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,662 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
-2026-03-24 22:16:38,848 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/69a194f2d29af86e5f085743/8f06040c24d0d6efc263cf398806debbf20d732031ba128349d086f6a7b8bab2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T141400Z&X-Amz-Expires=3600&X-Amz-Signature=889a67814c9ce9f4f91b97544888f4a804e6d92ba9e687ba21fd098e8bf8ecf9&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65724a857b5f2b6f3c365ab0&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27tokenizer.json%3B+filename%3D%22tokenizer.json%22%3B&response-content-type=application%2Fjson&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774365240&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM2NTI0MH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OWExOTRmMmQyOWFmODZlNWYwODU3NDMvOGYwNjA0MGMyNGQwZDZlZmMyNjNjZjM5ODgwNmRlYmJmMjBkNzMyMDMxYmExMjgzNDlkMDg2ZjZhN2I4YmFiMioifV19&Signature=u2HzhGyh%7EPlebN4YP0Iv5VpP3dy3pyQwDcvSl6S3%7Ezwi8i-FLficxI13Um9h%7EHmxu4i2RS7V2d9X4MbauKZvE0fRIQPUJSMdUSKPj1HsW8AVbO1pXEcqD3KUc0j3Q0-g7TycAC1JRYNalaLKeTis9HOMDQ2LR9w6jtYo1Sfyoku0fr%7EZ4ExIYlX%7EKHNrcdV0RWA4Ko6CgKb2KKI1BA0eTqZHT7uEvS3KIy2iQ5auVpwZQzDnqX31Tu1r5ZyD2S9V82qfO-Dw5ditX8ykfagoHLFaGozMpyXu7R3G5kIfVSK2BBn1A%7EBp0ELnHwSdR4fSsxK7jAygnRLpZPhv67-CNg__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
-2026-03-24 22:16:40,340 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,341 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,342 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,342 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,362 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,373 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,379 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,406 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,592 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,596 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,598 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,604 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,628 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,642 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,654 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,656 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,827 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,839 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,846 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,875 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,893 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,915 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,916 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:40,941 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:41,085 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,112 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,121 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,169 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,171 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,176 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,188 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,216 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,218 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,227 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/chat_template.jinja "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:41,238 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,250 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,264 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,275 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,300 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,300 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:41,353 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/chat_template.jinja "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,770 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,770 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,771 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,807 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,828 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,831 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,837 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:42,839 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,083 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,114 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,117 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,162 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,188 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,201 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,213 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,214 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,214 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,219 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,233 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,287 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,311 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,313 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,332 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,335 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,464 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:16,186 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,186 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,186 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,186 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,187 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,187 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,205 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,205 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,205 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,213 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,213 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,213 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,213 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,214 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,214 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,228 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,228 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,228 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,230 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,231 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,231 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,250 [INFO] === Training LoRA for domain: math ===
+2026-03-25 03:42:16,251 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:42:16,251 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
+2026-03-25 03:42:16,724 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,743 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,763 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,772 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,803 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,829 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,839 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,850 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:16,854 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:16,900 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:16,908 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:16,916 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:16,917 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:16,918 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,027 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,033 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,112 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,115 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,151 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,183 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,200 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,241 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,253 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,265 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,267 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,286 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,301 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,302 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,327 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,344 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,443 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,443 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,474 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,502 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,545 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,550 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,555 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,591 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,616 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,627 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,642 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,653 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,669 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,693 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,706 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,711 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,717 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,727 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:17,758 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,771 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,791 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,792 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,793 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,817 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,833 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,841 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,853 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:17,894 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,902 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,931 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:17,965 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:18,015 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:18,025 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:18,030 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,385 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,457 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,496 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,529 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,553 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,562 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,595 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,636 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,667 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,684 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,687 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,691 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,700 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,730 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,758 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,793 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,805 [INFO] Using attention implementation: sdpa
+2026-03-25 03:42:19,807 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,869 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
 `torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,466 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,468 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,574 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,579 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:43,579 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,580 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:19,905 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,915 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,948 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,963 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:19,977 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:19,977 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
 `torch_dtype` is deprecated! Use `dtype` instead!
 `torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,590 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:19,983 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
 `torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-24 22:16:43,766 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,778 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,798 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,835 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,837 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,848 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,849 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,872 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,874 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,874 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:43,888 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,934 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,956 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,957 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:43,957 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,047 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,103 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,160 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,160 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,182 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,205 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,206 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,222 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,323 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-24 22:16:44,348 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,425 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,445 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,446 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,447 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,452 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,484 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,487 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,507 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,540 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,545 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,583 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,600 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:16:44,609 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,638 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,640 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,649 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,661 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,681 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,684 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-2026-03-24 22:16:44,703 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,725 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,744 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,797 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,896 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]2026-03-24 22:16:44,963 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:44,985 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,021 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,031 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,032 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,035 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,061 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,099 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/69a194f2d29af86e5f085743/7b709e3cdec6630a3c7b151efa17f03183489d03287bf9cb97454153f4ecb873?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T141644Z&X-Amz-Expires=3600&X-Amz-Signature=94814ef6d144d4fa39b2263321798aff51404880621a50b38e52d43fe7b0b178&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors-00002-of-00004.safetensors%3B+filename%3D%22model.safetensors-00002-of-00004.safetensors%22%3B&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774365404&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM2NTQwNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OWExOTRmMmQyOWFmODZlNWYwODU3NDMvN2I3MDllM2NkZWM2NjMwYTNjN2IxNTFlZmExN2YwMzE4MzQ4OWQwMzI4N2JmOWNiOTc0NTQxNTNmNGVjYjg3MyoifV19&Signature=IXmGCjNyRB-wsJMRDsBrKd4OtYdcczCPq7GOCTHkZGu3vLhgsrV292ZDXuuBW8E1ukDb7k4U9GkGym9zbJxJ%7ExmNGojf4OZJaMSV92eDg2Axwmxgv4q5nEyhfRyzRrHd8UautDM6tVpU%7EimybOYmvIkVd3P2iQ3W63h5myOUQtkpBzJtqY2Fx6TFP7VsuKAPg9hd4QF2kK4raBbriRkEAxwSfX%7Eu6j0qkQdoL3tJ0REDj23KgG-cf3EVYNgkgQg8EC8hsjyJO0bKIaKTCR1h9vrEV31dfuCWxoXadLIvtOsG60TVWQSwdSEO7PQgpmDzm8cy%7EcfLlVzlGg9B2tfwTg__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
-2026-03-24 22:16:45,158 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,196 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,199 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,219 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,238 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,247 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,255 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00001-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,266 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,269 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,269 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,284 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,298 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,301 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,308 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,317 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,334 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,338 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/69a194f2d29af86e5f085743/7bcbd85ef394b0b8b10a242bb175c4b4e672a83fb3fc46da8319460de3edacce?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T141644Z&X-Amz-Expires=3600&X-Amz-Signature=eb770cc190431dcf06539a7ccdcc11fc3b87e73cf574a3679d53652001f0077e&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors-00001-of-00004.safetensors%3B+filename%3D%22model.safetensors-00001-of-00004.safetensors%22%3B&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774365404&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM2NTQwNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OWExOTRmMmQyOWFmODZlNWYwODU3NDMvN2JjYmQ4NWVmMzk0YjBiOGIxMGEyNDJiYjE3NWM0YjRlNjcyYTgzZmIzZmM0NmRhODMxOTQ2MGRlM2VkYWNjZSoifV19&Signature=FaG21Baj7BlcO%7E5CZB2NXX9F8mESZv9IdpwIIic1pw5uLCKOmU%7EwZ0fEOJBrjM75KEXa87Df5zvbpEHFROgHDm0%7E-gmxDmCCDmZbQr2bITUWjl-MvjSbOBnNYgTj9p8aTZknL5Vsa3AUekv4onzL6udDqV2XyV7LJjR93ySwm%7E4AnqdhNQbBNOsazy4waPbjze9PrEj7F5RkmOj2OCNo1W0pxzT2gFkTTrblHyK5wY82qTLp-JUPPhpZIBS%7E8gS6fl7MLX3L3gbPlf-2iphJnl8wnX3pcEwNS%7EKv82lZraLqRhnWBd1FVya4IqT4hYEY%7EnELa%7ErRXEtSl6XHVmq3Hg__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
-2026-03-24 22:16:45,339 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,352 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,354 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,386 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,400 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,409 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,460 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/69a194f2d29af86e5f085743/b56057d566829843f8688c32899ae599053cfb7766c2a94b3b6b2b805ad338b8?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T141644Z&X-Amz-Expires=3600&X-Amz-Signature=f3c468af9668731a59d463222feccc69903d568f927f1c745a00cd314bddf8e0&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors-00003-of-00004.safetensors%3B+filename%3D%22model.safetensors-00003-of-00004.safetensors%22%3B&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774365404&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM2NTQwNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OWExOTRmMmQyOWFmODZlNWYwODU3NDMvYjU2MDU3ZDU2NjgyOTg0M2Y4Njg4YzMyODk5YWU1OTkwNTNjZmI3NzY2YzJhOTRiM2I2YjJiODA1YWQzMzhiOCoifV19&Signature=Q0bT2jlu0V5lByadbrbsG0Wu4NVPOp-YUPROQnCZEhMKkq2wRq25pHlOxEj3xiBIs7zgC%7Ezmvq3cZYm402nvC0cbOLrEjJ39CA9kwzyY9JR%7EvpVWzwNw%7E5yBeRCINzU0G-GfkK5M4cvY8%7E-2G40sLZVxAQ9nMaaW%7EoxwbbD7rHRCKlFZuR9BzKMGyYxtY2dEwvkMi%7EiQI7ScM0dBF1Hob3%7EhCAEb-Y-umLc5SpMUvw1E5T2S25yxOgEKfYwOvxd8rW3Xp3TAZmA%7ENK4dy-K2AhOM6fX9uOB-lLaHvxYfe8nIy3VkPMevi5sXS5BiKOG28S8Hw4nxkkKyEFwomsGR-A__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
-2026-03-24 22:16:45,488 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00004-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,497 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00002-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,519 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors-00003-of-00004.safetensors "HTTP/1.1 302 Found"
-2026-03-24 22:16:45,567 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/69a194f2d29af86e5f085743/69e03ef8ea69638c0ef6360da111c81b8701efac19848c687038964a4b6ac250?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T141410Z&X-Amz-Expires=3600&X-Amz-Signature=bc7ee8ac7bb53a2ae240b5889fb8c6bcf9ba669738f26c8bbceb397f737f51c0&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors-00004-of-00004.safetensors%3B+filename%3D%22model.safetensors-00004-of-00004.safetensors%22%3B&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774365250&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM2NTI1MH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82OWExOTRmMmQyOWFmODZlNWYwODU3NDMvNjllMDNlZjhlYTY5NjM4YzBlZjYzNjBkYTExMWM4MWI4NzAxZWZhYzE5ODQ4YzY4NzAzODk2NGE0YjZhYzI1MCoifV19&Signature=uaxAQtlTAww3vsBw27UI3jmLqkteggdEPADYAmgkuf9fY-LbP9ysOfpi-x-hTDydqMsivXnezP5rrCjIbv6O52ZgyugzTL0fSlU709aawSUwMcK3YdKXqJRrhcyTRC30mxJKDxEUNfNjWer6f09IzX5RStc9QgU%7ERWBgVc10YrW074H2kQLZEr4RBhGcbfqh5QTy%7EzI525%7EZ0-myTMYCoyHuJIcRuFcUlgXgzALDYnsbGnS5zsQ-5aSlhg6WZ8OX83kmj1AbyEYoimOd5TiUrOED8EpO9tK2jLSbJUYxRNKMu8iWv7PXQC%7Eq%7ECGZ5JNENQztolIXGD9RikgKAJ4E8A__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.66s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.17s/it]
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.54s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.14s/it]
+2026-03-25 03:42:20,019 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 03:42:20,022 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,033 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 03:42:20,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,141 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 03:42:20,144 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,145 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 03:42:20,253 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,255 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,280 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,290 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,321 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,321 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,350 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,361 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,366 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,383 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,397 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,417 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,426 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,470 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,490 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,611 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,615 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,618 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,647 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,648 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,689 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,736 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,756 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:20,869 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,877 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,884 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,894 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,919 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,969 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:20,971 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:20,982 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,000 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,006 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:21,010 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:21,053 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,056 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,058 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 51781.53it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 03:42:21,076 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,098 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 50994.58it/s]
+2026-03-25 03:42:21,140 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,143 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 48072.25it/s]
+2026-03-25 03:42:21,147 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 49344.75it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 50231.19it/s]
+2026-03-25 03:42:21,207 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 53261.00it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 03:42:21,214 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 03:42:21,311 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 03:42:21,313 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 34169.48it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 50994.58it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<04:20,  1.64it/s]Loading weights:   0%|          | 1/427 [00:00<02:45,  2.58it/s]Loading weights:   0%|          | 1/427 [00:00<02:42,  2.63it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:09, 44.75it/s]Loading weights:   0%|          | 1/427 [00:00<01:57,  3.63it/s]Loading weights:   0%|          | 1/427 [00:00<01:57,  3.62it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 70.08it/s]Loading weights:  13%|█▎        | 56/427 [00:00<00:04, 86.27it/s]Loading weights:   0%|          | 1/427 [00:00<02:49,  2.51it/s]Loading weights:   0%|          | 1/427 [00:00<04:49,  1.47it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 111.92it/s]Loading weights:   0%|          | 2/427 [00:00<02:33,  2.77it/s]Loading weights:   5%|▌         | 23/427 [00:00<00:10, 39.18it/s]Loading weights:   0%|          | 1/427 [00:00<04:27,  1.59it/s]Loading weights:   0%|          | 2/427 [00:00<02:30,  2.83it/s]Loading weights:   0%|          | 2/427 [00:00<02:36,  2.72it/s]Loading weights:   0%|          | 2/427 [00:00<02:56,  2.41it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 126.51it/s]Loading weights:   5%|▌         | 22/427 [00:00<00:10, 39.45it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 66.39it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:09, 43.82it/s]Loading weights:   5%|▌         | 23/427 [00:00<00:09, 42.23it/s]Loading weights:   4%|▍         | 19/427 [00:00<00:12, 33.81it/s]Loading weights:   5%|▍         | 20/427 [00:00<00:12, 32.33it/s]Loading weights:  26%|██▌       | 111/427 [00:01<00:02, 134.02it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 68.90it/s]Loading weights:  13%|█▎        | 56/427 [00:01<00:04, 82.06it/s]Loading weights:   0%|          | 2/427 [00:00<02:36,  2.72it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 69.38it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 70.35it/s]Loading weights:   9%|▊         | 37/427 [00:01<00:06, 57.87it/s]Loading weights:   8%|▊         | 36/427 [00:00<00:06, 61.00it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 144.56it/s]Loading weights:  12%|█▏        | 53/427 [00:01<00:04, 79.53it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 109.20it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:09, 43.07it/s]Loading weights:  13%|█▎        | 56/427 [00:00<00:04, 84.93it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:04, 82.47it/s]Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 147.34it/s]Loading weights:  11%|█         | 47/427 [00:01<00:05, 68.52it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 113.37it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 124.66it/s]Loading weights:  11%|█▏        | 49/427 [00:01<00:05, 65.08it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 68.28it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 111.60it/s]Loading weights:  18%|█▊        | 78/427 [00:01<00:02, 119.29it/s]Loading weights:  16%|█▌        | 67/427 [00:01<00:03, 97.00it/s]Loading weights:  22%|██▏       | 93/427 [00:01<00:02, 124.08it/s]Loading weights:  38%|███▊      | 163/427 [00:01<00:01, 142.35it/s]Loading weights:  26%|██▌       | 111/427 [00:01<00:02, 130.22it/s]Loading weights:  16%|█▌        | 68/427 [00:01<00:03, 89.89it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:04, 79.75it/s]Loading weights:  22%|██▏       | 95/427 [00:01<00:02, 127.52it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 120.13it/s]Loading weights:  19%|█▉        | 82/427 [00:01<00:03, 107.41it/s]Loading weights:  43%|████▎     | 182/427 [00:01<00:01, 153.96it/s]Loading weights:  25%|██▌       | 108/427 [00:01<00:02, 126.52it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 141.09it/s]Loading weights:  21%|██        | 89/427 [00:01<00:02, 116.15it/s]Loading weights:  17%|█▋        | 73/427 [00:01<00:03, 105.74it/s]Loading weights:  27%|██▋       | 115/427 [00:01<00:02, 142.35it/s]Loading weights:  27%|██▋       | 114/427 [00:01<00:02, 138.00it/s]Loading weights:  23%|██▎       | 99/427 [00:01<00:02, 119.84it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 147.35it/s]Loading weights:  34%|███▍      | 146/427 [00:01<00:01, 143.77it/s]Loading weights:  47%|████▋     | 200/427 [00:01<00:01, 149.47it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 127.52it/s]Loading weights:  24%|██▍       | 104/427 [00:01<00:02, 116.03it/s]Loading weights:  31%|███       | 133/427 [00:01<00:01, 150.14it/s]Loading weights:  31%|███       | 133/427 [00:01<00:01, 147.61it/s]Loading weights:  28%|██▊       | 119/427 [00:01<00:02, 137.12it/s]Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 150.63it/s]Loading weights:  52%|█████▏    | 221/427 [00:01<00:01, 164.51it/s]Loading weights:  38%|███▊      | 162/427 [00:01<00:01, 141.82it/s]Loading weights:  26%|██▌       | 110/427 [00:01<00:02, 132.84it/s]Loading weights:  28%|██▊       | 121/427 [00:01<00:02, 125.26it/s]Loading weights:  35%|███▌      | 150/427 [00:01<00:01, 147.19it/s]Loading weights:  35%|███▌      | 150/427 [00:01<00:01, 142.96it/s]Loading weights:  43%|████▎     | 182/427 [00:01<00:01, 157.50it/s]Loading weights:  38%|███▊      | 164/427 [00:01<00:01, 146.95it/s]Loading weights:  56%|█████▌    | 239/427 [00:02<00:01, 161.73it/s]Loading weights:  32%|███▏      | 135/427 [00:01<00:02, 131.97it/s]Loading weights:  30%|███       | 130/427 [00:01<00:01, 150.50it/s]Loading weights:  33%|███▎      | 143/427 [00:01<00:01, 146.05it/s]Loading weights:  40%|███▉      | 169/427 [00:01<00:01, 158.69it/s]Loading weights:  40%|███▉      | 170/427 [00:01<00:01, 156.58it/s]Loading weights:  43%|████▎     | 183/427 [00:01<00:01, 156.50it/s]Loading weights:  47%|████▋     | 199/427 [00:01<00:01, 155.57it/s]Loading weights:  36%|███▌      | 152/427 [00:01<00:01, 138.05it/s]Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 151.95it/s]Loading weights:  60%|█████▉    | 256/427 [00:02<00:01, 154.50it/s]Loading weights:  44%|████▍     | 187/427 [00:01<00:01, 157.45it/s]Loading weights:  37%|███▋      | 160/427 [00:01<00:02, 130.68it/s]Loading weights:  44%|████▍     | 187/427 [00:01<00:01, 153.88it/s]Loading weights:  47%|████▋     | 200/427 [00:01<00:01, 157.74it/s]Loading weights:  40%|████      | 171/427 [00:01<00:01, 151.10it/s]Loading weights:  51%|█████     | 216/427 [00:01<00:01, 152.81it/s]Loading weights:  64%|██████▍   | 275/427 [00:02<00:00, 163.43it/s]Loading weights:  38%|███▊      | 164/427 [00:01<00:01, 151.63it/s]Loading weights:  48%|████▊     | 204/427 [00:01<00:01, 160.77it/s]Loading weights:  42%|████▏     | 179/427 [00:02<00:01, 144.99it/s]Loading weights:  48%|████▊     | 204/427 [00:01<00:01, 158.06it/s]Loading weights:  55%|█████▌    | 235/427 [00:02<00:01, 162.22it/s]Loading weights:  43%|████▎     | 182/427 [00:01<00:01, 158.56it/s]Loading weights:  68%|██████▊   | 292/427 [00:02<00:00, 162.00it/s]Loading weights:  51%|█████     | 217/427 [00:02<00:01, 151.75it/s]Loading weights:  44%|████▍     | 187/427 [00:01<00:01, 140.52it/s]Loading weights:  46%|████▌     | 195/427 [00:02<00:01, 147.83it/s]Loading weights:  52%|█████▏    | 224/427 [00:01<00:01, 164.34it/s]Loading weights:  52%|█████▏    | 224/427 [00:01<00:01, 160.37it/s]Loading weights:  47%|████▋     | 200/427 [00:01<00:01, 160.91it/s]Loading weights:  55%|█████▍    | 233/427 [00:02<00:01, 150.90it/s]Loading weights:  72%|███████▏  | 309/427 [00:02<00:00, 153.11it/s]Loading weights:  59%|█████▉    | 253/427 [00:02<00:01, 152.49it/s]Loading weights:  47%|████▋     | 202/427 [00:02<00:01, 139.33it/s]Loading weights:  56%|█████▋    | 241/427 [00:02<00:01, 157.18it/s]Loading weights:  49%|████▉     | 211/427 [00:02<00:01, 137.96it/s]Loading weights:  56%|█████▋    | 241/427 [00:02<00:01, 155.59it/s]Loading weights:  51%|█████     | 217/427 [00:02<00:01, 160.40it/s]Loading weights:  59%|█████▉    | 252/427 [00:02<00:01, 155.74it/s]Loading weights:  77%|███████▋  | 328/427 [00:02<00:00, 161.15it/s]Loading weights:  52%|█████▏    | 223/427 [00:02<00:01, 157.89it/s]Loading weights:  63%|██████▎   | 269/427 [00:02<00:01, 150.54it/s]Loading weights:  60%|██████    | 258/427 [00:02<00:01, 158.54it/s]Loading weights:  53%|█████▎    | 227/427 [00:02<00:01, 142.96it/s]Loading weights:  60%|██████    | 258/427 [00:02<00:01, 156.95it/s]Loading weights:  55%|█████▌    | 236/427 [00:02<00:01, 165.95it/s]Loading weights:  63%|██████▎   | 268/427 [00:02<00:01, 151.87it/s]Loading weights:  68%|██████▊   | 291/427 [00:02<00:00, 168.33it/s]Loading weights:  81%|████████  | 346/427 [00:02<00:00, 159.26it/s]Loading weights:  56%|█████▌    | 240/427 [00:02<00:01, 145.47it/s]Loading weights:  58%|█████▊    | 247/427 [00:02<00:01, 155.68it/s]Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 165.60it/s]Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 164.46it/s]Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 165.07it/s]Loading weights:  59%|█████▉    | 253/427 [00:02<00:01, 156.37it/s]Loading weights:  85%|████████▌ | 364/427 [00:02<00:00, 159.16it/s]Loading weights:  72%|███████▏  | 309/427 [00:02<00:00, 153.92it/s]Loading weights:  60%|█████▉    | 256/427 [00:02<00:01, 141.96it/s]Loading weights:  69%|██████▉   | 296/427 [00:02<00:00, 165.89it/s]Loading weights:  62%|██████▏   | 264/427 [00:02<00:01, 149.33it/s]Loading weights:  69%|██████▉   | 296/427 [00:02<00:00, 164.99it/s]Loading weights:  72%|███████▏  | 306/427 [00:02<00:00, 164.38it/s]Loading weights:  63%|██████▎   | 269/427 [00:02<00:01, 148.60it/s]Loading weights:  90%|████████▉ | 384/427 [00:02<00:00, 167.74it/s]Loading weights:  77%|███████▋  | 327/427 [00:02<00:00, 159.00it/s]Loading weights:  65%|██████▍   | 277/427 [00:02<00:00, 157.72it/s]Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 166.32it/s]Loading weights:  73%|███████▎  | 313/427 [00:02<00:00, 149.47it/s]Loading weights:  76%|███████▌  | 323/427 [00:02<00:00, 157.58it/s]Loading weights:  73%|███████▎  | 313/427 [00:02<00:00, 150.75it/s]Loading weights:  94%|█████████▍| 401/427 [00:03<00:00, 161.34it/s]Loading weights:  68%|██████▊   | 292/427 [00:02<00:00, 163.23it/s]Loading weights:  81%|████████  | 345/427 [00:02<00:00, 163.02it/s]Loading weights:  69%|██████▉   | 294/427 [00:02<00:00, 146.68it/s]Loading weights:  78%|███████▊  | 333/427 [00:02<00:00, 162.05it/s]Loading weights:  72%|███████▏  | 306/427 [00:02<00:00, 164.09it/s]Loading weights:  80%|███████▉  | 340/427 [00:02<00:00, 160.36it/s]Loading weights:  79%|███████▉  | 337/427 [00:02<00:00, 173.86it/s]Loading weights:  72%|███████▏  | 309/427 [00:02<00:00, 155.11it/s]Loading weights:  85%|████████▍ | 362/427 [00:02<00:00, 154.34it/s]Loading weights:  98%|█████████▊| 418/427 [00:03<00:00, 150.10it/s]Loading weights:  73%|███████▎  | 311/427 [00:02<00:00, 148.62it/s]Loading weights:  83%|████████▎ | 356/427 [00:02<00:00, 180.51it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 131.77it/s]
+Loading weights:  76%|███████▌  | 323/427 [00:02<00:00, 158.93it/s]Loading weights:  83%|████████▎ | 356/427 [00:02<00:00, 176.50it/s]Loading weights:  84%|████████▍ | 359/427 [00:02<00:00, 165.60it/s]Loading weights:  89%|████████▊ | 378/427 [00:03<00:00, 155.73it/s]Loading weights:  78%|███████▊  | 331/427 [00:02<00:00, 167.58it/s]Loading weights:  78%|███████▊  | 331/427 [00:02<00:00, 160.29it/s]Loading weights:  80%|████████  | 342/427 [00:03<00:00, 163.14it/s]Loading weights:  88%|████████▊ | 375/427 [00:02<00:00, 164.76it/s]Loading weights:  88%|████████▊ | 376/427 [00:03<00:00, 156.55it/s]Loading weights:  88%|████████▊ | 374/427 [00:02<00:00, 161.65it/s]Loading weights:  93%|█████████▎| 395/427 [00:03<00:00, 158.13it/s]Loading weights:  81%|████████▏ | 348/427 [00:02<00:00, 158.57it/s]Loading weights:  81%|████████▏ | 348/427 [00:03<00:00, 150.93it/s]Loading weights:  93%|█████████▎| 396/427 [00:03<00:00, 173.77it/s]Loading weights:  93%|█████████▎| 397/427 [00:03<00:00, 169.04it/s]Loading weights:  84%|████████▍ | 359/427 [00:03<00:00, 155.10it/s]Loading weights:  92%|█████████▏| 394/427 [00:02<00:00, 169.10it/s]Loading weights:  96%|█████████▋| 411/427 [00:03<00:00, 156.07it/s]Loading weights:  85%|████████▌ | 365/427 [00:02<00:00, 153.84it/s]Loading weights:  88%|████████▊ | 375/427 [00:03<00:00, 156.28it/s]Loading weights:  85%|████████▌ | 365/427 [00:03<00:00, 143.51it/s]Loading weights:  96%|█████████▋| 412/427 [00:03<00:00, 170.62it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 150.87it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 127.82it/s]
+Loading weights:  97%|█████████▋| 415/427 [00:03<00:00, 151.06it/s]Loading weights:  97%|█████████▋| 414/427 [00:03<00:00, 153.68it/s]Loading weights:  90%|█████████ | 386/427 [00:03<00:00, 161.68it/s]Loading weights:  92%|█████████▏| 394/427 [00:03<00:00, 177.98it/s]Loading weights:  93%|█████████▎| 398/427 [00:03<00:00, 170.42it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 131.07it/s]
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 125.84it/s]
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 133.05it/s]
+Loading weights:  96%|█████████▋| 411/427 [00:03<00:00, 183.42it/s]Loading weights:  97%|█████████▋| 413/427 [00:03<00:00, 175.67it/s]Loading weights:  97%|█████████▋| 416/427 [00:03<00:00, 164.65it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 119.85it/s]
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 128.25it/s]
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 123.46it/s]
+2026-03-25 03:42:25,715 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:25,972 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,056 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,298 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,299 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:26,299 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:26,317 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,409 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,411 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,415 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,423 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,441 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,553 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,568 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,590 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:26,648 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,649 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,679 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,679 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,691 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,710 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,757 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,780 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,781 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,782 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,872 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:26,886 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,922 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,922 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:26,972 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,013 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,014 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,014 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,053 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,054 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,054 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,065 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,065 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,065 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,065 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,066 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,066 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,141 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,142 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,143 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,156 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,184 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,185 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,185 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,228 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,229 [INFO] Loading dataset TIGER-Lab/MathInstruct (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,229 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'TIGER-Lab/MathInstruct' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 03:42:27,254 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,322 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,333 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,345 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,394 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,406 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,426 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,426 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,457 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,472 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,473 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:42:27,562 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,564 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,579 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/TIGER-Lab/MathInstruct/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/README.md "HTTP/1.1 200 OK"
+2026-03-25 03:42:27,654 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,674 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,676 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,791 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,801 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,825 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:27,845 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 03:42:27,846 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 03:42:27,994 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,466 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,623 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,683 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,688 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,694 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,714 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,718 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,783 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,783 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,787 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,798 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,810 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,826 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/TIGER-Lab/MathInstruct/TIGER-Lab/MathInstruct.py "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:28,887 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,897 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:28,920 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/revision/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,100 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,102 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,182 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,193 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,201 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,306 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,351 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,365 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,405 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,408 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,468 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,471 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,481 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,648 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,648 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,648 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,649 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,649 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,651 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,651 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,653 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/TIGER-Lab/MathInstruct/tree/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 03:42:29,989 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:29,999 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,003 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,015 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,023 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,025 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,034 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:30,036 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 03:42:31,266 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/TIGER-Lab/MathInstruct/resolve/b4fdc323a7be1379c9c7c0b67b1de72dfee2111a/MathInstruct.json "HTTP/1.1 302 Found"
+2026-03-25 03:42:31,621 [INFO] HTTP Request: GET https://cas-bridge.xethub.hf.co/xet-bridge-us/64ff224ee7ef4e223d949733/415eeb24535f7a3e3ca8cbe274a5afa353d19d937b0952d11cff007cecf2af99?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20260324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260324T194231Z&X-Amz-Expires=3600&X-Amz-Signature=0a677b5e40ea34900ad5faac406e3d18b4e126a74ae3a206e30cdad382f40216&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=62171e3b6a99db28e0b3159d&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27MathInstruct.json%3B+filename%3D%22MathInstruct.json%22%3B&response-content-type=application%2Fjson&x-amz-checksum-mode=ENABLED&x-id=GetObject&Expires=1774384951&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3NDM4NDk1MX19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82NGZmMjI0ZWU3ZWY0ZTIyM2Q5NDk3MzMvNDE1ZWViMjQ1MzVmN2EzZTNjYThjYmUyNzRhNWFmYTM1M2QxOWQ5MzdiMDk1MmQxMWNmZjAwN2NlY2YyYWY5OSoifV19&Signature=Qej4tGXT8s9x1AX%7EGfnBaSYPRxibF4dhcTE9ybHTWCRBOSM5hrwjd294fuCi40qwucMCJcDzemfyEpC8958J0nXhx9XG-sHep7ILN4-wSFC9EHbQrRPHVk5IUCwHs%7Eifww5zGUcbe8HcYP6aQiXFVzqPupzvcZILlQ9VBuxARrhwso3Fyxbtu3Ko-xCqSVOG58jQihKITA5njQ7gNrfn-A8uN1zNO29QAxLVWMWMFu5lDkG8XXSQdqvUWPLv1BAowNRzbPefD2zSDqV9LCaxvEQAfN9TIkx7pKyUIcfLtksxOnvZhdY7pGU9FwGCbeOXjYE7KoSalc7iuc-KQZnZPA__&Key-Pair-Id=K2L8F4GPSG1IFC "HTTP/1.1 200 OK"
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 262039 examples [00:04, 60161.81 examples/s]Generating train split: 262039 examples [00:04, 58895.30 examples/s]
+Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:   6%|▌         | 1112/20000 [00:00<00:01, 11027.52 examples/s]Map:   6%|▌         | 1110/20000 [00:00<00:01, 11001.91 examples/s]Map:   5%|▌         | 1060/20000 [00:00<00:01, 10517.54 examples/s]Map:   5%|▌         | 1041/20000 [00:00<00:01, 10327.45 examples/s]Map:   6%|▌         | 1132/20000 [00:00<00:01, 11229.28 examples/s]Map:   5%|▌         | 1065/20000 [00:00<00:01, 10569.17 examples/s]Map:   5%|▌         | 1060/20000 [00:00<00:01, 10516.71 examples/s]Map:   5%|▍         | 946/20000 [00:00<00:02, 9355.20 examples/s]Map:  11%|█▏        | 2298/20000 [00:00<00:01, 11505.37 examples/s]Map:  11%|█▏        | 2290/20000 [00:00<00:01, 11463.85 examples/s]Map:  11%|█         | 2178/20000 [00:00<00:01, 10902.31 examples/s]Map:  11%|█         | 2137/20000 [00:00<00:01, 10692.84 examples/s]Map:  11%|█         | 2188/20000 [00:00<00:01, 10954.05 examples/s]Map:  12%|█▏        | 2308/20000 [00:00<00:01, 11507.95 examples/s]Map:  11%|█         | 2230/20000 [00:00<00:01, 11204.45 examples/s]Map:  10%|█         | 2040/20000 [00:00<00:01, 10277.55 examples/s]Map:  17%|█▋        | 3462/20000 [00:00<00:01, 11565.58 examples/s]Map:  17%|█▋        | 3446/20000 [00:00<00:01, 11502.70 examples/s]Map:  17%|█▋        | 3313/20000 [00:00<00:01, 11100.87 examples/s]Map:  17%|█▋        | 3308/20000 [00:00<00:01, 11150.95 examples/s]Map:  17%|█▋        | 3487/20000 [00:00<00:01, 11635.05 examples/s]Map:  17%|█▋        | 3353/20000 [00:00<00:01, 11270.54 examples/s]Map:  17%|█▋        | 3434/20000 [00:00<00:01, 11581.62 examples/s]Map:  16%|█▌        | 3179/20000 [00:00<00:01, 10779.99 examples/s]Map:  23%|██▎       | 4656/20000 [00:00<00:01, 11706.41 examples/s]Map:  23%|██▎       | 4623/20000 [00:00<00:01, 11574.93 examples/s]Map:  22%|██▏       | 4461/20000 [00:00<00:01, 11245.68 examples/s]Map:  22%|██▏       | 4493/20000 [00:00<00:01, 11419.90 examples/s]Map:  23%|██▎       | 4696/20000 [00:00<00:01, 11810.96 examples/s]Map:  22%|██▏       | 4498/20000 [00:00<00:01, 11335.24 examples/s]Map:  23%|██▎       | 4634/20000 [00:00<00:01, 11744.31 examples/s]Map:  22%|██▏       | 4325/20000 [00:00<00:01, 11044.27 examples/s]Map:  29%|██▉       | 5866/20000 [00:00<00:01, 11846.41 examples/s]Map:  29%|██▉       | 5841/20000 [00:00<00:01, 11788.12 examples/s]Map:  28%|██▊       | 5642/20000 [00:00<00:01, 11443.13 examples/s]Map:  30%|██▉       | 5924/20000 [00:00<00:01, 11975.48 examples/s]Map:  28%|██▊       | 5674/20000 [00:00<00:01, 11485.06 examples/s]Map:  28%|██▊       | 5663/20000 [00:00<00:01, 11449.91 examples/s]Map:  29%|██▉       | 5821/20000 [00:00<00:01, 11785.49 examples/s]Map:  27%|██▋       | 5470/20000 [00:00<00:01, 11184.47 examples/s]Map:  35%|███▌      | 7058/20000 [00:00<00:01, 11866.44 examples/s]Map:  34%|███▍      | 6821/20000 [00:00<00:01, 11557.23 examples/s]Map:  36%|███▌      | 7129/20000 [00:00<00:01, 11999.39 examples/s]Map:  34%|███▍      | 6850/20000 [00:00<00:01, 11574.71 examples/s]Map:  34%|███▍      | 6837/20000 [00:00<00:01, 11546.42 examples/s]Map:  35%|███▌      | 7000/20000 [00:00<00:01, 11760.23 examples/s]Map:  38%|███▊      | 7615/20000 [00:00<00:01, 11776.86 examples/s]Map:  33%|███▎      | 6633/20000 [00:00<00:01, 11330.73 examples/s]Map:  41%|████▏     | 8274/20000 [00:00<00:00, 11959.69 examples/s]Map:  40%|███▉      | 7991/20000 [00:00<00:01, 11599.50 examples/s]Map:  42%|████▏     | 8358/20000 [00:00<00:00, 12090.75 examples/s]Map:  40%|████      | 8000/20000 [00:00<00:01, 11571.34 examples/s]Map:  41%|████      | 8216/20000 [00:00<00:00, 11888.71 examples/s]Map:  44%|████▍     | 8826/20000 [00:00<00:00, 11870.85 examples/s]Map:  39%|███▉      | 7813/20000 [00:00<00:01, 11479.90 examples/s]Map:  43%|████▎     | 8579/20000 [00:00<00:00, 11548.63 examples/s]Map:  47%|████▋     | 9491/20000 [00:00<00:00, 12023.49 examples/s]Map:  48%|████▊     | 9586/20000 [00:00<00:00, 12147.98 examples/s]Map:  47%|████▋     | 9435/20000 [00:00<00:00, 11979.89 examples/s]Map:  48%|████▊     | 9621/20000 [00:00<00:00, 11294.16 examples/s]Map:  50%|█████     | 10022/20000 [00:00<00:00, 11893.41 examples/s]Map:  49%|████▊     | 9738/20000 [00:00<00:00, 11557.27 examples/s]Map:  49%|████▊     | 9718/20000 [00:00<00:00, 11519.05 examples/s]Map:  54%|█████▎    | 10714/20000 [00:00<00:00, 12082.79 examples/s]Map:  54%|█████▍    | 10818/20000 [00:00<00:00, 12197.68 examples/s]Map:  48%|████▊     | 9524/20000 [00:00<00:00, 11444.64 examples/s]Map:  53%|█████▎    | 10656/20000 [00:00<00:00, 12051.30 examples/s]Map:  54%|█████▍    | 10765/20000 [00:00<00:00, 11332.35 examples/s]Map:  56%|█████▌    | 11234/20000 [00:00<00:00, 11955.28 examples/s]Map:  55%|█████▍    | 10916/20000 [00:00<00:00, 11620.42 examples/s]Map:  54%|█████▍    | 10899/20000 [00:00<00:00, 11598.46 examples/s]Map:  60%|█████▉    | 11934/20000 [00:01<00:00, 12118.32 examples/s]Map:  53%|█████▎    | 10693/20000 [00:00<00:00, 11512.07 examples/s]Map:  62%|██████▏   | 12450/20000 [00:01<00:00, 12014.12 examples/s]Map:  63%|██████▎   | 12642/20000 [00:01<00:00, 12180.13 examples/s]Map:  62%|██████▏   | 12386/20000 [00:01<00:00, 11840.51 examples/s]Map:  62%|██████▏   | 12395/20000 [00:01<00:00, 11152.69 examples/s]Map:  59%|█████▉    | 11849/20000 [00:01<00:00, 11521.90 examples/s]Map:  63%|██████▎   | 12661/20000 [00:01<00:00, 11622.50 examples/s]Map:  63%|██████▎   | 12638/20000 [00:01<00:00, 11592.14 examples/s]Map:  69%|██████▊   | 13733/20000 [00:01<00:00, 12063.53 examples/s]Map:  71%|███████   | 14230/20000 [00:01<00:00, 11953.53 examples/s]Map:  72%|███████▏  | 14460/20000 [00:01<00:00, 12154.29 examples/s]Map:  69%|██████▉   | 13823/20000 [00:01<00:00, 11658.88 examples/s]Map:  71%|███████   | 14147/20000 [00:01<00:00, 11800.09 examples/s]Map:  75%|███████▍  | 14952/20000 [00:01<00:00, 12094.29 examples/s]Map:  70%|███████   | 14064/20000 [00:01<00:00, 11141.07 examples/s]Map:  72%|███████▏  | 14359/20000 [00:01<00:00, 11513.91 examples/s]Map:  68%|██████▊   | 13603/20000 [00:01<00:00, 11540.25 examples/s]Map:  77%|███████▋  | 15442/20000 [00:01<00:00, 11996.04 examples/s]Map:  77%|███████▋  | 15349/20000 [00:01<00:00, 11852.28 examples/s]Map:  81%|████████▏ | 16271/20000 [00:01<00:00, 12122.45 examples/s]Map:  78%|███████▊  | 15550/20000 [00:01<00:00, 11602.67 examples/s]Map:  74%|███████▍  | 14778/20000 [00:01<00:00, 11593.12 examples/s]Map:  84%|████████▍ | 16754/20000 [00:01<00:00, 12059.42 examples/s]Map:  79%|███████▉  | 15751/20000 [00:01<00:00, 11174.03 examples/s]Map:  83%|████████▎ | 16666/20000 [00:01<00:00, 12061.05 examples/s]Map:  80%|████████  | 16087/20000 [00:01<00:00, 11512.18 examples/s]Map:  83%|████████▎ | 16542/20000 [00:01<00:00, 11871.28 examples/s]Map:  87%|████████▋ | 17496/20000 [00:01<00:00, 12151.08 examples/s]Map:  84%|████████▎ | 16739/20000 [00:01<00:00, 11674.03 examples/s]Map:  86%|████████▋ | 17263/20000 [00:01<00:00, 11569.09 examples/s]Map:  83%|████████▎ | 16501/20000 [00:01<00:00, 11551.64 examples/s]Map:  89%|████████▊ | 17743/20000 [00:01<00:00, 11909.02 examples/s]Map:  93%|█████████▎| 18557/20000 [00:01<00:00, 12041.54 examples/s]Map:  87%|████████▋ | 17399/20000 [00:01<00:00, 11105.44 examples/s]Map:  92%|█████████▏| 18428/20000 [00:01<00:00, 11939.73 examples/s]Map:  94%|█████████▎| 18715/20000 [00:01<00:00, 12160.75 examples/s]Map:  90%|████████▉ | 17926/20000 [00:01<00:00, 11722.09 examples/s]Map:  92%|█████████▏| 18432/20000 [00:01<00:00, 11598.80 examples/s]Map:  88%|████████▊ | 17674/20000 [00:01<00:00, 11594.65 examples/s]Map:  95%|█████████▍| 18950/20000 [00:01<00:00, 11951.93 examples/s]Map:  99%|█████████▉| 19777/20000 [00:01<00:00, 12077.47 examples/s]Map:  93%|█████████▎| 18524/20000 [00:01<00:00, 11137.42 examples/s]Map:  98%|█████████▊| 19646/20000 [00:01<00:00, 11999.80 examples/s]Map: 100%|█████████▉| 19945/20000 [00:01<00:00, 12196.72 examples/s]Map: 100%|██████████| 20000/20000 [00:01<00:00, 12046.53 examples/s]
+Map: 100%|██████████| 20000/20000 [00:01<00:00, 11950.84 examples/s]
+Filter:   0%|          | 0/20000 [00:00<?, ? examples/s]Filter:   0%|          | 0/20000 [00:00<?, ? examples/s]Map: 100%|██████████| 20000/20000 [00:01<00:00, 11861.03 examples/s]
+Filter:   0%|          | 0/20000 [00:00<?, ? examples/s]Map:  98%|█████████▊| 19602/20000 [00:01<00:00, 11608.18 examples/s]Map:  98%|█████████▊| 19637/20000 [00:01<00:00, 11602.96 examples/s]Map:  94%|█████████▍| 18839/20000 [00:01<00:00, 11605.99 examples/s]Map: 100%|██████████| 20000/20000 [00:01<00:00, 11808.97 examples/s]
+Filter:   0%|          | 0/20000 [00:00<?, ? examples/s]Filter: 100%|██████████| 20000/20000 [00:00<00:00, 345213.05 examples/s]
+2026-03-25 03:42:43,638 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Filter: 100%|██████████| 20000/20000 [00:00<00:00, 345934.82 examples/s]
+2026-03-25 03:42:43,646 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.59s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.15s/it]
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Map: 100%|██████████| 20000/20000 [00:01<00:00, 11502.78 examples/s]
+Map: 100%|██████████| 20000/20000 [00:01<00:00, 11492.95 examples/s]
+Filter: 100%|██████████| 20000/20000 [00:00<00:00, 331905.31 examples/s]
+2026-03-25 03:42:43,658 [INFO] Loaded 20000 examples for domain Mathematics
+2026-03-25 03:42:43,659 [INFO] Loaded 20000 examples for domain Mathematics
+Map:  98%|█████████▊| 19652/20000 [00:01<00:00, 11172.85 examples/s]Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
+    main()
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.54s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.13s/it]
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.39s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.10s/it]
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.58s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.15s/it]Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+2026-03-25 03:42:43,660 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:13, 924.61s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.15s/it]
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Filter: 100%|██████████| 20000/20000 [00:00<00:00, 330931.14 examples/s]
+2026-03-25 03:42:43,692 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Map: 100%|██████████| 20000/20000 [00:01<00:00, 11190.46 examples/s]
+2026-03-25 03:42:43,703 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-Fetching 4 files:  25%|██▌       | 1/4 [15:24<46:14, 924.67s/it]Fetching 4 files: 100%|██████████| 4/4 [15:24<00:00, 231.17s/it]
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Map: 100%|██████████| 20000/20000 [00:01<00:00, 11346.87 examples/s]
+2026-03-25 03:42:43,734 [INFO] Loaded 20000 examples for domain Mathematics
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 120, in main
-    model = AutoModelForCausalLM.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
-    return model_class.from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4094, in from_pretrained
-    model = cls(config, *model_args, **model_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1800, in __init__
-    super().__init__(config)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1260, in __init__
-    self.config._attn_implementation_internal = self._check_and_adjust_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1887, in _check_and_adjust_attn_implementation
-    applicable_attn_implementation = self.get_correct_attn_implementation(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1928, in get_correct_attn_implementation
-    self._flash_attn_2_can_dispatch(is_init_check)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1587, in _flash_attn_2_can_dispatch
-    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
-ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
-W0324 22:32:10.571000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45109 closing signal SIGTERM
-W0324 22:32:10.573000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45110 closing signal SIGTERM
-W0324 22:32:10.574000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45111 closing signal SIGTERM
-W0324 22:32:10.574000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45112 closing signal SIGTERM
-W0324 22:32:10.575000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45115 closing signal SIGTERM
-W0324 22:32:10.575000 45096 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 45116 closing signal SIGTERM
-E0324 22:32:10.655000 45096 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 4 (pid: 45113) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 147, in main
+    sft_config = SFTConfig(
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+W0325 03:42:44.861000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49348 closing signal SIGTERM
+W0325 03:42:44.862000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49349 closing signal SIGTERM
+W0325 03:42:44.862000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49350 closing signal SIGTERM
+W0325 03:42:44.862000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49352 closing signal SIGTERM
+W0325 03:42:44.862000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49353 closing signal SIGTERM
+W0325 03:42:44.863000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49354 closing signal SIGTERM
+W0325 03:42:44.863000 49335 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 49355 closing signal SIGTERM
+E0325 03:42:45.141000 49335 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 3 (pid: 49351) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
     sys.exit(main())
@@ -457,61 +459,61 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ------------------------------------------------------------
 Failures:
 [1]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 0 (local_rank: 0)
-  exitcode  : -15 (pid: 45109)
+  exitcode  : -15 (pid: 49348)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 45109
+  traceback : Signal 15 (SIGTERM) received by PID 49348
 [2]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 45110)
+  exitcode  : 1 (pid: 49349)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 [3]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 2 (local_rank: 2)
-  exitcode  : 1 (pid: 45111)
+  exitcode  : 1 (pid: 49350)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 [4]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 3 (local_rank: 3)
-  exitcode  : 1 (pid: 45112)
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 49352)
   error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+  traceback : Signal 15 (SIGTERM) received by PID 49352
 [5]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 5 (local_rank: 5)
-  exitcode  : 1 (pid: 45114)
+  exitcode  : 1 (pid: 49353)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 [6]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 6 (local_rank: 6)
-  exitcode  : -15 (pid: 45115)
+  exitcode  : 1 (pid: 49354)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 45115
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 [7]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:45
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 7 (local_rank: 7)
-  exitcode  : 1 (pid: 45116)
+  exitcode  : 1 (pid: 49355)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-03-24_22:32:10
+  time      : 2026-03-25_03:42:44
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 4 (local_rank: 4)
-  exitcode  : 1 (pid: 45113)
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 49351)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================

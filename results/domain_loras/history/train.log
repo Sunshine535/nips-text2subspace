@@ -1,628 +1,133 @@
-2026-03-24 22:33:39,636 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,637 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,637 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,643 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,643 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,643 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,650 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,651 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,651 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,658 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,659 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,659 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,740 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,740 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,740 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,784 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,784 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,784 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,802 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,803 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,803 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:39,828 [INFO] === Training LoRA for domain: history ===
-2026-03-24 22:33:39,828 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-24 22:33:39,828 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
-2026-03-24 22:33:40,173 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,209 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,243 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,250 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,255 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,283 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,289 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,314 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,338 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,360 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,436 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,436 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,475 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,503 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,503 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,553 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,573 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,594 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,595 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,596 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,614 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,636 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,662 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,664 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,673 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,692 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,758 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,762 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,795 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,829 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,831 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,859 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,891 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,910 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,921 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,977 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,977 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,979 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:40,980 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:40,991 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,044 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,048 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,049 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,050 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,065 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:41,068 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,088 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:41,097 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:41,113 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,119 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,124 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,152 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,176 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,179 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,183 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,193 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,226 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,237 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,240 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,242 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,254 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,320 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,358 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:41,383 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,726 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,729 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,745 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,804 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,809 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:42,844 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,073 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,077 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,199 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,215 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,216 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,235 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,261 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,271 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,277 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,285 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,309 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,316 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,331 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,350 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,350 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,354 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,382 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,383 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,409 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,459 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,472 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,473 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,480 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,513 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,526 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,537 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,539 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,578 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,579 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,610 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,656 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,730 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,738 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,770 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,782 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,785 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,793 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,836 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,857 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,861 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,878 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,902 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,958 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:43,969 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:43,972 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:44,036 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:44,108 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,132 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,133 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,133 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,135 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,183 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:44,202 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,202 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,202 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,203 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:44,203 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:33:44,203 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,203 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,203 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,203 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,203 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,206 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,213 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,276 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,276 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,277 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,286 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,286 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,286 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,316 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,391 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,392 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,392 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,426 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,483 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:33:44,509 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,509 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,509 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,550 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:44,550 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:44,550 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:33:45,272 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,272 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,272 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,274 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,274 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,274 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,278 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,278 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,278 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,348 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,348 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,348 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,372 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,372 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,372 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,463 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,463 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,463 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,581 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,581 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,581 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,630 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:45,630 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:45,630 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:33:47,343 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,343 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,343 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,345 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,346 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,346 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,348 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,348 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,348 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,419 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,420 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,420 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,443 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,443 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,443 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,546 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,546 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,546 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,652 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,652 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,652 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,696 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:47,697 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:47,697 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:33:51,412 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,412 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,412 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,415 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,415 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,415 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,435 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,435 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,435 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,489 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,489 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,489 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,523 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,523 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,523 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,616 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,616 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,616 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,729 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,729 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,730 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,764 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:51,765 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:51,765 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:33:59,701 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,701 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,701 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,788 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,788 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,788 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,802 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,802 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,803 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,813 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,814 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,814 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,919 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,919 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,920 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,961 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:33:59,961 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:33:59,961 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:00,021 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:00,021 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:00,021 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:00,105 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:00,105 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:00,105 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:08,084 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,084 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,145 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,145 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,209 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,209 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,214 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,214 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,238 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,238 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,326 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,327 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,343 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,343 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,344 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,418 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,434 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,453 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,453 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/vocab.json
-2026-03-24 22:34:08,500 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,521 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,563 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,563 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,593 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,602 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,604 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,644 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,648 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,669 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,671 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,685 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,721 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,764 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:08,764 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,764 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,767 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,788 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:08,852 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:08,852 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,852 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,864 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,924 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,927 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,940 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,948 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:08,948 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,948 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,970 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:08,991 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:08,992 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,992 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,994 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:08,994 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:08,994 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,013 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:09,014 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,014 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,041 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
-2026-03-24 22:34:09,047 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:09,047 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,048 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,121 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:09,121 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,121 [WARNING] Retrying in 1s [Retry 1/5].
-2026-03-24 22:34:09,829 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:09,829 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:09,829 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:09,916 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:09,917 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:09,917 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,021 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,021 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,022 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,055 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,055 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,072 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,073 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,073 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,098 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,098 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,098 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,122 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,122 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,122 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,183 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:10,184 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:10,184 [WARNING] Retrying in 2s [Retry 2/5].
-2026-03-24 22:34:11,895 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:11,895 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:11,895 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:11,992 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:11,992 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:11,993 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,103 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,104 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,104 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,114 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,114 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,114 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,148 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,148 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,148 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,167 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,168 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,168 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,207 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,208 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,208 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,251 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:12,251 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:12,251 [WARNING] Retrying in 4s [Retry 3/5].
-2026-03-24 22:34:15,969 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:15,969 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:15,969 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,074 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,075 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,075 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,179 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,179 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,179 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,187 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,187 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,188 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,212 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,213 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,213 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,247 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,247 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,247 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,292 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,293 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,293 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,334 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:16,334 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:16,334 [WARNING] Retrying in 8s [Retry 4/5].
-2026-03-24 22:34:24,311 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,311 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,311 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,425 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,426 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,426 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,500 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,501 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,501 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,544 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,544 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,545 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,553 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,554 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,554 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,581 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,581 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,581 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,659 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,659 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,659 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,750 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:24,750 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:24,750 [WARNING] Retrying in 8s [Retry 5/5].
-2026-03-24 22:34:32,609 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,609 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,770 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,770 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,859 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,859 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,876 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,876 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,877 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,878 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,883 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,883 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,994 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:32,995 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:33,134 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt "HTTP/1.1 429 Too Many Requests"
-HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:33,135 [WARNING] HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/merges.txt
-2026-03-24 22:34:33,779 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:29,725 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,726 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,726 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,766 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,766 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,766 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,790 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,790 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,790 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,804 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,804 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,804 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,806 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,806 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,806 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,865 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,865 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,865 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,925 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,925 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,925 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:29,950 [INFO] === Training LoRA for domain: history ===
+2026-03-25 03:44:29,950 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 03:44:29,950 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history
+2026-03-25 03:44:30,249 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,311 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,323 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,381 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,399 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,400 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,424 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,455 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,457 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,463 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,463 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,464 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,485 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,517 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,518 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,567 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,570 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,627 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,634 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,704 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,762 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,766 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,766 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,781 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,782 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,824 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,839 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,839 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,859 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,860 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,861 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,885 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,919 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:30,937 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:30,946 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,000 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,009 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,069 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,089 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,103 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,110 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,159 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,161 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,162 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,163 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,163 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:31,169 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,185 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,192 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,232 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,234 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,236 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,238 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,246 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,252 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,296 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,296 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,300 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,345 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,363 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,390 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,426 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,427 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:31,438 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,686 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,701 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,883 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,885 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,892 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,949 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:32,949 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,054 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,089 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,104 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,145 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,163 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,212 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,231 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,288 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,305 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,306 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,306 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,346 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,353 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,367 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,375 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,377 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,379 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,429 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,448 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,449 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,450 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,458 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,473 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 03:44:33,507 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,519 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,521 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,543 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,575 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,588 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,591 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,611 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,640 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:33,673 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,597 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,601 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
     response.raise_for_status()
@@ -655,53 +160,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-24 22:34:34,066 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:34,118 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-24 22:34:34,119 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -744,7 +203,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -755,7 +214,10 @@ Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
     raise OSError(
 OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-24 22:34:34,179 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,815 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,827 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,840 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,869 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
     response.raise_for_status()
@@ -788,51 +250,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-24 22:34:34,227 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -875,7 +293,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -886,7 +304,6 @@ Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
     raise OSError(
 OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-24 22:34:34,292 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
     response.raise_for_status()
@@ -919,7 +336,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -930,7 +347,6 @@ Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
     raise OSError(
 OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-24 22:34:34,669 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
     response.raise_for_status()
@@ -963,7 +379,7 @@ huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 184, in <module>
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
     main()
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
     tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
@@ -974,14 +390,102 @@ Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
     raise OSError(
 OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-W0324 22:34:34.989000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53727 closing signal SIGTERM
-W0324 22:34:34.990000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53728 closing signal SIGTERM
-W0324 22:34:34.990000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53729 closing signal SIGTERM
-W0324 22:34:34.991000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53730 closing signal SIGTERM
-W0324 22:34:34.991000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53731 closing signal SIGTERM
-W0324 22:34:34.991000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53732 closing signal SIGTERM
-W0324 22:34:34.991000 53713 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 53733 closing signal SIGTERM
-E0324 22:34:35.106000 53713 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 0 (pid: 53726) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+2026-03-25 03:44:34,940 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+2026-03-25 03:44:34,984 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
+    super().__init__(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
+    self._tokenizer = self._patch_mistral_regex(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
+    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
+    model = model_info(model_id)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
+    hf_raise_for_status(r)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
+    raise _format(HfHubHTTPError, message, response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
+    main()
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
+    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
+    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
+    return cls._from_pretrained(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
+    raise OSError(
+OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
+    response.raise_for_status()
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
+    super().__init__(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
+    self._tokenizer = self._patch_mistral_regex(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
+    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
+    model = model_info(model_id)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
+    hf_raise_for_status(r)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
+    raise _format(HfHubHTTPError, message, response) from e
+huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
+    main()
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
+    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
+    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
+    return cls._from_pretrained(
+  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
+    raise OSError(
+OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
+W0325 03:44:35.860000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52505 closing signal SIGTERM
+W0325 03:44:35.861000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52511 closing signal SIGTERM
+W0325 03:44:35.861000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52518 closing signal SIGTERM
+W0325 03:44:35.862000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52519 closing signal SIGTERM
+W0325 03:44:35.862000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52524 closing signal SIGTERM
+W0325 03:44:35.862000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52526 closing signal SIGTERM
+W0325 03:44:35.862000 52406 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 52529 closing signal SIGTERM
+E0325 03:44:35.977000 52406 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 7 (pid: 52533) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
     sys.exit(main())
@@ -1001,61 +505,61 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ------------------------------------------------------------
 Failures:
 [1]:
-  time      : 2026-03-24_22:34:35
+  time      : 2026-03-25_03:44:35
+  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 52505)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 52505
+[2]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 1 (local_rank: 1)
-  exitcode  : -15 (pid: 53727)
+  exitcode  : -15 (pid: 52511)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53727
-[2]:
-  time      : 2026-03-24_22:34:35
+  traceback : Signal 15 (SIGTERM) received by PID 52511
+[3]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 2 (local_rank: 2)
-  exitcode  : -15 (pid: 53728)
+  exitcode  : 1 (pid: 52518)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53728
-[3]:
-  time      : 2026-03-24_22:34:35
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 3 (local_rank: 3)
-  exitcode  : -15 (pid: 53729)
+  exitcode  : -15 (pid: 52519)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53729
-[4]:
-  time      : 2026-03-24_22:34:35
+  traceback : Signal 15 (SIGTERM) received by PID 52519
+[5]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 4 (local_rank: 4)
-  exitcode  : -15 (pid: 53730)
+  exitcode  : -15 (pid: 52524)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53730
-[5]:
-  time      : 2026-03-24_22:34:35
+  traceback : Signal 15 (SIGTERM) received by PID 52524
+[6]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 5 (local_rank: 5)
-  exitcode  : -15 (pid: 53731)
+  exitcode  : -15 (pid: 52526)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53731
-[6]:
-  time      : 2026-03-24_22:34:35
+  traceback : Signal 15 (SIGTERM) received by PID 52526
+[7]:
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 6 (local_rank: 6)
-  exitcode  : -15 (pid: 53732)
+  exitcode  : -15 (pid: 52529)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53732
-[7]:
-  time      : 2026-03-24_22:34:35
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 7 (local_rank: 7)
-  exitcode  : -15 (pid: 53733)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 53733
+  traceback : Signal 15 (SIGTERM) received by PID 52529
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-03-24_22:34:34
+  time      : 2026-03-25_03:44:35
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 0 (local_rank: 0)
-  exitcode  : 1 (pid: 53726)
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 52533)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
