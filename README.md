@@ -13,7 +13,7 @@ cd nips-text2subspace
 bash run.sh
 
 # 3. (Optional) Run in background for long experiments
-nohup bash run.sh > run.log 2>&1 &
+nohup bash rrun.sh > run.log 2>&1 &
 tail -f run.log
 ```
 

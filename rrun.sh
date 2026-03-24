@@ -1,0 +1,61 @@
+#!/bin/bash
+set -e
+PROJ_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$PROJ_DIR"
+
+# ====== 只需要这几行修复 ======
+
+# 修复1: UV缓存放本地，解决多机死锁
+export UV_CACHE_DIR="/tmp/uv-cache-$(hostname)"
+mkdir -p "$UV_CACHE_DIR"
+
+# 修复2: 如果 .venv 存在但是坏的，干掉重来
+if [ -L "$PROJ_DIR/.venv" ]; then
+    # 是符号链接（上次方案的残留），直接删
+    rm -f "$PROJ_DIR/.venv"
+elif [ -d "$PROJ_DIR/.venv" ]; then
+    # 是真实目录，检查能不能用
+    if [ ! -f "$PROJ_DIR/.venv/bin/activate" ] || \
+       ! "$PROJ_DIR/.venv/bin/python" --version &>/dev/null; then
+        echo "[FIX] .venv is broken, removing..."
+        rm -rf "$PROJ_DIR/.venv" 2>/dev/null || \
+            mv "$PROJ_DIR/.venv" "/tmp/.venv_dead_$(date +%s)" 2>/dev/null || true
+    fi
+fi
+
+# ====== 以下是原版 run.sh，一字不改 ======
+
+echo "============================================================"
+echo " Starting full experiment pipeline"
+echo " Project: $(basename "$PROJ_DIR")"
+echo " Time:    $(date)"
+echo "============================================================"
+
+if [ ! -f "$PROJ_DIR/.venv/bin/activate" ]; then
+    echo ""
+    echo "[1/2] Setting up environment..."
+    bash setup.sh
+else
+    echo ""
+    echo "[1/2] Environment already set up (.venv exists)"
+fi
+
+echo ""
+echo "[2/2] Running all experiments (full production mode)..."
+echo "  Log file: $PROJ_DIR/run.log"
+echo ""
+
+bash scripts/run_all_experiments.sh 2>&1 | tee "$PROJ_DIR/run.log"
+EXIT_CODE=${PIPESTATUS[0]}
+
+echo ""
+if [ $EXIT_CODE -eq 0 ]; then
+    echo "============================================================"
+    echo " Pipeline completed successfully!"
+    echo "============================================================"
+else
+    echo "============================================================"
+    echo " Pipeline failed (exit code: $EXIT_CODE)"
+    echo "============================================================"
+    exit $EXIT_CODE
+fi
