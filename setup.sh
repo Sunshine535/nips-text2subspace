@@ -31,16 +31,29 @@ echo "[3/5] Installing PyTorch 2.10.0 + CUDA 12.8 ..."
 uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
     --index-url https://download.pytorch.org/whl/cu128
 
-# --- Install project dependencies (alibaba mirror) ---
+# --- Install project dependencies (alibaba mirror, flash-attn handled separately in step 5) ---
 echo "[4/5] Installing project dependencies ..."
-uv pip install -r "$PROJ_DIR/requirements.txt" \
+grep -v '^flash-attn' "$PROJ_DIR/requirements.txt" > /tmp/_req_no_flash.txt
+uv pip install -r /tmp/_req_no_flash.txt \
     --index-url https://mirrors.aliyun.com/pypi/simple/ \
     --extra-index-url https://download.pytorch.org/whl/cu128 \
     --index-strategy unsafe-best-match
+rm -f /tmp/_req_no_flash.txt
 
 # --- Optional: flash-attention ---
 echo "[5/5] Installing flash-attn (optional) ..."
-uv pip install flash-attn --no-build-isolation 2>/dev/null || echo "  flash-attn skipped (optional)"
+if [ -z "$CUDA_HOME" ]; then
+    for p in /usr/local/cuda-12.8 /usr/local/cuda-12 /usr/local/cuda; do
+        if [ -f "$p/bin/nvcc" ]; then export CUDA_HOME="$p"; break; fi
+    done
+fi
+if [ -n "$CUDA_HOME" ]; then
+    echo "  CUDA_HOME=$CUDA_HOME"
+    export PATH="$CUDA_HOME/bin:$PATH"
+    uv pip install flash-attn --no-build-isolation 2>&1 || echo "  flash-attn build failed (optional, falling back to sdpa)"
+else
+    echo "  CUDA toolkit not found, skipping flash-attn (will use sdpa)"
+fi
 
 # --- Verify ---
 echo ""
