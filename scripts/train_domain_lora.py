@@ -2,7 +2,6 @@
 """Train a single domain-specific LoRA on Qwen/Qwen3.5-9B using TRL SFTTrainer + PEFT."""
 
 import argparse
-import inspect
 import json
 import logging
 import os
@@ -145,6 +144,9 @@ def main():
 
     dataset = load_domain_dataset(domain_cfg, tokenizer)
 
+    import trl
+    logger.info("trl version: %s", trl.__version__)
+
     sft_kwargs = dict(
         output_dir=output_dir,
         per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
@@ -165,21 +167,31 @@ def main():
         ddp_find_unused_parameters=False,
         dataset_text_field="text",
     )
-    # trl >= 0.16 renamed max_seq_length -> max_length
-    sft_params = inspect.signature(SFTConfig.__init__).parameters
-    if "max_seq_length" in sft_params:
+    # trl < 0.16: max_seq_length; trl >= 0.16: max_length
+    try:
+        SFTConfig(output_dir="/tmp/_probe", max_seq_length=512)
         sft_kwargs["max_seq_length"] = train_cfg["max_seq_length"]
-    else:
+    except TypeError:
         sft_kwargs["max_length"] = train_cfg["max_seq_length"]
+    # dataset_text_field might be removed in future trl
+    try:
+        SFTConfig(output_dir="/tmp/_probe", dataset_text_field="text")
+    except TypeError:
+        sft_kwargs.pop("dataset_text_field", None)
+
     sft_config = SFTConfig(**sft_kwargs)
 
-    trainer = SFTTrainer(
+    # processing_class (trl >= 0.12) vs tokenizer (older trl)
+    trainer_kwargs = dict(
         model=model,
         args=sft_config,
         train_dataset=dataset,
         peft_config=peft_config,
-        processing_class=tokenizer,
     )
+    try:
+        trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+    except TypeError:
+        trainer = SFTTrainer(**trainer_kwargs, tokenizer=tokenizer)
 
     logger.info("Starting training...")
     trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
