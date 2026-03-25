@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T19:45:48.497156+00:00",
+  "timestamp": "2026-03-25T08:26:46.140258+00:00",
   "base_model": "Qwen/Qwen3.5-9B",
   "lora_config": {
     "r": 16,
@@ -19,75 +19,75 @@
   "num_domains": 12,
   "num_trained": 0,
   "num_failed": 12,
-  "total_time_seconds": 222.79999999999998,
+  "total_time_seconds": 4821.299999999999,
   "results": [
     {
       "domain": "math",
       "return_code": 1,
-      "elapsed_seconds": 39.9,
+      "elapsed_seconds": 58.2,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math",
       "trained": false
     },
     {
       "domain": "code",
       "return_code": 1,
-      "elapsed_seconds": 26.7,
+      "elapsed_seconds": 25.1,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/code",
       "trained": false
     },
     {
       "domain": "medical",
       "return_code": 1,
-      "elapsed_seconds": 26.9,
+      "elapsed_seconds": 10.1,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/medical",
       "trained": false
     },
     {
       "domain": "legal",
       "return_code": 1,
-      "elapsed_seconds": 14.6,
+      "elapsed_seconds": 28.6,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/legal",
       "trained": false
     },
     {
       "domain": "finance",
       "return_code": 1,
-      "elapsed_seconds": 14.0,
+      "elapsed_seconds": 28.0,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance",
       "trained": false
     },
     {
       "domain": "science",
       "return_code": 1,
-      "elapsed_seconds": 14.1,
+      "elapsed_seconds": 4476.9,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science",
       "trained": false
     },
     {
       "domain": "history",
       "return_code": 1,
-      "elapsed_seconds": 14.4,
+      "elapsed_seconds": 92.9,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/history",
       "trained": false
     },
     {
       "domain": "geography",
       "return_code": 1,
-      "elapsed_seconds": 14.5,
+      "elapsed_seconds": 29.2,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/geography",
       "trained": false
     },
     {
       "domain": "philosophy",
       "return_code": 1,
-      "elapsed_seconds": 14.4,
+      "elapsed_seconds": 29.3,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/philosophy",
       "trained": false
     },
     {
       "domain": "psychology",
       "return_code": 1,
-      "elapsed_seconds": 14.6,
+      "elapsed_seconds": 14.3,
       "output_dir": "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/psychology",
       "trained": false
     },

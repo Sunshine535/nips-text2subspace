@@ -1,491 +1,548 @@
-2026-03-25 03:44:01,277 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,278 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,278 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,448 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,448 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,448 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,484 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,484 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,484 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,548 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,549 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,549 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,582 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,583 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,583 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,638 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,638 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,639 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,699 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,700 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,700 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,724 [INFO] === Training LoRA for domain: finance ===
-2026-03-25 03:44:01,724 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-25 03:44:01,724 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
-2026-03-25 03:44:01,954 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:01,956 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,027 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,032 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,126 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,132 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,205 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,205 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,220 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,277 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,289 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,292 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,295 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,301 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,355 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,356 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,360 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,361 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,379 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,462 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,472 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,509 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,536 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,545 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,579 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,597 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,616 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,619 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,636 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,647 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,680 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,686 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,696 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,730 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,731 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,748 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,758 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,804 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,806 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,840 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,870 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,872 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,874 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,905 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,921 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,922 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:02,934 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,935 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,987 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,996 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:02,999 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:03,009 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,054 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:03,061 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,065 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,102 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,121 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,121 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,133 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,135 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,195 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,204 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,286 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:03,339 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,336 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,574 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,633 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,633 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,684 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,686 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,688 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:04,764 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,827 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,828 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,891 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:04,932 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:04,960 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,008 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,068 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,068 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,083 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,111 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,136 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,137 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,139 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,173 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,216 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,218 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,221 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,221 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,225 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,243 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,303 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,304 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,344 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,345 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,371 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,372 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,421 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-25 03:44:05,477 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,495 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,543 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,571 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:05,694 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:06,144 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-25 03:44:06,569 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:06,574 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-25 03:44:06,644 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:06,707 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-25 03:44:06,772 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-2026-03-25 03:44:06,831 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-2026-03-25 03:44:07,000 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 429 Too Many Requests"
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 761, in hf_raise_for_status
-    response.raise_for_status()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
-    raise HTTPStatusError(message, request=request, response=self)
-httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B'
-For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1910, in _from_pretrained
-    tokenizer = cls(*init_inputs, **init_kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 89, in __init__
-    super().__init__(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 442, in __init__
-    self._tokenizer = self._patch_mistral_regex(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1262, in _patch_mistral_regex
-    is_local or (not is_local and is_base_mistral(pretrained_model_name_or_path))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_tokenizers.py", line 1252, in is_base_mistral
-    model = model_info(model_id)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/hf_api.py", line 2940, in model_info
-    hf_raise_for_status(r)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 880, in hf_raise_for_status
-    raise _format(HfHubHTTPError, message, response) from e
-huggingface_hub.errors.HfHubHTTPError: 429 Too Many Requests for url: https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 191, in <module>
-    main()
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 116, in main
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 693, in from_pretrained
-    return tokenizer_class_from_name(tokenizer_config_class).from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1721, in from_pretrained
-    return cls._from_pretrained(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/tokenization_utils_base.py", line 1925, in _from_pretrained
-    raise OSError(
-OSError: Unable to load vocabulary from file. Please check that the provided vocabulary is accessible and not corrupted.
-W0325 03:44:07.304000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51780 closing signal SIGTERM
-W0325 03:44:07.305000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51782 closing signal SIGTERM
-W0325 03:44:07.305000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51783 closing signal SIGTERM
-W0325 03:44:07.306000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51784 closing signal SIGTERM
-W0325 03:44:07.306000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51785 closing signal SIGTERM
-W0325 03:44:07.306000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51786 closing signal SIGTERM
-W0325 03:44:07.307000 51767 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 51787 closing signal SIGTERM
-E0325 03:44:07.421000 51767 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 1 (pid: 51781) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
+2026-03-25 15:08:34,222 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,222 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,223 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,526 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,527 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,527 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,529 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,530 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,530 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,572 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,572 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,573 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,613 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,613 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,613 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,725 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,726 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,726 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,736 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,737 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,737 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,737 [INFO] === Training LoRA for domain: finance ===
+2026-03-25 15:08:34,737 [INFO] Base model: Qwen/Qwen3.5-9B
+2026-03-25 15:08:34,737 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/finance
+2026-03-25 15:08:34,771 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:34,947 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,107 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,129 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,152 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,174 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,193 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,202 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,204 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,206 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,224 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,264 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,268 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,285 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,350 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,411 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,413 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,457 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,458 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,477 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,503 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,527 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,554 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,561 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,584 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,595 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,607 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,684 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,729 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,806 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,825 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,827 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,855 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,858 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,891 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:35,892 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,897 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,934 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,971 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:35,978 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:35,981 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,029 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,039 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:36,042 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,054 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,056 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,099 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,111 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,116 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,137 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,193 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,277 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:36,333 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,343 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:36,356 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,439 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,443 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,446 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:36,520 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,543 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,588 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,611 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:36,651 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:36,735 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,569 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,636 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,657 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,683 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:37,729 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,737 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:37,741 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:37,770 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:37,785 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:37,852 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:37,951 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:37,971 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,020 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,023 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,039 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,071 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,094 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,096 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,099 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,178 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,190 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,207 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:38,208 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,220 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,222 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:38,254 [INFO] Using attention implementation: sdpa
+2026-03-25 15:08:38,273 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,324 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,351 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,373 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,426 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,448 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,449 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,455 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,498 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,522 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,527 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,574 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,586 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,591 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,621 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:38,668 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:38,702 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-03-25 15:08:38,713 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,785 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,816 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:38,825 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:38,846 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,860 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,865 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,902 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,914 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,934 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,958 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:38,960 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:38,977 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:38,985 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,024 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 49932.19it/s]
+2026-03-25 15:08:39,048 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 15:08:39,054 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,063 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:39,112 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 53430.62it/s]
+2026-03-25 15:08:39,124 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 15:08:39,133 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,201 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,203 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,206 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:39,245 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 53430.62it/s]
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 53946.03it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 15:08:39,293 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:39,324 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,354 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:39,408 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 51622.20it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 15:08:39,434 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,444 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:39,516 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,517 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:39,582 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 50533.78it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+2026-03-25 15:08:39,624 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:39,651 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 55738.26it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]2026-03-25 15:08:39,712 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 51622.20it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<01:45,  4.02it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<02:07,  3.33it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 2/427 [00:00<01:57,  3.61it/s]Loading weights:   6%|▌         | 25/427 [00:00<00:07, 55.78it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  10%|▉         | 42/427 [00:00<00:04, 81.38it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<02:20,  3.03it/s]Loading weights:   0%|          | 2/427 [00:00<02:30,  2.82it/s]Loading weights:   0%|          | 1/427 [00:00<04:10,  1.70it/s]Loading weights:  15%|█▍        | 62/427 [00:00<00:03, 108.02it/s]Loading weights:   0%|          | 1/427 [00:00<01:51,  3.82it/s]Loading weights:   0%|          | 1/427 [00:00<04:08,  1.71it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:09, 43.78it/s]Loading weights:   5%|▌         | 23/427 [00:00<00:09, 43.65it/s]Loading weights:  19%|█▊        | 80/427 [00:00<00:02, 124.12it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 70.55it/s]Loading weights:   5%|▌         | 23/427 [00:00<00:09, 44.27it/s]Loading weights:   9%|▉         | 40/427 [00:00<00:05, 69.95it/s]Loading weights:  22%|██▏       | 96/427 [00:01<00:02, 128.14it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 71.70it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:04, 81.16it/s]Loading weights:  28%|██▊       | 119/427 [00:01<00:02, 148.02it/s]Loading weights:   0%|          | 2/427 [00:00<02:40,  2.64it/s]Loading weights:  13%|█▎        | 54/427 [00:00<00:04, 77.39it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 114.76it/s]Loading weights:  13%|█▎        | 56/427 [00:00<00:04, 87.04it/s]Loading weights:   0%|          | 2/427 [00:00<02:28,  2.86it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:09, 41.68it/s]Loading weights:  32%|███▏      | 136/427 [00:01<00:02, 144.75it/s]Loading weights:  18%|█▊        | 75/427 [00:01<00:03, 105.46it/s]Loading weights:  22%|██▏       | 92/427 [00:01<00:02, 125.86it/s]Loading weights:  18%|█▊        | 77/427 [00:01<00:03, 115.93it/s]Loading weights:   0%|          | 1/427 [00:00<05:17,  1.34it/s]Loading weights:   5%|▍         | 21/427 [00:00<00:10, 38.93it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 66.81it/s]Loading weights:  22%|██▏       | 92/427 [00:01<00:02, 120.99it/s]Loading weights:  36%|███▌      | 152/427 [00:01<00:01, 146.62it/s]Loading weights:  22%|██▏       | 95/427 [00:01<00:02, 128.23it/s]Loading weights:   0%|          | 1/427 [00:00<04:48,  1.48it/s]Loading weights:  25%|██▌       | 108/427 [00:01<00:02, 120.96it/s]Loading weights:   6%|▌         | 26/427 [00:00<00:09, 41.07it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 71.88it/s]Loading weights:  40%|████      | 171/427 [00:01<00:01, 158.20it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:04, 77.41it/s]Loading weights:   5%|▍         | 20/427 [00:00<00:11, 34.06it/s]Loading weights:  25%|██▌       | 108/427 [00:01<00:02, 116.95it/s]Loading weights:  26%|██▌       | 112/427 [00:01<00:02, 135.12it/s]Loading weights:  31%|███       | 132/427 [00:01<00:01, 149.35it/s]Loading weights:  10%|▉         | 42/427 [00:00<00:06, 59.42it/s]Loading weights:  13%|█▎        | 54/427 [00:01<00:04, 82.75it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 110.61it/s]Loading weights:  44%|████▍     | 188/427 [00:01<00:01, 153.91it/s]Loading weights:  30%|██▉       | 128/427 [00:01<00:02, 135.10it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 142.15it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 67.67it/s]Loading weights:  35%|███▍      | 149/427 [00:01<00:01, 143.44it/s]Loading weights:  18%|█▊        | 77/427 [00:01<00:02, 118.45it/s]Loading weights:  15%|█▌        | 66/427 [00:01<00:03, 93.07it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 124.41it/s]Loading weights:  48%|████▊     | 206/427 [00:01<00:01, 156.44it/s]Loading weights:  34%|███▎      | 144/427 [00:01<00:02, 140.43it/s]Loading weights:  34%|███▍      | 145/427 [00:01<00:01, 143.14it/s]Loading weights:  13%|█▎        | 56/427 [00:01<00:04, 82.38it/s]Loading weights:  40%|███▉      | 170/427 [00:01<00:01, 159.10it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 131.35it/s]Loading weights:  53%|█████▎    | 226/427 [00:01<00:01, 165.51it/s]Loading weights:  19%|█▉        | 83/427 [00:01<00:03, 104.52it/s]Loading weights:  26%|██▌       | 110/427 [00:01<00:02, 127.16it/s]Loading weights:  18%|█▊        | 76/427 [00:01<00:03, 107.73it/s]Loading weights:  37%|███▋      | 160/427 [00:01<00:02, 126.45it/s]Loading weights:  38%|███▊      | 161/427 [00:01<00:02, 129.48it/s]Loading weights:  26%|██▌       | 111/427 [00:01<00:02, 138.65it/s]Loading weights:  44%|████▍     | 188/427 [00:01<00:01, 147.21it/s]Loading weights:  23%|██▎       | 99/427 [00:01<00:02, 115.84it/s]Loading weights:  57%|█████▋    | 243/427 [00:01<00:01, 164.16it/s]Loading weights:  30%|███       | 129/427 [00:01<00:02, 140.21it/s]Loading weights:  22%|██▏       | 94/427 [00:01<00:02, 122.98it/s]Loading weights:  43%|████▎     | 182/427 [00:01<00:01, 148.90it/s]Loading weights:  30%|███       | 130/427 [00:01<00:01, 151.75it/s]Loading weights:  43%|████▎     | 182/427 [00:01<00:01, 144.92it/s]Loading weights:  48%|████▊     | 205/427 [00:01<00:01, 149.98it/s]Loading weights:  28%|██▊       | 119/427 [00:01<00:02, 133.84it/s]Loading weights:  34%|███▍      | 145/427 [00:01<00:01, 144.27it/s]Loading weights:  61%|██████    | 260/427 [00:02<00:01, 146.32it/s]Loading weights:  26%|██▌       | 110/427 [00:01<00:02, 127.60it/s]Loading weights:  46%|████▋     | 198/427 [00:01<00:01, 149.89it/s]Loading weights:  47%|████▋     | 199/427 [00:01<00:01, 150.80it/s]Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 153.73it/s]Loading weights:  53%|█████▎    | 225/427 [00:02<00:01, 159.78it/s]Loading weights:  32%|███▏      | 136/427 [00:01<00:02, 140.03it/s]Loading weights:  67%|██████▋   | 287/427 [00:02<00:00, 174.90it/s]Loading weights:  30%|███       | 130/427 [00:01<00:02, 144.40it/s]Loading weights:  38%|███▊      | 161/427 [00:01<00:02, 129.81it/s]Loading weights:  38%|███▊      | 164/427 [00:01<00:01, 150.64it/s]Loading weights:  57%|█████▋    | 242/427 [00:02<00:01, 156.00it/s]Loading weights:  36%|███▌      | 153/427 [00:01<00:01, 144.08it/s]Loading weights:  50%|█████     | 214/427 [00:01<00:01, 132.54it/s]Loading weights:  50%|█████     | 215/427 [00:02<00:01, 134.65it/s]Loading weights:  43%|████▎     | 184/427 [00:01<00:01, 154.60it/s]Loading weights:  72%|███████▏  | 306/427 [00:02<00:00, 168.23it/s]Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 144.49it/s]Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 163.34it/s]Loading weights:  41%|████      | 173/427 [00:01<00:01, 154.48it/s]Loading weights:  55%|█████▌    | 236/427 [00:02<00:01, 151.12it/s]Loading weights:  61%|██████    | 259/427 [00:02<00:01, 151.55it/s]Loading weights:  55%|█████▌    | 235/427 [00:02<00:01, 147.25it/s]Loading weights:  47%|████▋     | 201/427 [00:01<00:01, 149.13it/s]Loading weights:  38%|███▊      | 163/427 [00:01<00:01, 140.14it/s]Loading weights:  76%|███████▌  | 324/427 [00:02<00:00, 158.35it/s]Loading weights:  48%|████▊     | 203/427 [00:01<00:01, 161.49it/s]Loading weights:  44%|████▍     | 190/427 [00:01<00:01, 153.42it/s]Loading weights:  59%|█████▉    | 253/427 [00:02<00:01, 151.66it/s]Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 158.70it/s]Loading weights:  59%|█████▉    | 253/427 [00:02<00:01, 151.67it/s]Loading weights:  42%|████▏     | 179/427 [00:01<00:01, 142.24it/s]Loading weights:  52%|█████▏    | 221/427 [00:02<00:01, 155.96it/s]Loading weights:  80%|████████  | 342/427 [00:02<00:00, 162.57it/s]Loading weights:  53%|█████▎    | 225/427 [00:01<00:01, 169.31it/s]Loading weights:  69%|██████▉   | 296/427 [00:02<00:00, 161.15it/s]Loading weights:  63%|██████▎   | 269/427 [00:02<00:01, 146.66it/s]Loading weights:  63%|██████▎   | 269/427 [00:02<00:01, 145.79it/s]Loading weights:  48%|████▊     | 207/427 [00:02<00:01, 140.18it/s]Loading weights:  47%|████▋     | 199/427 [00:01<00:01, 157.19it/s]Loading weights:  84%|████████▍ | 359/427 [00:02<00:00, 163.41it/s]Loading weights:  56%|█████▌    | 239/427 [00:02<00:01, 158.31it/s]Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 158.00it/s]Loading weights:  57%|█████▋    | 243/427 [00:02<00:01, 161.49it/s]Loading weights:  68%|██████▊   | 291/427 [00:02<00:00, 165.01it/s]Loading weights:  73%|███████▎  | 313/427 [00:02<00:00, 150.67it/s]Loading weights:  53%|█████▎    | 227/427 [00:02<00:01, 154.89it/s]Loading weights:  88%|████████▊ | 376/427 [00:02<00:00, 159.92it/s]Loading weights:  60%|█████▉    | 256/427 [00:02<00:01, 153.14it/s]Loading weights:  51%|█████     | 216/427 [00:02<00:01, 147.56it/s]Loading weights:  71%|███████▏  | 305/427 [00:02<00:00, 158.20it/s]Loading weights:  58%|█████▊    | 249/427 [00:02<00:01, 171.69it/s]Loading weights:  78%|███████▊  | 333/427 [00:02<00:00, 157.23it/s]Loading weights:  61%|██████    | 260/427 [00:02<00:01, 149.40it/s]Loading weights:  64%|██████▍   | 275/427 [00:02<00:00, 161.24it/s]Loading weights:  72%|███████▏  | 309/427 [00:02<00:00, 143.28it/s]Loading weights:  55%|█████▌    | 235/427 [00:02<00:01, 157.49it/s]Loading weights:  93%|█████████▎| 398/427 [00:02<00:00, 166.99it/s]Loading weights:  83%|████████▎ | 355/427 [00:02<00:00, 171.35it/s]Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 177.59it/s]Loading weights:  75%|███████▌  | 322/427 [00:02<00:00, 141.83it/s]Loading weights:  63%|██████▎   | 267/427 [00:02<00:01, 155.77it/s]Loading weights:  77%|███████▋  | 328/427 [00:02<00:00, 153.67it/s]Loading weights:  59%|█████▉    | 252/427 [00:02<00:01, 159.32it/s]Loading weights:  68%|██████▊   | 292/427 [00:02<00:00, 160.01it/s]Loading weights:  97%|█████████▋| 415/427 [00:03<00:00, 160.38it/s]Loading weights:  80%|███████▉  | 341/427 [00:02<00:00, 150.01it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 136.35it/s]
+Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 169.37it/s]Loading weights:  72%|███████▏  | 307/427 [00:02<00:00, 166.03it/s]Loading weights:  87%|████████▋ | 373/427 [00:03<00:00, 152.53it/s]Loading weights:  81%|████████  | 345/427 [00:02<00:00, 149.75it/s]Loading weights:  72%|███████▏  | 309/427 [00:02<00:00, 151.15it/s]Loading weights:  63%|██████▎   | 269/427 [00:02<00:01, 146.47it/s]Loading weights:  84%|████████▍ | 358/427 [00:02<00:00, 153.71it/s]Loading weights:  72%|███████▏  | 306/427 [00:02<00:00, 169.54it/s]Loading weights:  77%|███████▋  | 327/427 [00:02<00:00, 172.04it/s]Loading weights:  93%|█████████▎| 395/427 [00:03<00:00, 169.04it/s]Loading weights:  77%|███████▋  | 329/427 [00:02<00:00, 160.68it/s]Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 157.15it/s]Loading weights:  85%|████████▍ | 361/427 [00:02<00:00, 141.75it/s]Loading weights:  76%|███████▌  | 324/427 [00:02<00:00, 170.23it/s]Loading weights:  81%|████████  | 346/427 [00:02<00:00, 170.78it/s]Loading weights:  88%|████████▊ | 374/427 [00:03<00:00, 140.61it/s]Loading weights:  97%|█████████▋| 413/427 [00:03<00:00, 161.58it/s]Loading weights:  71%|███████▏  | 305/427 [00:02<00:00, 158.90it/s]Loading weights:  89%|████████▉ | 381/427 [00:03<00:00, 155.94it/s]Loading weights:  81%|████████  | 346/427 [00:02<00:00, 145.63it/s]Loading weights:  80%|████████  | 342/427 [00:02<00:00, 170.36it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 128.24it/s]
+Loading weights:  85%|████████▌ | 364/427 [00:02<00:00, 169.28it/s]Loading weights:  93%|█████████▎| 396/427 [00:03<00:00, 159.53it/s]Loading weights:  93%|█████████▎| 399/427 [00:03<00:00, 157.79it/s]Loading weights:  75%|███████▌  | 322/427 [00:02<00:00, 146.09it/s]Loading weights:  85%|████████▌ | 364/427 [00:03<00:00, 147.66it/s]Loading weights:  84%|████████▍ | 360/427 [00:02<00:00, 160.25it/s]Loading weights:  90%|█████████ | 385/427 [00:02<00:00, 176.37it/s]Loading weights:  97%|█████████▋| 413/427 [00:03<00:00, 156.15it/s]Loading weights:  98%|█████████▊| 417/427 [00:03<00:00, 156.79it/s]Loading weights:  80%|████████  | 343/427 [00:02<00:00, 160.46it/s]Loading weights:  90%|████████▉ | 384/427 [00:03<00:00, 160.73it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 128.43it/s]
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 125.51it/s]
+Loading weights:  95%|█████████▍| 405/427 [00:03<00:00, 180.39it/s]Loading weights:  89%|████████▉ | 380/427 [00:03<00:00, 167.67it/s]Loading weights:  84%|████████▍ | 360/427 [00:02<00:00, 158.11it/s]Loading weights:  94%|█████████▍| 401/427 [00:03<00:00, 162.00it/s]2026-03-25 15:08:43,458 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+Loading weights:  93%|█████████▎| 398/427 [00:03<00:00, 166.97it/s]Loading weights:  99%|█████████▉| 424/427 [00:03<00:00, 171.92it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 135.05it/s]
+Loading weights:  89%|████████▉ | 379/427 [00:03<00:00, 166.20it/s]Loading weights:  98%|█████████▊| 418/427 [00:03<00:00, 152.84it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 125.28it/s]
+Loading weights:  97%|█████████▋| 415/427 [00:03<00:00, 164.22it/s]Loading weights:  93%|█████████▎| 399/427 [00:03<00:00, 174.85it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 129.29it/s]
+Loading weights:  98%|█████████▊| 417/427 [00:03<00:00, 172.44it/s]2026-03-25 15:08:43,757 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Loading weights: 100%|██████████| 427/427 [00:03<00:00, 129.49it/s]
+2026-03-25 15:08:43,869 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,026 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,072 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,080 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,088 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,104 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,162 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,222 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,225 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,257 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,258 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,258 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,308 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,328 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,335 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,376 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,405 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,473 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,474 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,474 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,480 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,510 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,532 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,548 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,597 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,653 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,659 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,660 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,660 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,662 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,717 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,770 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,771 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,771 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,773 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,780 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,781 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,781 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,784 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:44,785 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,785 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:44,820 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,841 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
+2026-03-25 15:08:44,932 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:44,984 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,003 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:45,003 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,047 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:45,058 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:45,070 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,085 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,086 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:45,086 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:45,116 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,117 [INFO] Loading dataset AdaptLLM/finance-tasks (subset=None, max=20000)
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:45,117 [ERROR] `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'AdaptLLM/finance-tasks' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-03-25 15:08:45,124 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,141 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,263 [INFO] HTTP Request: GET https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,402 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:45,474 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-25 15:08:45,482 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,499 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,508 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,508 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,521 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,522 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,529 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,542 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,543 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-03-25 15:08:45,585 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/AdaptLLM/finance-tasks/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/README.md "HTTP/1.1 200 OK"
+2026-03-25 15:08:45,593 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,705 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:45,825 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,376 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,416 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,476 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,546 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,552 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,556 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,584 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,853 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,854 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,855 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,857 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,864 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,864 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,864 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:46,878 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/AdaptLLM/finance-tasks/AdaptLLM/finance-tasks.py "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:46,969 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/revision/48d43d2ae814fc7ee8947698e4754c7f1468ad0b "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,098 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,101 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,110 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,117 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,149 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,158 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,217 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,296 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,690 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,690 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,691 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,692 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,693 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,694 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,694 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,703 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/AdaptLLM/finance-tasks/tree/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/ConviFinQA?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-25 15:08:47,925 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,926 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,935 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,936 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,939 [INFO] trl version: 0.29.1
+2026-03-25 15:08:47,951 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,951 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,957 [INFO] trl version: 0.29.1
+2026-03-25 15:08:47,965 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,965 [INFO] trl version: 0.29.1
+2026-03-25 15:08:47,965 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,979 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,979 [INFO] trl version: 0.29.1
+2026-03-25 15:08:47,980 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,988 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:47,989 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:47,993 [INFO] trl version: 0.29.1
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+2026-03-25 15:08:48,003 [INFO] trl version: 0.29.1
+2026-03-25 15:08:48,008 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:48,010 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+2026-03-25 15:08:48,024 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/AdaptLLM/finance-tasks/resolve/48d43d2ae814fc7ee8947698e4754c7f1468ad0b/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-25 15:08:48,025 [WARNING] Failed to load AdaptLLM/finance-tasks, generating synthetic data
+2026-03-25 15:08:48,027 [INFO] trl version: 0.29.1
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+2026-03-25 15:08:48,038 [INFO] trl version: 0.29.1
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:  70%|██████▉   | 3499/5000 [00:00<00:00, 34817.37 examples/s]Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 34573.55 examples/s]
+Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   9%|▉         | 442/5000 [00:00<00:01, 4380.38 examples/s]Tokenizing train dataset:  18%|█▊        | 885/5000 [00:00<00:00, 4403.97 examples/s]Tokenizing train dataset:  30%|██▉       | 1480/5000 [00:00<00:00, 4151.43 examples/s]Tokenizing train dataset:  39%|███▊      | 1927/5000 [00:00<00:00, 4257.11 examples/s]Tokenizing train dataset:  52%|█████▏    | 2575/5000 [00:00<00:00, 4277.95 examples/s]Tokenizing train dataset:  65%|██████▍   | 3230/5000 [00:00<00:00, 4284.38 examples/s]Tokenizing train dataset:  74%|███████▎  | 3687/5000 [00:00<00:00, 4357.32 examples/s]Tokenizing train dataset:  86%|████████▌ | 4303/5000 [00:01<00:00, 4264.81 examples/s]Tokenizing train dataset:  95%|█████████▍| 4741/5000 [00:01<00:00, 4291.30 examples/s]Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4258.43 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 860829.16 examples/s]
+Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Adding EOS to train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]2026-03-25 15:08:51,242 [WARNING] [RANK 0] Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank0]:     main()
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank0]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank0]:     super().__init__(
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank0]:     self.callback_handler = CallbackHandler(
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank0]:     self.add_callback(cb)
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank0]:     cb = callback() if isinstance(callback, type) else callback
+[rank0]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank0]:     raise RuntimeError(
+[rank0]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Adding EOS to train dataset:  68%|██████▊   | 3412/5000 [00:00<00:00, 33908.95 examples/s]Adding EOS to train dataset:  35%|███▍      | 1734/5000 [00:00<00:00, 17213.82 examples/s]Adding EOS to train dataset:  66%|██████▌   | 3304/5000 [00:00<00:00, 32839.28 examples/s]Adding EOS to train dataset:  68%|██████▊   | 3402/5000 [00:00<00:00, 33838.83 examples/s]Adding EOS to train dataset:  66%|██████▌   | 3304/5000 [00:00<00:00, 32863.11 examples/s]Adding EOS to train dataset:  65%|██████▌   | 3268/5000 [00:00<00:00, 32495.87 examples/s]Adding EOS to train dataset:  34%|███▍      | 1723/5000 [00:00<00:00, 17090.18 examples/s]Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 33662.10 examples/s]
+Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 33653.78 examples/s]
+Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 32789.42 examples/s]
+Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 32764.31 examples/s]
+Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 31919.78 examples/s]
+Adding EOS to train dataset:  78%|███████▊  | 3896/5000 [00:00<00:00, 19796.24 examples/s]Adding EOS to train dataset:  79%|███████▉  | 3967/5000 [00:00<00:00, 20222.68 examples/s]Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 21308.04 examples/s]
+Adding EOS to train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 21514.17 examples/s]
+Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Tokenizing train dataset:   9%|▊         | 428/5000 [00:00<00:01, 4248.68 examples/s]Tokenizing train dataset:   8%|▊         | 422/5000 [00:00<00:01, 4185.18 examples/s]Tokenizing train dataset:   9%|▊         | 431/5000 [00:00<00:01, 4280.42 examples/s]Tokenizing train dataset:   8%|▊         | 412/5000 [00:00<00:01, 4092.85 examples/s]Tokenizing train dataset:   8%|▊         | 423/5000 [00:00<00:01, 4199.24 examples/s]Tokenizing train dataset:   8%|▊         | 413/5000 [00:00<00:01, 4107.05 examples/s]Tokenizing train dataset:   8%|▊         | 423/5000 [00:00<00:01, 4198.34 examples/s][rank0]:[W325 15:08:51.041135443 ProcessGroupNCCL.cpp:1553] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+Tokenizing train dataset:  17%|█▋        | 851/5000 [00:00<00:00, 4238.56 examples/s]Tokenizing train dataset:  20%|██        | 1000/5000 [00:00<00:01, 3917.66 examples/s]Tokenizing train dataset:  20%|██        | 1000/5000 [00:00<00:01, 3841.71 examples/s]Tokenizing train dataset:  20%|██        | 1000/5000 [00:00<00:01, 3880.89 examples/s]Tokenizing train dataset:  17%|█▋        | 848/5000 [00:00<00:00, 4243.64 examples/s]Tokenizing train dataset:  17%|█▋        | 858/5000 [00:00<00:00, 4277.87 examples/s]Tokenizing train dataset:  20%|██        | 1000/5000 [00:00<00:01, 3716.01 examples/s]Tokenizing train dataset:  29%|██▊       | 1430/5000 [00:00<00:00, 4063.43 examples/s]Tokenizing train dataset:  29%|██▊       | 1435/5000 [00:00<00:00, 4060.33 examples/s]Tokenizing train dataset:  29%|██▊       | 1426/5000 [00:00<00:00, 3998.24 examples/s]Tokenizing train dataset:  29%|██▊       | 1431/5000 [00:00<00:00, 3999.02 examples/s]Tokenizing train dataset:  28%|██▊       | 1415/5000 [00:00<00:00, 3875.88 examples/s]Tokenizing train dataset:  28%|██▊       | 1417/5000 [00:00<00:00, 3954.37 examples/s]Tokenizing train dataset:  29%|██▊       | 1427/5000 [00:00<00:00, 3976.89 examples/s]Tokenizing train dataset:  37%|███▋      | 1843/5000 [00:00<00:00, 4081.70 examples/s]Tokenizing train dataset:  37%|███▋      | 1840/5000 [00:00<00:00, 4047.01 examples/s]Tokenizing train dataset:  37%|███▋      | 1849/5000 [00:00<00:00, 4085.93 examples/s]Tokenizing train dataset:  37%|███▋      | 1854/5000 [00:00<00:00, 4074.35 examples/s]Tokenizing train dataset:  37%|███▋      | 1843/5000 [00:00<00:00, 4057.79 examples/s]Tokenizing train dataset:  37%|███▋      | 1855/5000 [00:00<00:00, 4076.58 examples/s]Tokenizing train dataset:  40%|███▉      | 1979/5000 [00:00<00:00, 3822.60 examples/s]Tokenizing train dataset:  49%|████▉     | 2439/5000 [00:00<00:00, 4029.92 examples/s]Tokenizing train dataset:  49%|████▉     | 2464/5000 [00:00<00:00, 4089.89 examples/s]Tokenizing train dataset:  49%|████▉     | 2448/5000 [00:00<00:00, 4045.89 examples/s]Tokenizing train dataset:  49%|████▉     | 2467/5000 [00:00<00:00, 4077.10 examples/s]Tokenizing train dataset:  49%|████▉     | 2440/5000 [00:00<00:00, 4020.64 examples/s]Tokenizing train dataset:  50%|█████     | 2505/5000 [00:00<00:00, 3697.48 examples/s]Tokenizing train dataset:  49%|████▉     | 2471/5000 [00:00<00:00, 4083.73 examples/s]Tokenizing train dataset:  57%|█████▋    | 2867/5000 [00:00<00:00, 4100.30 examples/s]Tokenizing train dataset:  58%|█████▊    | 2901/5000 [00:00<00:00, 4169.13 examples/s]Tokenizing train dataset:  57%|█████▋    | 2871/5000 [00:00<00:00, 4094.02 examples/s]Tokenizing train dataset:  58%|█████▊    | 2907/5000 [00:00<00:00, 4168.46 examples/s]Tokenizing train dataset:  57%|█████▋    | 2874/5000 [00:00<00:00, 4108.56 examples/s]Tokenizing train dataset:  58%|█████▊    | 2886/5000 [00:00<00:00, 3726.38 examples/s]Tokenizing train dataset:  58%|█████▊    | 2902/5000 [00:00<00:00, 4143.90 examples/s]Tokenizing train dataset:  69%|██████▉   | 3443/5000 [00:00<00:00, 3993.55 examples/s]Tokenizing train dataset:  71%|███████   | 3526/5000 [00:00<00:00, 4163.26 examples/s]Tokenizing train dataset:  69%|██████▉   | 3465/5000 [00:00<00:00, 4040.28 examples/s]Tokenizing train dataset:  71%|███████   | 3528/5000 [00:00<00:00, 4152.19 examples/s]Tokenizing train dataset:  70%|██████▉   | 3486/5000 [00:00<00:00, 4095.64 examples/s]Tokenizing train dataset:  68%|██████▊   | 3419/5000 [00:00<00:00, 3656.97 examples/s]Tokenizing train dataset:  70%|███████   | 3519/5000 [00:00<00:00, 4128.93 examples/s]Tokenizing train dataset:  77%|███████▋  | 3863/5000 [00:00<00:00, 4046.35 examples/s]Tokenizing train dataset:  79%|███████▉  | 3961/5000 [00:00<00:00, 4211.60 examples/s]Tokenizing train dataset:  78%|███████▊  | 3891/5000 [00:00<00:00, 4096.26 examples/s]Tokenizing train dataset:  79%|███████▉  | 3965/5000 [00:00<00:00, 4208.93 examples/s]Tokenizing train dataset:  78%|███████▊  | 3914/5000 [00:00<00:00, 4142.40 examples/s]Tokenizing train dataset:  76%|███████▋  | 3818/5000 [00:01<00:00, 3741.04 examples/s]Tokenizing train dataset:  79%|███████▊  | 3937/5000 [00:00<00:00, 4139.35 examples/s]Tokenizing train dataset:  89%|████████▉ | 4458/5000 [00:01<00:00, 4011.94 examples/s]Tokenizing train dataset:  92%|█████████▏| 4579/5000 [00:01<00:00, 4176.67 examples/s]Tokenizing train dataset:  89%|████████▉ | 4459/5000 [00:01<00:00, 3978.34 examples/s]Tokenizing train dataset:  91%|█████████▏| 4567/5000 [00:01<00:00, 4133.50 examples/s]Tokenizing train dataset:  84%|████████▍ | 4214/5000 [00:01<00:00, 3739.65 examples/s]Tokenizing train dataset:  90%|████████▉ | 4490/5000 [00:01<00:00, 4028.56 examples/s]Tokenizing train dataset:  91%|█████████ | 4545/5000 [00:01<00:00, 4104.95 examples/s]Tokenizing train dataset:  98%|█████████▊| 4875/5000 [00:01<00:00, 4049.42 examples/s]Tokenizing train dataset:  97%|█████████▋| 4872/5000 [00:01<00:00, 4015.29 examples/s]Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4128.89 examples/s]Tokenizing train dataset: 100%|█████████▉| 4994/5000 [00:01<00:00, 4164.17 examples/s]Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4122.62 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 770955.08 examples/s]
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4112.66 examples/s]
+Tokenizing train dataset:  92%|█████████▏| 4619/5000 [00:01<00:00, 3822.42 examples/s]Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 762905.89 examples/s]
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4017.14 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s][rank2]: Traceback (most recent call last):
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank2]:     main()
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank2]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank2]:     super().__init__(
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank2]:     self.callback_handler = CallbackHandler(
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank2]:     self.add_callback(cb)
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank2]:     cb = callback() if isinstance(callback, type) else callback
+[rank2]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank2]:     raise RuntimeError(
+[rank2]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 3995.85 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 586862.18 examples/s]
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank4]:     main()
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank4]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank4]:     super().__init__(
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank4]:     self.callback_handler = CallbackHandler(
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank4]:     self.add_callback(cb)
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank4]:     cb = callback() if isinstance(callback, type) else callback
+[rank4]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank4]:     raise RuntimeError(
+[rank4]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 808026.51 examples/s]
+Tokenizing train dataset:  98%|█████████▊| 4908/5000 [00:01<00:00, 4064.73 examples/s]Tokenizing train dataset:  99%|█████████▉| 4973/5000 [00:01<00:00, 4144.96 examples/s][rank3]: Traceback (most recent call last):
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank3]:     main()
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank3]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank3]:     super().__init__(
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank3]:     self.callback_handler = CallbackHandler(
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank3]:     self.add_callback(cb)
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank3]:     cb = callback() if isinstance(callback, type) else callback
+[rank3]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank3]:     raise RuntimeError(
+[rank3]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank6]:     main()
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank6]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank6]:     super().__init__(
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank6]:     self.callback_handler = CallbackHandler(
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank6]:     self.add_callback(cb)
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank6]:     cb = callback() if isinstance(callback, type) else callback
+[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank6]:     raise RuntimeError(
+[rank6]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4089.24 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 735275.23 examples/s]
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 4044.81 examples/s]
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 761576.06 examples/s]
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank1]:     main()
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank1]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank1]:     super().__init__(
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank1]:     self.callback_handler = CallbackHandler(
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank1]:     self.add_callback(cb)
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank1]:     cb = callback() if isinstance(callback, type) else callback
+[rank1]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank1]:     raise RuntimeError(
+[rank1]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Tokenizing train dataset: 100%|██████████| 5000/5000 [00:01<00:00, 3757.23 examples/s]
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank7]:     main()
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank7]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank7]:     super().__init__(
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank7]:     self.callback_handler = CallbackHandler(
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank7]:     self.add_callback(cb)
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank7]:     cb = callback() if isinstance(callback, type) else callback
+[rank7]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank7]:     raise RuntimeError(
+[rank7]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Truncating train dataset:   0%|          | 0/5000 [00:00<?, ? examples/s]Truncating train dataset: 100%|██████████| 5000/5000 [00:00<00:00, 642116.35 examples/s]
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 210, in <module>
+[rank5]:     main()
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 192, in main
+[rank5]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 936, in __init__
+[rank5]:     super().__init__(
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer.py", line 560, in __init__
+[rank5]:     self.callback_handler = CallbackHandler(
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 435, in __init__
+[rank5]:     self.add_callback(cb)
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/trainer_callback.py", line 452, in add_callback
+[rank5]:     cb = callback() if isinstance(callback, type) else callback
+[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/transformers/integrations/integration_utils.py", line 582, in __init__
+[rank5]:     raise RuntimeError(
+[rank5]: RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+W0325 15:08:54.003000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86202 closing signal SIGTERM
+W0325 15:08:54.003000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86203 closing signal SIGTERM
+W0325 15:08:54.004000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86204 closing signal SIGTERM
+W0325 15:08:54.004000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86205 closing signal SIGTERM
+W0325 15:08:54.005000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86206 closing signal SIGTERM
+W0325 15:08:54.005000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86207 closing signal SIGTERM
+W0325 15:08:54.005000 86143 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 86208 closing signal SIGTERM
+E0325 15:08:54.434000 86143 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 0 (pid: 86201) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
 Traceback (most recent call last):
   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
     sys.exit(main())
@@ -505,61 +562,61 @@ torch.distributed.elastic.multiprocessing.errors.ChildFailedError:
 ------------------------------------------------------------
 Failures:
 [1]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 0 (local_rank: 0)
-  exitcode  : -15 (pid: 51780)
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 86202)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51780
+  traceback : Signal 15 (SIGTERM) received by PID 86202
 [2]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 2 (local_rank: 2)
-  exitcode  : -15 (pid: 51782)
+  exitcode  : -15 (pid: 86203)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51782
+  traceback : Signal 15 (SIGTERM) received by PID 86203
 [3]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 3 (local_rank: 3)
-  exitcode  : -15 (pid: 51783)
+  exitcode  : -15 (pid: 86204)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51783
+  traceback : Signal 15 (SIGTERM) received by PID 86204
 [4]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 4 (local_rank: 4)
-  exitcode  : -15 (pid: 51784)
+  exitcode  : -15 (pid: 86205)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51784
+  traceback : Signal 15 (SIGTERM) received by PID 86205
 [5]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 5 (local_rank: 5)
-  exitcode  : -15 (pid: 51785)
+  exitcode  : -15 (pid: 86206)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51785
+  traceback : Signal 15 (SIGTERM) received by PID 86206
 [6]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 6 (local_rank: 6)
-  exitcode  : -15 (pid: 51786)
+  exitcode  : -15 (pid: 86207)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51786
+  traceback : Signal 15 (SIGTERM) received by PID 86207
 [7]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
   rank      : 7 (local_rank: 7)
-  exitcode  : -15 (pid: 51787)
+  exitcode  : -15 (pid: 86208)
   error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 51787
+  traceback : Signal 15 (SIGTERM) received by PID 86208
 ------------------------------------------------------------
 Root Cause (first observed failure):
 [0]:
-  time      : 2026-03-25_03:44:07
+  time      : 2026-03-25_15:08:54
   host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 1 (local_rank: 1)
-  exitcode  : 1 (pid: 51781)
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 86201)
   error_file: <N/A>
   traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
 ============================================================
