@@ -20,6 +20,19 @@ logger = logging.getLogger(__name__)
 os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
 
+def _has_tensorboard() -> bool:
+    try:
+        import tensorboard  # noqa: F401
+        return True
+    except ImportError:
+        pass
+    try:
+        import tensorboardX  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+
 def load_config(config_path: str) -> dict:
     with open(config_path) as f:
         return yaml.safe_load(f)
@@ -163,7 +176,7 @@ def main():
         gradient_checkpointing_kwargs={"use_reentrant": False},
         dataloader_num_workers=train_cfg["dataloader_num_workers"],
         remove_unused_columns=False,
-        report_to="tensorboard",
+        report_to="tensorboard" if _has_tensorboard() else "none",
         ddp_find_unused_parameters=False,
         dataset_text_field="text",
     )
