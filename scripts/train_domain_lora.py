@@ -2,6 +2,7 @@
 """Train a single domain-specific LoRA on Qwen/Qwen3.5-9B using TRL SFTTrainer + PEFT."""
 
 import argparse
+import inspect
 import json
 import logging
 import os
@@ -144,7 +145,7 @@ def main():
 
     dataset = load_domain_dataset(domain_cfg, tokenizer)
 
-    sft_config = SFTConfig(
+    sft_kwargs = dict(
         output_dir=output_dir,
         per_device_train_batch_size=train_cfg["per_device_train_batch_size"],
         gradient_accumulation_steps=train_cfg["gradient_accumulation_steps"],
@@ -156,7 +157,6 @@ def main():
         logging_steps=train_cfg["logging_steps"],
         save_steps=train_cfg["save_steps"],
         save_total_limit=2,
-        max_seq_length=train_cfg["max_seq_length"],
         gradient_checkpointing=train_cfg["gradient_checkpointing"],
         gradient_checkpointing_kwargs={"use_reentrant": False},
         dataloader_num_workers=train_cfg["dataloader_num_workers"],
@@ -165,6 +165,13 @@ def main():
         ddp_find_unused_parameters=False,
         dataset_text_field="text",
     )
+    # trl >= 0.16 renamed max_seq_length -> max_length
+    sft_params = inspect.signature(SFTConfig.__init__).parameters
+    if "max_seq_length" in sft_params:
+        sft_kwargs["max_seq_length"] = train_cfg["max_seq_length"]
+    else:
+        sft_kwargs["max_length"] = train_cfg["max_seq_length"]
+    sft_config = SFTConfig(**sft_kwargs)
 
     trainer = SFTTrainer(
         model=model,
