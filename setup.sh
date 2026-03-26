@@ -40,6 +40,10 @@ uv pip install -r /tmp/_req_no_flash.txt \
     --index-strategy unsafe-best-match
 rm -f /tmp/_req_no_flash.txt
 
+# --- Re-ensure PyTorch CUDA (pip mirror may have pulled CPU-only torch) ---
+uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
+    --index-url https://download.pytorch.org/whl/cu128 --reinstall-package torch
+
 # --- Optional: flash-attention ---
 echo "[5/5] Installing flash-attn (optional) ..."
 if [ -z "$CUDA_HOME" ]; then
