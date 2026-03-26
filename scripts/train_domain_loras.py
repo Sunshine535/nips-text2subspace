@@ -9,6 +9,7 @@ import argparse
 import json
 import logging
 import os
+import random
 import subprocess
 import sys
 import time
@@ -103,7 +104,8 @@ def main():
     parser.add_argument("--domains", nargs="+", default=None,
                         help="Specific domains to train (default: all 12)")
     parser.add_argument("--num_gpus", type=int, default=8)
-    parser.add_argument("--master_port_start", type=int, default=29500)
+    parser.add_argument("--master_port_start", type=int,
+                        default=random.randint(20000, 28000))
     parser.add_argument("--force", action="store_true",
                         help="Retrain even if adapter_config.json exists")
     parser.add_argument("--dry_run", action="store_true",
