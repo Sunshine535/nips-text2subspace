@@ -43,12 +43,16 @@ if [ -z "$CUDA_HOME" ]; then
         if [ -f "$p/bin/nvcc" ]; then export CUDA_HOME="$p"; break; fi
     done
 fi
-if [ -n "$CUDA_HOME" ]; then
+_FA_MARKER="$VENV_DIR/.flash_attn_attempted"
+if [ ! -f "$_FA_MARKER" ] && [ -n "$CUDA_HOME" ]; then
     echo "  CUDA_HOME=$CUDA_HOME"
     export PATH="$CUDA_HOME/bin:$PATH"
-    uv pip install flash-attn --no-build-isolation 2>&1 || echo "  flash-attn build failed (optional, falling back to sdpa)"
+    uv pip install flash-attn --no-build-isolation 2>&1 || echo "  flash-attn build failed (optional)"
+    touch "$_FA_MARKER"
+elif [ -f "$_FA_MARKER" ]; then
+    echo "  Flash-attn already attempted (skip rebuild)"
 else
-    echo "  CUDA toolkit not found, skipping flash-attn (will use sdpa)"
+    echo "  CUDA toolkit not found, skipping flash-attn"
 fi
 
 # --- Verify ---
