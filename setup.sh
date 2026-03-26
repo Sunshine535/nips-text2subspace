@@ -26,23 +26,15 @@ else
 fi
 source "$VENV_DIR/bin/activate"
 
-# --- Install PyTorch 2.10 + CUDA 12.8 ---
-echo "[3/5] Installing PyTorch 2.10.0 + CUDA 12.8 ..."
-uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
-    --index-url https://download.pytorch.org/whl/cu128
-
-# --- Install project dependencies (alibaba mirror, flash-attn handled separately in step 5) ---
-echo "[4/5] Installing project dependencies ..."
+# --- Install PyTorch CUDA + project dependencies (single resolve) ---
+echo "[3/5] Installing PyTorch 2.10.0 + CUDA 12.8 + project deps ..."
 grep -v '^flash-attn' "$PROJ_DIR/requirements.txt" > /tmp/_req_no_flash.txt
-uv pip install -r /tmp/_req_no_flash.txt \
-    --index-url https://mirrors.aliyun.com/pypi/simple/ \
-    --extra-index-url https://download.pytorch.org/whl/cu128 \
+uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
+    -r /tmp/_req_no_flash.txt \
+    --index-url https://download.pytorch.org/whl/cu128 \
+    --extra-index-url https://mirrors.aliyun.com/pypi/simple/ \
     --index-strategy unsafe-best-match
 rm -f /tmp/_req_no_flash.txt
-
-# --- Re-ensure PyTorch CUDA (pip mirror may have pulled CPU-only torch) ---
-uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
-    --index-url https://download.pytorch.org/whl/cu128 --reinstall-package torch
 
 # --- Optional: flash-attention ---
 echo "[5/5] Installing flash-attn (optional) ..."
