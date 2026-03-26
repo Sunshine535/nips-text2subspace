@@ -6,28 +6,30 @@
 # ============================================================================
 
 detect_gpus() {
-    # Detect available NVIDIA GPUs and set environment variables
     if ! command -v nvidia-smi &>/dev/null; then
         echo "[ERROR] nvidia-smi not found. CUDA driver not installed?"
         exit 1
     fi
 
-    export NUM_GPUS=$(nvidia-smi -L 2>/dev/null | wc -l)
-    if [ "$NUM_GPUS" -eq 0 ]; then
-        echo "[ERROR] No GPUs detected."
-        exit 1
+    if [ -n "${CUDA_VISIBLE_DEVICES:-}" ]; then
+        export NUM_GPUS=$(echo "$CUDA_VISIBLE_DEVICES" | tr ',' '\n' | wc -l)
+        local first_gpu=$(echo "$CUDA_VISIBLE_DEVICES" | cut -d',' -f1)
+    else
+        export NUM_GPUS=$(nvidia-smi -L 2>/dev/null | wc -l)
+        if [ "$NUM_GPUS" -eq 0 ]; then
+            echo "[ERROR] No GPUs detected."
+            exit 1
+        fi
+        local gpu_ids=""
+        for ((i=0; i<NUM_GPUS; i++)); do
+            [ -n "$gpu_ids" ] && gpu_ids="${gpu_ids},"
+            gpu_ids="${gpu_ids}${i}"
+        done
+        export CUDA_VISIBLE_DEVICES="$gpu_ids"
+        local first_gpu=0
     fi
 
-    # Build CUDA_VISIBLE_DEVICES string: 0,1,...,N-1
-    local gpu_ids=""
-    for ((i=0; i<NUM_GPUS; i++)); do
-        [ -n "$gpu_ids" ] && gpu_ids="${gpu_ids},"
-        gpu_ids="${gpu_ids}${i}"
-    done
-    export CUDA_VISIBLE_DEVICES="$gpu_ids"
-
-    # GPU memory in MiB (of first GPU)
-    export GPU_MEM_MIB=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits -i 0 2>/dev/null | tr -d ' ')
+    export GPU_MEM_MIB=$(nvidia-smi --query-gpu=memory.total --format=csv,noheader,nounits -i "${first_gpu}" 2>/dev/null | tr -d ' ')
 
     # Determine if we can run large models
     if [ "${GPU_MEM_MIB:-0}" -ge 70000 ]; then
@@ -144,6 +146,24 @@ setup_env() {
     export NCCL_IB_DISABLE="${NCCL_IB_DISABLE:-0}"
     export CUDA_DEVICE_ORDER=PCI_BUS_ID
     export OMP_NUM_THREADS=8
+}
+
+# Map local GPU index to physical GPU ID from CUDA_VISIBLE_DEVICES
+gpu_at_index() {
+    IFS=',' read -ra _arr <<< "$CUDA_VISIBLE_DEVICES"
+    echo "${_arr[$1]:-$1}"
+}
+
+# Map a contiguous range of local indices to physical GPU IDs
+gpu_range() {
+    local start=$1 count=$2
+    IFS=',' read -ra _arr <<< "$CUDA_VISIBLE_DEVICES"
+    local result=""
+    for ((i=start; i<start+count && i<${#_arr[@]}; i++)); do
+        [ -n "$result" ] && result="${result},"
+        result="${result}${_arr[$i]}"
+    done
+    echo "$result"
 }
 
 # Auto-detect and setup everything
