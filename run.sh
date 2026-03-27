@@ -9,16 +9,12 @@ cd "$PROJ_DIR"
 
 # ====== 只需要这几行修复 ======
 
-# 修复1: UV缓存放本地，解决多机死锁
-export UV_CACHE_DIR="/tmp/uv-cache-$(hostname)"
+export UV_CACHE_DIR="$PROJ_DIR/.uv_cache"
 mkdir -p "$UV_CACHE_DIR"
 
-# 修复2: 如果 .venv 存在但是坏的，干掉重来
 if [ -L "$PROJ_DIR/.venv" ]; then
-    # 是符号链接（上次方案的残留），直接删
     rm -f "$PROJ_DIR/.venv"
 elif [ -d "$PROJ_DIR/.venv" ]; then
-    # 是真实目录，检查能不能用
     if [ ! -f "$PROJ_DIR/.venv/bin/activate" ] || \
        ! "$PROJ_DIR/.venv/bin/python" --version &>/dev/null; then
         echo "[FIX] .venv is broken, removing..."
@@ -26,6 +22,7 @@ elif [ -d "$PROJ_DIR/.venv" ]; then
             mv "$PROJ_DIR/.venv" "/tmp/.venv_dead_$(date +%s)" 2>/dev/null || true
     fi
 fi
+
 
 # ====== 以下是原版 run.sh，一字不改 ======
 

@@ -1,16 +1,34 @@
-2026-03-26 15:26:57,530 [INFO] ============================================================
-2026-03-26 15:26:57,530 [INFO]   LoRA Algebra — Train 12 Domain LoRAs
-2026-03-26 15:26:57,530 [INFO]   Base model: Qwen/Qwen3.5-9B
-2026-03-26 15:26:57,530 [INFO]   LoRA r=16, alpha=32, epochs=2
-2026-03-26 15:26:57,530 [INFO]   GPUs: 8
-2026-03-26 15:26:57,530 [INFO]   Output root: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras
-2026-03-26 15:26:57,530 [INFO] ============================================================
-2026-03-26 15:26:57,539 [INFO] Will train 12 domains: ['math', 'code', 'medical', 'legal', 'finance', 'science', 'history', 'geography', 'philosophy', 'psychology', 'creative_writing', 'translation']
-2026-03-26 15:26:57,539 [INFO] 
-2026-03-26 15:26:57,539 [INFO] ==================================================
-2026-03-26 15:26:57,539 [INFO]   [1/12] Domain: math
-2026-03-26 15:26:57,539 [INFO] ==================================================
-2026-03-26 15:26:57,540 [INFO] Starting training for domain 'math'
-2026-03-26 15:26:57,540 [INFO]   Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math
-2026-03-26 15:26:57,540 [INFO]   Log: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math/train.log
-2026-03-26 15:26:57,540 [INFO]   Command: torchrun --nproc_per_node=8 --master_port=29500 /ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py --config /ytech_m2v4_hdd/mengzijie/nips-text2subspace/configs/domains.yaml --domain math --output_dir /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/math --num_gpus 8
+2026-03-27 17:48:03,451 [INFO] ============================================================
+2026-03-27 17:48:03,451 [INFO]   LoRA Algebra — Train 12 Domain LoRAs
+2026-03-27 17:48:03,451 [INFO]   Base model: Qwen/Qwen3.5-9B
+2026-03-27 17:48:03,451 [INFO]   LoRA r=16, alpha=32, epochs=2
+2026-03-27 17:48:03,451 [INFO]   GPUs: 8
+2026-03-27 17:48:03,451 [INFO]   Output root: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras
+2026-03-27 17:48:03,451 [INFO] ============================================================
+2026-03-27 17:48:03,451 [INFO] Skipping 10 already-trained domains: ['math', 'code', 'medical', 'legal', 'finance', 'history', 'geography', 'philosophy', 'psychology', 'translation']
+2026-03-27 17:48:03,451 [INFO] Will train 2 domains: ['science', 'creative_writing']
+2026-03-27 17:48:03,451 [INFO] 
+2026-03-27 17:48:03,451 [INFO] ==================================================
+2026-03-27 17:48:03,451 [INFO]   [1/2] Domain: science
+2026-03-27 17:48:03,451 [INFO] ==================================================
+2026-03-27 17:48:03,451 [INFO] Starting training for domain 'science'
+2026-03-27 17:48:03,451 [INFO]   Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science
+2026-03-27 17:48:03,451 [INFO]   Log: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science/train.log
+2026-03-27 17:48:03,451 [INFO]   Command: torchrun --nproc_per_node=8 --master_port=27912 /ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py --config /ytech_m2v4_hdd/mengzijie/nips-text2subspace/configs/domains.yaml --domain science --output_dir /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science --num_gpus 8
+2026-03-27 17:49:49,311 [ERROR] Training FAILED for domain 'science' (rc=1). Check /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/science/train.log
+2026-03-27 17:49:49,311 [INFO] 
+2026-03-27 17:49:49,311 [INFO] ==================================================
+2026-03-27 17:49:49,311 [INFO]   [2/2] Domain: creative_writing
+2026-03-27 17:49:49,312 [INFO] ==================================================
+2026-03-27 17:49:49,312 [INFO] Starting training for domain 'creative_writing'
+2026-03-27 17:49:49,312 [INFO]   Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
+2026-03-27 17:49:49,312 [INFO]   Log: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing/train.log
+2026-03-27 17:49:49,312 [INFO]   Command: torchrun --nproc_per_node=8 --master_port=27913 /ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py --config /ytech_m2v4_hdd/mengzijie/nips-text2subspace/configs/domains.yaml --domain creative_writing --output_dir /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing --num_gpus 8
+2026-03-27 17:50:18,746 [ERROR] Training FAILED for domain 'creative_writing' (rc=1). Check /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing/train.log
+2026-03-27 17:50:18,752 [INFO] 
+2026-03-27 17:50:18,752 [INFO] ============================================================
+2026-03-27 17:50:18,752 [INFO]   Training Summary
+2026-03-27 17:50:18,752 [INFO]   Trained: 0/12  |  Failed: 2  |  Skipped: 10
+2026-03-27 17:50:18,752 [INFO]   Total time: 135.3 seconds
+2026-03-27 17:50:18,752 [INFO]   Summary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/training_summary.json
+2026-03-27 17:50:18,752 [INFO] ============================================================
