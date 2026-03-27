@@ -25,7 +25,6 @@ from src.lora_algebra import (
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
 
 def load_all_loras(lora_dir: str, domains: list) -> dict:

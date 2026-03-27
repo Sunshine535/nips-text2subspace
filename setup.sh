@@ -32,7 +32,7 @@ grep -v '^flash-attn' "$PROJ_DIR/requirements.txt" > /tmp/_req_no_flash.txt
 uv pip install "torch==2.10.0" "torchvision" "torchaudio" \
     -r /tmp/_req_no_flash.txt \
     --index-url https://download.pytorch.org/whl/cu128 \
-    --extra-index-url https://mirrors.aliyun.com/pypi/simple/ \
+    --extra-index-url https://pypi.org/simple/ \
     --index-strategy unsafe-best-match
 rm -f /tmp/_req_no_flash.txt
 

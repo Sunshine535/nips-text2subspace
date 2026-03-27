@@ -6,10 +6,8 @@ _PROJ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [ -f "$_PROJ_ROOT/.venv/bin/activate" ]; then source "$_PROJ_ROOT/.venv/bin/activate"; fi
 export PATH="$HOME/.local/bin:$PATH"
 
-export HF_ENDPOINT="https://hf-mirror.com"
 export NCCL_P2P_DISABLE=0
 export NCCL_IB_DISABLE=0
-export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
