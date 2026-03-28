@@ -124,7 +124,7 @@ def main():
     logger.info("Base model: %s", base_model)
     logger.info("Output: %s", output_dir)
 
-    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(base_model)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 

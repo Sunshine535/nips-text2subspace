@@ -216,7 +216,7 @@ def evaluate_synthetic(model, tokenizer, domain: str, n: int) -> dict:
 def load_model_with_adapter(base_model_name: str, adapter_path: str | None, device_map: str = "auto"):
     """Load base model optionally with a PEFT adapter."""
     model = AutoModelForCausalLM.from_pretrained(
-        base_model_name, torch_dtype=torch.bfloat16, trust_remote_code=True, device_map=device_map,
+        base_model_name, torch_dtype=torch.bfloat16, device_map=device_map,
     )
     if adapter_path and os.path.exists(os.path.join(adapter_path, "adapter_config.json")):
         model = PeftModel.from_pretrained(model, adapter_path)
@@ -227,7 +227,7 @@ def load_model_with_adapter(base_model_name: str, adapter_path: str | None, devi
 def apply_delta_weights(base_model_name: str, delta_path: str, device_map: str = "auto"):
     """Load base model and apply pre-computed delta weights."""
     model = AutoModelForCausalLM.from_pretrained(
-        base_model_name, torch_dtype=torch.bfloat16, trust_remote_code=True, device_map=device_map,
+        base_model_name, torch_dtype=torch.bfloat16, device_map=device_map,
     )
     delta = torch.load(delta_path, map_location="cpu")
     state = model.state_dict()
@@ -286,7 +286,7 @@ def main():
     os.makedirs(args.output_dir, exist_ok=True)
     base_model_name = config["base_model"]
 
-    tokenizer = AutoTokenizer.from_pretrained(base_model_name, trust_remote_code=True)
+    tokenizer = AutoTokenizer.from_pretrained(base_model_name)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -303,7 +303,7 @@ def main():
         logger.info("  PHASE 1: Base Model Evaluation")
         logger.info("=" * 50)
         model = AutoModelForCausalLM.from_pretrained(
-            base_model_name, torch_dtype=torch.bfloat16, trust_remote_code=True, device_map="auto",
+            base_model_name, torch_dtype=torch.bfloat16, device_map="auto",
         )
         model.eval()
         base_results = {}
