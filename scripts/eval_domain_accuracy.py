@@ -140,9 +140,9 @@ def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dic
 
     try:
         if subset:
-            ds = load_dataset(ds_id, subset, split=split, trust_remote_code=True)
+            ds = load_dataset(ds_id, subset, split=split)
         else:
-            ds = load_dataset(ds_id, split=split, trust_remote_code=True)
+            ds = load_dataset(ds_id, split=split)
     except Exception as e:
         logger.warning("Failed to load %s/%s: %s", ds_id, subset, e)
         return {"accuracy": 0.0, "total": 0, "error": str(e)}

@@ -60,9 +60,9 @@ def load_domain_dataset(domain_cfg: dict, tokenizer):
     logger.info("Loading dataset %s (subset=%s, max=%d)", ds_name, subset, max_samples)
     try:
         if subset:
-            ds = load_dataset(ds_name, subset, split="train", trust_remote_code=True)
+            ds = load_dataset(ds_name, subset, split="train")
         else:
-            ds = load_dataset(ds_name, split="train", trust_remote_code=True)
+            ds = load_dataset(ds_name, split="train")
     except Exception:
         logger.warning("Failed to load %s, generating synthetic data", ds_name)
         ds = _generate_synthetic(domain_cfg, max_samples)
