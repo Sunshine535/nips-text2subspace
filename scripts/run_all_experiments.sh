@@ -8,6 +8,8 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 source "${SCRIPT_DIR}/gpu_utils.sh"
 auto_setup
+TORCHRUN=$(get_torchrun_cmd)
+export TORCHRUN
 
 PROJ_DIR_ROOT="$PROJECT_DIR"
 if [ -f "$PROJ_DIR_ROOT/.venv/bin/activate" ]; then

@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import random
+import shlex
 import subprocess
 import sys
 import time
@@ -40,6 +41,13 @@ def is_domain_trained(output_dir: str) -> bool:
     return os.path.exists(os.path.join(output_dir, "adapter_config.json"))
 
 
+def _torchrun_exe() -> str:
+    raw = os.environ.get("TORCHRUN", "").strip()
+    if not raw:
+        return "torchrun"
+    return shlex.split(raw)[0]
+
+
 def train_single_domain(
     domain: str,
     config_path: str,
@@ -52,7 +60,7 @@ def train_single_domain(
     worker_script = str(SCRIPT_DIR / "train_domain_lora.py")
 
     cmd = [
-        "torchrun",
+        _torchrun_exe(),
         f"--nproc_per_node={num_gpus}",
         f"--master_port={master_port}",
         worker_script,
