@@ -9,11 +9,14 @@
 git clone https://github.com/Sunshine535/nips-text2subspace.git
 cd nips-text2subspace
 
-# 2. One-command setup + run all experiments
+# 2. Install dependencies
+bash setup.sh
+
+# 3. Run all experiments
 bash run.sh
 
-# 3. (Optional) Run in background for long experiments
-nohup bash rrun.sh > run.log 2>&1 &
+# 4. (Optional) Run in background for long experiments
+nohup bash run.sh > run.log 2>&1 &
 tail -f run.log
 ```
 
