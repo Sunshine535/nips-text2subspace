@@ -72,3 +72,65 @@
 
 ### Status
 - ARIS code review complete. Moving to server validation.
+
+## Round 4 (2026-03-31)
+
+### Assessment (Summary)
+- Score: 5.0/10
+- Verdict: Training is partially functional, but the repository is not yet ready for a credible end-to-end reproduction of the claimed experimental results.
+- Strengths:
+  1. The project has a coherent 5-stage layout and the main scripts compile.
+  2. Stage 1 multi-GPU training is genuinely implemented via `torchrun` + TRL `SFTTrainer`.
+  3. Checkpoint resume is wired through for single-domain training.
+
+### Findings (ordered by severity)
+1. **The code-domain benchmark is still not a valid evaluation.**
+   - `code` is evaluated on MBPP (`scripts/eval_domain_accuracy.py:46-48`), but `extract_answer()` is designed for numbers / MCQ letters and otherwise falls back to the final generated line (`scripts/eval_domain_accuracy.py:90-103`).
+   - The scorer then compares that extracted string directly against the gold `code` field (`scripts/eval_domain_accuracy.py:171-195`), which is not execution-based and will not measure program correctness.
+   - **Impact:** one of the six core domains is not producing trustworthy scores.
+   - **Action:** replace MBPP scoring with execution-based `pass@1`, or drop the code domain from core claims until fixed.
+
+2. **The "trained" / resume logic can treat incomplete adapters as successful.**
+   - `is_domain_trained()` only checks for `adapter_config.json` (`scripts/train_domain_loras.py:40-41`).
+   - Downstream loading requires `adapter_model.safetensors` or `adapter_model.bin` (`src/lora_algebra.py:42-49`).
+   - **Impact:** interrupted or partial saves can be skipped on rerun and then fail later in Stage 2. The checked-in `results/domain_loras/*` tree already shows this failure mode: configs and logs exist, but adapter weight files are absent.
+   - **Action:** require both config and weight files, and add a loadability / integrity check before skip or resume decisions.
+
+3. **The repository claims PEFT-compatible merged outputs, but Stage 2 only writes raw delta tensors.**
+   - The README claims the merged adapter is PEFT-compatible (`README.md:3`, `README.md:11`).
+   - In practice, Stage 2 writes `torch.save(delta, ...)` for GrassMerge and baselines (`scripts/run_algebra_experiments.py:79-80`, `scripts/run_algebra_experiments.py:256-260`).
+   - `LoRAWeights` exposes an in-memory `to_state_dict()` but no helper that writes a full PEFT adapter directory (`src/lora_algebra.py:65-71`).
+   - **Impact:** merged artifacts are not drop-in PEFT checkpoints and cannot be reused with standard adapter tooling.
+   - **Action:** add `save_peft_dir()` for merged adapters and make Stage 2 emit standard adapter directories.
+
+4. **End-to-end reproducibility is weak because seeds and tests are missing.**
+   - Training never exposes or sets a global experiment seed; only dataset subsampling uses fixed seeds (`scripts/train_domain_lora.py:133-140`).
+   - There are no test files in the repository, and `docs/` is empty.
+   - **Impact:** numbers will be difficult to reproduce exactly, and regressions are likely to slip through.
+   - **Action:** add `--seed`, seed Python / NumPy / PyTorch / Trainer, and add at least one 1-GPU and 2-GPU smoke test.
+
+5. **Multi-GPU support exists, but it is narrower than the docs imply.**
+   - The real training path is single-node `torchrun` DDP (`scripts/train_domain_loras.py:75-83`, `scripts/train_domain_lora.py:188-194`, `scripts/train_domain_lora.py:228`, `scripts/train_domain_lora.py:258`).
+   - `gpu_utils.sh` advertises Accelerate / FSDP helpers, but the main path never uses them (`scripts/gpu_utils.sh:55-63`, `scripts/gpu_utils.sh:93-143`).
+   - Training logs also show NCCL teardown warnings, indicating missing cleanup.
+   - **Impact:** one-node multi-GPU is plausible, but the feature is under-validated and less portable than the README suggests.
+   - **Action:** document "single-node torchrun only" explicitly, add world-size sanity logging, and cleanly destroy the process group on exit.
+
+6. **The evaluation pipeline is likely too expensive to be practical at full scale.**
+   - Stage 3 reloads the 9B base model for the base model, each individual adapter, each GrassMerge pair, and each baseline pair (`scripts/eval_domain_accuracy.py:327-329`, `scripts/eval_domain_accuracy.py:359-360`, `scripts/eval_domain_accuracy.py:387`, `scripts/eval_domain_accuracy.py:419-420`).
+   - **Impact:** even if correctness issues are fixed, the evaluation pass will be much slower and more expensive than necessary.
+   - **Action:** reuse a single base model where possible, swap adapters instead of reloading, or shard evaluation by pair / method.
+
+### Focused Answers
+- **Code quality and completeness:** Moderate. The repo is organized and the core scripts compile, but there are no tests, no artifact integrity checks, and the output formats do not fully match the documented interface.
+- **Multi-GPU support:** Partial. One-node `torchrun` training is implemented and looks real, but the support is not deeply validated and does not match the broader helper surface advertised in the repo.
+- **Checkpoint resume support:** Partial. Stage 1 trainer resume is implemented, but success detection is too weak and later stages only resume at a coarse phase level.
+- **Ready to produce experimental results?:** Not yet for a NeurIPS submission. Math / MCQ-style experiments are close, but the overall package still needs evaluation fixes, stronger artifact handling, and reproducibility hardening.
+
+### Actionable Checklist
+1. Replace MBPP scoring with execution-based evaluation.
+2. Tighten `is_domain_trained()` to verify actual adapter weight files and loadability.
+3. Save merged outputs in standard PEFT format.
+4. Add `--seed` and publish exact seeds for all reported runs.
+5. Add a tiny end-to-end smoke test on 1 GPU and 2 GPUs.
+6. Reduce evaluation reload overhead or split evaluation jobs by pair / method.

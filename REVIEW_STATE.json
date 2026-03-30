@@ -1,9 +1,14 @@
 {
-  "round": 3,
+  "round": 4,
   "threadId": null,
-  "status": "in_progress",
-  "last_score": 6.0,
-  "last_verdict": "code ready for experiments",
-  "pending_experiments": ["server_validation"],
-  "timestamp": "2026-03-30T00:00:00"
+  "status": "completed",
+  "last_score": 5.0,
+  "last_verdict": "not ready to reproduce full experimental results",
+  "pending_experiments": [
+    "replace MBPP with execution-based code evaluation",
+    "tighten adapter integrity checks for skip/resume",
+    "export merged adapters in PEFT format",
+    "add reproducibility seeds and smoke tests"
+  ],
+  "timestamp": "2026-03-31T00:00:00+08:00"
 }
