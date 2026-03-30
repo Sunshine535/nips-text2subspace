@@ -36,10 +36,66 @@ def load_config(config_path: str) -> dict:
         return yaml.safe_load(f)
 
 
+MMLU_LETTERS = ["A", "B", "C", "D"]
+
+
 def format_example(example: dict, system_prompt: str, domain: str) -> dict:
-    """Format dataset examples into chat-style text for SFT."""
-    instruction = example.get("instruction") or example.get("question") or example.get("input", "")
-    output = example.get("output") or example.get("answer") or example.get("response", "")
+    """Format dataset examples into chat-style text for SFT.
+    
+    Handles diverse HuggingFace dataset schemas: instruction/output,
+    question/answer, MMLU-style with choices, camel-ai message pairs,
+    writingprompts prompt/story, sciq support/question/answer, etc.
+    """
+    choices = example.get("choices", [])
+    answer_raw = example.get("answer", example.get("output", example.get("response", "")))
+
+    if choices and isinstance(choices, list) and len(choices) >= 2:
+        question = str(example.get("question", example.get("input", ""))).strip()
+        if not question:
+            return {"text": ""}
+        for i, c in enumerate(choices):
+            if i < len(MMLU_LETTERS):
+                question += f"\n{MMLU_LETTERS[i]}. {c}"
+        question += "\n\nAnswer with the letter of the correct choice."
+        if isinstance(answer_raw, int) and 0 <= answer_raw < len(MMLU_LETTERS):
+            answer = MMLU_LETTERS[answer_raw]
+        else:
+            answer = str(answer_raw).strip()
+        if not answer:
+            return {"text": ""}
+        text = (
+            f"<|im_start|>system\n{system_prompt}<|im_end|>\n"
+            f"<|im_start|>user\n{question}<|im_end|>\n"
+            f"<|im_start|>assistant\nThe answer is {answer}.<|im_end|>"
+        )
+        return {"text": text}
+
+    instruction = (
+        example.get("instruction")
+        or example.get("question")
+        or example.get("input")
+        or example.get("prompt")
+        or example.get("message_1")
+        or example.get("support", "") + " " + str(example.get("question", ""))
+        or example.get("text")
+        or ""
+    )
+    output = (
+        example.get("output")
+        or example.get("answer")
+        or example.get("correct_answer")
+        or example.get("response")
+        or example.get("message_2")
+        or example.get("story")
+        or example.get("label")
+        or ""
+    )
+    if isinstance(instruction, list):
+        instruction = " ".join(str(x) for x in instruction)
+    if isinstance(output, list):
+        output = " ".join(str(x) for x in output)
+    instruction = str(instruction).strip()
+    output = str(output).strip()
     if not instruction or not output:
         return {"text": ""}
     text = (
@@ -50,23 +106,29 @@ def format_example(example: dict, system_prompt: str, domain: str) -> dict:
     return {"text": text}
 
 
+SPLIT_OVERRIDES = {
+    "cais/mmlu": "auxiliary_train",
+}
+
+
 def load_domain_dataset(domain_cfg: dict, tokenizer):
     """Load and format a domain-specific dataset."""
     ds_name = domain_cfg["datasets"][0]
     subset = domain_cfg.get("subset", None)
     max_samples = domain_cfg.get("max_samples", 20000)
     system_prompt = domain_cfg.get("system_prompt", "You are a helpful assistant.")
+    split = SPLIT_OVERRIDES.get(ds_name, "train")
 
-    logger.info("Loading dataset %s (subset=%s, max=%d)", ds_name, subset, max_samples)
+    logger.info("Loading dataset %s (subset=%s, split=%s, max=%d)", ds_name, subset, split, max_samples)
     try:
         if subset:
-            ds = load_dataset(ds_name, subset, split="train")
+            ds = load_dataset(ds_name, subset, split=split)
         else:
-            ds = load_dataset(ds_name, split="train")
-    except Exception:
-        logger.warning("Failed to load %s, generating synthetic data", ds_name)
-        ds = _generate_synthetic(domain_cfg, max_samples)
-        return ds
+            ds = load_dataset(ds_name, split=split)
+    except Exception as e:
+        logger.error("FAILED to load %s (subset=%s, split=%s): %s", ds_name, subset, split, e)
+        logger.error("Will NOT silently generate synthetic data. Fix the dataset config.")
+        raise RuntimeError(f"Dataset loading failed for {ds_name}: {e}") from e
 
     if len(ds) > max_samples:
         ds = ds.shuffle(seed=42).select(range(max_samples))
@@ -76,26 +138,14 @@ def load_domain_dataset(domain_cfg: dict, tokenizer):
         remove_columns=ds.column_names,
     )
     ds = ds.filter(lambda ex: len(ex["text"]) > 0)
+    if len(ds) == 0:
+        raise RuntimeError(
+            f"Dataset {ds_name} produced 0 valid examples after formatting. "
+            f"Check field mapping in format_example()."
+        )
     logger.info("Loaded %d examples for domain %s", len(ds), domain_cfg["name"])
     return ds
 
-
-def _generate_synthetic(domain_cfg: dict, n: int):
-    """Fallback: generate simple synthetic training data."""
-    from datasets import Dataset
-
-    name = domain_cfg["name"]
-    system_prompt = domain_cfg.get("system_prompt", "You are a helpful assistant.")
-    examples = []
-    for i in range(min(n, 5000)):
-        text = (
-            f"<|im_start|>system\n{system_prompt}<|im_end|>\n"
-            f"<|im_start|>user\nExplain concept {i} in {name}.<|im_end|>\n"
-            f"<|im_start|>assistant\nHere is an explanation of concept {i} in {name}: "
-            f"This is a fundamental topic that requires understanding of core principles.<|im_end|>"
-        )
-        examples.append({"text": text})
-    return Dataset.from_list(examples)
 
 
 def main():

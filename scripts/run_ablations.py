@@ -24,6 +24,8 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.lora_algebra import (
+    GrassMerge,
+    GrassmannOps,
     GrassmannProjector,
     LoRAAlgebra,
     LoRAWeights,
@@ -89,10 +91,10 @@ def measure_composition_quality(lora_a: LoRAWeights, lora_b: LoRAWeights, compos
 # ===== Ablation 1: LoRA Rank =====
 
 def ablation_rank(loras: dict, ranks: list, output_dir: str) -> dict:
-    """Ablation over LoRA ranks: composition quality at different ranks."""
+    """Ablation over LoRA ranks: GrassMerge composition quality at different ranks."""
     logger.info("=== Ablation: LoRA Rank ===")
     results = {}
-    algebra = LoRAAlgebra()
+    merger = GrassMerge()
     pair = list(sorted(loras.keys()))[:2]
     if len(pair) < 2:
         return {}
@@ -104,7 +106,7 @@ def ablation_rank(loras: dict, ranks: list, output_dir: str) -> dict:
         lora2_r = refactorize_at_rank(loras[d2], rank)
 
         t0 = time.time()
-        composed = algebra.compose(lora1_r, lora2_r, name=f"r{rank}_{d1}+{d2}")
+        composed = merger.merge([lora1_r, lora2_r], name=f"r{rank}_{d1}+{d2}")
         elapsed = time.time() - t0
 
         quality = measure_composition_quality(lora1_r, lora2_r, composed)
@@ -183,11 +185,9 @@ def ablation_interpolation_type(loras: dict, output_dir: str) -> dict:
     d1, d2 = pair
 
     for alpha in alphas:
-        # Linear
-        linear = algebra.interpolate(loras[d1], loras[d2], alpha=alpha, name="linear")
+        linear = LoRAAlgebra.interpolate(loras[d1], loras[d2], alpha=alpha, name="linear")
         delta_lin = linear.to_delta_weight()
 
-        # Geodesic
         geodesic = algebra.grassmann_interpolate(loras[d1], loras[d2], t=alpha, name="geodesic")
         delta_geo = geodesic.to_delta_weight()
 
@@ -224,10 +224,10 @@ def ablation_interpolation_type(loras: dict, output_dir: str) -> dict:
 # ===== Ablation 4: Number of Domains Composed =====
 
 def ablation_compose_count(loras: dict, counts: list, output_dir: str) -> dict:
-    """Ablation: composition quality as number of domains increases."""
+    """Ablation: GrassMerge composition quality as number of domains increases."""
     logger.info("=== Ablation: Number of Domains Composed ===")
     results = {}
-    algebra = LoRAAlgebra()
+    merger = GrassMerge()
     domains = sorted(loras.keys())
 
     for n in counts:
@@ -239,9 +239,8 @@ def ablation_compose_count(loras: dict, counts: list, output_dir: str) -> dict:
         logger.info("  Composing %d domains: %s", n, selected)
 
         t0 = time.time()
-        current = loras[selected[0]]
-        for d in selected[1:]:
-            current = algebra.compose(current, loras[d], name=f"composed_{n}d")
+        selected_loras = [loras[d] for d in selected]
+        current = merger.merge(selected_loras, name=f"grassmerge_{n}d")
         elapsed = time.time() - t0
 
         delta = current.to_delta_weight()

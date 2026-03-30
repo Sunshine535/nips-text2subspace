@@ -1,0 +1,9 @@
+{
+  "round": 3,
+  "threadId": null,
+  "status": "in_progress",
+  "last_score": 6.0,
+  "last_verdict": "code ready for experiments",
+  "pending_experiments": ["server_validation"],
+  "timestamp": "2026-03-30T00:00:00"
+}

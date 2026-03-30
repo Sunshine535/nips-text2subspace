@@ -62,7 +62,7 @@ domains:
   science:
     name: "Science"
     datasets:
-      - "camel-ai/physics"
+      - "allenai/sciq"
     max_samples: 20000
     system_prompt: "You are a science expert. Explain scientific concepts clearly and accurately."
 
@@ -101,7 +101,7 @@ domains:
   creative_writing:
     name: "Creative Writing"
     datasets:
-      - "euclaise/writingprompts"
+      - "lmsys/chatbot_arena_conversations"
     max_samples: 20000
     system_prompt: "You are a creative writer. Craft engaging, imaginative, and well-structured text."
 

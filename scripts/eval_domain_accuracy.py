@@ -44,12 +44,13 @@ DOMAIN_BENCHMARKS = {
                    "q_field": "question", "a_field": "answer", "max_samples": 500},
     },
     "code": {
-        "humaneval_prompts": {"dataset_id": "openai/openai_humaneval", "split": "test",
-                              "q_field": "prompt", "a_field": "canonical_solution", "max_samples": 164},
+        "mbpp": {"dataset_id": "google-research-datasets/mbpp", "subset": "sanitized",
+                 "split": "test", "q_field": "text", "a_field": "code", "max_samples": 500},
     },
     "medical": {
         "medqa": {"dataset_id": "GBaker/MedQA-USMLE-4-options", "split": "test",
-                  "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
+                  "q_field": "question", "a_field": "answer_idx", "options_field": "options",
+                  "max_samples": 500, "multichoice": True},
     },
     "legal": {
         "legalbench_subset": {"dataset_id": "nguha/legalbench", "subset": "abercrombie",
@@ -79,13 +80,9 @@ DOMAIN_BENCHMARKS = {
         "mmlu_psychology": {"dataset_id": "cais/mmlu", "subset": "high_school_psychology",
                             "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
     },
-    "creative_writing": {
-        "writing_quality": {"synthetic": True, "max_samples": 100},
-    },
-    "translation": {
-        "translation_quality": {"synthetic": True, "max_samples": 100},
-    },
 }
+
+CORE_EVAL_DOMAINS = ["math", "code", "medical", "science", "history", "philosophy"]
 
 MMLU_CHOICES = ["A", "B", "C", "D"]
 
@@ -108,12 +105,29 @@ def extract_answer(text: str) -> str:
 
 def format_mmlu_question(example: dict) -> str:
     q = example.get("question", "")
-    choices = example.get("choices", [])
-    if choices:
+    choices = example.get("choices", example.get("options", {}))
+    if isinstance(choices, dict) and "text" in choices:
+        choice_texts = choices["text"]
+        labels = choices.get("label", MMLU_CHOICES[:len(choice_texts)])
+        for label, text in zip(labels, choice_texts):
+            q += f"\n{label}. {text}"
+    elif isinstance(choices, list):
         for i, c in enumerate(choices):
-            q += f"\n{MMLU_CHOICES[i]}. {c}"
+            if i < len(MMLU_CHOICES):
+                q += f"\n{MMLU_CHOICES[i]}. {c}"
+    elif isinstance(choices, dict):
+        for key in sorted(choices.keys()):
+            q += f"\n{key}. {choices[key]}"
     q += "\n\nAnswer with the letter of the correct choice."
     return q
+
+
+def decode_answer(example: dict, bench_cfg: dict) -> str:
+    """Decode the gold answer, handling ClassLabel integers and lettered answers."""
+    raw = example.get(bench_cfg.get("a_field", "answer"), "")
+    if isinstance(raw, int) and 0 <= raw < len(MMLU_CHOICES):
+        return MMLU_CHOICES[raw]
+    return str(raw).strip()
 
 
 def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 512) -> str:
@@ -153,14 +167,22 @@ def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dic
     correct, total, total_tokens = 0, 0, 0
     t0 = time.time()
 
+    options_field = bench_cfg.get("options_field", None)
     for ex in ds:
         if is_mc:
-            question = format_mmlu_question(ex)
+            if options_field and options_field in ex:
+                ex_copy = dict(ex)
+                ex_copy["options"] = ex[options_field]
+            else:
+                ex_copy = ex
+            question = format_mmlu_question(ex_copy)
         else:
             question = str(ex.get(q_field, ""))
 
-        gold = str(ex.get(a_field, ""))
-        gold_extracted = extract_answer(gold)
+        gold_extracted = decode_answer(ex, bench_cfg)
+        if not gold_extracted:
+            gold = str(ex.get(a_field, ""))
+            gold_extracted = extract_answer(gold)
 
         response = generate_response(model, tokenizer, question)
         pred = extract_answer(response)
@@ -290,7 +312,7 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    eval_domains = args.domains or list(config["domains"].keys())
+    eval_domains = args.domains or CORE_EVAL_DOMAINS
     all_results = {"meta": {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "base_model": base_model_name,
@@ -347,19 +369,21 @@ def main():
         torch.cuda.empty_cache()
     all_results["individual_loras"] = individual_results
 
-    # --- Phase 3: Composed LoRAs ---
+    # --- Phase 3: Composed LoRAs (GrassMerge pairwise) ---
     if not args.skip_composed and args.algebra_dir:
         logger.info("=" * 50)
-        logger.info("  PHASE 3: Composed LoRAs")
+        logger.info("  PHASE 3: Composed LoRAs (GrassMerge)")
         logger.info("=" * 50)
         composed_results = {}
-        compose_dir = os.path.join(args.algebra_dir, "composed")
+        compose_dir = os.path.join(args.algebra_dir, "grassmerge")
+        if not os.path.isdir(compose_dir):
+            compose_dir = os.path.join(args.algebra_dir, "composed")
         if os.path.isdir(compose_dir):
             pt_files = sorted(f for f in os.listdir(compose_dir) if f.endswith(".pt"))
             for fname in pt_files:
                 name = fname.replace(".pt", "")
                 domains_in = name.split("+")
-                logger.info("  Evaluating composed: %s", name)
+                logger.info("  Evaluating GrassMerge: %s", name)
                 model = apply_delta_weights(base_model_name, os.path.join(compose_dir, fname))
                 for d in domains_in:
                     if d in DOMAIN_BENCHMARKS:
@@ -371,34 +395,42 @@ def main():
                             composed_results[key] = evaluate_on_benchmark(model, tokenizer, bench_cfg, d)
                 del model
                 torch.cuda.empty_cache()
-        all_results["composed_loras"] = composed_results
+        all_results["grassmerge"] = composed_results
 
-    # --- Phase 4: Baseline merging methods ---
+    # --- Phase 4: Pairwise baseline merging methods ---
     if not args.skip_baselines and args.algebra_dir:
         logger.info("=" * 50)
-        logger.info("  PHASE 4: Baseline Merging Methods")
+        logger.info("  PHASE 4: Pairwise Baseline Merging Methods")
         logger.info("=" * 50)
         baseline_results = {}
         baseline_dir = os.path.join(args.algebra_dir, "baselines")
-        eval_on = ["math", "code", "science"]
         if os.path.isdir(baseline_dir):
-            for fname in sorted(os.listdir(baseline_dir)):
-                if not fname.endswith(".pt"):
+            for method_name in sorted(os.listdir(baseline_dir)):
+                method_dir = os.path.join(baseline_dir, method_name)
+                if not os.path.isdir(method_dir):
                     continue
-                method = fname.replace(".pt", "")
-                logger.info("  Baseline: %s", method)
-                model = apply_delta_weights(base_model_name, os.path.join(baseline_dir, fname))
+                logger.info("  Baseline method: %s", method_name)
                 method_results = {}
-                for d in eval_on:
-                    if d in DOMAIN_BENCHMARKS:
-                        for bench_name, bench_cfg in DOMAIN_BENCHMARKS[d].items():
-                            if args.max_samples:
-                                bench_cfg = {**bench_cfg, "max_samples": args.max_samples}
-                            key = f"{d}/{bench_name}"
-                            method_results[key] = evaluate_on_benchmark(model, tokenizer, bench_cfg, d)
-                baseline_results[method] = method_results
-                del model
-                torch.cuda.empty_cache()
+                pt_files = sorted(f for f in os.listdir(method_dir) if f.endswith(".pt"))
+                for fname in pt_files:
+                    name = fname.replace(".pt", "")
+                    domains_in = name.split("+")
+                    logger.info("    Evaluating %s: %s", method_name, name)
+                    model = apply_delta_weights(
+                        base_model_name, os.path.join(method_dir, fname)
+                    )
+                    for d in domains_in:
+                        if d in DOMAIN_BENCHMARKS:
+                            for bench_name, bench_cfg in DOMAIN_BENCHMARKS[d].items():
+                                if args.max_samples:
+                                    bench_cfg = {**bench_cfg, "max_samples": args.max_samples}
+                                key = f"{name}_on_{d}_{bench_name}"
+                                method_results[key] = evaluate_on_benchmark(
+                                    model, tokenizer, bench_cfg, d
+                                )
+                    del model
+                    torch.cuda.empty_cache()
+                baseline_results[method_name] = method_results
         all_results["baselines"] = baseline_results
 
     # --- Save results ---
