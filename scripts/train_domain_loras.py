@@ -41,6 +41,19 @@ def is_domain_trained(output_dir: str) -> bool:
     return os.path.exists(os.path.join(output_dir, "adapter_config.json"))
 
 
+def find_latest_checkpoint(output_dir: str) -> str | None:
+    """Return the path of the latest checkpoint-* dir, or None."""
+    if not os.path.isdir(output_dir):
+        return None
+    ckpts = sorted(
+        (d for d in os.listdir(output_dir) if d.startswith("checkpoint-")),
+        key=lambda d: int(d.split("-")[1]) if d.split("-")[1].isdigit() else 0,
+    )
+    if ckpts:
+        return os.path.join(output_dir, ckpts[-1])
+    return None
+
+
 def _torchrun_exe() -> str:
     raw = os.environ.get("TORCHRUN", "").strip()
     if not raw:
@@ -169,12 +182,17 @@ def main():
         logger.info("  [%d/%d] Domain: %s", idx + 1, len(to_train), p["domain"])
         logger.info("=" * 50)
 
+        resume_ckpt = find_latest_checkpoint(p["output"])
+        if resume_ckpt:
+            logger.info("  Resuming from checkpoint: %s", resume_ckpt)
+
         result = train_single_domain(
             domain=p["domain"],
             config_path=args.config,
             output_dir=p["output"],
             num_gpus=args.num_gpus,
             master_port=args.master_port_start + idx,
+            resume_from=resume_ckpt,
         )
         results.append(result)
 
