@@ -17,6 +17,10 @@ echo "============================================================"
 if [ -f "$PROJ_DIR/.venv/bin/activate" ]; then
     source "$PROJ_DIR/.venv/bin/activate"
     echo "[env] Activated venv: $PROJ_DIR/.venv"
+elif [ -d "$PROJ_DIR/.venv/conda-meta" ] && command -v conda &>/dev/null; then
+    eval "$(conda shell.bash hook)"
+    conda activate "$PROJ_DIR/.venv"
+    echo "[env] Activated conda env: $PROJ_DIR/.venv"
 else
     echo "[env] No .venv found, using system Python"
 fi

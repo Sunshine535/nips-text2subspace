@@ -21,25 +21,39 @@ fi
 echo "[1/5] Using: $($PYTHON_CMD --version)"
 
 VENV_DIR="$PROJ_DIR/.venv"
+USE_CONDA=0
+
 if [ -d "$VENV_DIR" ] && { [ ! -f "$VENV_DIR/bin/activate" ] || [ ! -x "$VENV_DIR/bin/python" ]; }; then
     echo "[2/5] Removing incomplete .venv (missing bin/activate or python) ..."
     rm -rf "$VENV_DIR"
 fi
 if [ ! -d "$VENV_DIR" ]; then
     echo "[2/5] Creating venv ..."
-    if ! "$PYTHON_CMD" -m venv "$VENV_DIR"; then
+    if "$PYTHON_CMD" -m venv "$VENV_DIR" 2>/dev/null; then
+        :
+    elif command -v conda &>/dev/null; then
+        echo "  python -m venv failed; falling back to conda environment"
+        USE_CONDA=1
+        conda create -y -p "$VENV_DIR" "python>=3.10" pip 2>&1 | tail -n5
+    else
         echo ""
-        echo "ERROR: python -m venv failed (ensurepip). On Debian/Ubuntu:"
+        echo "ERROR: python -m venv failed and conda is not available."
         ver="$("$PYTHON_CMD" -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))")"
-        echo "  sudo apt install python${ver}-venv"
+        echo "  Debian/Ubuntu: sudo apt install python${ver}-venv"
+        echo "  Or install conda/miniconda."
         rm -rf "$VENV_DIR" 2>/dev/null || true
         exit 1
     fi
 else
     echo "[2/5] Venv exists: $VENV_DIR"
 fi
-# shellcheck disable=SC1090
-source "$VENV_DIR/bin/activate"
+if [ "$USE_CONDA" == "1" ]; then
+    eval "$(conda shell.bash hook)"
+    conda activate "$VENV_DIR"
+else
+    # shellcheck disable=SC1090
+    source "$VENV_DIR/bin/activate"
+fi
 
 export PIP_DEFAULT_TIMEOUT="${PIP_DEFAULT_TIMEOUT:-600}"
 

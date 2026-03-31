@@ -148,6 +148,16 @@ def load_domain_dataset(domain_cfg: dict, tokenizer):
 
 
 
+def _seed_everything(seed: int) -> None:
+    import random
+    import numpy as np
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Train a single domain LoRA")
     parser.add_argument("--config", type=str, default="configs/domains.yaml")
@@ -155,7 +165,10 @@ def main():
     parser.add_argument("--output_dir", type=str, default=None)
     parser.add_argument("--num_gpus", type=int, default=8)
     parser.add_argument("--resume_from_checkpoint", type=str, default=None)
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+
+    _seed_everything(args.seed)
 
     config = load_config(args.config)
     if args.domain not in config["domains"]:
@@ -263,6 +276,10 @@ def main():
 
     with open(os.path.join(output_dir, "training_args.json"), "w") as f:
         json.dump({"domain": args.domain, "base_model": base_model, "lora_config": lora_cfg}, f, indent=2)
+
+    if torch.distributed.is_initialized():
+        torch.distributed.destroy_process_group()
+        logger.info("Destroyed distributed process group")
 
     logger.info("=== Training complete for domain: %s ===", args.domain)
 

@@ -13,6 +13,7 @@ import itertools
 import json
 import logging
 import os
+import random
 import sys
 import time
 from datetime import datetime, timezone
@@ -61,7 +62,28 @@ def load_all_loras(lora_dir: str, domains: list) -> dict:
     return loras
 
 
-def run_grassmerge_composition(merger: GrassMerge, loras: dict, output_dir: str) -> dict:
+def save_as_peft(composed: LoRAWeights, peft_dir: str, config: dict) -> None:
+    """Save a composed LoRAWeights as a PEFT-loadable directory."""
+    import safetensors.torch
+    os.makedirs(peft_dir, exist_ok=True)
+    sd = composed.to_state_dict()
+    safetensors.torch.save_file(sd, os.path.join(peft_dir, "adapter_model.safetensors"))
+    lora_cfg = config.get("lora", {})
+    adapter_config = {
+        "peft_type": "LORA",
+        "base_model_name_or_path": config.get("base_model", ""),
+        "r": composed.rank,
+        "lora_alpha": composed.rank,
+        "target_modules": lora_cfg.get("target_modules", []),
+        "lora_dropout": lora_cfg.get("lora_dropout", 0.0),
+        "bias": "none",
+        "task_type": lora_cfg.get("task_type", "CAUSAL_LM"),
+    }
+    with open(os.path.join(peft_dir, "adapter_config.json"), "w") as f:
+        json.dump(adapter_config, f, indent=2)
+
+
+def run_grassmerge_composition(merger: GrassMerge, loras: dict, output_dir: str, config: dict) -> dict:
     results = {}
     compose_dir = os.path.join(output_dir, "grassmerge")
     os.makedirs(compose_dir, exist_ok=True)
@@ -78,6 +100,7 @@ def run_grassmerge_composition(merger: GrassMerge, loras: dict, output_dir: str)
 
         delta_c = composed.to_delta_weight()
         torch.save(delta_c, os.path.join(compose_dir, f"{name}.pt"))
+        save_as_peft(composed, os.path.join(compose_dir, name), config)
 
         delta_a = loras[d1].to_delta_weight()
         delta_b = loras[d2].to_delta_weight()
@@ -225,7 +248,18 @@ def run_bgd_analysis(loras: dict, output_dir: str) -> dict:
     return result
 
 
-def run_pairwise_baselines(loras: dict, output_dir: str) -> dict:
+def _delta_dict_to_lora(delta: dict, name: str, rank: int) -> LoRAWeights:
+    """Factorize a delta-weight dict into LoRA A/B factors via SVD."""
+    new_A, new_B = {}, {}
+    for key, d in delta.items():
+        U, S, Vh = torch.linalg.svd(d.float(), full_matrices=False)
+        r = min(rank, len(S))
+        new_B[key] = U[:, :r] @ torch.diag(torch.sqrt(S[:r]))
+        new_A[key] = torch.diag(torch.sqrt(S[:r])) @ Vh[:r, :]
+    return LoRAWeights(name=name, lora_A=new_A, lora_B=new_B, rank=rank, alpha=1.0)
+
+
+def run_pairwise_baselines(loras: dict, output_dir: str, config: dict) -> dict:
     """Run baselines pairwise to match GrassMerge evaluation protocol."""
     results = {}
     baseline_dir = os.path.join(output_dir, "baselines")
@@ -255,8 +289,12 @@ def run_pairwise_baselines(loras: dict, output_dir: str) -> dict:
 
             if returns_lora_weights:
                 delta = merged.to_delta_weight()
+                save_as_peft(merged, os.path.join(method_dir, name), config)
             else:
                 delta = merged
+                rank = max(loras[d1].rank, loras[d2].rank)
+                lora_w = _delta_dict_to_lora(delta, name, rank)
+                save_as_peft(lora_w, os.path.join(method_dir, name), config)
             torch.save(delta, os.path.join(method_dir, f"{name}.pt"))
             method_results[name] = {
                 "pair": [d1, d2],
@@ -278,7 +316,12 @@ def main():
     parser.add_argument("--skip_ablation_a0", action="store_true")
     parser.add_argument("--skip_baselines", action="store_true")
     parser.add_argument("--skip_bgd", action="store_true")
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
 
     config = load_config(args.config)
     os.makedirs(args.output_dir, exist_ok=True)
@@ -303,7 +346,7 @@ def main():
         logger.info("=" * 50)
         logger.info("  PHASE 1: GrassMerge Composition")
         logger.info("=" * 50)
-        all_results["grassmerge"] = run_grassmerge_composition(merger, loras, args.output_dir)
+        all_results["grassmerge"] = run_grassmerge_composition(merger, loras, args.output_dir, config)
 
     if not args.skip_ablation_a0:
         logger.info("=" * 50)
@@ -321,7 +364,7 @@ def main():
         logger.info("=" * 50)
         logger.info("  PHASE 4: Pairwise Baseline Comparisons")
         logger.info("=" * 50)
-        all_results["baselines"] = run_pairwise_baselines(loras, args.output_dir)
+        all_results["baselines"] = run_pairwise_baselines(loras, args.output_dir, config)
 
     results_path = os.path.join(args.output_dir, "all_algebra_results.json")
     with open(results_path, "w") as f:

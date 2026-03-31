@@ -13,6 +13,7 @@ import itertools
 import json
 import logging
 import os
+import random
 import sys
 import time
 from datetime import datetime, timezone
@@ -280,7 +281,12 @@ def main():
     parser.add_argument("--config", type=str, default=str(Path(__file__).resolve().parent.parent / "configs" / "domains.yaml"))
     parser.add_argument("--lora_dir", type=str, required=True, help="Directory with trained domain LoRAs")
     parser.add_argument("--output_dir", type=str, default="results/ablations")
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
 
     config = load_config(args.config)
     os.makedirs(args.output_dir, exist_ok=True)

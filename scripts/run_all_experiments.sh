@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# DEPRECATED: Use scripts/run_production.sh as the canonical entry point.
+# This script is kept for reference only.
 set -euo pipefail
 
 export HF_HOME="${HF_HOME:-$HOME/.cache/huggingface}"

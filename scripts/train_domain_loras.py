@@ -17,6 +17,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
+import torch
 import yaml
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -37,8 +39,42 @@ def load_config(config_path: str) -> dict:
         return yaml.safe_load(f)
 
 
+def _adapter_weight_exists(output_dir: str) -> bool:
+    return (
+        os.path.exists(os.path.join(output_dir, "adapter_model.safetensors"))
+        or os.path.exists(os.path.join(output_dir, "adapter_model.bin"))
+    )
+
+
 def is_domain_trained(output_dir: str) -> bool:
-    return os.path.exists(os.path.join(output_dir, "adapter_config.json"))
+    if not os.path.exists(os.path.join(output_dir, "adapter_config.json")):
+        return False
+    return _adapter_weight_exists(output_dir)
+
+
+def verify_adapter_integrity(output_dir: str) -> bool:
+    """Verify an adapter directory is loadable, not just that files exist."""
+    if not is_domain_trained(output_dir):
+        return False
+    try:
+        import safetensors.torch
+        safetensors_path = os.path.join(output_dir, "adapter_model.safetensors")
+        bin_path = os.path.join(output_dir, "adapter_model.bin")
+        if os.path.exists(safetensors_path):
+            sd = safetensors.torch.load_file(safetensors_path, device="cpu")
+        elif os.path.exists(bin_path):
+            sd = torch.load(bin_path, map_location="cpu", weights_only=True)
+        else:
+            return False
+        has_a = any("lora_A" in k for k in sd.keys())
+        has_b = any("lora_B" in k for k in sd.keys())
+        if not (has_a and has_b):
+            logger.warning("Adapter at %s lacks lora_A or lora_B keys", output_dir)
+            return False
+        return True
+    except Exception as e:
+        logger.warning("Adapter integrity check failed for %s: %s", output_dir, e)
+        return False
 
 
 def find_latest_checkpoint(output_dir: str) -> str | None:
@@ -68,6 +104,7 @@ def train_single_domain(
     num_gpus: int,
     master_port: int,
     resume_from: str | None = None,
+    seed: int = 42,
 ) -> dict:
     """Launch torchrun for a single domain training."""
     worker_script = str(SCRIPT_DIR / "train_domain_lora.py")
@@ -81,6 +118,7 @@ def train_single_domain(
         "--domain", domain,
         "--output_dir", output_dir,
         "--num_gpus", str(num_gpus),
+        "--seed", str(seed),
     ]
     if resume_from:
         cmd.extend(["--resume_from_checkpoint", resume_from])
@@ -125,13 +163,20 @@ def main():
     parser.add_argument("--domains", nargs="+", default=None,
                         help="Specific domains to train (default: all 12)")
     parser.add_argument("--num_gpus", type=int, default=8)
-    parser.add_argument("--master_port_start", type=int,
-                        default=random.randint(20000, 28000))
+    parser.add_argument("--master_port_start", type=int, default=None)
     parser.add_argument("--force", action="store_true",
                         help="Retrain even if adapter_config.json exists")
     parser.add_argument("--dry_run", action="store_true",
                         help="Print training plan without executing")
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
+
+    if args.master_port_start is None:
+        args.master_port_start = random.randint(20000, 28000)
 
     config = load_config(args.config)
     output_root = args.output_root or config.get("output_root", "./results/domain_loras")
@@ -159,9 +204,11 @@ def main():
     plan = []
     for domain in domains:
         domain_dir = os.path.join(output_root, domain)
-        trained = is_domain_trained(domain_dir)
-        skip = trained and not args.force
-        plan.append({"domain": domain, "output": domain_dir, "skip": skip, "already_trained": trained})
+        intact = verify_adapter_integrity(domain_dir)
+        skip = intact and not args.force
+        if is_domain_trained(domain_dir) and not intact and not args.force:
+            logger.warning("Domain '%s' has incomplete adapter at %s — will retrain", domain, domain_dir)
+        plan.append({"domain": domain, "output": domain_dir, "skip": skip, "already_trained": intact})
 
     to_train = [p for p in plan if not p["skip"]]
     to_skip = [p for p in plan if p["skip"]]
@@ -193,7 +240,11 @@ def main():
             num_gpus=args.num_gpus,
             master_port=args.master_port_start + idx,
             resume_from=resume_ckpt,
+            seed=args.seed,
         )
+        if result["trained"] and not verify_adapter_integrity(p["output"]):
+            logger.error("Post-train integrity check FAILED for '%s'", p["domain"])
+            result["trained"] = False
         results.append(result)
 
     summary_path = os.path.join(output_root, "training_summary.json")

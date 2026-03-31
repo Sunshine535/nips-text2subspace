@@ -70,6 +70,34 @@ class LoRAWeights:
             sd[f"{prefix}{key}.lora_B.weight"] = self.lora_B[key]
         return sd
 
+    def save_peft_dir(
+        self,
+        peft_dir: str,
+        base_model_name: str = "",
+        target_modules: Optional[List[str]] = None,
+        lora_dropout: float = 0.0,
+        task_type: str = "CAUSAL_LM",
+    ) -> None:
+        """Write a PEFT-compatible adapter directory (adapter_model.safetensors + adapter_config.json)."""
+        import json
+        import os
+        import safetensors.torch
+        os.makedirs(peft_dir, exist_ok=True)
+        sd = self.to_state_dict()
+        safetensors.torch.save_file(sd, os.path.join(peft_dir, "adapter_model.safetensors"))
+        cfg = {
+            "peft_type": "LORA",
+            "base_model_name_or_path": base_model_name,
+            "r": self.rank,
+            "lora_alpha": self.rank,
+            "target_modules": target_modules or [],
+            "lora_dropout": lora_dropout,
+            "bias": "none",
+            "task_type": task_type,
+        }
+        with open(os.path.join(peft_dir, "adapter_config.json"), "w") as f:
+            json.dump(cfg, f, indent=2)
+
 
 class GrassmannOps:
     """Grassmann manifold G(r, d) operations: log map, exp map, distance, Karcher mean."""

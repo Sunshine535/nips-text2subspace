@@ -18,12 +18,16 @@ import argparse
 import json
 import logging
 import os
+import random
 import re
+import subprocess
 import sys
+import tempfile
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
 import torch
 import yaml
 from datasets import load_dataset
@@ -103,6 +107,32 @@ def extract_answer(text: str) -> str:
     return text.strip().split("\n")[-1].strip()
 
 
+def _extract_code_block(text: str) -> str:
+    """Extract python code from markdown fences or return raw text."""
+    m = re.search(r"```(?:python)?\s*\n(.*?)```", text, re.DOTALL)
+    if m:
+        return m.group(1).strip()
+    return text.strip()
+
+
+def _run_code_with_tests(code: str, test_list: list, timeout: int = 10) -> bool:
+    """Execute generated code against test assertions, return True if all pass."""
+    combined = code + "\n" + "\n".join(test_list)
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".py", delete=False) as f:
+        f.write(combined)
+        tmp_path = f.name
+    try:
+        proc = subprocess.run(
+            [sys.executable, tmp_path],
+            capture_output=True, timeout=timeout,
+        )
+        return proc.returncode == 0
+    except (subprocess.TimeoutExpired, Exception):
+        return False
+    finally:
+        os.unlink(tmp_path)
+
+
 def format_mmlu_question(example: dict) -> str:
     q = example.get("question", "")
     choices = example.get("choices", example.get("options", {}))
@@ -139,10 +169,50 @@ def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 512) 
     return tokenizer.decode(output[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
 
+def evaluate_code_execution(model, tokenizer, bench_cfg: dict) -> dict:
+    """Execution-based evaluation for MBPP: run generated code against test assertions."""
+    ds_id = bench_cfg["dataset_id"]
+    subset = bench_cfg.get("subset")
+    split = bench_cfg.get("split", "test")
+    max_samples = bench_cfg.get("max_samples", 500)
+
+    try:
+        ds = load_dataset(ds_id, subset, split=split) if subset else load_dataset(ds_id, split=split)
+    except Exception as e:
+        logger.warning("Failed to load %s/%s: %s", ds_id, subset, e)
+        return {"accuracy": 0.0, "total": 0, "error": str(e)}
+
+    if len(ds) > max_samples:
+        ds = ds.shuffle(seed=42).select(range(max_samples))
+
+    correct, total = 0, 0
+    t0 = time.time()
+    for ex in ds:
+        prompt = f"Write a Python function.\n\n{ex.get('text', '')}\n\nProvide only the code."
+        response = generate_response(model, tokenizer, prompt)
+        code = _extract_code_block(response)
+        test_list = ex.get("test_list", [])
+        if test_list and _run_code_with_tests(code, test_list):
+            correct += 1
+        total += 1
+
+    elapsed = time.time() - t0
+    return {
+        "accuracy": round(correct / max(total, 1), 4),
+        "correct": correct,
+        "total": total,
+        "eval_mode": "execution",
+        "time_seconds": round(elapsed, 1),
+    }
+
+
 def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dict:
     """Evaluate model on a single benchmark."""
     if bench_cfg.get("synthetic"):
         return evaluate_synthetic(model, tokenizer, domain, bench_cfg.get("max_samples", 100))
+
+    if domain == "code" and "mbpp" in bench_cfg.get("dataset_id", ""):
+        return evaluate_code_execution(model, tokenizer, bench_cfg)
 
     ds_id = bench_cfg["dataset_id"]
     subset = bench_cfg.get("subset")
@@ -300,7 +370,12 @@ def main():
     parser.add_argument("--skip_base", action="store_true", help="Skip base model evaluation")
     parser.add_argument("--skip_composed", action="store_true", help="Skip composed LoRA evaluation")
     parser.add_argument("--skip_baselines", action="store_true", help="Skip baseline merging evaluation")
+    parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
+
+    random.seed(args.seed)
+    np.random.seed(args.seed)
+    torch.manual_seed(args.seed)
 
     with open(args.config) as f:
         config = yaml.safe_load(f)
@@ -384,7 +459,11 @@ def main():
                 name = fname.replace(".pt", "")
                 domains_in = name.split("+")
                 logger.info("  Evaluating GrassMerge: %s", name)
-                model = apply_delta_weights(base_model_name, os.path.join(compose_dir, fname))
+                peft_subdir = os.path.join(compose_dir, name)
+                if os.path.isdir(peft_subdir) and os.path.exists(os.path.join(peft_subdir, "adapter_config.json")):
+                    model = load_model_with_adapter(base_model_name, peft_subdir)
+                else:
+                    model = apply_delta_weights(base_model_name, os.path.join(compose_dir, fname))
                 for d in domains_in:
                     if d in DOMAIN_BENCHMARKS:
                         for bench_name, bench_cfg in DOMAIN_BENCHMARKS[d].items():
@@ -416,9 +495,13 @@ def main():
                     name = fname.replace(".pt", "")
                     domains_in = name.split("+")
                     logger.info("    Evaluating %s: %s", method_name, name)
-                    model = apply_delta_weights(
-                        base_model_name, os.path.join(method_dir, fname)
-                    )
+                    peft_subdir = os.path.join(method_dir, name)
+                    if os.path.isdir(peft_subdir) and os.path.exists(os.path.join(peft_subdir, "adapter_config.json")):
+                        model = load_model_with_adapter(base_model_name, peft_subdir)
+                    else:
+                        model = apply_delta_weights(
+                            base_model_name, os.path.join(method_dir, fname)
+                        )
                     for d in domains_in:
                         if d in DOMAIN_BENCHMARKS:
                             for bench_name, bench_cfg in DOMAIN_BENCHMARKS[d].items():

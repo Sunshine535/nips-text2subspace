@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
+# DEPRECATED: Use scripts/run_production.sh as the canonical entry point.
+# This script is kept for reference only.
 set -euo pipefail
-
-# Activate venv if available
 _PROJ_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 if [ -f "$_PROJ_ROOT/.venv/bin/activate" ]; then source "$_PROJ_ROOT/.venv/bin/activate"; fi
 export PATH="$HOME/.local/bin:$PATH"

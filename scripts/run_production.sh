@@ -20,12 +20,21 @@ export PATH="$HOME/.local/bin:$PATH"
 PHASE_MARKER_DIR="$PROJECT_DIR/results/.phase_markers"
 mkdir -p "$PHASE_MARKER_DIR"
 FORCE_RERUN="${FORCE_RERUN:-0}"
+SMOKE="${1:-}"
 phase_done() { touch "$PHASE_MARKER_DIR/phase_${1}.done"; echo "[PHASE $1] Completed at $(date)"; }
 is_phase_done() {
     [[ "$FORCE_RERUN" == "1" ]] && return 1
     [[ -f "$PHASE_MARKER_DIR/phase_${1}.done" ]] && echo "[PHASE $1] Already completed. Skipping." && return 0
     return 1
 }
+
+SMOKE_ARGS=""
+SEED="${SEED:-42}"
+if [[ "$SMOKE" == "--smoke" ]]; then
+    SMOKE_ARGS="--max_samples 8"
+    CORE_DOMAINS_OVERRIDE="math code"
+    echo ">>> SMOKE TEST MODE: reduced data/domains <<<"
+fi
 
 CONFIG="${PROJECT_DIR}/configs/domains.yaml"
 LORA_DIR="${PROJECT_DIR}/results/domain_loras"
@@ -42,10 +51,11 @@ mkdir -p results "$LOG_DIR"
 echo "================================================================"
 echo "  GrassMerge — Production Pipeline"
 echo "  Base model: Qwen/Qwen3.5-9B | GPUs: ${NUM_GPUS} | $(date)"
-echo "  Host: $(hostname)"
+echo "  Host: $(hostname) | Seed: ${SEED}"
+echo "  Multi-GPU: single-node torchrun DDP (${NUM_GPUS} GPUs)"
 echo "================================================================"
 
-CORE_DOMAINS="math code medical science history philosophy"
+CORE_DOMAINS="${CORE_DOMAINS_OVERRIDE:-math code medical science history philosophy}"
 
 if ! is_phase_done 1; then
     echo "========== STAGE 1: Train Core Domain LoRAs =========="
@@ -54,6 +64,7 @@ if ! is_phase_done 1; then
         --output_root "$LORA_DIR" \
         --domains $CORE_DOMAINS \
         --num_gpus ${NUM_GPUS} \
+        --seed ${SEED} \
         2>&1 | tee "$LOG_DIR/stage1_train_${TIMESTAMP}.log"
     phase_done 1
 fi
@@ -62,6 +73,7 @@ if ! is_phase_done 2; then
     echo "========== STAGE 2: Algebra Experiments =========="
     python scripts/run_algebra_experiments.py \
         --config "$CONFIG" --lora_dir "$LORA_DIR" --output_dir "$ALGEBRA_DIR" \
+        --seed ${SEED} \
         2>&1 | tee "$LOG_DIR/stage2_algebra_${TIMESTAMP}.log"
     phase_done 2
 fi
@@ -70,7 +82,7 @@ if ! is_phase_done 3; then
     echo "========== STAGE 3: Domain Evaluation =========="
     python scripts/eval_domain_accuracy.py \
         --config "$CONFIG" --lora_dir "$LORA_DIR" --algebra_dir "$ALGEBRA_DIR" \
-        --output_dir "$EVAL_DIR" --domains $CORE_DOMAINS \
+        --output_dir "$EVAL_DIR" --domains $CORE_DOMAINS --seed ${SEED} $SMOKE_ARGS \
         2>&1 | tee "$LOG_DIR/stage3_eval_${TIMESTAMP}.log"
     phase_done 3
 fi
@@ -79,6 +91,7 @@ if ! is_phase_done 4; then
     echo "========== STAGE 4: Ablation Study =========="
     python scripts/run_ablations.py \
         --config "$CONFIG" --lora_dir "$LORA_DIR" --output_dir "$ABLATION_DIR" \
+        --seed ${SEED} \
         2>&1 | tee "$LOG_DIR/stage4_ablations_${TIMESTAMP}.log"
     phase_done 4
 fi
