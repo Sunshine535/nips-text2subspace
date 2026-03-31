@@ -31,9 +31,13 @@ class LoRAWeights:
         for key, val in state_dict.items():
             if "lora_A" in key:
                 layer_key = key.replace(".lora_A.weight", "").replace(".lora_A.default.weight", "")
+                if layer_key.startswith("base_model.model."):
+                    layer_key = layer_key[len("base_model.model."):]
                 lora_A[layer_key] = val.clone().float()
             elif "lora_B" in key:
                 layer_key = key.replace(".lora_B.weight", "").replace(".lora_B.default.weight", "")
+                if layer_key.startswith("base_model.model."):
+                    layer_key = layer_key[len("base_model.model."):]
                 lora_B[layer_key] = val.clone().float()
         rank = next(iter(lora_A.values())).shape[0] if lora_A else 0
         return cls(name=name, lora_A=lora_A, lora_B=lora_B, rank=rank, alpha=alpha)
@@ -65,9 +69,11 @@ class LoRAWeights:
     def to_state_dict(self, prefix: str = "base_model.model.") -> Dict[str, torch.Tensor]:
         sd = {}
         for key in self.lora_A:
-            sd[f"{prefix}{key}.lora_A.weight"] = self.lora_A[key]
+            clean_key = key[len(prefix):] if key.startswith(prefix) else key
+            sd[f"{prefix}{clean_key}.lora_A.weight"] = self.lora_A[key]
         for key in self.lora_B:
-            sd[f"{prefix}{key}.lora_B.weight"] = self.lora_B[key]
+            clean_key = key[len(prefix):] if key.startswith(prefix) else key
+            sd[f"{prefix}{clean_key}.lora_B.weight"] = self.lora_B[key]
         return sd
 
     def save_peft_dir(
@@ -302,17 +308,16 @@ class GrassMerge:
             common_keys &= set(d.keys())
 
         rank = max(lora.rank for lora in loras)
-        num_keys = min(5, len(common_keys))
-        sampled_keys = sorted(common_keys)[:num_keys]
+        all_keys = sorted(common_keys)
 
         for i in range(N):
             for j in range(i + 1, N):
                 bgd_sum = 0.0
-                for key in sampled_keys:
+                for key in all_keys:
                     bgd_sum += bilateral_grassmann_distance(
                         all_deltas[i][key], all_deltas[j][key], rank
                     )
-                bgd_avg = bgd_sum / len(sampled_keys)
+                bgd_avg = bgd_sum / len(all_keys)
                 bgd_matrix[i][j] = bgd_avg
                 bgd_matrix[j][i] = bgd_avg
 
@@ -670,7 +675,7 @@ class LoRAAlgebra:
         return LoRAWeights(name=name, lora_A=new_A, lora_B=new_B, rank=rank, alpha=1.0)
 
 
-def compute_bgd_matrix(loras: List[LoRAWeights], num_sample_layers: int = 5) -> np.ndarray:
+def compute_bgd_matrix(loras: List[LoRAWeights]) -> np.ndarray:
     merger = GrassMerge()
     return merger.compute_bgd_matrix(loras)
 
@@ -682,17 +687,20 @@ def compute_similarity_matrix(loras: List[LoRAWeights], projector: "GrassmannPro
     common_keys = set(deltas[0].keys())
     for d in deltas[1:]:
         common_keys &= set(d.keys())
-    first_key = sorted(common_keys)[0]
+    all_keys = sorted(common_keys)
     for i in range(n):
-        U_i, _, _ = torch.linalg.svd(deltas[i][first_key].float(), full_matrices=False)
-        r = min(projector.svd_rank, U_i.shape[1])
-        U_i = U_i[:, :r]
         for j in range(i + 1, n):
-            U_j, _, _ = torch.linalg.svd(deltas[j][first_key].float(), full_matrices=False)
-            U_j = U_j[:, :r]
-            dist = GrassmannOps.geodesic_distance(U_i, U_j)
-            dist_matrix[i][j] = dist
-            dist_matrix[j][i] = dist
+            dist_sum = 0.0
+            for key in all_keys:
+                U_i, _, _ = torch.linalg.svd(deltas[i][key].float(), full_matrices=False)
+                r = min(projector.svd_rank, U_i.shape[1])
+                U_i_k = U_i[:, :r]
+                U_j, _, _ = torch.linalg.svd(deltas[j][key].float(), full_matrices=False)
+                U_j_k = U_j[:, :r]
+                dist_sum += GrassmannOps.geodesic_distance(U_i_k, U_j_k)
+            dist_avg = dist_sum / len(all_keys)
+            dist_matrix[i][j] = dist_avg
+            dist_matrix[j][i] = dist_avg
     return dist_matrix
 
 

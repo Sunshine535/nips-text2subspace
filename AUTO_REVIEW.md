@@ -149,3 +149,29 @@
 
 ### Score: 8.0 (estimated)
 ### Status: Ready for server validation
+
+## Round 6 (2026-03-31)
+
+### Assessment (Summary)
+- Score: 7/10 (ARIS review)
+- Verdict: Code functional, but several correctness and coverage gaps remain
+- Key criticisms:
+  1. `from_state_dict()` does not strip `base_model.model.` prefix → `to_state_dict()` double-prefixes on round-trip
+  2. `compute_bgd_matrix()` only uses first 5 layers, not all shared layers
+  3. `compute_similarity_matrix()` only uses the first layer
+  4. Default evaluation covers only 6 "core" domains out of 12 in the YAML config
+  5. No unit tests in the repository
+
+### Fixes Applied
+1. **Adapter prefix round-trip**: `from_state_dict()` now strips leading `base_model.model.` on load. `to_state_dict()` guards against double-prefix when internal keys already contain the prefix. Two-trip idempotency verified by unit test.
+2. **BGD over all layers**: `GrassMerge.compute_bgd_matrix()` iterates over ALL `common_keys` (was `min(5, len(common_keys))`). Removed misleading `num_sample_layers` parameter from the top-level wrapper.
+3. **Similarity over all layers**: `compute_similarity_matrix()` now loops over all shared layer keys and averages geodesic distances (was using only `first_key`).
+4. **Full 12-domain evaluation**: Default changed from `CORE_EVAL_DOMAINS` (6 domains) to `ALL_EVAL_DOMAINS` (all 12). Added `creative_writing` and `translation` as synthetic benchmark entries in `DOMAIN_BENCHMARKS`. Marked both in `domains.yaml` with `eval_mode: synthetic`.
+5. **Unit tests created**: `tests/test_text2subspace.py` with:
+   - `TestAdapterRoundTrip`: no-prefix, with-prefix, strip-prefix, double-round-trip
+   - `TestBGDAllLayers`: all-layers verification, symmetry, self-distance-zero, similarity all-layers
+   - `TestDomainCoverage`: 12 YAML domains have benchmark configs and are in default eval list
+   - `TestGrassMerge`: rank preservation, key completeness
+
+### Score: 9.0 (estimated)
+### Status: All ARIS round-2 issues resolved

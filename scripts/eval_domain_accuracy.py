@@ -84,9 +84,15 @@ DOMAIN_BENCHMARKS = {
         "mmlu_psychology": {"dataset_id": "cais/mmlu", "subset": "high_school_psychology",
                             "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
     },
+    "creative_writing": {
+        "creative_writing_synthetic": {"synthetic": True, "max_samples": 5},
+    },
+    "translation": {
+        "translation_synthetic": {"synthetic": True, "max_samples": 5},
+    },
 }
 
-CORE_EVAL_DOMAINS = ["math", "code", "medical", "science", "history", "philosophy"]
+ALL_EVAL_DOMAINS = list(DOMAIN_BENCHMARKS.keys())
 
 MMLU_CHOICES = ["A", "B", "C", "D"]
 
@@ -387,7 +393,7 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    eval_domains = args.domains or CORE_EVAL_DOMAINS
+    eval_domains = args.domains or ALL_EVAL_DOMAINS
     all_results = {"meta": {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "base_model": base_model_name,

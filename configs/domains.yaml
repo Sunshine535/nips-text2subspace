@@ -104,6 +104,7 @@ domains:
       - "lmsys/chatbot_arena_conversations"
     max_samples: 20000
     system_prompt: "You are a creative writer. Craft engaging, imaginative, and well-structured text."
+    eval_mode: "synthetic"  # no automated benchmark; qualitative eval only
 
   translation:
     name: "Translation"
@@ -111,6 +112,7 @@ domains:
       - "FreedomIntelligence/alpaca-gpt4-zh"
     max_samples: 20000
     system_prompt: "You are a multilingual translation expert. Translate accurately preserving meaning and style."
+    eval_mode: "synthetic"  # no automated benchmark; qualitative eval only
 
 algebra:
   interpolation_alphas: [0.0, 0.25, 0.5, 0.75, 1.0]
