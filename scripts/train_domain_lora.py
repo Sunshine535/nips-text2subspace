@@ -107,7 +107,7 @@ def format_example(example: dict, system_prompt: str, domain: str) -> dict:
 
 
 SPLIT_OVERRIDES = {
-    "cais/mmlu": "auxiliary_train",
+    "cais/mmlu": "test",  # cais/mmlu: test has 237-311 samples; dev/validation too small
 }
 
 
@@ -166,6 +166,7 @@ def main():
     parser.add_argument("--num_gpus", type=int, default=8)
     parser.add_argument("--resume_from_checkpoint", type=str, default=None)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--max_samples", type=int, default=None, help="Override max_samples from config")
     args = parser.parse_args()
 
     _seed_everything(args.seed)
@@ -176,6 +177,8 @@ def main():
         sys.exit(1)
 
     domain_cfg = config["domains"][args.domain]
+    if args.max_samples is not None:
+        domain_cfg["max_samples"] = args.max_samples
     output_dir = args.output_dir or os.path.join(config["output_root"], args.domain)
     os.makedirs(output_dir, exist_ok=True)
 
@@ -200,7 +203,7 @@ def main():
 
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         trust_remote_code=True,
         attn_implementation=attn_impl,
         device_map={"": int(os.environ.get("LOCAL_RANK", 0))},

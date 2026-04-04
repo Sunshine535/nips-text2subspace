@@ -106,14 +106,18 @@ def run_grassmerge_composition(merger: GrassMerge, loras: dict, output_dir: str,
         delta_b = loras[d2].to_delta_weight()
         keys = sorted(set(delta_a.keys()) & set(delta_b.keys()) & set(delta_c.keys()))
         if keys:
-            k = keys[0]
-            cosine_a = torch.nn.functional.cosine_similarity(
-                delta_c[k].flatten().unsqueeze(0), delta_a[k].flatten().unsqueeze(0)
-            ).item()
-            cosine_b = torch.nn.functional.cosine_similarity(
-                delta_c[k].flatten().unsqueeze(0), delta_b[k].flatten().unsqueeze(0)
-            ).item()
-            bgd = bilateral_grassmann_distance(delta_a[k], delta_b[k], composed.rank)
+            cos_a_vals, cos_b_vals, bgd_vals = [], [], []
+            for k in keys:
+                cos_a_vals.append(torch.nn.functional.cosine_similarity(
+                    delta_c[k].flatten().unsqueeze(0), delta_a[k].flatten().unsqueeze(0)
+                ).item())
+                cos_b_vals.append(torch.nn.functional.cosine_similarity(
+                    delta_c[k].flatten().unsqueeze(0), delta_b[k].flatten().unsqueeze(0)
+                ).item())
+                bgd_vals.append(bilateral_grassmann_distance(delta_a[k], delta_b[k], composed.rank))
+            cosine_a = float(np.mean(cos_a_vals))
+            cosine_b = float(np.mean(cos_b_vals))
+            bgd = float(np.mean(bgd_vals))
         else:
             cosine_a, cosine_b, bgd = 0.0, 0.0, 0.0
 
@@ -216,7 +220,7 @@ def run_bgd_analysis(loras: dict, output_dir: str) -> dict:
     common_keys = set(all_deltas[names[0]].keys())
     for n in names[1:]:
         common_keys &= set(all_deltas[n].keys())
-    sample_keys = sorted(common_keys)[:5]
+    sample_keys = sorted(common_keys)  # Use all layers for thorough analysis
 
     for i in range(N):
         for j in range(i + 1, N):

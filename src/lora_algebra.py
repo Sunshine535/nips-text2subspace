@@ -66,6 +66,32 @@ class LoRAWeights:
                 deltas[key] = (self.lora_B[key] @ self.lora_A[key]) * self.alpha
         return deltas
 
+    def fast_svd(self) -> Dict[str, Tuple[torch.Tensor, torch.Tensor, torch.Tensor]]:
+        """Compute truncated SVD of delta weights WITHOUT materializing full (d_out x d_in) matrix.
+
+        For LoRA with B (d_out x r) and A (r x d_in), exploits rank-r structure:
+        1. QR(B) → Q_B (d_out x r), R_B (r x r)
+        2. QR(A^T) → Q_A (d_in x r), R_A (r x r)
+        3. SVD(R_B @ R_A^T * alpha) → U_s, S, Vh_s  (all r x r)
+        4. U = Q_B @ U_s, V = Q_A @ Vh_s^T
+
+        Returns dict of {layer_key: (U, S, Vh)} where U is (d_out x r), S is (r,), Vh is (r x d_in).
+        """
+        result = {}
+        for key in self.lora_A:
+            if key not in self.lora_B:
+                continue
+            B = self.lora_B[key].float()  # (d_out, r)
+            A = self.lora_A[key].float()  # (r, d_in)
+            Q_B, R_B = torch.linalg.qr(B)       # Q_B: (d_out, r), R_B: (r, r)
+            Q_A, R_A = torch.linalg.qr(A.T)     # Q_A: (d_in, r), R_A: (r, r)
+            M = (R_B @ R_A.T) * self.alpha       # (r, r) — tiny!
+            U_s, S, Vh_s = torch.linalg.svd(M, full_matrices=False)  # all (r, r)
+            U = Q_B @ U_s     # (d_out, r)
+            Vh = Vh_s @ Q_A.T  # (r, d_in)
+            result[key] = (U, S, Vh)
+        return result
+
     def to_state_dict(self, prefix: str = "base_model.model.") -> Dict[str, torch.Tensor]:
         sd = {}
         for key in self.lora_A:
@@ -145,6 +171,12 @@ class GrassmannOps:
         return torch.acos(sigmas)
 
     @classmethod
+    def geodesic_midpoint(cls, U1: torch.Tensor, U2: torch.Tensor, t: float = 0.5) -> torch.Tensor:
+        """Fast geodesic midpoint on Grassmannian — single log+exp, no iteration."""
+        tangent = cls.log_map(U1, U2)
+        return cls.exp_map(U1, t * tangent)
+
+    @classmethod
     def karcher_mean(
         cls,
         bases: List[torch.Tensor],
@@ -154,6 +186,9 @@ class GrassmannOps:
     ) -> torch.Tensor:
         if weights is None:
             weights = [1.0 / len(bases)] * len(bases)
+        # Fast path for N=2 with equal weights: geodesic midpoint (single step)
+        if len(bases) == 2 and abs(weights[0] - weights[1]) < 1e-6:
+            return cls.geodesic_midpoint(bases[0], bases[1], t=0.5)
         mu = bases[0].clone()
         for _ in range(max_iter):
             tangent_sum = torch.zeros_like(mu)
@@ -242,15 +277,18 @@ class GrassMerge:
         assert abs(sum(weights) - 1.0) < 1e-6, f"Weights must sum to 1, got {sum(weights)}"
 
         rank = max(lora.rank for lora in loras)
-        all_deltas = [lora.to_delta_weight() for lora in loras]
-        common_keys = set(all_deltas[0].keys())
-        for d in all_deltas[1:]:
-            common_keys &= set(d.keys())
+
+        # Use fast SVD that exploits low-rank structure (avoids d_out × d_in matrices)
+        all_svds = [lora.fast_svd() for lora in loras]
+        common_keys = set(all_svds[0].keys())
+        for s in all_svds[1:]:
+            common_keys &= set(s.keys())
 
         new_A, new_B = {}, {}
         for key in sorted(common_keys):
-            merged_A, merged_B = self._merge_layer(
-                [d[key] for d in all_deltas], weights, rank
+            svd_list = [s[key] for s in all_svds]  # List of (U, S, Vh) tuples
+            merged_A, merged_B = self._merge_layer_fast(
+                svd_list, loras, key, weights, rank
             )
             new_A[key] = merged_A
             new_B[key] = merged_B
@@ -299,13 +337,72 @@ class GrassMerge:
 
         return A_merged, B_merged
 
+    def _merge_layer_fast(
+        self,
+        svd_list: List[Tuple[torch.Tensor, torch.Tensor, torch.Tensor]],
+        loras: List["LoRAWeights"],
+        key: str,
+        weights: List[float],
+        rank: int,
+    ) -> Tuple[torch.Tensor, torch.Tensor]:
+        """Fast merge using pre-computed SVDs — avoids materializing full delta matrices.
+
+        For projected-core: S_i = U*^T @ ΔW_i @ V* = (U*^T @ B_i) @ (A_i @ V*) * alpha_i
+        This is O(d·r²) instead of O(d²·r).
+        """
+        N = len(svd_list)
+
+        Us, Vs = [], []
+        for U, S, Vh in svd_list:
+            r = min(rank, U.shape[1])
+            Us.append(U[:, :r])
+            Vs.append(Vh[:r, :].T)  # (d_in, r)
+
+        r = min(rank, Us[0].shape[1])
+        for i in range(len(Us)):
+            if Us[i].shape[1] < r:
+                pad = r - Us[i].shape[1]
+                Us[i] = torch.cat([Us[i], torch.zeros(Us[i].shape[0], pad, device=Us[i].device)], dim=1)
+                Vs[i] = torch.cat([Vs[i], torch.zeros(Vs[i].shape[0], pad, device=Vs[i].device)], dim=1)
+
+        U_star = GrassmannOps.karcher_mean(Us, weights, self.karcher_max_iter, self.karcher_tol)
+        V_star = GrassmannOps.karcher_mean(Vs, weights, self.karcher_max_iter, self.karcher_tol)
+
+        # Projected-core averaging using compact factors (avoids full delta matrix)
+        device = U_star.device
+        S_avg = torch.zeros(r, r, device=device)
+        for i in range(N):
+            B_i = loras[i].lora_B.get(key)
+            A_i = loras[i].lora_A.get(key)
+            if B_i is None or A_i is None:
+                continue
+            alpha_i = loras[i].alpha
+            # S_i = U*^T @ (B_i @ A_i * alpha_i) @ V*
+            #      = (U*^T @ B_i) @ (A_i @ V*) * alpha_i
+            left = U_star.T @ B_i.float()    # (r, lora_r)
+            right = A_i.float() @ V_star     # (lora_r, r)
+            S_i = left @ right * alpha_i     # (r, r)
+            S_avg += weights[i] * S_i
+
+        U_core, sigma_star, Vh_core = torch.linalg.svd(S_avg, full_matrices=False)
+        U_final = U_star @ U_core
+        V_final = V_star @ Vh_core.T
+
+        sqrt_sigma = torch.sqrt(sigma_star.clamp(min=0))
+        B_merged = U_final @ torch.diag(sqrt_sigma)
+        A_merged = torch.diag(sqrt_sigma) @ V_final.T
+
+        return A_merged, B_merged
+
     def compute_bgd_matrix(self, loras: List[LoRAWeights]) -> np.ndarray:
         N = len(loras)
         bgd_matrix = np.zeros((N, N))
-        all_deltas = [lora.to_delta_weight() for lora in loras]
-        common_keys = set(all_deltas[0].keys())
-        for d in all_deltas[1:]:
-            common_keys &= set(d.keys())
+
+        # Use fast SVD to get subspace decompositions
+        all_svds = [lora.fast_svd() for lora in loras]
+        common_keys = set(all_svds[0].keys())
+        for s in all_svds[1:]:
+            common_keys &= set(s.keys())
 
         rank = max(lora.rank for lora in loras)
         all_keys = sorted(common_keys)
@@ -314,9 +411,12 @@ class GrassMerge:
             for j in range(i + 1, N):
                 bgd_sum = 0.0
                 for key in all_keys:
-                    bgd_sum += bilateral_grassmann_distance(
-                        all_deltas[i][key], all_deltas[j][key], rank
-                    )
+                    U_i, _, Vh_i = all_svds[i][key]
+                    U_j, _, Vh_j = all_svds[j][key]
+                    r = min(rank, U_i.shape[1], U_j.shape[1])
+                    d_left = GrassmannOps.geodesic_distance(U_i[:, :r], U_j[:, :r])
+                    d_right = GrassmannOps.geodesic_distance(Vh_i[:r, :].T, Vh_j[:r, :].T)
+                    bgd_sum += float(np.sqrt(d_left**2 + d_right**2))
                 bgd_avg = bgd_sum / len(all_keys)
                 bgd_matrix[i][j] = bgd_avg
                 bgd_matrix[j][i] = bgd_avg

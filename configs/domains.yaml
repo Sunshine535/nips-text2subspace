@@ -1,4 +1,4 @@
-base_model: "Qwen/Qwen3.5-9B"
+base_model: "Qwen/Qwen3-8B"
 output_root: "./results/domain_loras"
 
 lora:
