@@ -45,16 +45,19 @@ logger = logging.getLogger(__name__)
 DOMAIN_BENCHMARKS = {
     "math": {
         "gsm8k": {"dataset_id": "openai/gsm8k", "subset": "main", "split": "test",
-                   "q_field": "question", "a_field": "answer", "max_samples": 500},
+                   "q_field": "question", "a_field": "answer", "max_samples": 500,
+                   "system_prompt": "Solve the math problem step by step. End with 'The answer is [number]'."},
     },
     "code": {
         "mbpp": {"dataset_id": "google-research-datasets/mbpp", "subset": "sanitized",
-                 "split": "test", "q_field": "text", "a_field": "code", "max_samples": 500},
+                 "split": "test", "q_field": "text", "a_field": "code", "max_samples": 500,
+                 "system_prompt": "Write clean Python code. Provide only the code."},
     },
     "medical": {
         "medqa": {"dataset_id": "GBaker/MedQA-USMLE-4-options", "split": "test",
                   "q_field": "question", "a_field": "answer_idx", "options_field": "options",
-                  "max_samples": 500, "multichoice": True},
+                  "max_samples": 500, "multichoice": True,
+                  "system_prompt": "You are a medical expert. Answer with the letter of the correct choice."},
     },
     "legal": {
         "legalbench_subset": {"dataset_id": "nguha/legalbench", "subset": "abercrombie",
@@ -159,20 +162,40 @@ def format_mmlu_question(example: dict) -> str:
 
 
 def decode_answer(example: dict, bench_cfg: dict) -> str:
-    """Decode the gold answer, handling ClassLabel integers and lettered answers."""
+    """Decode the gold answer, handling ClassLabel integers, GSM8K format, and lettered answers."""
     raw = example.get(bench_cfg.get("a_field", "answer"), "")
     if isinstance(raw, int) and 0 <= raw < len(MMLU_CHOICES):
         return MMLU_CHOICES[raw]
-    return str(raw).strip()
+    raw_str = str(raw).strip()
+    # GSM8K: answer field contains reasoning ending with "#### NUMBER"
+    gsm_match = re.search(r"####\s*([\-\d,]+\.?\d*)", raw_str)
+    if gsm_match:
+        return gsm_match.group(1).replace(",", "").strip()
+    return raw_str
 
 
-def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 512) -> str:
-    messages = [{"role": "user", "content": prompt}]
-    text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+def _strip_think_tags(text: str) -> str:
+    """Strip Qwen3 <think>...</think> reasoning blocks, keeping only the final answer."""
+    # Remove <think>...</think> blocks (Qwen3 reasoning model feature)
+    cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+    # If stripping removed everything, fall back to original
+    return cleaned if cleaned else text
+
+
+def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 512, system_prompt: str = "") -> str:
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+    # Use default template (do NOT pass enable_thinking=False — it actually triggers thinking)
+    text = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True,
+    )
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048).to(model.device)
     with torch.no_grad():
-        output = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False, temperature=1.0)
-    return tokenizer.decode(output[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+        output = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
+    response = tokenizer.decode(output[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+    return _strip_think_tags(response)
 
 
 def evaluate_code_execution(model, tokenizer, bench_cfg: dict) -> dict:
@@ -260,7 +283,8 @@ def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dic
             gold = str(ex.get(a_field, ""))
             gold_extracted = extract_answer(gold)
 
-        response = generate_response(model, tokenizer, question)
+        sys_prompt = bench_cfg.get("system_prompt", "")
+        response = generate_response(model, tokenizer, question, system_prompt=sys_prompt)
         pred = extract_answer(response)
         total_tokens += len(tokenizer.encode(response))
 

@@ -54,14 +54,14 @@ def load_all_loras(lora_dir: str, domains: list) -> dict:
 
 
 def refactorize_at_rank(lora: LoRAWeights, target_rank: int) -> LoRAWeights:
-    """Re-factorize a LoRA's delta weights at a different rank."""
-    delta = lora.to_delta_weight()
+    """Re-factorize a LoRA at a different rank using fast SVD (no full d×d matrix)."""
+    svd_data = lora.fast_svd()  # Uses QR+compact SVD, O(d*r²) not O(d²*r)
     new_A, new_B = {}, {}
-    for key, d in delta.items():
-        U, S, Vh = torch.linalg.svd(d.float(), full_matrices=False)
+    for key, (U, S, Vh) in svd_data.items():
         r = min(target_rank, len(S))
-        new_A[key] = torch.diag(torch.sqrt(S[:r])) @ Vh[:r, :]
-        new_B[key] = U[:, :r] @ torch.diag(torch.sqrt(S[:r]))
+        sqrt_S = torch.sqrt(S[:r].clamp(min=0))
+        new_B[key] = U[:, :r] @ torch.diag(sqrt_S)
+        new_A[key] = torch.diag(sqrt_S) @ Vh[:r, :]
     return LoRAWeights(
         name=f"{lora.name}_r{target_rank}",
         lora_A=new_A, lora_B=new_B, rank=target_rank, alpha=1.0,
@@ -77,16 +77,18 @@ def measure_composition_quality(lora_a: LoRAWeights, lora_b: LoRAWeights, compos
     if not keys:
         return {"cosine_a": 0.0, "cosine_b": 0.0, "reconstruction_error": 1.0}
 
-    k = keys[0]
-    cos_a = torch.nn.functional.cosine_similarity(
-        delta_c[k].flatten().unsqueeze(0), delta_a[k].flatten().unsqueeze(0),
-    ).item()
-    cos_b = torch.nn.functional.cosine_similarity(
-        delta_c[k].flatten().unsqueeze(0), delta_b[k].flatten().unsqueeze(0),
-    ).item()
-    ideal = delta_a[k] + delta_b[k]
-    err = torch.norm(delta_c[k] - ideal, "fro").item() / max(torch.norm(ideal, "fro").item(), 1e-8)
-    return {"cosine_a": round(cos_a, 4), "cosine_b": round(cos_b, 4), "reconstruction_error": round(err, 4)}
+    cos_a_vals, cos_b_vals, err_vals = [], [], []
+    for k in keys[:10]:  # Sample 10 layers for speed
+        cos_a_vals.append(torch.nn.functional.cosine_similarity(
+            delta_c[k].flatten().unsqueeze(0), delta_a[k].flatten().unsqueeze(0),
+        ).item())
+        cos_b_vals.append(torch.nn.functional.cosine_similarity(
+            delta_c[k].flatten().unsqueeze(0), delta_b[k].flatten().unsqueeze(0),
+        ).item())
+        ideal = delta_a[k] + delta_b[k]
+        err_vals.append(torch.norm(delta_c[k] - ideal, "fro").item() / max(torch.norm(ideal, "fro").item(), 1e-8))
+    import numpy as _np
+    return {"cosine_a": round(float(_np.mean(cos_a_vals)), 4), "cosine_b": round(float(_np.mean(cos_b_vals)), 4), "reconstruction_error": round(float(_np.mean(err_vals)), 4)}
 
 
 # ===== Ablation 1: LoRA Rank =====
