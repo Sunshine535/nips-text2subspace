@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "note": "Extracted from partial run - interpolation not completed"
+  },
+  "rank_ablation": {
+    "rank_4": {
+      "rank": 4,
+      "compose_time": 9.32,
+      "spectral_cosine_a": 0.9978,
+      "spectral_cosine_b": 0.9544
+    },
+    "rank_8": {
+      "rank": 8,
+      "compose_time": 89.8,
+      "spectral_cosine_a": 0.9981,
+      "spectral_cosine_b": 0.9425
+    },
+    "rank_16": {
+      "rank": 16,
+      "compose_time": 53.5,
+      "spectral_cosine_a": 0.9977,
+      "spectral_cosine_b": 0.9398
+    },
+    "rank_32": {
+      "rank": 32,
+      "compose_time": 49.82,
+      "spectral_cosine_a": 0.9977,
+      "spectral_cosine_b": 0.9398
+    },
+    "rank_64": {
+      "rank": 64,
+      "compose_time": 47.9,
+      "spectral_cosine_a": 0.9977,
+      "spectral_cosine_b": 0.9398
+    }
+  },
+  "compose_count_ablation": {
+    "n_2": {
+      "num_domains": 2,
+      "compose_time": 46.7,
+      "avg_cosine": 0.9682
+    },
+    "n_3": {
+      "num_domains": 3,
+      "compose_time": 451.49,
+      "avg_cosine": 0.9432
+    },
+    "n_4": {
+      "num_domains": 4,
+      "compose_time": 523.3,
+      "avg_cosine": 0.9526
+    },
+    "n_6": {
+      "num_domains": 6,
+      "compose_time": 721.29,
+      "avg_cosine": 0.9525
+    }
+  },
+  "interpolation_ablation": {}
+}

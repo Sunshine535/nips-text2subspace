@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "timestamp": "2026-04-05T01:37:50.459534+00:00",
+    "base_model": "Qwen/Qwen3-8B",
+    "domains": [
+      "history",
+      "philosophy",
+      "science"
+    ]
+  },
+  "base_model": {
+    "history": {
+      "mmlu_history": {
+        "accuracy": 0.04,
+        "correct": 8,
+        "total": 200,
+        "avg_tokens": 407.9,
+        "time_seconds": 2154.2
+      }
+    },
+    "philosophy": {
+      "mmlu_philosophy": {
+        "accuracy": 0.085,
+        "correct": 17,
+        "total": 200,
+        "avg_tokens": 410.4,
+        "time_seconds": 2148.5
+      }
+    },
+    "science": {
+      "arc_challenge": {
+        "accuracy": 0.115,
+        "correct": 23,
+        "total": 200,
+        "avg_tokens": 304.6,
+        "time_seconds": 2118.4
+      }
+    }
+  },
+  "individual_loras": {
+    "history": {
+      "mmlu_history": {
+        "accuracy": 0.795,
+        "correct": 159,
+        "total": 200,
+        "avg_tokens": 5.0,
+        "time_seconds": 51.0
+      }
+    },
+    "philosophy": {
+      "mmlu_philosophy": {
+        "accuracy": 0.745,
+        "correct": 149,
+        "total": 200,
+        "avg_tokens": 5.0,
+        "time_seconds": 50.5
+      }
+    },
+    "science": {
+      "arc_challenge": {
+        "accuracy": 0.91,
+        "correct": 182,
+        "total": 200,
+        "avg_tokens": 1.0,
+        "time_seconds": 17.7
+      }
+    }
+  },
+  "grassmerge": {
+    "history+philosophy_on_history_mmlu_history": {
+      "accuracy": 0.835,
+      "correct": 167,
+      "total": 200,
+      "avg_tokens": 5.0,
+      "time_seconds": 49.7
+    },
+    "history+philosophy_on_philosophy_mmlu_philosophy": {
+      "accuracy": 0.67,
+      "correct": 134,
+      "total": 200,
+      "avg_tokens": 67.2,
+      "time_seconds": 542.2
+    },
+    "history+science_on_history_mmlu_history": {
+      "accuracy": 0.79,
+      "correct": 158,
+      "total": 200,
+      "avg_tokens": 38.8,
+      "time_seconds": 326.9
+    },
+    "history+science_on_science_arc_challenge": {
+      "accuracy": 0.685,
+      "correct": 137,
+      "total": 200,
+      "avg_tokens": 144.7,
+      "time_seconds": 1360.9
+    },
+    "philosophy+science_on_philosophy_mmlu_philosophy": {
+      "accuracy": 0.575,
+      "correct": 115,
+      "total": 200,
+      "avg_tokens": 121.4,
+      "time_seconds": 966.7
+    },
+    "philosophy+science_on_science_arc_challenge": {
+      "accuracy": 0.47,
+      "correct": 94,
+      "total": 200,
+      "avg_tokens": 372.6,
+      "time_seconds": 2977.6
+    }
+  }
+}

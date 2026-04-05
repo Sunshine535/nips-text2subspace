@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "domains": [
+      "code",
+      "history",
+      "math",
+      "medical",
+      "philosophy",
+      "science"
+    ]
+  },
+  "grassmerge": {
+    "code+history": {
+      "method": "grassmerge"
+    },
+    "code+math": {
+      "method": "grassmerge"
+    },
+    "code+medical": {
+      "method": "grassmerge"
+    },
+    "code+philosophy": {
+      "method": "grassmerge"
+    },
+    "code+science": {
+      "method": "grassmerge"
+    },
+    "history+math": {
+      "method": "grassmerge"
+    },
+    "history+medical": {
+      "method": "grassmerge"
+    },
+    "history+philosophy": {
+      "method": "grassmerge"
+    },
+    "history+science": {
+      "method": "grassmerge"
+    },
+    "math+medical": {
+      "method": "grassmerge"
+    },
+    "math+philosophy": {
+      "method": "grassmerge"
+    },
+    "math+science": {
+      "method": "grassmerge"
+    },
+    "medical+philosophy": {
+      "method": "grassmerge"
+    },
+    "medical+science": {
+      "method": "grassmerge"
+    },
+    "philosophy+science": {
+      "method": "grassmerge"
+    }
+  },
+  "baselines": {
+    "task_arithmetic": {
+      "code+history": {},
+      "code+math": {},
+      "code+medical": {},
+      "code+philosophy": {},
+      "code+science": {},
+      "history+math": {},
+      "history+medical": {},
+      "history+philosophy": {},
+      "history+science": {},
+      "math+medical": {},
+      "math+philosophy": {},
+      "math+science": {},
+      "medical+philosophy": {},
+      "medical+science": {},
+      "philosophy+science": {}
+    }
+  }
+}
