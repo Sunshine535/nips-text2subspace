@@ -175,3 +175,61 @@
 
 ### Score: 9.0 (estimated)
 ### Status: All ARIS round-2 issues resolved
+
+## Round 7 (2026-04-05)
+
+### Assessment (Summary)
+- Score: 3/10 (for best paper bar)
+- Verdict: Not ready — too incomplete empirically, too exposed on obvious reviewer questions
+- Key criticisms (22 total, top 10):
+  1. Core empirical matrix incomplete (only 3/15 pairs evaluated)
+  2. No baseline comparison established
+  3. Sample sizes too small (50-sample comparisons not publishable)
+  4. No statistical reliability (need 3 seeds + bootstrap CIs)
+  5. Benchmark validity questionable (GSM8K=0.91 for base Qwen3-8B suspicious)
+  6. One benchmark per domain too narrow
+  7. BGD correlation has only N=6 data points — underpowered
+  8. N-way and rank ablations use spectral cosine proxy, not downstream accuracy
+  9. Missing critical controls: multitask LoRA, concat+compress, oracle routing
+  10. No held-out domain / general capability preservation evaluation
+  11. Need second backbone family
+  12. No failure analysis
+  13. Reparameterization invariance not demonstrated
+  14. Karcher mean convergence not characterized
+  15. Heterogeneous adapter testing missing
+
+### Reviewer Raw Response
+
+<details>
+<summary>Click to expand full reviewer response</summary>
+
+Score: 3/10 for NeurIPS best paper.
+
+22 weaknesses identified. Key requirements for minimum viable submission:
+1. Full 15-pair table for GrassMerge + all baselines with CIs
+2. Real downstream 3/4/6-way results
+3. BGD analysis on all pairs + comparison to simpler metrics
+4. Multitask LoRA control + general capability preservation
+5. Second backbone replication + complete ablation/runtime section
+6. Full test sets or large subsamples with bootstrap CIs
+
+For best paper: BGD story must become genuinely broad and decisive.
+
+</details>
+
+### Actions Planned
+1. [RUNNING] Complete all individual LoRA evals + all 15 pairwise GrassMerge + all baselines
+2. [TODO] Add multitask baseline (single LoRA trained on union of all domain data)
+3. [TODO] Add oracle routing upper bound (per-domain routing to correct adapter)
+4. [TODO] Add held-out domain evaluation (legal, finance, geography, psychology)
+5. [TODO] Verify GSM8K=0.91 base model result
+6. [TODO] Bootstrap CIs for all comparisons
+7. [TODO] N-way downstream accuracy (3,4,6-way)
+8. [TODO] Rank ablation with downstream accuracy
+9. [TODO] BGD correlation analysis on full 15 pairs
+10. [TODO] Failure analysis
+11. [TODO] Reparameterization invariance test
+12. [TODO] Karcher mean convergence curves
+
+### Status
+- Continuing to Round 8 after implementing fixes

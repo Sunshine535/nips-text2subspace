@@ -46,11 +46,11 @@ DOMAIN_BENCHMARKS = {
     "math": {
         "gsm8k": {"dataset_id": "openai/gsm8k", "subset": "main", "split": "test",
                    "q_field": "question", "a_field": "answer", "max_samples": 500,
-                   "system_prompt": "Solve the math problem step by step. End with 'The answer is [number]'."},
+                   "system_prompt": "Solve this math problem step by step. End your solution with #### followed by the final numeric answer (e.g., #### 42)."},
     },
     "code": {
         "mbpp": {"dataset_id": "google-research-datasets/mbpp", "subset": "sanitized",
-                 "split": "test", "q_field": "text", "a_field": "code", "max_samples": 500,
+                 "split": "test", "q_field": "prompt", "a_field": "code", "max_samples": 500,
                  "system_prompt": "Write clean Python code. Provide only the code."},
     },
     "medical": {
@@ -69,23 +69,28 @@ DOMAIN_BENCHMARKS = {
     },
     "science": {
         "arc_challenge": {"dataset_id": "allenai/ai2_arc", "subset": "ARC-Challenge",
-                          "split": "test", "q_field": "question", "a_field": "answerKey", "max_samples": 500, "multichoice": True},
+                          "split": "test", "q_field": "question", "a_field": "answerKey", "max_samples": 500, "multichoice": True,
+                          "system_prompt": "Answer the multiple choice question. Reply with just the letter of the correct answer (A, B, C, or D)."},
     },
     "history": {
         "mmlu_history": {"dataset_id": "cais/mmlu", "subset": "high_school_world_history",
-                         "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
+                         "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True,
+                         "system_prompt": "Answer the multiple choice question. Reply with just the letter of the correct answer (A, B, C, or D)."},
     },
     "geography": {
         "mmlu_geography": {"dataset_id": "cais/mmlu", "subset": "high_school_geography",
-                           "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
+                           "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True,
+                           "system_prompt": "Answer the multiple choice question. Reply with just the letter of the correct answer (A, B, C, or D)."},
     },
     "philosophy": {
         "mmlu_philosophy": {"dataset_id": "cais/mmlu", "subset": "philosophy",
-                            "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
+                            "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True,
+                            "system_prompt": "Answer the multiple choice question. Reply with just the letter of the correct answer (A, B, C, or D)."},
     },
     "psychology": {
         "mmlu_psychology": {"dataset_id": "cais/mmlu", "subset": "high_school_psychology",
-                            "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True},
+                            "split": "test", "q_field": "question", "a_field": "answer", "max_samples": 500, "multichoice": True,
+                            "system_prompt": "Answer the multiple choice question. Reply with just the letter of the correct answer (A, B, C, or D)."},
     },
     "creative_writing": {
         "creative_writing_synthetic": {"synthetic": True, "max_samples": 5},
@@ -105,12 +110,19 @@ def extract_answer(text: str) -> str:
         r"####\s*([\-\d,]+\.?\d*)",
         r"(?:the answer is|answer:)\s*\$?\\?boxed\{([^}]+)\}",
         r"(?:the answer is|answer:)\s*\(?([A-D])\)?",
+        # MCQ: "correct answer is A", "answer: B", "**A.**", etc.
+        r"(?:correct answer|the answer)\s*(?:is)?[:\s]*\**\(?([A-D])\)?",
+        r"(?:correct answer|the answer)\s*(?:is)?[:\s]*\**([A-D])[\.\s\*]",
         r"(?:the answer is|answer:)\s*\$?\s*([\-\d,]+\.?\d*)",
+        # Bold letter at start: "**A. description**"
+        r"^\**([A-D])[\.\)]",
+        # Standalone letter on a line
+        r"^([A-D])\s*$",
         r"\b([A-D])\b\s*$",
         r"([\-\d,]+\.?\d*)\s*$",
     ]
     for pattern in patterns:
-        match = re.search(pattern, text, re.IGNORECASE)
+        match = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
         if match:
             return match.group(1).replace(",", "").strip()
     return text.strip().split("\n")[-1].strip()
@@ -176,22 +188,40 @@ def decode_answer(example: dict, bench_cfg: dict) -> str:
 
 def _strip_think_tags(text: str) -> str:
     """Strip Qwen3 <think>...</think> reasoning blocks, keeping only the final answer."""
-    # Remove <think>...</think> blocks (Qwen3 reasoning model feature)
+    # Remove complete <think>...</think> blocks
     cleaned = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+    # Handle truncated thinking: if <think> exists without closing </think>,
+    # the model ran out of tokens mid-thought. Remove from <think> to end.
+    if "<think>" in cleaned:
+        cleaned = re.sub(r"<think>.*", "", cleaned, flags=re.DOTALL).strip()
     # If stripping removed everything, fall back to original
     return cleaned if cleaned else text
 
 
-def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 512, system_prompt: str = "") -> str:
+_IS_PEFT_MODEL = False  # Set by caller to control format
+
+
+def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 2048, system_prompt: str = "") -> str:
+    global _IS_PEFT_MODEL
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
     messages.append({"role": "user", "content": prompt})
-    # Use default template (do NOT pass enable_thinking=False — it actually triggers thinking)
-    text = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True,
-    )
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=2048).to(model.device)
+    # Format selection:
+    # - Base model / delta-weight models: use enable_thinking=False for direct answers
+    #   (Qwen3's designed API: adds <think>\n\n</think>\n\n prefix → model answers directly)
+    # - PEFT LoRA models: use default template (no thinking prefix) to match training format
+    #   (Training used raw <|im_start|>assistant\n{answer} without thinking prefix)
+    if _IS_PEFT_MODEL:
+        text = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True,
+        )
+    else:
+        text = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True,
+            enable_thinking=False,
+        )
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=4096).to(model.device)
     with torch.no_grad():
         output = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
     response = tokenizer.decode(output[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
@@ -217,7 +247,8 @@ def evaluate_code_execution(model, tokenizer, bench_cfg: dict) -> dict:
     correct, total = 0, 0
     t0 = time.time()
     for ex in ds:
-        prompt = f"Write a Python function.\n\n{ex.get('text', '')}\n\nProvide only the code."
+        task_desc = ex.get("prompt", ex.get("text", ""))
+        prompt = f"Write a Python function.\n\n{task_desc}\n\nProvide only the code, no explanations."
         response = generate_response(model, tokenizer, prompt)
         code = _extract_code_block(response)
         test_list = ex.get("test_list", [])

@@ -282,11 +282,26 @@ def run_pairwise_baselines(loras: dict, output_dir: str, config: dict) -> dict:
     for method_name, method_fn, kwargs, returns_lora_weights in baseline_configs:
         method_dir = os.path.join(baseline_dir, method_name)
         os.makedirs(method_dir, exist_ok=True)
+        # Skip if all pairs already computed
+        existing = [f for f in os.listdir(method_dir) if f.endswith(".pt")]
+        if len(existing) >= len(pairs):
+            logger.info("  Baseline: %s — all %d pairs already exist, skipping", method_name, len(pairs))
+            method_results = {}
+            for d1, d2 in pairs:
+                name = f"{d1}+{d2}"
+                method_results[name] = {"pair": [d1, d2], "status": "cached"}
+            results[method_name] = method_results
+            continue
         method_results = {}
-        logger.info("  Baseline: %s (%d pairs)", method_name, len(pairs))
+        logger.info("  Baseline: %s (%d pairs, %d cached)", method_name, len(pairs), len(existing))
 
         for d1, d2 in pairs:
             name = f"{d1}+{d2}"
+            pt_path = os.path.join(method_dir, f"{name}.pt")
+            if os.path.exists(pt_path):
+                logger.info("    %s already exists, skipping", name)
+                method_results[name] = {"pair": [d1, d2], "status": "cached"}
+                continue
             t0 = time.time()
             merged = method_fn([loras[d1], loras[d2]], **kwargs)
             elapsed = time.time() - t0
@@ -296,16 +311,14 @@ def run_pairwise_baselines(loras: dict, output_dir: str, config: dict) -> dict:
                 save_as_peft(merged, os.path.join(method_dir, name), config)
             else:
                 delta = merged
-                rank = max(loras[d1].rank, loras[d2].rank)
-                lora_w = _delta_dict_to_lora(delta, name, rank)
-                save_as_peft(lora_w, os.path.join(method_dir, name), config)
-            torch.save(delta, os.path.join(method_dir, f"{name}.pt"))
+            torch.save(delta, pt_path)
             method_results[name] = {
                 "pair": [d1, d2],
                 "num_layers": len(delta),
                 "total_params": sum(v.numel() for v in delta.values()),
                 "time_seconds": round(elapsed, 3),
             }
+            del delta, merged
         results[method_name] = method_results
 
     return results

@@ -1,23 +1,12 @@
 {
-  "round": 6,
-  "threadId": null,
-  "status": "fixes_applied",
-  "last_score": 9.0,
-  "last_verdict": "Round-6 ARIS fixes: adapter round-trip prefix handling, BGD/similarity aggregation over all layers, full 12-domain evaluation coverage, unit tests added.",
-  "pending_experiments": [],
-  "timestamp": "2026-03-31T18:00:00+08:00",
-  "previous_score": 8.0,
-  "code_fixes_applied": "2026-03-31",
-  "estimated_score_after_fixes": 9.0,
-  "fixes_in_round_6": [
-    "from_state_dict() strips leading 'base_model.model.' prefix on load — prevents double-prefix on round-trip",
-    "to_state_dict() guards against double-prefix when internal keys already contain the prefix",
-    "compute_bgd_matrix() aggregates over ALL shared layers (was capped at 5)",
-    "compute_similarity_matrix() aggregates over ALL shared layers (was using first layer only)",
-    "Removed misleading num_sample_layers parameter from top-level compute_bgd_matrix()",
-    "eval_domain_accuracy.py default changed from CORE_EVAL_DOMAINS (6) to ALL_EVAL_DOMAINS (all 12)",
-    "Added creative_writing and translation as synthetic benchmarks in DOMAIN_BENCHMARKS",
-    "domains.yaml marks creative_writing and translation with eval_mode: synthetic",
-    "Created tests/test_text2subspace.py: adapter round-trip, BGD all-layers, similarity all-layers, domain coverage, GrassMerge sanity"
-  ]
+  "round": 7,
+  "threadId": "019d5e69-75ba-7ec2-bfc5-794dd0f1e580",
+  "status": "in_progress",
+  "difficulty": "medium",
+  "last_score": 3.0,
+  "last_verdict": "Not ready — too incomplete empirically for any acceptance tier",
+  "pending_experiments": ["full_eval_pipeline"],
+  "timestamp": "2026-04-05T16:10:00+08:00",
+  "previous_score": 9.0,
+  "score_history": [4, 5.5, 6, 5, 8, 9, 3]
 }

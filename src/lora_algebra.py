@@ -617,69 +617,108 @@ class TSPAMerge:
 class MergingBaselines:
     @staticmethod
     def task_arithmetic(loras: List[LoRAWeights], scaling: float = 1.0) -> Dict[str, torch.Tensor]:
-        all_deltas = [lora.to_delta_weight() for lora in loras]
+        # Memory-efficient: compute deltas one layer at a time
         all_keys = set()
-        for d in all_deltas:
-            all_keys |= set(d.keys())
+        for lora in loras:
+            all_keys |= set(lora.lora_A.keys()) & set(lora.lora_B.keys())
         merged = {}
-        for key in all_keys:
-            stack = [d[key] for d in all_deltas if key in d]
-            merged[key] = scaling * torch.stack(stack).sum(dim=0)
+        for key in sorted(all_keys):
+            layer_deltas = []
+            for lora in loras:
+                if key in lora.lora_A and key in lora.lora_B:
+                    layer_deltas.append((lora.lora_B[key] @ lora.lora_A[key]) * lora.alpha)
+            if layer_deltas:
+                merged[key] = scaling * torch.stack(layer_deltas).sum(dim=0)
         return merged
 
     @staticmethod
     def task_arithmetic_avg(loras: List[LoRAWeights], scaling: float = 1.0) -> Dict[str, torch.Tensor]:
-        all_deltas = [lora.to_delta_weight() for lora in loras]
+        # Memory-efficient: compute deltas one layer at a time
         all_keys = set()
-        for d in all_deltas:
-            all_keys |= set(d.keys())
+        for lora in loras:
+            all_keys |= set(lora.lora_A.keys()) & set(lora.lora_B.keys())
         merged = {}
-        for key in all_keys:
-            stack = [d[key] for d in all_deltas if key in d]
-            merged[key] = scaling * torch.stack(stack).mean(dim=0)
+        for key in sorted(all_keys):
+            layer_deltas = []
+            for lora in loras:
+                if key in lora.lora_A and key in lora.lora_B:
+                    layer_deltas.append((lora.lora_B[key] @ lora.lora_A[key]) * lora.alpha)
+            if layer_deltas:
+                merged[key] = scaling * torch.stack(layer_deltas).mean(dim=0)
         return merged
 
     @staticmethod
     def ties_merging(
         loras: List[LoRAWeights], density: float = 0.5, scaling: float = 1.0
     ) -> Dict[str, torch.Tensor]:
-        all_deltas = [lora.to_delta_weight() for lora in loras]
+        # GPU-accelerated, one layer at a time to manage memory
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         all_keys = set()
-        for d in all_deltas:
-            all_keys |= set(d.keys())
+        for lora in loras:
+            all_keys |= set(lora.lora_A.keys()) & set(lora.lora_B.keys())
         merged = {}
-        for key in all_keys:
-            stack = torch.stack([d[key] for d in all_deltas if key in d])
+        for key in sorted(all_keys):
+            layer_deltas = []
+            for lora in loras:
+                if key in lora.lora_A and key in lora.lora_B:
+                    d = (lora.lora_B[key].to(device) @ lora.lora_A[key].to(device)) * lora.alpha
+                    layer_deltas.append(d)
+            if not layer_deltas:
+                continue
+            stack = torch.stack(layer_deltas)
+            del layer_deltas
             k = int(density * stack[0].numel())
             trimmed = stack.clone()
+            del stack
             for i in range(trimmed.shape[0]):
                 flat = trimmed[i].abs().flatten()
                 if k < flat.numel():
-                    threshold = flat.topk(k).values[-1]
+                    threshold = flat.kthvalue(flat.numel() - k + 1).values
                     trimmed[i][trimmed[i].abs() < threshold] = 0.0
             sign_votes = torch.sign(trimmed).sum(dim=0)
             elected_sign = torch.sign(sign_votes)
+            del sign_votes
             elected_sign[elected_sign == 0] = 1.0
             mask = torch.sign(trimmed) == elected_sign.unsqueeze(0)
+            del elected_sign
             trimmed[~mask] = 0.0
             counts = mask.float().sum(dim=0).clamp(min=1.0)
-            merged[key] = scaling * trimmed.sum(dim=0) / counts
+            del mask
+            merged[key] = (scaling * trimmed.sum(dim=0) / counts).cpu()
+            del trimmed, counts
+            if device.type == "cuda":
+                torch.cuda.empty_cache()
         return merged
 
     @staticmethod
     def dare_merging(
         loras: List[LoRAWeights], drop_rate: float = 0.5, scaling: float = 1.0
     ) -> Dict[str, torch.Tensor]:
-        all_deltas = [lora.to_delta_weight() for lora in loras]
+        # GPU-accelerated, one layer at a time
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         all_keys = set()
-        for d in all_deltas:
-            all_keys |= set(d.keys())
+        for lora in loras:
+            all_keys |= set(lora.lora_A.keys()) & set(lora.lora_B.keys())
         merged = {}
-        for key in all_keys:
-            stack = torch.stack([d[key] for d in all_deltas if key in d])
-            mask = torch.bernoulli(torch.full_like(stack, 1.0 - drop_rate))
+        gen = torch.Generator(device=device)
+        gen.manual_seed(42)
+        for key in sorted(all_keys):
+            layer_deltas = []
+            for lora in loras:
+                if key in lora.lora_A and key in lora.lora_B:
+                    d = (lora.lora_B[key].to(device) @ lora.lora_A[key].to(device)) * lora.alpha
+                    layer_deltas.append(d)
+            if not layer_deltas:
+                continue
+            stack = torch.stack(layer_deltas)
+            del layer_deltas
+            mask = torch.bernoulli(torch.full_like(stack, 1.0 - drop_rate), generator=gen)
             rescaled = stack * mask / (1.0 - drop_rate)
-            merged[key] = scaling * rescaled.mean(dim=0)
+            del stack, mask
+            merged[key] = (scaling * rescaled.mean(dim=0)).cpu()
+            del rescaled
+            if device.type == "cuda":
+                torch.cuda.empty_cache()
         return merged
 
 
