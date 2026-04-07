@@ -247,7 +247,7 @@ def generate_latex_table(eval_results: dict) -> str:
 
 
 def main():
-    results_dir = Path("/home/claude/nips-text2subspace/results")
+    results_dir = Path(__file__).resolve().parent.parent / "results"
 
     eval_results = load_json(str(results_dir / "eval" / "eval_results.json"))
     algebra_results = load_json(str(results_dir / "algebra" / "all_algebra_results.json"))

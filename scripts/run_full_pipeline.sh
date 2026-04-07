@@ -3,8 +3,7 @@
 # Run AFTER domain LoRA training is complete
 set -e
 
-export PATH="/home/claude/.local/bin:$PATH"
-cd /home/claude/nips-text2subspace
+cd "$(dirname "$0")/.."
 
 SEED=42
 CONFIG=configs/domains.yaml

@@ -19,7 +19,7 @@ MODEL_9B="/data/szs/share/Qwen3.5-9B"
 
 # === Environment ===
 export HF_HOME="${DATA_DIR}/hf_cache"
-export HF_ENDPOINT="${HF_ENDPOINT:-https://hf-mirror.com}"
+# HF_ENDPOINT removed (use default huggingface.co)
 export TRANSFORMERS_CACHE="${HF_HOME}/hub"
 export TOKENIZERS_PARALLELISM=false
 export NCCL_P2P_DISABLE="${NCCL_P2P_DISABLE:-0}"

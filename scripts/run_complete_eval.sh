@@ -2,8 +2,7 @@
 # Complete evaluation pipeline: all methods, all domains, 200 samples
 # GPU runs eval, CPU runs ablations in parallel
 set -e
-export PATH="/home/claude/.local/bin:$PATH"
-cd /home/claude/nips-text2subspace
+cd "$(dirname "$0")/.."
 
 CONFIG=configs/domains.yaml
 LORA_DIR=results/domain_loras

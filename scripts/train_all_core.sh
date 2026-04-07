@@ -3,8 +3,7 @@
 # Usage: bash scripts/train_all_core.sh [max_samples]
 set -e
 
-export PATH="/home/claude/.local/bin:$PATH"
-cd /home/claude/nips-text2subspace
+cd "$(dirname "$0")/.."
 
 MAX_SAMPLES=${1:-10000}
 SEED=42

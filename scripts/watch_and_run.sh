@@ -1,8 +1,7 @@
 #!/bin/bash
 # Watch for training completion and auto-launch downstream experiments
 set -e
-export PATH="/home/claude/.local/bin:$PATH"
-cd /home/claude/nips-text2subspace
+cd "$(dirname "$0")/.."
 
 LORA_DIR=results/domain_loras
 REQUIRED_DOMAINS="math code medical science history philosophy"
