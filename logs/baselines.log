@@ -1,0 +1,18 @@
+2026-04-05 09:33:49,273 [INFO] Loading 12 domain LoRAs from results/domain_loras
+2026-04-05 09:33:49,273 [INFO] Loading LoRA: math
+2026-04-05 09:33:49,912 [INFO] Loading LoRA: code
+2026-04-05 09:33:50,522 [INFO] Loading LoRA: medical
+2026-04-05 09:33:51,219 [WARNING] LoRA for 'legal' not found at results/domain_loras/legal, skipping
+2026-04-05 09:33:51,219 [WARNING] LoRA for 'finance' not found at results/domain_loras/finance, skipping
+2026-04-05 09:33:51,219 [INFO] Loading LoRA: science
+2026-04-05 09:33:52,020 [INFO] Loading LoRA: history
+2026-04-05 09:33:52,813 [WARNING] LoRA for 'geography' not found at results/domain_loras/geography, skipping
+2026-04-05 09:33:52,813 [INFO] Loading LoRA: philosophy
+2026-04-05 09:33:53,520 [WARNING] LoRA for 'psychology' not found at results/domain_loras/psychology, skipping
+2026-04-05 09:33:53,520 [WARNING] LoRA for 'creative_writing' not found at results/domain_loras/creative_writing, skipping
+2026-04-05 09:33:53,520 [WARNING] LoRA for 'translation' not found at results/domain_loras/translation, skipping
+2026-04-05 09:33:53,520 [INFO] Loaded 6 LoRAs: ['code', 'history', 'math', 'medical', 'philosophy', 'science']
+2026-04-05 09:33:53,520 [INFO] ==================================================
+2026-04-05 09:33:53,520 [INFO]   PHASE 4: Pairwise Baseline Comparisons
+2026-04-05 09:33:53,520 [INFO] ==================================================
+2026-04-05 09:33:53,520 [INFO]   Baseline: task_arithmetic (15 pairs)

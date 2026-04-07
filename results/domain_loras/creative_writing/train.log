@@ -1,448 +1,0 @@
-2026-03-27 17:50:02,067 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,067 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,067 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,220 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,221 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,221 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,226 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,227 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,227 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,252 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,252 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,252 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,261 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,261 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,261 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,302 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,302 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,302 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,303 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,304 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,304 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,304 [INFO] === Training LoRA for domain: creative_writing ===
-2026-03-27 17:50:02,305 [INFO] Base model: Qwen/Qwen3.5-9B
-2026-03-27 17:50:02,305 [INFO] Output: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/results/domain_loras/creative_writing
-2026-03-27 17:50:02,582 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:02,709 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:02,780 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:02,833 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:02,878 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:02,905 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:02,930 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:02,932 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,026 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,037 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,077 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,143 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,236 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,237 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,264 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,273 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,348 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,361 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,378 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,409 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,455 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,480 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,511 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,536 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,613 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,641 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,656 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,660 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,723 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,765 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,766 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,766 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,792 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:03,844 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,867 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:03,899 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:03,916 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:03,930 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,015 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,056 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,059 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:04,217 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,227 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,286 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:04,350 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:04,351 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:04,430 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,440 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,520 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,520 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,560 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:04,561 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:04,679 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,698 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:04,934 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:05,210 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:05,428 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:05,486 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:05,536 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:05,585 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:05,645 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:05,865 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:05,930 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:05,961 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:05,992 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:05,992 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,035 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,077 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:06,107 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:06,121 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:06,146 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:06,239 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,341 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,380 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,478 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,498 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,510 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:06,602 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,609 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:06,632 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,797 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,800 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:06,833 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,846 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-2026-03-27 17:50:06,853 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,938 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:06,938 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:06,943 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:07,065 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,115 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/tokenizer_config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,145 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:07,228 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:07,256 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:07,285 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,297 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:07,340 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,356 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:07,360 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:07,394 [INFO] Using attention implementation: flash_attention_2
-2026-03-27 17:50:07,408 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:07,510 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,649 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:07,654 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 48072.25it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-2026-03-27 17:50:07,713 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:07,748 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:07,769 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:07,774 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:07,912 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:07,932 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:08,006 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:08,034 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]2026-03-27 17:50:08,127 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:08,154 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:08,194 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:08,263 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-Loading weights:   0%|          | 1/427 [00:00<01:35,  4.45it/s]2026-03-27 17:50:08,380 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:08,406 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 39756.44it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-2026-03-27 17:50:08,522 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:08,542 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:   0%|          | 2/427 [00:00<01:46,  4.00it/s]2026-03-27 17:50:08,602 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:08,611 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:08,684 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Loading weights:   6%|▋         | 27/427 [00:00<00:06, 64.04it/s]2026-03-27 17:50:08,801 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 55370.35it/s]
-Loading weights:  11%|█         | 46/427 [00:00<00:04, 92.73it/s]The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-2026-03-27 17:50:08,886 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:08,886 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Loading weights:  15%|█▌        | 65/427 [00:00<00:03, 118.16it/s]2026-03-27 17:50:08,915 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-Loading weights:  19%|█▉        | 81/427 [00:00<00:02, 124.46it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 48210.39it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-2026-03-27 17:50:09,106 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 100/427 [00:01<00:02, 140.98it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 121/427 [00:01<00:01, 153.09it/s]2026-03-27 17:50:09,317 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B "HTTP/1.1 200 OK"
-Loading weights:  34%|███▍      | 147/427 [00:01<00:01, 174.83it/s]Loading weights:   0%|          | 1/427 [00:00<01:56,  3.67it/s]2026-03-27 17:50:09,432 [INFO] Using attention implementation: flash_attention_2
-Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  39%|███▉      | 166/427 [00:01<00:01, 173.28it/s]Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 178.12it/s]Loading weights:  48%|████▊     | 205/427 [00:01<00:01, 174.33it/s]Loading weights:   0%|          | 1/427 [00:00<03:32,  2.01it/s]2026-03-27 17:50:09,715 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:09,771 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  53%|█████▎    | 226/427 [00:01<00:01, 181.54it/s]Loading weights:   0%|          | 2/427 [00:00<02:30,  2.83it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:07, 52.80it/s]Loading weights:  58%|█████▊    | 249/427 [00:01<00:00, 190.13it/s]Loading weights:  10%|▉         | 42/427 [00:00<00:04, 83.23it/s]Loading weights:   6%|▋         | 27/427 [00:00<00:08, 49.37it/s]2026-03-27 17:50:09,921 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-2026-03-27 17:50:09,921 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-`torch_dtype` is deprecated! Use `dtype` instead!
-2026-03-27 17:50:09,952 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Loading weights:  15%|█▍        | 63/427 [00:00<00:03, 115.08it/s]Loading weights:  10%|█         | 43/427 [00:00<00:05, 71.66it/s]Loading weights:  63%|██████▎   | 269/427 [00:01<00:00, 176.49it/s]Loading weights:  19%|█▉        | 81/427 [00:00<00:02, 128.58it/s]Loading weights:  15%|█▌        | 66/427 [00:01<00:03, 106.59it/s]2026-03-27 17:50:10,124 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:   0%|          | 1/427 [00:00<04:53,  1.45it/s]Loading weights:  68%|██████▊   | 292/427 [00:02<00:00, 188.72it/s]Loading weights:  19%|█▉        | 82/427 [00:01<00:02, 118.05it/s]2026-03-27 17:50:10,228 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  23%|██▎       | 100/427 [00:01<00:02, 137.99it/s]Loading weights:   6%|▌         | 26/427 [00:00<00:09, 43.62it/s]2026-03-27 17:50:10,269 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 51941.85it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-2026-03-27 17:50:10,289 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Loading weights:  73%|███████▎  | 312/427 [00:02<00:00, 168.16it/s]2026-03-27 17:50:10,330 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  10%|█         | 43/427 [00:00<00:05, 67.74it/s]Loading weights:  30%|███       | 129/427 [00:01<00:01, 175.28it/s]Loading weights:  23%|██▎       | 100/427 [00:01<00:02, 126.43it/s]Loading weights:  78%|███████▊  | 333/427 [00:02<00:00, 175.81it/s]Loading weights:  15%|█▌        | 66/427 [00:01<00:03, 99.31it/s]Loading weights:  30%|██▉       | 126/427 [00:01<00:01, 155.75it/s]Loading weights:  35%|███▌      | 150/427 [00:01<00:01, 161.59it/s]Loading weights:  84%|████████▍ | 358/427 [00:02<00:00, 189.42it/s]Loading weights:  19%|█▉        | 83/427 [00:01<00:03, 113.58it/s]Loading weights:  35%|███▍      | 148/427 [00:01<00:01, 167.31it/s]Loading weights:  40%|████      | 172/427 [00:01<00:01, 172.84it/s]Loading weights:  89%|████████▉ | 380/427 [00:02<00:00, 194.17it/s]2026-03-27 17:50:10,637 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
-Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  39%|███▉      | 167/427 [00:01<00:01, 171.53it/s]Loading weights:  23%|██▎       | 100/427 [00:01<00:02, 117.60it/s]Loading weights:  45%|████▍     | 191/427 [00:01<00:01, 177.31it/s]Loading weights:  94%|█████████▎| 400/427 [00:02<00:00, 181.60it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 47798.34it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 173.30it/s]Loading weights:  49%|████▉     | 210/427 [00:01<00:01, 176.50it/s]Loading weights:  30%|███       | 129/427 [00:01<00:01, 154.12it/s]Loading weights:  98%|█████████▊| 419/427 [00:02<00:00, 166.88it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 151.65it/s]
-2026-03-27 17:50:10,917 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  48%|████▊     | 205/427 [00:01<00:01, 163.57it/s]Loading weights:  55%|█████▌    | 235/427 [00:01<00:00, 193.09it/s]Loading weights:  35%|███▍      | 148/427 [00:01<00:01, 160.75it/s]Loading weights:   0%|          | 1/427 [00:00<02:04,  3.41it/s]Loading weights:  53%|█████▎    | 225/427 [00:01<00:01, 170.00it/s]Loading weights:  39%|███▉      | 167/427 [00:01<00:01, 164.57it/s]Loading weights:  60%|█████▉    | 255/427 [00:01<00:01, 170.58it/s]2026-03-27 17:50:11,086 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Loading weights:  57%|█████▋    | 243/427 [00:02<00:01, 169.16it/s]Loading weights:  44%|████▎     | 186/427 [00:01<00:01, 167.48it/s]2026-03-27 17:50:11,149 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/model.safetensors.index.json "HTTP/1.1 200 OK"
-Loading weights:  65%|██████▌   | 278/427 [00:01<00:00, 185.08it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  48%|████▊     | 204/427 [00:01<00:01, 161.37it/s]2026-03-27 17:50:11,269 [INFO] HTTP Request: GET https://hf-mirror.com/api/models/Qwen/Qwen3.5-9B/revision/main "HTTP/1.1 200 OK"
-Loading weights:  61%|██████    | 261/427 [00:02<00:01, 154.94it/s]Loading weights:  70%|██████▉   | 298/427 [00:02<00:00, 183.79it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 43690.67it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-Loading weights:   0%|          | 2/427 [00:00<02:20,  3.02it/s]Loading weights:  52%|█████▏    | 224/427 [00:01<00:01, 170.40it/s]Loading weights:  66%|██████▌   | 280/427 [00:02<00:00, 158.73it/s]Loading weights:  74%|███████▍  | 317/427 [00:02<00:00, 166.25it/s]Loading weights:   6%|▌         | 25/427 [00:00<00:08, 48.40it/s]Loading weights:  70%|██████▉   | 298/427 [00:02<00:00, 162.72it/s]Loading weights:  57%|█████▋    | 242/427 [00:02<00:01, 161.45it/s]Loading weights:  80%|████████  | 342/427 [00:02<00:00, 182.76it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 72.21it/s]Loading weights:  61%|██████    | 259/427 [00:02<00:01, 162.21it/s]Loading weights:  74%|███████▍  | 315/427 [00:02<00:00, 154.96it/s]2026-03-27 17:50:11,639 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-Loading weights:  13%|█▎        | 54/427 [00:00<00:04, 85.14it/s]Loading weights:  85%|████████▍ | 361/427 [00:02<00:00, 179.19it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 161.06it/s]Loading weights:  78%|███████▊  | 333/427 [00:02<00:00, 156.31it/s]Loading weights:  18%|█▊        | 77/427 [00:01<00:02, 120.17it/s]Loading weights:  90%|████████▉ | 384/427 [00:02<00:00, 188.31it/s]Loading weights:  71%|███████▏  | 305/427 [00:02<00:00, 186.71it/s]Loading weights:  83%|████████▎ | 354/427 [00:02<00:00, 168.05it/s]Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 31242.49it/s]
-The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
-Loading weights:  22%|██▏       | 95/427 [00:01<00:02, 131.80it/s]Loading weights:  95%|█████████▍| 404/427 [00:02<00:00, 188.42it/s]Loading weights:   0%|          | 1/427 [00:00<04:46,  1.49it/s]Loading weights:  76%|███████▌  | 325/427 [00:02<00:00, 182.09it/s]Loading weights:  87%|████████▋ | 371/427 [00:02<00:00, 156.30it/s]Loading weights:  27%|██▋       | 115/427 [00:01<00:02, 146.18it/s]2026-03-27 17:50:11,981 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:   6%|▌         | 25/427 [00:00<00:09, 43.20it/s]Loading weights:  99%|█████████▉| 424/427 [00:02<00:00, 161.83it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 150.49it/s]
-Loading weights:  81%|████████  | 344/427 [00:02<00:00, 174.89it/s]Loading weights:  91%|█████████ | 387/427 [00:02<00:00, 154.31it/s]Loading weights:  31%|███       | 132/427 [00:01<00:01, 151.68it/s]Loading weights:  10%|▉         | 41/427 [00:00<00:05, 65.64it/s]2026-03-27 17:50:12,098 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  96%|█████████▌| 410/427 [00:03<00:00, 174.01it/s]Loading weights:  85%|████████▍ | 362/427 [00:02<00:00, 162.08it/s]Loading weights:  13%|█▎        | 56/427 [00:00<00:04, 83.93it/s]Loading weights:  35%|███▍      | 149/427 [00:01<00:01, 146.63it/s]Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:  89%|████████▉ | 382/427 [00:02<00:00, 170.83it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 134.21it/s]
-Loading weights:  19%|█▊        | 79/427 [00:01<00:02, 117.33it/s]Loading weights:  40%|████      | 172/427 [00:01<00:01, 162.89it/s]Loading weights:   0%|          | 1/427 [00:00<04:43,  1.50it/s]2026-03-27 17:50:12,388 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:12,389 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:12,392 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-Loading weights:  44%|████▍     | 190/427 [00:01<00:01, 162.47it/s]Loading weights:  23%|██▎       | 97/427 [00:01<00:02, 124.93it/s]Loading weights:  94%|█████████▎| 400/427 [00:03<00:00, 152.31it/s]Loading weights:   6%|▌         | 26/427 [00:00<00:08, 45.20it/s]Loading weights:  28%|██▊       | 119/427 [00:01<00:02, 144.78it/s]Loading weights:  48%|████▊     | 207/427 [00:01<00:01, 152.99it/s]Loading weights:  98%|█████████▊| 418/427 [00:03<00:00, 156.03it/s]Loading weights:   0%|          | 1/427 [00:00<02:02,  3.49it/s]Loading weights:  10%|▉         | 42/427 [00:00<00:05, 66.93it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 135.31it/s]
-Loading weights:  32%|███▏      | 137/427 [00:01<00:01, 148.32it/s]Loading weights:  53%|█████▎    | 227/427 [00:01<00:01, 164.78it/s]2026-03-27 17:50:12,668 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:12,674 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-Loading weights:  15%|█▍        | 62/427 [00:00<00:03, 95.91it/s]Loading weights:  59%|█████▉    | 252/427 [00:02<00:00, 185.92it/s]Loading weights:  36%|███▌      | 154/427 [00:01<00:01, 145.18it/s]2026-03-27 17:50:12,789 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-Loading weights:  19%|█▉        | 81/427 [00:01<00:03, 113.98it/s]Loading weights:  41%|████      | 174/427 [00:01<00:01, 158.15it/s]Loading weights:   0%|          | 2/427 [00:00<02:14,  3.16it/s]Loading weights:  64%|██████▎   | 272/427 [00:02<00:00, 167.53it/s]Loading weights:  23%|██▎       | 99/427 [00:01<00:02, 126.91it/s]2026-03-27 17:50:12,960 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  46%|████▋     | 198/427 [00:01<00:01, 180.24it/s]Loading weights:   6%|▌         | 24/427 [00:00<00:08, 48.03it/s]2026-03-27 17:50:12,998 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-Loading weights:  68%|██████▊   | 292/427 [00:02<00:00, 167.86it/s]Loading weights:  28%|██▊       | 120/427 [00:01<00:02, 143.36it/s]2026-03-27 17:50:13,068 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:13,069 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  51%|█████     | 218/427 [00:01<00:01, 179.07it/s]Loading weights:  10%|▉         | 42/427 [00:00<00:05, 75.55it/s]Loading weights:  33%|███▎      | 141/427 [00:01<00:01, 157.87it/s]Loading weights:  73%|███████▎  | 311/427 [00:02<00:00, 168.91it/s]Loading weights:  56%|█████▌    | 239/427 [00:01<00:01, 180.42it/s]Loading weights:  15%|█▍        | 62/427 [00:00<00:03, 104.95it/s]Loading weights:  78%|███████▊  | 331/427 [00:02<00:00, 176.98it/s]Loading weights:  37%|███▋      | 159/427 [00:01<00:01, 159.43it/s]Loading weights:  19%|█▉        | 81/427 [00:01<00:02, 123.09it/s]Loading weights:  60%|██████    | 258/427 [00:02<00:00, 170.14it/s]Loading weights:  82%|████████▏ | 350/427 [00:02<00:00, 178.37it/s]Loading weights:  42%|████▏     | 179/427 [00:01<00:01, 170.41it/s]2026-03-27 17:50:13,353 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:13,354 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:13,355 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:13,367 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:13,381 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  23%|██▎       | 99/427 [00:01<00:02, 132.43it/s]Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 174.61it/s]Loading weights:  47%|████▋     | 199/427 [00:01<00:01, 169.16it/s]Loading weights:  86%|████████▋ | 369/427 [00:02<00:00, 169.32it/s]Loading weights:  71%|███████   | 302/427 [00:02<00:00, 189.39it/s]Loading weights:  28%|██▊       | 120/427 [00:01<00:02, 148.07it/s]Loading weights:  51%|█████     | 217/427 [00:01<00:01, 167.80it/s]2026-03-27 17:50:13,586 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  92%|█████████▏| 394/427 [00:02<00:00, 176.37it/s]Loading weights:  34%|███▎      | 144/427 [00:01<00:01, 170.88it/s]Loading weights:  75%|███████▌  | 322/427 [00:02<00:00, 178.15it/s]2026-03-27 17:50:13,679 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  56%|█████▌    | 239/427 [00:01<00:01, 177.58it/s]Loading weights:  97%|█████████▋| 413/427 [00:03<00:00, 176.90it/s]Loading weights:  38%|███▊      | 163/427 [00:01<00:01, 168.29it/s]Loading weights:  81%|████████  | 345/427 [00:02<00:00, 189.40it/s]Loading weights:  60%|██████    | 258/427 [00:02<00:00, 174.36it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 136.94it/s]
-2026-03-27 17:50:13,847 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/euclaise/writingprompts/euclaise/writingprompts.py "HTTP/1.1 404 Not Found"
-Loading weights:  43%|████▎     | 185/427 [00:01<00:01, 181.08it/s]2026-03-27 17:50:13,910 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:13,911 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:13,911 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-Loading weights:  65%|██████▌   | 279/427 [00:02<00:00, 175.06it/s]Loading weights:  85%|████████▌ | 365/427 [00:02<00:00, 171.24it/s]2026-03-27 17:50:13,931 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-2026-03-27 17:50:13,999 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/revision/35f0aa359452ba8147b34d925684fccee26679cc "HTTP/1.1 200 OK"
-Loading weights:  48%|████▊     | 204/427 [00:01<00:01, 170.77it/s]Loading weights:  70%|███████   | 299/427 [00:02<00:00, 176.31it/s]Loading weights:  91%|█████████ | 387/427 [00:02<00:00, 182.87it/s]Loading weights:  53%|█████▎    | 225/427 [00:01<00:01, 177.78it/s]Loading weights:  74%|███████▍  | 317/427 [00:02<00:00, 176.81it/s]Loading weights:  96%|█████████▋| 412/427 [00:02<00:00, 195.23it/s]2026-03-27 17:50:14,143 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  57%|█████▋    | 244/427 [00:01<00:01, 180.35it/s]2026-03-27 17:50:14,217 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  80%|███████▉  | 341/427 [00:02<00:00, 190.40it/s]Loading weights: 100%|██████████| 427/427 [00:03<00:00, 140.96it/s]
-2026-03-27 17:50:14,247 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:14,315 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-Loading weights:  62%|██████▏   | 263/427 [00:02<00:00, 171.43it/s]Loading weights:  85%|████████▍ | 361/427 [00:02<00:00, 179.28it/s]2026-03-27 17:50:14,368 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  67%|██████▋   | 288/427 [00:02<00:00, 188.57it/s]Loading weights:  90%|████████▉ | 384/427 [00:02<00:00, 189.57it/s]2026-03-27 17:50:14,487 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-Loading weights:  72%|███████▏  | 308/427 [00:02<00:00, 179.96it/s]Loading weights:  95%|█████████▍| 404/427 [00:02<00:00, 186.64it/s]2026-03-27 17:50:14,659 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-Loading weights:  78%|███████▊  | 331/427 [00:02<00:00, 191.92it/s]Loading weights:  99%|█████████▉| 423/427 [00:02<00:00, 177.37it/s]2026-03-27 17:50:14,713 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:14,714 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:14,714 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-Loading weights: 100%|██████████| 427/427 [00:03<00:00, 141.99it/s]
-2026-03-27 17:50:14,718 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/.huggingface.yaml "HTTP/1.1 404 Not Found"
-Loading weights:  82%|████████▏ | 351/427 [00:02<00:00, 188.98it/s]2026-03-27 17:50:14,805 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  87%|████████▋ | 371/427 [00:02<00:00, 180.45it/s]2026-03-27 17:50:14,935 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-Loading weights:  93%|█████████▎| 395/427 [00:02<00:00, 195.71it/s]2026-03-27 17:50:15,048 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-Loading weights:  97%|█████████▋| 415/427 [00:02<00:00, 185.47it/s]Loading weights: 100%|██████████| 427/427 [00:02<00:00, 145.91it/s]
-2026-03-27 17:50:15,236 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,237 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:15,237 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:15,335 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,347 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,396 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc/data?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,407 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,472 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/euclaise/writingprompts/euclaise/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,536 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc?recursive=false&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,640 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/revision/35f0aa359452ba8147b34d925684fccee26679cc "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,654 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:15,689 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,690 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:15,765 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:15,798 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,811 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-2026-03-27 17:50:15,899 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/generation_config.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:15,943 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/.huggingface.yaml "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:16,081 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:16,082 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:16,082 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:16,138 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-03-27 17:50:16,138 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-03-27 17:50:16,292 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/euclaise/writingprompts/euclaise/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:16,336 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/dataset_infos.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:16,351 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:16,384 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:16,423 [INFO] Loaded 0 examples for domain Creative Writing
-2026-03-27 17:50:16,423 [INFO] trl version: 0.29.1
-warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
-2026-03-27 17:50:16,514 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-2026-03-27 17:50:16,586 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:16,626 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/revision/35f0aa359452ba8147b34d925684fccee26679cc "HTTP/1.1 200 OK"
-2026-03-27 17:50:16,667 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc/data?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:16,819 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:16,820 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:16,820 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:16,909 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc?recursive=false&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:16,945 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/.huggingface.yaml "HTTP/1.1 404 Not Found"
-[rank5]: Traceback (most recent call last):
-[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 223, in <module>
-[rank5]:     main()
-[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 205, in main
-[rank5]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
-[rank5]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 828, in __init__
-[rank5]:     dataset_sample = next(iter(train_dataset))
-[rank5]: StopIteration
-2026-03-27 17:50:17,095 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/euclaise/writingprompts/euclaise/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,176 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/euclaise/writingprompts/euclaise/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,258 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
-2026-03-27 17:50:17,284 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/revision/35f0aa359452ba8147b34d925684fccee26679cc "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,285 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/dataset_infos.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,313 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/models/Qwen/Qwen3.5-9B/c202236235762e1c871ad0ccb60c8ee5ba337b9a/config.json "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,331 [INFO] Loaded 0 examples for domain Creative Writing
-2026-03-27 17:50:17,331 [INFO] trl version: 0.29.1
-warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
-2026-03-27 17:50:17,428 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc/data?recursive=true&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,435 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/revision/35f0aa359452ba8147b34d925684fccee26679cc "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,482 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,526 [INFO] HTTP Request: HEAD https://hf-mirror.com/api/resolve-cache/datasets/euclaise/writingprompts/35f0aa359452ba8147b34d925684fccee26679cc/README.md "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,555 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc?recursive=false&expand=false "HTTP/1.1 200 OK"
-2026-03-27 17:50:17,609 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/.huggingface.yaml "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,797 [INFO] HTTP Request: HEAD https://hf-mirror.com/Qwen/Qwen3.5-9B/resolve/main/custom_generate/generate.py "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:17,798 [INFO] Loading dataset euclaise/writingprompts (subset=None, max=20000)
-`trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:17,799 [ERROR] `trust_remote_code` is not supported anymore.
-Please check that the Hugging Face dataset 'euclaise/writingprompts' isn't based on a loading script and remove `trust_remote_code`.
-If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
-2026-03-27 17:50:17,825 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/.huggingface.yaml "HTTP/1.1 404 Not Found"
-[rank6]: Traceback (most recent call last):
-[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 223, in <module>
-[rank6]:     main()
-[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py", line 205, in main
-[rank6]:     trainer = SFTTrainer(**trainer_kwargs, processing_class=tokenizer)
-[rank6]:   File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/trl/trainer/sft_trainer.py", line 828, in __init__
-[rank6]:     dataset_sample = next(iter(train_dataset))
-[rank6]: StopIteration
-2026-03-27 17:50:17,924 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/writingprompts.py "HTTP/1.1 404 Not Found"
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-03-27 17:50:17,925 [WARNING] Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-2026-03-27 17:50:17,971 [INFO] HTTP Request: HEAD https://hf-mirror.com/datasets/euclaise/writingprompts/resolve/35f0aa359452ba8147b34d925684fccee26679cc/dataset_infos.json "HTTP/1.1 404 Not Found"
-2026-03-27 17:50:18,014 [INFO] Loaded 0 examples for domain Creative Writing
-2026-03-27 17:50:18,014 [INFO] trl version: 0.29.1
-2026-03-27 17:50:18,067 [INFO] HTTP Request: GET https://hf-mirror.com/api/datasets/euclaise/writingprompts/tree/35f0aa359452ba8147b34d925684fccee26679cc/data?recursive=true&expand=false "HTTP/1.1 200 OK"
-warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
-W0327 17:50:18.160000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31031 closing signal SIGTERM
-W0327 17:50:18.161000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31032 closing signal SIGTERM
-W0327 17:50:18.162000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31033 closing signal SIGTERM
-W0327 17:50:18.162000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31034 closing signal SIGTERM
-W0327 17:50:18.163000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31035 closing signal SIGTERM
-W0327 17:50:18.163000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31037 closing signal SIGTERM
-W0327 17:50:18.164000 30823 torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 31038 closing signal SIGTERM
-E0327 17:50:18.473000 30823 torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 5 (pid: 31036) of binary: /ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/python3
-Traceback (most recent call last):
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/bin/torchrun", line 10, in <module>
-    sys.exit(main())
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
-    return f(*args, **kwargs)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 991, in main
-    run(args)
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
-    elastic_launch(
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
-    return launch_agent(self._config, self._entrypoint, list(args))
-  File "/ytech_m2v4_hdd/mengzijie/nips-text2subspace/.venv/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
-    raise ChildFailedError(
-torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
-============================================================
-/ytech_m2v4_hdd/mengzijie/nips-text2subspace/scripts/train_domain_lora.py FAILED
-------------------------------------------------------------
-Failures:
-[1]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 0 (local_rank: 0)
-  exitcode  : -15 (pid: 31031)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31031
-[2]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 1 (local_rank: 1)
-  exitcode  : -15 (pid: 31032)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31032
-[3]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 2 (local_rank: 2)
-  exitcode  : -15 (pid: 31033)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31033
-[4]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 3 (local_rank: 3)
-  exitcode  : -15 (pid: 31034)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31034
-[5]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 4 (local_rank: 4)
-  exitcode  : -15 (pid: 31035)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31035
-[6]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 6 (local_rank: 6)
-  exitcode  : -15 (pid: 31037)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31037
-[7]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 7 (local_rank: 7)
-  exitcode  : -15 (pid: 31038)
-  error_file: <N/A>
-  traceback : Signal 15 (SIGTERM) received by PID 31038
-------------------------------------------------------------
-Root Cause (first observed failure):
-[0]:
-  time      : 2026-03-27_17:50:18
-  host      : rack-wlf2-ge26-29.idchb2az2.hb2.kwaidc.com
-  rank      : 5 (local_rank: 5)
-  exitcode  : 1 (pid: 31036)
-  error_file: <N/A>
-  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
-============================================================

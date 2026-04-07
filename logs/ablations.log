@@ -1,0 +1,4 @@
+2026-04-04 06:04:14,117 [INFO] Loading LoRAs from results/domain_loras
+2026-04-04 06:04:18,318 [INFO] Loaded 6 LoRAs: ['code', 'history', 'math', 'medical', 'philosophy', 'science']
+2026-04-04 06:04:18,319 [INFO] === Ablation: LoRA Rank ===
+2026-04-04 06:04:18,319 [INFO]   Rank=4

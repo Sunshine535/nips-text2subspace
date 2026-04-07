@@ -34,7 +34,6 @@ from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-import scripts.eval_domain_accuracy as eval_module
 from scripts.eval_domain_accuracy import (
     DOMAIN_BENCHMARKS,
     evaluate_code_execution,
@@ -64,11 +63,6 @@ RESULTS_FILE = "results/eval_comprehensive/eval_results.json"
 def load_config(path="configs/domains.yaml"):
     with open(path) as f:
         return yaml.safe_load(f)
-
-
-def set_peft_mode(is_peft):
-    """Toggle whether generate_response uses PEFT-compatible format (no thinking prefix)."""
-    eval_module._IS_PEFT_MODEL = is_peft
 
 
 def eval_on_domain(model, tokenizer, domain, max_samples=200):
@@ -213,7 +207,6 @@ def main():
             logger.info("=" * 60)
             logger.info("  PHASE: Base Model Evaluation")
             logger.info("=" * 60)
-            set_peft_mode(False)  # Base model: use enable_thinking=False
             model = AutoModelForCausalLM.from_pretrained(
                 base_model_name, dtype=torch.bfloat16, attn_implementation="sdpa", device_map="auto")
             model.eval()
@@ -237,7 +230,6 @@ def main():
         logger.info("=" * 60)
         logger.info("  PHASE: Individual LoRA Evaluation")
         logger.info("=" * 60)
-        set_peft_mode(True)  # PEFT LoRA: use training-compatible format
         individual = results.get("individual_loras", {})
         for domain in CORE_DOMAINS:
             if domain in individual and individual[domain]:
@@ -304,12 +296,10 @@ def main():
             if found_peft:
                 logger.info("  [%d/%d] GrassMerge %s (PEFT)", idx+1, len(pairs), pair_name)
                 model = PeftModel.from_pretrained(model, found_peft)
-                set_peft_mode(True)
             elif found_pt:
                 logger.info("  [%d/%d] GrassMerge %s (delta)", idx+1, len(pairs), pair_name)
                 delta = torch.load(found_pt, map_location="cpu")
                 apply_delta_to_model(model, delta)
-                set_peft_mode(False)
                 del delta
             else:
                 logger.warning("  No GrassMerge output for %s (tried %s and %s)", pair_name, pair_name, alt_name)
@@ -336,7 +326,6 @@ def main():
         logger.info("=" * 60)
         logger.info("  PHASE: Baseline Methods (merge + eval on-the-fly)")
         logger.info("=" * 60)
-        set_peft_mode(False)  # Baselines apply delta weights to base model
 
         # Load all LoRAs into memory
         loras = {}
@@ -349,10 +338,6 @@ def main():
             ("task_arithmetic", {"scaling": 1.0}),
             ("ties", {"density": 0.5}),
             ("dare", {"drop_rate": 0.5}),
-            ("knots", {}),
-            ("tspa", {}),
-            ("svd_procrustes", {}),
-            ("col_grassmann", {}),
         ]
 
         pairs = list(itertools.combinations(CORE_DOMAINS, 2))
@@ -414,7 +399,6 @@ def main():
         logger.info("=" * 60)
         logger.info("  PHASE: N-way Merge Evaluation")
         logger.info("=" * 60)
-        set_peft_mode(False)  # N-way uses delta weights
 
         loras = {}
         for d in CORE_DOMAINS:
@@ -424,8 +408,11 @@ def main():
 
         nway_results = results.get("nway", {})
 
-        for n in [3, 4, 6]:
+        for n in [3, 6]:
             combos = list(itertools.combinations(CORE_DOMAINS, n))
+            # Limit to 3 representative combos for 3-way, all for 6-way (only 1)
+            if n == 3:
+                combos = combos[:3]
             for combo in combos:
                 name = "+".join(combo)
 

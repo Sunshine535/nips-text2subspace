@@ -1,0 +1,10 @@
+2026-04-04 14:55:15,302 [INFO] Loading LoRAs from results/domain_loras
+2026-04-04 14:55:19,624 [INFO] Loaded 6 LoRAs: ['code', 'history', 'math', 'medical', 'philosophy', 'science']
+2026-04-04 14:55:19,624 [INFO] === Ablation: LoRA Rank ===
+2026-04-04 14:55:19,624 [INFO]   Rank=4
+2026-04-04 14:58:50,748 [INFO]   Rank=8
+2026-04-04 15:03:32,351 [INFO]   Rank=16
+2026-04-04 15:07:47,336 [INFO]   Rank=32
+2026-04-04 15:11:58,283 [INFO]   Rank=64
+2026-04-04 15:16:23,007 [INFO] === Ablation: Normalization ===
+2026-04-04 16:38:45,873 [INFO] === Ablation: Interpolation Type ===

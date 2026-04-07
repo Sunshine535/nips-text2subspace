@@ -198,29 +198,20 @@ def _strip_think_tags(text: str) -> str:
     return cleaned if cleaned else text
 
 
-_IS_PEFT_MODEL = False  # Set by caller to control format
-
-
 def generate_response(model, tokenizer, prompt: str, max_new_tokens: int = 2048, system_prompt: str = "") -> str:
-    global _IS_PEFT_MODEL
     messages = []
     if system_prompt:
         messages.append({"role": "system", "content": system_prompt})
     messages.append({"role": "user", "content": prompt})
-    # Format selection:
-    # - Base model / delta-weight models: use enable_thinking=False for direct answers
-    #   (Qwen3's designed API: adds <think>\n\n</think>\n\n prefix → model answers directly)
-    # - PEFT LoRA models: use default template (no thinking prefix) to match training format
-    #   (Training used raw <|im_start|>assistant\n{answer} without thinking prefix)
-    if _IS_PEFT_MODEL:
-        text = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True,
-        )
-    else:
-        text = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True,
-            enable_thinking=False,
-        )
+    # Always use enable_thinking=False for direct answers.
+    # This works for both base model and PEFT/merged models:
+    # - Base model: answers directly (designed API)
+    # - PEFT LoRA: answers directly (tested to work correctly)
+    # - Delta-weight merged: answers directly
+    text = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True,
+        enable_thinking=False,
+    )
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=4096).to(model.device)
     with torch.no_grad():
         output = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
