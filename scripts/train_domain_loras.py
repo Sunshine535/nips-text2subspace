@@ -162,7 +162,8 @@ def main():
                         help="Root dir for LoRA outputs (default: from config)")
     parser.add_argument("--domains", nargs="+", default=None,
                         help="Specific domains to train (default: all 12)")
-    parser.add_argument("--num_gpus", type=int, default=8)
+    parser.add_argument("--num_gpus", type=int, default=0,
+                        help="Number of GPUs (0 = auto-detect via torch.cuda.device_count())")
     parser.add_argument("--master_port_start", type=int, default=None)
     parser.add_argument("--force", action="store_true",
                         help="Retrain even if adapter_config.json exists")
@@ -192,12 +193,19 @@ def main():
     lora_cfg = config["lora"]
     train_cfg = config["training"]
 
+    # Auto-detect GPU count if not specified
+    if args.num_gpus <= 0:
+        args.num_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 0
+    if args.num_gpus == 0:
+        logger.error("No GPUs detected. Training requires at least 1 GPU.")
+        sys.exit(1)
+
     logger.info("=" * 60)
     logger.info("  LoRA Algebra — Train %d Domain LoRAs", len(domains))
     logger.info("  Base model: %s", config["base_model"])
     logger.info("  LoRA r=%d, alpha=%d, epochs=%d",
                 lora_cfg["r"], lora_cfg["lora_alpha"], train_cfg["num_train_epochs"])
-    logger.info("  GPUs: %d", args.num_gpus)
+    logger.info("  GPUs: %d (auto-detected)" if args.num_gpus == torch.cuda.device_count() else "  GPUs: %d", args.num_gpus)
     logger.info("  Output root: %s", output_root)
     logger.info("=" * 60)
 
