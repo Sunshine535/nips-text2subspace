@@ -21,5 +21,8 @@ evaluate>=0.4.0
 wandb>=0.18.0
 tensorboard>=2.18.0
 
+# SAE decomposition
+sae-lens>=4.0.0
+
 # Performance (installed separately in setup.sh with --no-build-isolation)
 flash-attn>=2.7.0

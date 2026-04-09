@@ -1,0 +1,13 @@
+{"from": "idea:001", "to": "paper:sails2026_sae_safety", "type": "inspired_by", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "paper:fsrl2025_anatomy_alignment", "type": "inspired_by", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "paper:rethinking2025_orthogonality", "type": "inspired_by", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "paper:stf2025_superpose_features", "type": "inspired_by", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "gap:G1", "type": "addresses_gap", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "gap:G2", "type": "addresses_gap", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "gap:G3", "type": "addresses_gap", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "gap:G4", "type": "addresses_gap", "created_at": "2026-04-09"}
+{"from": "idea:001", "to": "gap:G6", "type": "addresses_gap", "created_at": "2026-04-09"}
+{"from": "paper:stf2025_superpose_features", "to": "paper:sails2026_sae_safety", "type": "extends", "created_at": "2026-04-09", "note": "both move merging to feature/representation space"}
+{"from": "paper:fsrl2025_anatomy_alignment", "to": "paper:sails2026_sae_safety", "type": "extends", "created_at": "2026-04-09", "note": "both connect SAE features to adapters"}
+{"from": "paper:rethinking2025_orthogonality", "to": "gap:G2", "type": "addresses_gap", "created_at": "2026-04-09", "note": "identifies the problem but no solution"}
+{"from": "paper:scaling2025_merging_laws", "to": "gap:G3", "type": "addresses_gap", "created_at": "2026-04-09", "note": "empirical only, no theory"}

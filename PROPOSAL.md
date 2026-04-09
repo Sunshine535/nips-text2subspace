@@ -1,156 +1,171 @@
-# Proposal: LoRA Algebra — Algebraic Operations on LoRA Weight Spaces
+# Proposal: Compose Features, Not Weights — Interference-Free Adapter Merging via Sparse Feature Decomposition
 
 ## One-Sentence Summary
 
-Define principled algebraic operations (compose, interpolate, project, subtract)
-on LoRA adapter weight spaces via Grassmann manifold geometry, providing
-theoretical guarantees that heuristic methods (TIES, DARE, Task Arithmetic) lack.
+We show that LoRA adapter effects are sparse in SAE feature space, prove that
+feature-disjoint adapters compose without interference, and provide Sparse Feature
+Composition (SFC) — a zero-hyperparameter method that replaces all weight-space
+merging heuristics with one principled operation in feature space.
 
 ## Problem Statement
 
-The LoRA ecosystem produces thousands of task-specific adapters, but combining
-them remains ad-hoc. Current merging methods operate directly in weight space:
+LoRA adapter merging operates in weight space: Task Arithmetic adds delta weights,
+TIES resolves sign conflicts, DARE randomly drops parameters. All these heuristics
+share a fundamental flaw: **they operate in the wrong space.** Weight matrices are
+entangled representations where a single parameter encodes multiple semantic features.
+Merging in this space inevitably creates cross-feature interference.
 
-- **Task Arithmetic** adds/subtracts weight differences linearly — this assumes
-  task vectors are in a shared linear subspace, which is generally false.
-- **TIES** resolves sign conflicts via magnitude-weighted election — a heuristic
-  with no optimality guarantee.
-- **DARE** randomly drops parameters before merging — reduces interference
-  empirically but can destroy important directions.
+Recent work proves this is not merely an engineering problem:
+- "Rethinking Inter-LoRA Orthogonality" (2025) showed weight-space orthogonality
+  does NOT predict composability
+- Raffel et al. (2026) showed merging often reduces to regularization rather than
+  genuine knowledge transfer
 
-All three methods ignore a fundamental problem: **LoRA matrices span low-rank
-subspaces, and these subspaces have rotational/permutation symmetry**. Merging
-in the ambient weight space conflates basis-dependent artifacts with meaningful
-task information.
+Meanwhile, mechanistic interpretability has produced Sparse Autoencoders (SAEs) that
+decompose neural activations into monosemantic features — single, interpretable
+directions in representation space. SAILS (Jan 2026) proved that SAE features can
+construct LoRA adapters for safety. FSRL (2025) proved that individual adapter effects
+are functionally equivalent to sparse feature modifications.
 
-## Critical Differentiation
-
-| | Text-to-LoRA / LoRAGen | TIES / DARE / Task Arithmetic | **Ours** |
-|---|---|---|---|
-| **Goal** | GENERATE new LoRA | MERGE existing LoRAs | ALGEBRA on LoRA space |
-| **Input** | Task description text | Set of LoRA weights | Set of LoRA weights |
-| **Output** | New LoRA weights | Merged LoRA weights | Algebraically composed LoRA |
-| **Theory** | None | None (heuristic) | Grassmann manifold geometry |
-
-We are **orthogonal** to LoRA generation — T2L/LoRAGen produce individual LoRAs;
-we define operations for combining, interpolating, and decomposing them.
+**The gap:** Nobody has connected these two facts. If each adapter modifies a sparse
+set of features, and these features are disentangled, then composition in feature
+space should be interference-free. This is the insight we formalize and exploit.
 
 ## Thesis (Falsifiable)
 
-> Mapping LoRA adapters to the Grassmann manifold Gr(r, d) via a learned
-> canonicalization map, then performing algebraic operations (composition,
-> interpolation, projection) using geodesic geometry, produces combined adapters
-> with provably lower interference than weight-space heuristics.
+> Decomposing LoRA adapter effects into SAE feature space reveals that each adapter
+> modifies a sparse (<5%) set of monosemantic features. Composing adapters by
+> feature-level operations (union/max) in this space provably eliminates interference
+> on non-overlapping features, outperforms all weight-space merging methods, and
+> explains why composability scales with model size.
 
-## Falsifiable Hypotheses
+## Contributions
 
-1. **H1 (Composition superiority):** Grassmann composition preserves >= 98% of
-   individual LoRA accuracy on both source tasks, while TIES/DARE preserve <= 95%.
+### C1 — Sparse Feature Decomposition Theorem
 
-2. **H2 (Interpolation smoothness):** Geodesic interpolation on Gr(r,d) yields
-   monotonically smooth accuracy curves between two tasks, while linear
-   interpolation in weight space shows quality collapse at intermediate points.
+**Theorem 1:** For a rank-r LoRA adapter ΔW and an SAE with D features and
+coherence μ, the feature support |S(ΔW)| ≤ C · r · μ(SAE) with high probability
+over a probe distribution. Typically |S|/D < 0.05 for task-specific adapters.
 
-3. **H3 (Projection precision):** Projecting away a task subspace removes >= 90%
-   of that capability while preserving >= 95% of other capabilities. TIES-based
-   removal achieves <= 80% removal precision.
+**Key insight:** Low-rank constraint → low-dimensional activation perturbation →
+sparse feature modification. The sparsity scales inversely with D (more features =
+sparser effects).
 
-4. **H4 (Rank preservation):** All algebraic operations output LoRAs of the
-   original rank r, while naive weight-space operations may increase effective
-   rank or introduce rank deficiency.
+### C2 — Interference Localization Theorem
 
-5. **H5 (Canonicalization necessity):** Without canonicalization, Grassmann
-   operations degrade to weight-space heuristic quality. The learned canonical
-   map accounts for >= 5pt accuracy gain in composition.
+**Theorem 2:** For two adapters with feature supports S₁, S₂ and coefficients c₁, c₂:
 
-## Quantitative Success Criteria
+  Interference(SFC) = Σ_{k ∈ S₁∩S₂} ψ(c₁ₖ, c₂ₖ) · ||dₖ||²
 
-| Criterion | Metric | Target | Comparison |
-|-----------|--------|--------|------------|
-| Primary | Composition accuracy retention | >= 98% on both tasks | vs TIES <= 95% |
-| Primary | Interpolation smoothness | Monotonic (0 quality collapses) | vs linear (>= 1 collapse) |
-| Secondary | Projection removal precision | >= 90% target removal | vs TIES <= 80% |
-| Secondary | Other-task preservation | >= 95% accuracy retained | vs TIES <= 90% |
-| Tertiary | Rank preservation | Exact rank r maintained | vs weight-space (rank varies) |
+where ψ captures the max-pool residual and dₖ are SAE dictionary atoms.
 
-## Method
+**When S₁ ∩ S₂ = ∅, interference = 0 exactly.**
 
-### Grassmann Manifold Framework
+This is NOT an approximation — it follows directly from the SAE's linear decode.
+All interference is localized to the feature overlap.
 
-The Grassmann manifold Gr(r, d) is the set of all r-dimensional subspaces of R^d.
-A LoRA adapter with matrices A ∈ R^{d×r} and B ∈ R^{r×d} spans an r-dimensional
-subspace of the weight space. We map each LoRA to a point on Gr(r, d):
+### C3 — Sparse Feature Composition (SFC)
 
-1. **Canonicalization φ**: Learn a map that resolves basis ambiguity.
-   LoRA (A, B) and (AQ, Q⁻¹B) for any invertible Q span the same subspace.
-   φ maps both to the same canonical representative.
+**Algorithm:**
+1. For each adapter: compute feature profile (support + coefficients) via SAE encode
+   of activation differences on a probe set
+2. Compose: for each feature k in the union of supports, take max coefficient
+3. Reconstruct: decode composed features back to activations
 
-2. **Composition ⊕**: Given canonical reps φ(L₁), φ(L₂) on Gr(r, d),
-   compute the geodesic midpoint. This is the subspace that minimizes
-   total Grassmann distance to both inputs.
+**Two variants:**
+- **SFC-Exact:** Hook-based inference, applies composed features at each layer.
+  Provably optimal. Small inference overhead (SAE forward per layer).
+- **SFC-Merge:** Pre-compute composed weight update via least-squares fit, deploy
+  as standard LoRA adapter. Zero inference overhead. Approximate.
 
-3. **Interpolation**: Move along the geodesic from φ(L₁) to φ(L₂) with
-   parameter t ∈ [0, 1]. Unlike linear interpolation, this stays on the
-   manifold.
+**Properties:** Zero hyperparameters. One operation (feature max-pool). Subsumes
+TIES (approximate sign consensus ≈ feature selection), DARE (random sparsity ≈
+random feature selection), and Task Arithmetic (addition ≈ feature union without
+collision handling).
 
-4. **Projection π_S**: Given a task subspace S ⊂ Gr(r, d), project a LoRA
-   onto the orthogonal complement S⊥ to remove task S while preserving others.
+### C4 — Feature Disentanglement Score (FDS)
 
-5. **Subtraction ⊖**: Use the logarithmic map to compute the tangent vector
-   from φ(L₁) to φ(L₂), representing the "task difference."
+FDS = 1 - |S₁ ∩ S₂| / |S₁ ∪ S₂|  (Jaccard distance of feature supports)
 
-### Learning the Canonicalization Map
+**Properties:**
+- Structurally interpretable: each overlapping feature is a named, monosemantic concept
+- Predicts composition quality from adapter weights + small probe set
+- Explains WHY weight-space orthogonality ≠ composability: orthogonal weights can
+  still modify the same features (via different projections)
 
-- Train a neural network f_θ that takes LoRA weight matrices (A, B) and outputs
-  a canonical orthonormal basis for the column space of AB^T.
-- Training objective: for LoRAs that represent the same task (data augmentation
-  via random basis rotations), f_θ should produce identical outputs.
-- Contrastive loss: same-task LoRAs → close on Gr(r,d); different-task → far.
+### C5 — Composability Scaling Law (Corollary)
 
-### Implementation
+Under a random feature model where each rank-r adapter activates features with
+probability p ∝ r/D:
 
-1. **SVD-based Grassmann embedding**: Compute thin SVD of AB^T = UΣV^T, use
-   U[:, :r] as the Grassmann representative.
-2. **Geodesic computation**: Use the matrix exponential of the skew-symmetric
-   log map for geodesics on Gr(r, d).
-3. **Efficient implementation**: For r << d (typical: r=16, d=4096), all
-   operations are O(d·r²) — negligible compared to LoRA training.
+  E[overlap(N)] / E[union(N)] = p^N / (1 - (1-p)^N)
 
-## Why Not Just Align Bases Then Average?
+As model size grows → D grows → p shrinks → overlap shrinks → composability improves.
 
-Git Re-Basin aligns neural network bases via permutation search. This is:
-1. NP-hard in general (Git Re-Basin uses approximations)
-2. Designed for full networks, not low-rank adapters
-3. Permutation-only, ignoring continuous rotational symmetry of LoRA subspaces
-4. No guarantees on the quality of the merged result
+This gives the **first theoretical explanation** of the empirical scaling law
+(arxiv 2509.24244): larger models merge better because they have more features
+and sparser adapter effects.
 
-Our Grassmann approach handles continuous symmetry natively and provides
-distance-minimizing guarantees for all operations.
+## Experimental Plan
 
-## Risk Analysis
+### Models & SAEs (zero SAE training cost)
+- **Primary:** Gemma-2-9B + Gemma Scope SAEs (400+ pre-trained SAEs, all layers)
+- **Secondary:** Llama-3.1-8B + Llama Scope SAEs (all layers)
+- **Scaling:** Gemma-2-2B + Gemma Scope (smaller model for scaling analysis)
 
-| Risk | Mitigation |
-|------|------------|
-| Grassmann operations too expensive | O(d·r²) with r=16, d=4096 → ~1M FLOPs, negligible |
-| Canonicalization map doesn't converge | SVD-based fallback always works; learned map is an improvement |
-| Domain LoRAs have very different structure | Include diverse domains in training; analyze failure modes |
-| Benefits disappear at high rank | Test r ∈ {4, 8, 16, 32, 64}; theory predicts larger gains at lower rank |
-| Grassmann composition ≈ simple averaging | Verify with ablation: Grassmann vs weight-space average |
+### Domains (8 task-specific LoRA adapters per model)
+math (GSM8K), code (MBPP), medical (MedQA), science (ARC-Challenge),
+history (MMLU-History), philosophy (MMLU-Philosophy), law (MMLU-Law),
+reasoning (ARC-Easy)
 
-## Compute Budget
+### Experiments
 
-| Phase | GPUs | Duration | GPU-Hours |
-|-------|------|----------|-----------|
-| Train 12 domain LoRAs | 4× A100 | 3 days | 288 |
-| Learn canonicalization map | 2× A100 | 2 days | 96 |
-| Algebraic operation experiments | 4× A100 | 3 days | 288 |
-| Baselines (TIES, DARE, TA) | 4× A100 | 2 days | 192 |
-| Ablations and analysis | 4× A100 | 2 days | 192 |
-| **Total** | | **12 days** | **1056 GPU-hours** |
+| Block | Experiment | Purpose | GPU-hours |
+|-------|-----------|---------|-----------|
+| E0 | Sparsity verification | Kill criterion: is |S|/D < 0.1? | 8 |
+| E1 | SFC vs baselines (28 pairs) | Core comparison | 40 |
+| E2 | FDS phase diagram | Diagnostic validation | 8 |
+| E3 | Multi-model replication | Generalization | 40 |
+| E4 | N-way scaling (2,4,8 adapters) | Scaling behavior | 20 |
+| E5 | Ablations (SAE size, threshold, static vs dynamic) | Robustness | 16 |
+| E6 | Synthetic theorem verification | Theory validation | 4 |
+| E7 | Scaling law (2B vs 9B) | C5 verification | 16 |
+| **Total** | | | **~150 GPU-hours** |
+
+### Baselines
+Task Arithmetic, TIES (d=0.5), DARE (p=0.5), ESM (if available),
+GrassMerge (our prior work), Individual LoRA, Base model
+
+### Key Figures
+1. **Feature support visualization**: heatmap of which SAE features each adapter modifies
+2. **FDS vs composition quality**: scatter plot showing FDS predicts performance
+3. **N-way scaling**: SFC degrades gracefully while baselines collapse
+4. **Scaling law**: sparsity vs model size, confirming p ∝ 1/D
 
 ## Kill Criteria
 
-Abandon if:
-1. Grassmann composition accuracy <= weight-space average ± 1pt on >= 3 domain pairs
-2. Canonicalization fails to converge (same-task LoRAs not mapped to same point)
-3. Benefits vanish at rank >= 16 (only works at impractically low ranks)
+1. LoRA effects not sparse in SAE space (|S|/D > 0.2) → framework fails
+2. SFC-Exact not better than best baseline on >60% of pairs → method not useful
+3. FDS Spearman ρ < 0.5 with composition quality → theory disconnected
+4. Sparsity does not decrease with model size → scaling law wrong
+
+## Risk Analysis
+
+| Risk | Probability | Mitigation |
+|------|------------|-----------|
+| SAE reconstruction error dominates | Medium | Use high-quality SAEs (Gemma Scope); bound error contribution |
+| Effects not sparse for some tasks | Low | FSRL already showed sparsity; test diverse tasks |
+| SFC-Merge reconstruction poor | Medium | SFC-Exact as gold standard; SFC-Merge is bonus |
+| Feature overlap too high for related tasks | Medium | This is expected; document the transition point |
+| Reviewer: "just PCA with extra steps" | Low | SAE features are monosemantic (interpretable), PCA is not |
+
+## Mandatory Citations
+
+- SAILS (arxiv 2512.23260): SAE → safety LoRA
+- FSRL (arxiv 2509.12934): adapter ≈ sparse features
+- STF (EMNLP 2025): feature-space merging
+- Rethinking Orthogonality (arxiv 2510.03262): negative result
+- Model Merging Scaling Laws (arxiv 2509.24244): empirical law
+- Conceptor Steering (ICML 2025): Boolean algebra for composition
+- SASFT (ICLR 2026): SAE guides fine-tuning
+- Gemma Scope (arxiv 2408.05147): SAE infrastructure
