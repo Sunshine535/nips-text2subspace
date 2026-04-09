@@ -13,9 +13,9 @@ This script:
 5. Reports sparsity stats and pairwise FDS
 
 Usage:
-    python scripts/run_sfc_pilot.py --model google/gemma-2-9b \
-        --sae-repo google/gemma-scope-9b-pt-res \
-        --layers 10,15,20,25,30 \
+    python scripts/run_sfc_pilot.py --model Qwen/Qwen3.5-9B-Base \
+        --sae-repo saes/qwen3.5-9b \
+        --layers 8,12,16,24,32 \
         --output results/sfc_pilot.json
 
 Requirements:
@@ -46,13 +46,13 @@ logger = logging.getLogger("sfc_pilot")
 
 def parse_args():
     p = argparse.ArgumentParser(description="SFC Pilot: Sparsity Verification")
-    p.add_argument("--model", default="google/gemma-2-9b",
+    p.add_argument("--model", default="Qwen/Qwen3.5-9B-Base",
                     help="Base model name or path")
-    p.add_argument("--sae-repo", default="google/gemma-scope-9b-pt-res",
+    p.add_argument("--sae-repo", default="saes/qwen3.5-9b",
                     help="HuggingFace repo for SAEs")
     p.add_argument("--sae-width", default="16k",
                     help="SAE width (16k, 32k, 65k, 131k)")
-    p.add_argument("--layers", default="10,15,20,25,30",
+    p.add_argument("--layers", default="8,12,16,24,32",
                     help="Comma-separated layer indices for SAEs")
     p.add_argument("--adapter-dir", default="results/domain_loras",
                     help="Directory containing LoRA adapter subdirs")
@@ -247,32 +247,37 @@ def train_single_adapter(
 # ---------------------------------------------------------------------------
 
 def load_saes(
-    repo_id: str,
+    sae_path: str,
     layers: list,
     width: str = "16k",
     device: str = "cpu",
 ) -> dict:
-    """Load pre-trained SAEs for specified layers."""
+    """Load SAEs for specified layers. Tries local path first, then HuggingFace."""
     from src.sae_decomposition import SparseAutoencoder
 
     saes = {}
     for layer_idx in layers:
         layer_name = f"model.layers.{layer_idx}"
-        logger.info(f"Loading SAE for layer {layer_idx} (width={width})...")
+        logger.info(f"Loading SAE for layer {layer_idx}...")
+
+        # Try local directory first (from train_sae.py output)
+        local_dir = Path(sae_path) / f"layer_{layer_idx}"
+        if local_dir.exists() and any(local_dir.glob("*.safetensors")):
+            sae = SparseAutoencoder.from_pretrained(str(local_dir), device=device)
+            saes[layer_name] = sae
+            logger.info(f"  → Local: {sae.n_features} features, d_model={sae.d_model}")
+            continue
+
+        # Fallback: try as HuggingFace repo (e.g., google/gemma-scope-9b-pt-res)
         try:
             sae = SparseAutoencoder.from_huggingface(
-                repo_id, layer=layer_idx, width=width, device=device,
+                sae_path, layer=layer_idx, width=width, device=device,
             )
             saes[layer_name] = sae
-            logger.info(f"  → {sae.n_features} features, d_model={sae.d_model}")
+            logger.info(f"  → HuggingFace: {sae.n_features} features, d_model={sae.d_model}")
         except Exception as e:
-            logger.warning(f"  → Failed to load SAE for layer {layer_idx}: {e}")
-            # Try local path as fallback
-            local_path = Path(f"saes/layer_{layer_idx}")
-            if local_path.exists():
-                sae = SparseAutoencoder.from_pretrained(str(local_path), device=device)
-                saes[layer_name] = sae
-                logger.info(f"  → Loaded from local: {sae.n_features} features")
+            logger.error(f"  → FAILED: {e}")
+            logger.error(f"  → Run: python scripts/train_sae.py --model <MODEL> --layers {layer_idx} --output {sae_path}")
 
     return saes
 

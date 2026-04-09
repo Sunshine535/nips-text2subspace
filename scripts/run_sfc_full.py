@@ -13,8 +13,8 @@ Experiments:
 
 Usage:
     python scripts/run_sfc_full.py --experiment E1 \
-        --model google/gemma-2-9b \
-        --sae-repo google/gemma-scope-9b-pt-res \
+        --model Qwen/Qwen3.5-9B-Base \
+        --sae-repo saes/qwen3.5-9b \
         --adapter-dir results/domain_loras \
         --output results/sfc_full/
 """
@@ -45,10 +45,10 @@ def parse_args():
     p.add_argument("--experiment", nargs="+", default=["E1"],
                     choices=["E1", "E2", "E4", "E5", "all"],
                     help="Which experiments to run")
-    p.add_argument("--model", default="google/gemma-2-9b")
-    p.add_argument("--sae-repo", default="google/gemma-scope-9b-pt-res")
+    p.add_argument("--model", default="Qwen/Qwen3.5-9B-Base")
+    p.add_argument("--sae-repo", default="saes/qwen3.5-9b")
     p.add_argument("--sae-width", default="16k")
-    p.add_argument("--layers", default="10,15,20,25,30")
+    p.add_argument("--layers", default="8,12,16,24,32")
     p.add_argument("--adapter-dir", default="results/domain_loras")
     p.add_argument("--pilot-results", default="results/sfc_pilot.json",
                     help="Path to E0 pilot results (for reusing feature maps)")
