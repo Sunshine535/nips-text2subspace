@@ -7,9 +7,9 @@ LoRA adapter 组合的 rank bottleneck 理论 + Bottleneck-Aware Composition (BA
 ## Quick Start
 
 ```bash
-# 1. 环境安装 (conda env 'text2subspace' + Python 3.11 + PyTorch CUDA 12.8)
+# 1. 环境安装 (venv + PyTorch CUDA 12.8 + all deps)
 bash setup.sh
-conda activate text2subspace
+source .venv/bin/activate
 
 # 2. 一键运行 (自动检测 GPU 数量，多卡并行)
 bash run.sh
@@ -34,11 +34,11 @@ python scripts/run_parallel_eval.py --num_gpus 0  # 0 = auto-detect
 ```bash
 git clone <this-repo>
 cd nips-text2subspace
-bash setup.sh          # conda env 'text2subspace' + Python 3.11 + PyTorch (CUDA 12.8)
-conda activate text2subspace
+bash setup.sh          # venv + PyTorch (CUDA 12.8) + all deps
+source .venv/bin/activate
 ```
 
-依赖: Python 3.11 (conda), PyTorch (CUDA 12.8), transformers, peft, datasets, safetensors.
+依赖: Python >= 3.10, PyTorch (CUDA 12.8), transformers, peft, datasets, safetensors.
 
 ## 项目结构
 
