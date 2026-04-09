@@ -8,7 +8,7 @@ dependencies:
   - python=3.11
   - pip
   - pytorch>=2.5
-  - pytorch-cuda=12.4
+  - pytorch-cuda=12.8
   - torchvision
   - torchaudio
   - numpy

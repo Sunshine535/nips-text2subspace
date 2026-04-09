@@ -1,106 +1,68 @@
 #!/bin/bash
 set -e
 PROJ_DIR="$(cd "$(dirname "$0")" && pwd)"
-ENV_NAME="nips-text2subspace"
+ENV_NAME="text2subspace"
 
 echo "============================================"
-echo " Environment Setup (venv + pip + PyTorch 2.10 + CUDA 12.8)"
+echo " ${ENV_NAME}: Environment Setup (conda + CUDA 12.8)"
 echo "============================================"
 
-PYTHON_CMD=""
-for try in python3.10 python3.11 python3.12 python3; do
-    if command -v "$try" &>/dev/null; then
-        PYTHON_CMD="$try"
-        break
-    fi
-done
-if [ -z "$PYTHON_CMD" ]; then
-    echo "ERROR: Need python3.10+."
-    exit 1
-fi
-echo "[1/5] Using: $($PYTHON_CMD --version)"
-
-VENV_DIR="$PROJ_DIR/.venv"
-USE_CONDA=0
-
-if [ -d "$VENV_DIR" ] && { [ ! -f "$VENV_DIR/bin/activate" ] || [ ! -x "$VENV_DIR/bin/python" ]; }; then
-    echo "[2/5] Removing incomplete .venv (missing bin/activate or python) ..."
-    rm -rf "$VENV_DIR"
-fi
-if [ ! -d "$VENV_DIR" ]; then
-    echo "[2/5] Creating venv ..."
-    if "$PYTHON_CMD" -m venv "$VENV_DIR" 2>/dev/null; then
-        :
-    elif command -v conda &>/dev/null; then
-        echo "  python -m venv failed; falling back to conda environment"
-        USE_CONDA=1
-        conda create -y -p "$VENV_DIR" "python>=3.10" pip 2>&1 | tail -n5
-    else
-        echo ""
-        echo "ERROR: python -m venv failed and conda is not available."
-        ver="$("$PYTHON_CMD" -c "import sys; print('{}.{}'.format(sys.version_info.major, sys.version_info.minor))")"
-        echo "  Debian/Ubuntu: sudo apt install python${ver}-venv"
-        echo "  Or install conda/miniconda."
-        rm -rf "$VENV_DIR" 2>/dev/null || true
-        exit 1
-    fi
-else
-    echo "[2/5] Venv exists: $VENV_DIR"
-fi
-if [ "$USE_CONDA" == "1" ]; then
-    eval "$(conda shell.bash hook)"
-    conda activate "$VENV_DIR"
-else
-    # shellcheck disable=SC1090
-    source "$VENV_DIR/bin/activate"
-fi
-
-export PIP_DEFAULT_TIMEOUT="${PIP_DEFAULT_TIMEOUT:-600}"
-
-echo "[3/5] Upgrading pip ..."
-python -m pip install -U pip setuptools wheel
-
-REQ_TMP="$(mktemp)"
-trap 'rm -f "$REQ_TMP"' EXIT
-grep -v '^flash-attn' "$PROJ_DIR/requirements.txt" > "$REQ_TMP"
-
-echo "[4/5] Installing PyTorch 2.10.0 + CUDA 12.8 + project deps ..."
-python -m pip install \
-    "torch==2.10.0" "torchvision" "torchaudio" \
-    -r "$REQ_TMP" \
-    --index-url https://download.pytorch.org/whl/cu128 \
-    --extra-index-url https://pypi.org/simple
-
-echo "[5/5] Installing flash-attn (optional) ..."
-if [ -z "$CUDA_HOME" ]; then
-    for p in /usr/local/cuda-12.8 /usr/local/cuda-12 /usr/local/cuda; do
-        if [ -f "$p/bin/nvcc" ]; then export CUDA_HOME="$p"; break; fi
+# --- Locate conda ---
+CONDA_BIN="${CONDA_EXE:-$(which conda 2>/dev/null || echo "")}"
+if [ -z "$CONDA_BIN" ] || [ ! -f "$CONDA_BIN" ]; then
+    for p in /opt/conda/bin/conda "$HOME/miniconda3/bin/conda" "$HOME/anaconda3/bin/conda" /root/miniconda3/bin/conda; do
+        if [ -f "$p" ]; then CONDA_BIN="$p"; break; fi
     done
 fi
-_FA_MARKER="$VENV_DIR/.flash_attn_attempted"
-if [ ! -f "$_FA_MARKER" ] && [ -n "$CUDA_HOME" ]; then
-    echo "  CUDA_HOME=$CUDA_HOME"
-    export PATH="$CUDA_HOME/bin:$PATH"
-    python -m pip install flash-attn --no-build-isolation 2>&1 || echo "  flash-attn build failed (optional)"
-    touch "$_FA_MARKER"
-elif [ -f "$_FA_MARKER" ]; then
-    echo "  Flash-attn already attempted (skip rebuild)"
-else
-    echo "  CUDA toolkit not found, skipping flash-attn"
+if [ -z "$CONDA_BIN" ] || [ ! -f "$CONDA_BIN" ]; then
+    echo "ERROR: conda not found. Install Miniconda: https://docs.conda.io/en/latest/miniconda.html"
+    exit 1
 fi
+echo "[1/4] Using conda: $CONDA_BIN"
+eval "$("$CONDA_BIN" shell.bash hook 2>/dev/null)" || {
+    CONDA_DIR="$(dirname "$(dirname "$CONDA_BIN")")"
+    source "$CONDA_DIR/etc/profile.d/conda.sh"
+}
 
+# --- Create / activate env ---
+if ! conda env list 2>/dev/null | grep -qw "$ENV_NAME"; then
+    echo "[2/4] Creating conda env '$ENV_NAME' (Python 3.11)..."
+    conda create -y -n "$ENV_NAME" python=3.11 2>&1 | tail -3
+else
+    echo "[2/4] Conda env '$ENV_NAME' already exists"
+fi
+conda activate "$ENV_NAME"
+echo "  Python: $(python --version) @ $(which python)"
+
+# --- Install PyTorch + CUDA 12.8 ---
+echo "[3/4] Installing PyTorch (CUDA 12.8)..."
+pip install -U pip setuptools wheel
+pip install "torch>=2.4.0" "torchvision" "torchaudio" \
+    --index-url https://download.pytorch.org/whl/cu128
+
+# --- Install project deps ---
+echo "[4/4] Installing project dependencies..."
+pip install -r "$PROJ_DIR/requirements.txt"
+
+# Optional: flash-attn
+pip install flash-attn --no-build-isolation 2>/dev/null || echo "  flash-attn skipped (optional)"
+
+# --- Verify ---
 echo ""
 echo "============================================"
 python -c "
-import torch
-print(f'  PyTorch  : {torch.__version__}')
-print(f'  CUDA     : {torch.version.cuda}')
-print(f'  GPUs     : {torch.cuda.device_count()}')
+import torch, transformers, peft, accelerate
+print(f'  PyTorch       : {torch.__version__}')
+print(f'  Transformers  : {transformers.__version__}')
+print(f'  PEFT          : {peft.__version__}')
+print(f'  Accelerate    : {accelerate.__version__}')
+print(f'  CUDA          : {torch.version.cuda}')
+print(f'  GPUs          : {torch.cuda.device_count()}')
 for i in range(torch.cuda.device_count()):
     print(f'    GPU {i}: {torch.cuda.get_device_name(i)}')
-"
+" 2>/dev/null || echo "  (import check skipped)"
 echo "============================================"
 echo ""
 echo "Setup complete!"
-echo "  Activate:  source $VENV_DIR/bin/activate"
-echo "  Run:       bash scripts/run_all_experiments.sh"
+echo "  Activate:  conda activate $ENV_NAME"
+echo "  Run:       bash run.sh"

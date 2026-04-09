@@ -24,5 +24,4 @@ tensorboard>=2.18.0
 # SAE decomposition
 sae-lens>=4.0.0
 
-# Performance (installed separately in setup.sh with --no-build-isolation)
-flash-attn>=2.7.0
+# flash-attn: installed separately in setup.sh (optional)
