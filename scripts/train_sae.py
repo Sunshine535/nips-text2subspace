@@ -187,13 +187,17 @@ def train_sae_manual(
 
     logger.info(f"Manual SAE training for layer {layer}")
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    # Support both local paths and HuggingFace repo IDs
+    is_local = os.path.isdir(model_name)
+    load_kwargs = {"local_files_only": True} if not is_local else {}
+
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, **load_kwargs)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name, torch_dtype=torch.bfloat16, device_map="cuda",
-        attn_implementation="sdpa",
+        attn_implementation="sdpa", trust_remote_code=True, **load_kwargs,
     )
     model.eval()
 
@@ -227,8 +231,15 @@ def train_sae_manual(
             module.register_forward_hook(hook_fn)
             break
 
-    # Stream training data
-    ds = load_dataset(dataset, dataset_config, split="train", streaming=True)
+    # Stream training data — try real dataset, fall back to random tokens
+    try:
+        ds = load_dataset(dataset, dataset_config, split="train", streaming=True)
+        use_random = False
+        logger.info(f"Using dataset: {dataset}/{dataset_config}")
+    except Exception as e:
+        logger.warning(f"Cannot load {dataset}: {e}. Using random token inputs.")
+        use_random = True
+        ds = None
 
     tokens_seen = 0
     step = 0
@@ -236,20 +247,29 @@ def train_sae_manual(
 
     logger.info(f"Training: d_model={d_model}, n_features={n_features}, k={k}")
 
-    for example in ds:
+    def data_iter():
+        """Yield tokenized inputs from dataset or random tokens."""
+        if use_random:
+            vocab_size = tokenizer.vocab_size
+            while True:
+                random_ids = torch.randint(100, vocab_size - 100, (1, context_size)).to("cuda")
+                yield {"input_ids": random_ids, "attention_mask": torch.ones_like(random_ids)}
+        else:
+            for example in ds:
+                text = example.get("text", "")
+                if len(text) < 50:
+                    continue
+                inputs = tokenizer(text, return_tensors="pt", truncation=True,
+                                  max_length=context_size, padding=False).to("cuda")
+                yield inputs
+
+    for inputs in data_iter():
         if tokens_seen >= training_tokens:
             break
 
-        text = example.get("text", "")
-        if len(text) < 50:
-            continue
-
-        inputs = tokenizer(text, return_tensors="pt", truncation=True,
-                          max_length=context_size, padding=False).to("cuda")
-
         activations.clear()
         with torch.no_grad():
-            model(**inputs)
+            model(**{k: v for k, v in inputs.items() if k in ("input_ids", "attention_mask")})
 
         if not activations:
             continue
