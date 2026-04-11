@@ -8,6 +8,11 @@ set -e
 PROJ_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$PROJ_DIR"
 
+# --- HF cache: shared across projects in parent dir ---
+export HF_HOME="${HF_HOME:-$(dirname "$PROJ_DIR")/.cache/hf}"
+export TOKENIZERS_PARALLELISM=false
+mkdir -p "$HF_HOME"
+
 # ---------------------------------------------------------------------------
 # Environment
 # ---------------------------------------------------------------------------
