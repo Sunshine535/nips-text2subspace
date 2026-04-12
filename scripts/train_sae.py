@@ -24,11 +24,15 @@ Usage:
 import argparse
 import json
 import logging
+import multiprocessing as mp
 import os
 import sys
 import time
-from multiprocessing import Process
 from pathlib import Path
+
+# CUDA requires spawn (not fork) for multiprocessing
+mp.set_start_method("spawn", force=True)
+Process = mp.Process
 
 logging.basicConfig(
     level=logging.INFO,
@@ -282,8 +286,13 @@ def main():
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    import torch
-    n_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 0
+    # Detect GPUs without initializing CUDA (to avoid fork issues)
+    import subprocess
+    try:
+        result = subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True)
+        n_gpus = len([l for l in result.stdout.strip().split("\n") if l.startswith("GPU")])
+    except Exception:
+        n_gpus = 0
     logger.info(f"Model: {args.model}")
     logger.info(f"Layers: {layers}")
     logger.info(f"Features: {args.n_features}")
