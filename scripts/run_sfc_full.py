@@ -13,7 +13,7 @@ Experiments:
 
 Usage:
     python scripts/run_sfc_full.py --experiment E1 \
-        --model Qwen/Qwen3.5-9B-Base \
+        --model Qwen/Qwen3.5-9B \
         --sae-repo saes/qwen3.5-9b \
         --adapter-dir results/domain_loras \
         --output results/sfc_full/
@@ -45,7 +45,7 @@ def parse_args():
     p.add_argument("--experiment", nargs="+", default=["E1"],
                     choices=["E1", "E2", "E4", "E5", "all"],
                     help="Which experiments to run")
-    p.add_argument("--model", default="Qwen/Qwen3.5-9B-Base")
+    p.add_argument("--model", default="Qwen/Qwen3.5-9B")
     p.add_argument("--sae-repo", default="saes/qwen3.5-9b")
     p.add_argument("--sae-width", default="16k")
     p.add_argument("--layers", default="8,12,16,24,32")

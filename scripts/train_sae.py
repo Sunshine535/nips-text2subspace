@@ -8,7 +8,7 @@ Supports multi-GPU: one SAE per GPU in parallel.
 Usage:
     # Train SAEs for 5 layers, 8 GPUs available → 5 parallel jobs
     python scripts/train_sae.py \
-        --model Qwen/Qwen3.5-9B-Base \
+        --model Qwen/Qwen3.5-9B \
         --layers 8,12,16,24,32 \
         --output saes/qwen3.5-9b \
         --n-features 16384 \
@@ -16,7 +16,7 @@ Usage:
 
     # Single layer on specific GPU
     CUDA_VISIBLE_DEVICES=0 python scripts/train_sae.py \
-        --model Qwen/Qwen3.5-9B-Base \
+        --model Qwen/Qwen3.5-9B \
         --layers 16 \
         --output saes/qwen3.5-9b
 """
@@ -39,7 +39,7 @@ logger = logging.getLogger("train_sae")
 
 def parse_args():
     p = argparse.ArgumentParser(description="Train SAEs for SFC experiments")
-    p.add_argument("--model", default="Qwen/Qwen3.5-9B-Base",
+    p.add_argument("--model", default="Qwen/Qwen3.5-9B",
                     help="Base model to train SAEs on")
     p.add_argument("--layers", default="8,12,16,24,32",
                     help="Comma-separated layer indices")
@@ -128,17 +128,18 @@ def train_sae_manual(
 
     logger.info(f"Manual SAE training for layer {layer}")
 
-    # Support both local paths and HuggingFace repo IDs
-    is_local = os.path.isdir(model_name)
-    load_kwargs = {"local_files_only": True} if not is_local else {}
+    # Set offline mode via env var (more reliable than local_files_only kwarg)
+    if not os.path.isdir(model_name):
+        os.environ["HF_HUB_OFFLINE"] = "1"
+        os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True, **load_kwargs)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name, torch_dtype=torch.bfloat16, device_map="cuda",
-        attn_implementation="sdpa", trust_remote_code=True, **load_kwargs,
+        attn_implementation="sdpa", trust_remote_code=True,
     )
     model.eval()
 

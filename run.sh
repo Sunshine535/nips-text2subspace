@@ -9,11 +9,13 @@ cd "$PROJ_DIR"
 
 # --- HF cache ---
 export HF_HOME="${HF_HOME:-$(dirname "$PROJ_DIR")/.cache/hf}"
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
 export TOKENIZERS_PARALLELISM=false
 mkdir -p "$HF_HOME"
 
 # --- Model config ---
-MODEL="${MODEL:-Qwen/Qwen3.5-9B-Base}"
+MODEL="${MODEL:-Qwen/Qwen3.5-9B}"
 SAE_DIR="${SAE_DIR:-saes/qwen3.5-9b}"
 SAE_LAYERS="${SAE_LAYERS:-8,12,16,24,32}"
 SAE_FEATURES="${SAE_FEATURES:-16384}"

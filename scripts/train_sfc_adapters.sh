@@ -9,7 +9,7 @@
 
 set -euo pipefail
 
-MODEL="${1:-Qwen/Qwen3.5-9B-Base}"
+MODEL="${1:-Qwen/Qwen3.5-9B}"
 OUTPUT_DIR="${2:-results/sfc_loras}"
 SAMPLES_PER_DOMAIN=5000
 RANK=16

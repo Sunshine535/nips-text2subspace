@@ -13,7 +13,7 @@ This script:
 5. Reports sparsity stats and pairwise FDS
 
 Usage:
-    python scripts/run_sfc_pilot.py --model Qwen/Qwen3.5-9B-Base \
+    python scripts/run_sfc_pilot.py --model Qwen/Qwen3.5-9B \
         --sae-repo saes/qwen3.5-9b \
         --layers 8,12,16,24,32 \
         --output results/sfc_pilot.json
@@ -46,7 +46,7 @@ logger = logging.getLogger("sfc_pilot")
 
 def parse_args():
     p = argparse.ArgumentParser(description="SFC Pilot: Sparsity Verification")
-    p.add_argument("--model", default="Qwen/Qwen3.5-9B-Base",
+    p.add_argument("--model", default="Qwen/Qwen3.5-9B",
                     help="Base model name or path")
     p.add_argument("--sae-repo", default="saes/qwen3.5-9b",
                     help="HuggingFace repo for SAEs")
