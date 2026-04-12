@@ -98,70 +98,11 @@ def train_sae_single_layer(
     logger.info(f"[GPU {gpu_id}] Training SAE for layer {layer}: "
                 f"{n_features} features, {training_tokens/1e6:.0f}M tokens")
 
-    try:
-        from sae_lens import LanguageModelSAERunnerConfig, SAETrainingRunner
-
-        hook_name = f"blocks.{layer}.hook_resid_post"
-
-        cfg = LanguageModelSAERunnerConfig(
-            model_name=model_name,
-            hook_name=hook_name,
-            hook_layer=layer,
-            d_sae=n_features,
-            dataset_path=dataset,
-            streaming=True,
-            context_size=context_size,
-            training_tokens=training_tokens,
-            train_batch_size_tokens=batch_size,
-            lr=lr,
-            l1_coefficient=l1_coefficient,
-            activation_fn="topk",
-            normalize_sae_decoder=True,
-            device="cuda",
-            seed=42,
-            dtype="float32",
-            log_to_wandb=False,
-            checkpoint_path=str(layer_dir),
-        )
-
-        runner = SAETrainingRunner(cfg)
-        sae = runner.run()
-
-        # Save in our format
-        from safetensors.torch import save_file
-        state = {
-            "W_enc": sae.W_enc.detach().cpu(),
-            "W_dec": sae.W_dec.detach().cpu(),
-            "b_enc": sae.b_enc.detach().cpu(),
-            "b_dec": sae.b_dec.detach().cpu(),
-        }
-        if hasattr(sae, "threshold") and sae.threshold is not None:
-            state["threshold"] = sae.threshold.detach().cpu()
-
-        save_file(state, str(layer_dir / "sae_weights.safetensors"))
-
-        # Save config
-        config = {
-            "model_name": model_name,
-            "layer": layer,
-            "n_features": n_features,
-            "d_model": sae.W_enc.shape[1] if sae.W_enc.shape[0] == n_features else sae.W_enc.shape[0],
-            "training_tokens": training_tokens,
-            "l1_coefficient": l1_coefficient,
-            "hook_name": hook_name,
-        }
-        with open(layer_dir / "config.json", "w") as f:
-            json.dump(config, f, indent=2)
-
-        logger.info(f"[GPU {gpu_id}] Layer {layer}: DONE → {layer_dir}")
-
-    except ImportError:
-        logger.warning("sae-lens not available, falling back to manual SAE training")
-        train_sae_manual(
-            model_name, layer, str(layer_dir), n_features,
-            training_tokens, batch_size, lr, l1_coefficient,
-            dataset, dataset_config, context_size,
-        )
+    train_sae_manual(
+        model_name, layer, str(layer_dir), n_features,
+        training_tokens, batch_size, lr, l1_coefficient,
+        dataset, dataset_config, context_size,
+    )
 
 
 def train_sae_manual(
