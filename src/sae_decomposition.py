@@ -338,12 +338,14 @@ def compute_feature_profile(
     sae: SparseAutoencoder,
     adapter_name: str,
     layer_name: str,
-    threshold_percentile: float = 95.0,
+    threshold_multiplier: float = 3.0,
     device: str = "cuda",
 ) -> FeatureProfile:
     """Compute the feature profile of a LoRA adapter at one layer.
 
     Measures which SAE features the adapter modifies and by how much.
+    Uses absolute threshold (mean + k*std of all feature deltas) to avoid
+    the tautological percentile-based sparsity measurement.
 
     Args:
         base_activations: (n_tokens, d_model) activations without LoRA
@@ -351,7 +353,7 @@ def compute_feature_profile(
         sae: the Sparse Autoencoder for this layer
         adapter_name: name of the adapter
         layer_name: name of the layer
-        threshold_percentile: features with mean |Δf| above this percentile are "active"
+        threshold_multiplier: features with mean|Δf| > mean + k*std are "active"
         device: computation device
 
     Returns:
@@ -396,12 +398,11 @@ def compute_feature_profile(
             total_features=sae.n_features,
         )
 
-    # Use percentile threshold on non-zero values
-    nonzero_vals = mean_abs_delta[nonzero_mask]
-    if threshold_percentile > 0:
-        thresh = torch.quantile(nonzero_vals, threshold_percentile / 100.0)
-    else:
-        thresh = 0.0
+    # Absolute threshold: mean + k*std of all feature deltas
+    # This measures TRUE sparsity, not a tautological percentile
+    global_mean = mean_abs_delta.mean()
+    global_std = mean_abs_delta.std()
+    thresh = global_mean + threshold_multiplier * global_std
 
     active_mask = mean_abs_delta > thresh
     support = active_mask.nonzero(as_tuple=False).squeeze(-1)
@@ -428,7 +429,7 @@ def compute_adapter_feature_map(
     probe_texts: List[str],
     batch_size: int = 4,
     max_length: int = 256,
-    threshold_percentile: float = 95.0,
+    threshold_multiplier: float = 3.0,
     device: str = "cuda",
 ) -> AdapterFeatureMap:
     """Compute full feature map for a LoRA adapter across all SAE layers.
@@ -442,7 +443,7 @@ def compute_adapter_feature_map(
         probe_texts: probe dataset
         batch_size: batch size for activation collection
         max_length: max sequence length
-        threshold_percentile: percentile threshold for feature activity
+        threshold_multiplier: features with mean|Δf| > mean + k*std are "active"
         device: computation device
 
     Returns:
@@ -492,7 +493,7 @@ def compute_adapter_feature_map(
             sae=saes[layer_name],
             adapter_name=adapter_name,
             layer_name=layer_name,
-            threshold_percentile=threshold_percentile,
+            threshold_multiplier=threshold_multiplier,
             device=device,
         )
         profiles[layer_name] = profile

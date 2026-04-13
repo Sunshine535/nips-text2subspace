@@ -100,8 +100,10 @@ def verify_sparse_decomposition(
 
             # Measure sparsity
             mean_abs = delta_f.abs().mean(dim=0)
-            # Use 95th percentile threshold
-            thresh = torch.quantile(mean_abs[mean_abs > 0], 0.95) if (mean_abs > 0).any() else 0
+            # Absolute threshold: mean + 3*std (not percentile — that would be tautological)
+            global_mean = mean_abs.mean()
+            global_std = mean_abs.std()
+            thresh = global_mean + 3.0 * global_std
             n_active = (mean_abs > thresh).sum().item()
             sparsity = n_active / n_features
             sparsities.append(sparsity)

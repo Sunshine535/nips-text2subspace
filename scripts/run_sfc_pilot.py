@@ -58,8 +58,8 @@ def parse_args():
                     help="Directory containing LoRA adapter subdirs")
     p.add_argument("--probe-size", type=int, default=256,
                     help="Number of probe samples for feature decomposition")
-    p.add_argument("--threshold-percentile", type=float, default=95.0,
-                    help="Percentile threshold for feature activity")
+    p.add_argument("--threshold-multiplier", type=float, default=3.0,
+                    help="Features with mean|Δf| > mean + k*std are active (default: 3σ)")
     p.add_argument("--output", default="results/sfc_pilot.json",
                     help="Output JSON path")
     p.add_argument("--device", default="auto",
@@ -429,7 +429,7 @@ def main():
                 sae=sae,
                 adapter_name=domain,
                 layer_name=layer_name,
-                threshold_percentile=args.threshold_percentile,
+                threshold_multiplier=args.threshold_multiplier,
                 device=device,
             )
             profiles[layer_name] = profile
