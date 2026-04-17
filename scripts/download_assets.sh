@@ -2,8 +2,8 @@
 # =============================================================================
 # Download all assets needed for SFC experiments (with China proxies)
 #
-# Run on a machine WITH internet (e.g., download container at /openbayes/input/input0),
-# then scp the resulting directories to the offline GPU server.
+# Run on a machine WITH internet, then scp the resulting directories
+# to the offline GPU server.
 #
 # Uses:
 #   - HuggingFace mirror: https://hf-mirror.com
