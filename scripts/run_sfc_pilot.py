@@ -246,7 +246,8 @@ def train_single_adapter(
     ds = ds.shuffle(seed=42).select(range(min(n_samples, len(ds))))
     ds = ds.map(format_example, remove_columns=ds.column_names)
 
-    training_args = SFTConfig(
+    # TRL 1.x API — max_seq_length moved, some args renamed
+    sft_kwargs = dict(
         output_dir=output_dir,
         num_train_epochs=epochs,
         per_device_train_batch_size=4,
@@ -256,9 +257,16 @@ def train_single_adapter(
         logging_steps=50,
         save_strategy="epoch",
         bf16=True,
-        max_seq_length=512,
         dataset_text_field="text",
     )
+    # Try new API first (TRL 1.x), fall back to old
+    try:
+        training_args = SFTConfig(**sft_kwargs, max_length=512)
+    except TypeError:
+        try:
+            training_args = SFTConfig(**sft_kwargs, max_seq_length=512)
+        except TypeError:
+            training_args = SFTConfig(**sft_kwargs)
 
     trainer = SFTTrainer(
         model=model,
