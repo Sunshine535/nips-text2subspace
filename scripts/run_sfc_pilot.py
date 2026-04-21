@@ -146,13 +146,44 @@ def generate_probe_texts(n: int) -> list:
 # ---------------------------------------------------------------------------
 
 DOMAIN_DATASETS = {
-    "math": ("gsm8k", "main", "question", "answer"),
-    "science": ("allenai/ai2_arc", "ARC-Challenge", "question", "answerKey"),
-    "medical": ("bigbio/med_qa", "med_qa_en_4options_source", "question", "answer_idx"),
-    "history": ("cais/mmlu", "all", "question", "answer"),  # filter for history
-    "philosophy": ("cais/mmlu", "all", "question", "answer"),  # filter for philosophy
-    "code": ("mbpp", "full", "text", "code"),
+    # (repo_or_local_path, config, question_field, answer_field)
+    "math":       ("openai/gsm8k",                    "main",                          "question", "answer"),
+    "science":    ("allenai/ai2_arc",                 "ARC-Challenge",                 "question", "answerKey"),
+    "medical":    ("openlifescienceai/medmcqa",       None,                            "question", "cop"),
+    "history":    ("cais/mmlu",                       "all",                           "question", "answer"),
+    "philosophy": ("cais/mmlu",                       "all",                           "question", "answer"),
+    "code":       ("google-research-datasets/mbpp",   "full",                          "text",     "code"),
 }
+
+# Map repo ID → local cache directory name (for offline load)
+LOCAL_DATASET_MAP = {
+    "openai/gsm8k": "gsm8k",
+    "allenai/ai2_arc": lambda cfg: "arc_challenge" if cfg == "ARC-Challenge" else "arc_easy",
+    "openlifescienceai/medmcqa": "medmcqa",
+    "cais/mmlu": "mmlu",
+    "google-research-datasets/mbpp": "mbpp",
+    "Salesforce/wikitext": "wikitext",
+}
+
+
+def load_domain_dataset(repo, cfg, local_root="/root/datasets"):
+    """Load dataset from local disk if available, else from HF."""
+    from pathlib import Path
+    from datasets import load_dataset, load_from_disk
+
+    if local_root and repo in LOCAL_DATASET_MAP:
+        entry = LOCAL_DATASET_MAP[repo]
+        name = entry(cfg) if callable(entry) else entry
+        local_path = Path(local_root) / name
+        if local_path.exists() and any(local_path.iterdir()):
+            logger.info(f"  Loading from local: {local_path}")
+            return load_from_disk(str(local_path))
+
+    logger.info(f"  Loading from HF: {repo} ({cfg})")
+    try:
+        return load_dataset(repo, cfg) if cfg else load_dataset(repo)
+    except Exception:
+        return load_dataset(repo, split=None)
 
 
 def train_single_adapter(
@@ -194,15 +225,17 @@ def train_single_adapter(
     )
     model = get_peft_model(model, lora_config)
 
-    # Load domain data
+    # Load domain data (local cache first, then HF)
     ds_name, ds_config, q_field, a_field = DOMAIN_DATASETS.get(
-        domain, ("gsm8k", "main", "question", "answer")
+        domain, ("openai/gsm8k", "main", "question", "answer")
     )
 
-    try:
-        ds = load_dataset(ds_name, ds_config, split="train")
-    except Exception:
-        ds = load_dataset(ds_name, split="train")
+    ds_full = load_domain_dataset(ds_name, ds_config)
+    # Pick train split if it's a DatasetDict
+    if hasattr(ds_full, "keys"):
+        ds = ds_full["train"] if "train" in ds_full else next(iter(ds_full.values()))
+    else:
+        ds = ds_full
 
     # Format for SFT
     def format_example(example):
