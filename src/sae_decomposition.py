@@ -42,10 +42,12 @@ class SparseAutoencoder(nn.Module):
         b_enc: torch.Tensor,
         b_dec: torch.Tensor,
         threshold: Optional[torch.Tensor] = None,
+        topk: Optional[int] = None,
     ):
         super().__init__()
         self.d_model = d_model
         self.n_features = n_features
+        self.topk = topk
         self.register_buffer("W_enc", W_enc.float())   # (n_features, d_model)
         self.register_buffer("W_dec", W_dec.float())   # (n_features, d_model)
         self.register_buffer("b_enc", b_enc.float())   # (n_features,)
@@ -59,13 +61,14 @@ class SparseAutoencoder(nn.Module):
     def encode(self, x: torch.Tensor) -> torch.Tensor:
         """Encode activations to sparse feature coefficients.
 
-        Args:
-            x: (..., d_model) input activations
-        Returns:
-            f: (..., n_features) sparse feature coefficients
+        Uses TopK if the SAE was trained with TopK, otherwise JumpReLU/ReLU.
         """
         z = (x - self.b_dec) @ self.W_enc.T + self.b_enc  # (..., n_features)
-        if self.use_jumprelu:
+        if self.topk is not None:
+            topk_vals, topk_idx = z.topk(self.topk, dim=-1)
+            f = torch.zeros_like(z)
+            f.scatter_(-1, topk_idx, torch.relu(topk_vals))
+        elif self.use_jumprelu:
             f = torch.relu(z) * (z > self.threshold).float()
         else:
             f = torch.relu(z)
@@ -152,8 +155,18 @@ class SparseAutoencoder(nn.Module):
         if W_dec.shape != (n_features, d_model):
             W_dec = W_dec.T
 
+        # Load config for topk if available
+        import json
+        topk = None
+        config_path = path / "config.json"
+        if config_path.exists():
+            with open(config_path) as cf:
+                cfg = json.load(cf)
+                topk = cfg.get("topk")
+
+        enc_type = "topk" if topk else ("jumprelu" if threshold is not None else "relu")
         logger.info(f"Loaded SAE: d_model={d_model}, n_features={n_features}, "
-                     f"jumprelu={'yes' if threshold is not None else 'no'}")
+                     f"encoder={enc_type}" + (f", k={topk}" if topk else ""))
 
         return cls(
             d_model=d_model,
@@ -163,6 +176,7 @@ class SparseAutoencoder(nn.Module):
             b_enc=b_enc,
             b_dec=b_dec,
             threshold=threshold,
+            topk=topk,
         )
 
     @classmethod
@@ -377,40 +391,43 @@ def compute_feature_profile(
 
     delta_f_all = torch.cat(all_delta_f, dim=0)  # (n_tokens, n_features)
 
-    # Mean absolute feature modification across tokens
+    # Signed mean delta preserves direction; absolute for thresholding
+    mean_signed_delta = delta_f_all.mean(dim=0)  # (n_features,)
     mean_abs_delta = delta_f_all.abs().mean(dim=0)  # (n_features,)
 
     # Determine support: features with significant modification
     nonzero_mask = mean_abs_delta > 0
     if nonzero_mask.sum() == 0:
-        # No features modified — return empty profile
         return FeatureProfile(
             adapter_name=adapter_name,
             layer_name=layer_name,
             support=torch.tensor([], dtype=torch.long),
             coefficients=torch.tensor([]),
-            full_coefficients=mean_abs_delta,
+            full_coefficients=torch.zeros_like(mean_signed_delta),
             sparsity=0.0,
             total_features=sae.n_features,
         )
 
-    # Absolute threshold: mean + k*std of all feature deltas
-    # This measures TRUE sparsity, not a tautological percentile
+    # Absolute threshold on magnitude to identify active features
     global_mean = mean_abs_delta.mean()
     global_std = mean_abs_delta.std()
     thresh = global_mean + threshold_multiplier * global_std
 
     active_mask = mean_abs_delta > thresh
     support = active_mask.nonzero(as_tuple=False).squeeze(-1)
-    coefficients = mean_abs_delta[support]
+    coefficients = mean_signed_delta[support]  # SIGNED coefficients
     sparsity = float(support.numel()) / sae.n_features
+
+    # Zero inactive features so composition respects the support
+    full_coefficients = torch.zeros_like(mean_signed_delta)
+    full_coefficients[support] = coefficients
 
     return FeatureProfile(
         adapter_name=adapter_name,
         layer_name=layer_name,
         support=support,
         coefficients=coefficients,
-        full_coefficients=mean_abs_delta,
+        full_coefficients=full_coefficients,
         sparsity=sparsity,
         total_features=sae.n_features,
     )

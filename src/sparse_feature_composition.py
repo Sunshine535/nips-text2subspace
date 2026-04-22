@@ -163,16 +163,18 @@ def compose_feature_profiles(
     if weights is None:
         weights = [1.0] * N
 
-    # Build full coefficient matrix (N, n_features)
+    # Build full coefficient matrix (N, n_features) — now signed
     coeff_matrix = torch.zeros(N, n_features)
     for i, prof in enumerate(profiles):
         coeff_matrix[i] = prof.full_coefficients * weights[i]
 
-    # Max-pool across adapters
-    composed, source_indices = coeff_matrix.max(dim=0)  # (n_features,), (n_features,)
+    # Compose: take coefficient with largest absolute magnitude (preserving sign)
+    abs_matrix = coeff_matrix.abs()
+    _, source_indices = abs_matrix.max(dim=0)
+    composed = coeff_matrix.gather(0, source_indices.unsqueeze(0)).squeeze(0)
 
     # Determine support (non-zero composed features)
-    active_mask = composed > 0
+    active_mask = composed.abs() > 0
     support = active_mask.nonzero(as_tuple=False).squeeze(-1)
     coefficients = composed[support]
 
@@ -183,7 +185,7 @@ def compose_feature_profiles(
         contributors = [
             profiles[i].adapter_name
             for i in range(N)
-            if coeff_matrix[i, idx] > 0
+            if coeff_matrix[i, idx].abs() > 0
         ]
         source_adapters[idx] = contributors
         if len(contributors) > 1:

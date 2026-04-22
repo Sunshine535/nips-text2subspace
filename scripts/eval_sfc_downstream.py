@@ -218,80 +218,100 @@ def load_adapter_weights(adapter_path):
     raise FileNotFoundError(f"No adapter weights in {adapter_path}")
 
 
+def _materialize_delta_w(weights, module_prefix):
+    """Compute delta_W = B @ A for a single LoRA module, return as flat tensor."""
+    a_key = f"{module_prefix}.lora_A.weight"
+    b_key = f"{module_prefix}.lora_B.weight"
+    if a_key in weights and b_key in weights:
+        return weights[b_key].float() @ weights[a_key].float()
+    return None
+
+
+def _get_lora_modules(weights):
+    """Extract unique LoRA module prefixes from weight keys."""
+    modules = set()
+    for key in weights:
+        if ".lora_A.weight" in key:
+            modules.add(key.replace(".lora_A.weight", ""))
+    return sorted(modules)
+
+
 def merge_task_arithmetic(weights_a, weights_b, weight=0.5):
-    """Task Arithmetic: weighted average of LoRA parameters."""
+    """Task Arithmetic: average in delta_W = B@A space, then refactor to LoRA."""
+    modules = _get_lora_modules(weights_a)
     merged = {}
-    for key in weights_a:
-        if key in weights_b:
-            merged[key] = weight * weights_a[key] + (1 - weight) * weights_b[key]
-        else:
-            merged[key] = weights_a[key] * weight
-    for key in weights_b:
-        if key not in merged:
-            merged[key] = weights_b[key] * (1 - weight)
+    for mod in modules:
+        dw_a = _materialize_delta_w(weights_a, mod)
+        dw_b = _materialize_delta_w(weights_b, mod)
+        if dw_a is not None and dw_b is not None:
+            dw_merged = weight * dw_a + (1 - weight) * dw_b
+            U, S, Vh = torch.linalg.svd(dw_merged, full_matrices=False)
+            rank = weights_a[f"{mod}.lora_A.weight"].shape[0]
+            r = min(rank, U.shape[1])
+            sqrt_S = torch.sqrt(S[:r].clamp(min=0))
+            merged[f"{mod}.lora_B.weight"] = (U[:, :r] @ torch.diag(sqrt_S)).to(weights_a[f"{mod}.lora_B.weight"].dtype)
+            merged[f"{mod}.lora_A.weight"] = (torch.diag(sqrt_S) @ Vh[:r, :]).to(weights_a[f"{mod}.lora_A.weight"].dtype)
     return merged
 
 
 def merge_ties(weights_a, weights_b, density=0.5):
-    """TIES: Trim, Elect sign, Merge."""
+    """TIES: Trim, Elect sign, Merge — in delta_W space."""
+    modules = _get_lora_modules(weights_a)
     merged = {}
-    for key in weights_a:
-        if key not in weights_b:
-            merged[key] = weights_a[key]
+    for mod in modules:
+        dw_a = _materialize_delta_w(weights_a, mod)
+        dw_b = _materialize_delta_w(weights_b, mod)
+        if dw_a is None or dw_b is None:
             continue
 
-        wa = weights_a[key].float()
-        wb = weights_b[key].float()
-
-        # Trim: keep top-density% by magnitude
-        for w in [wa, wb]:
-            flat = w.abs().flatten()
-            if flat.numel() == 0:
-                continue
+        # Trim: zero out small-magnitude elements
+        for dw in [dw_a, dw_b]:
+            flat = dw.abs().flatten()
             threshold = torch.quantile(flat, 1 - density)
-            w[w.abs() < threshold] = 0
+            dw[dw.abs() < threshold] = 0
 
         # Elect sign: majority vote
-        signs = torch.sign(wa) + torch.sign(wb)
+        signs = torch.sign(dw_a) + torch.sign(dw_b)
         elected_sign = torch.sign(signs)
         elected_sign[elected_sign == 0] = 1
 
         # Merge: average magnitudes, apply elected sign
-        avg_mag = (wa.abs() + wb.abs()) / 2
-        merged[key] = (elected_sign * avg_mag).to(weights_a[key].dtype)
+        avg_mag = (dw_a.abs() + dw_b.abs()) / 2
+        dw_merged = elected_sign * avg_mag
 
-    for key in weights_b:
-        if key not in merged:
-            merged[key] = weights_b[key]
+        # Refactor to LoRA
+        rank = weights_a[f"{mod}.lora_A.weight"].shape[0]
+        U, S, Vh = torch.linalg.svd(dw_merged, full_matrices=False)
+        r = min(rank, U.shape[1])
+        sqrt_S = torch.sqrt(S[:r].clamp(min=0))
+        merged[f"{mod}.lora_B.weight"] = (U[:, :r] @ torch.diag(sqrt_S)).to(weights_a[f"{mod}.lora_B.weight"].dtype)
+        merged[f"{mod}.lora_A.weight"] = (torch.diag(sqrt_S) @ Vh[:r, :]).to(weights_a[f"{mod}.lora_A.weight"].dtype)
     return merged
 
 
 def merge_dare(weights_a, weights_b, drop_rate=0.5):
-    """DARE: Drop And REscale, then merge."""
+    """DARE: Drop And REscale — in delta_W space."""
+    modules = _get_lora_modules(weights_a)
     merged = {}
-    for key in weights_a:
-        if key not in weights_b:
-            merged[key] = weights_a[key]
+    for mod in modules:
+        dw_a = _materialize_delta_w(weights_a, mod)
+        dw_b = _materialize_delta_w(weights_b, mod)
+        if dw_a is None or dw_b is None:
             continue
 
-        wa = weights_a[key].float()
-        wb = weights_b[key].float()
-
-        # Random binary masks
-        mask_a = (torch.rand_like(wa) > drop_rate).float()
-        mask_b = (torch.rand_like(wb) > drop_rate).float()
-
-        # Rescale
+        # Random binary masks + rescale
+        mask_a = (torch.rand_like(dw_a) > drop_rate).float()
+        mask_b = (torch.rand_like(dw_b) > drop_rate).float()
         scale = 1.0 / (1.0 - drop_rate + 1e-8)
-        wa_dare = wa * mask_a * scale
-        wb_dare = wb * mask_b * scale
+        dw_merged = (dw_a * mask_a * scale + dw_b * mask_b * scale) / 2
 
-        # Average
-        merged[key] = ((wa_dare + wb_dare) / 2).to(weights_a[key].dtype)
-
-    for key in weights_b:
-        if key not in merged:
-            merged[key] = weights_b[key]
+        # Refactor to LoRA
+        rank = weights_a[f"{mod}.lora_A.weight"].shape[0]
+        U, S, Vh = torch.linalg.svd(dw_merged, full_matrices=False)
+        r = min(rank, U.shape[1])
+        sqrt_S = torch.sqrt(S[:r].clamp(min=0))
+        merged[f"{mod}.lora_B.weight"] = (U[:, :r] @ torch.diag(sqrt_S)).to(weights_a[f"{mod}.lora_B.weight"].dtype)
+        merged[f"{mod}.lora_A.weight"] = (torch.diag(sqrt_S) @ Vh[:r, :]).to(weights_a[f"{mod}.lora_A.weight"].dtype)
     return merged
 
 
