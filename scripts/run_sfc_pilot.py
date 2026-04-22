@@ -76,6 +76,8 @@ def parse_args():
     p.add_argument("--lora-rank", type=int, default=16)
     p.add_argument("--lora-alpha", type=int, default=32)
     p.add_argument("--train-epochs", type=int, default=2)
+    p.add_argument("--only-domain", default=None,
+                    help="If set, train/load only this single domain (for parallel jobs)")
     return p.parse_args()
 
 
@@ -357,6 +359,9 @@ def main():
     # Step 1: Check/train LoRA adapters
     adapter_dir = Path(args.adapter_dir)
     domains = ["math", "code", "medical", "science", "history", "philosophy"]
+    if args.only_domain:
+        domains = [args.only_domain]
+        logger.info(f"--only-domain set: training/loading only {args.only_domain}")
     adapter_paths = {}
 
     for domain in domains:
@@ -380,11 +385,20 @@ def main():
         else:
             logger.warning(f"No adapter for {domain}. Use --train-adapters to create.")
 
+    results["adapters_found"] = list(adapter_paths.keys())
+
+    # If --only-domain was set, we only trained/loaded one adapter — exit now
+    if args.only_domain:
+        logger.info(f"--only-domain: training complete for {args.only_domain}, exiting")
+        output_path = Path(args.output)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(output_path, "w") as f:
+            json.dump(results, f, indent=2, default=str)
+        return
+
     if len(adapter_paths) < 2:
         logger.error("Need at least 2 adapters. Run with --train-adapters.")
         sys.exit(1)
-
-    results["adapters_found"] = list(adapter_paths.keys())
 
     # Step 2: Load SAEs
     logger.info("Loading SAEs...")

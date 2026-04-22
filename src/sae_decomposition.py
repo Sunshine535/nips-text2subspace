@@ -261,17 +261,13 @@ def collect_activations(
     cache = ActivationCache()
     handles = []
 
-    # Register hooks on target layers
+    # Register hooks on target layers (handles both base and PEFT-wrapped models)
+    # base model: "model.layers.7", PEFT: "base_model.model.model.layers.7"
     for name, module in model.named_modules():
-        if name in layer_names:
-            handles.append(module.register_forward_hook(cache.hook_fn(name)))
-
-    if not handles:
-        # Try matching by partial name
-        for name, module in model.named_modules():
-            for target in layer_names:
-                if target in name and name.endswith(target.split(".")[-1]):
-                    handles.append(module.register_forward_hook(cache.hook_fn(name)))
+        for target in layer_names:
+            if name == target or name.endswith(target):
+                handles.append(module.register_forward_hook(cache.hook_fn(target)))
+                break
 
     # For device_map="auto" models, find the input device from the model itself
     if device == "auto" or (hasattr(model, "hf_device_map") and model.hf_device_map):
@@ -287,7 +283,7 @@ def collect_activations(
             inputs = tokenizer(
                 batch_texts,
                 return_tensors="pt",
-                padding=True,
+                padding="max_length",
                 truncation=True,
                 max_length=max_length,
             ).to(input_device)

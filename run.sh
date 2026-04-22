@@ -7,12 +7,17 @@ set -e
 PROJ_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$PROJ_DIR"
 
-# --- HF cache ---
-export HF_HOME="${HF_HOME:-$(dirname "$PROJ_DIR")/.cache/hf}"
-export HF_HUB_OFFLINE=1
-export TRANSFORMERS_OFFLINE=1
+# --- HF cache: 统一落盘到 /openbayes/input/input0 ---
+export HF_HOME="${HF_HOME:-/openbayes/input/input0}"
+export HF_HUB_CACHE="${HF_HUB_CACHE:-$HF_HOME/hub}"
+export HF_DATASETS_CACHE="${HF_DATASETS_CACHE:-$HF_HOME/datasets}"
+export TRANSFORMERS_CACHE="${TRANSFORMERS_CACHE:-$HF_HOME/hub}"
+export HF_ENDPOINT="${HF_ENDPOINT:-https://hf-mirror.com}"
+export HF_HUB_ENABLE_HF_TRANSFER="${HF_HUB_ENABLE_HF_TRANSFER:-0}"
+export HF_HUB_OFFLINE="${HF_HUB_OFFLINE:-1}"
+export TRANSFORMERS_OFFLINE="${TRANSFORMERS_OFFLINE:-1}"
 export TOKENIZERS_PARALLELISM=false
-mkdir -p "$HF_HOME"
+mkdir -p "$HF_HOME" "$HF_HUB_CACHE" "$HF_DATASETS_CACHE"
 
 # --- Model config ---
 MODEL="${MODEL:-Qwen/Qwen3.5-9B}"

@@ -9,12 +9,15 @@
 
 set -euo pipefail
 
-MODEL="${1:-Qwen/Qwen3.5-9B}"
-OUTPUT_DIR="${2:-results/sfc_loras}"
-SAMPLES_PER_DOMAIN=5000
-RANK=16
-ALPHA=32
-EPOCHS=2
+MODEL="${MODEL:-${1:-Qwen/Qwen3.5-9B}}"
+OUTPUT_DIR="${OUTPUT_DIR:-${2:-results/sfc_loras}}"
+SAMPLES_PER_DOMAIN="${SAMPLES_PER_DOMAIN:-5000}"
+RANK="${RANK:-16}"
+ALPHA="${ALPHA:-32}"
+EPOCHS="${EPOCHS:-2}"
+export TRANSFORMERS_OFFLINE="${TRANSFORMERS_OFFLINE:-1}"
+export HF_DATASETS_OFFLINE="${HF_DATASETS_OFFLINE:-1}"
+export TOKENIZERS_PARALLELISM=false
 
 # --- GPU auto-detection ---
 if command -v nvidia-smi &>/dev/null; then
@@ -47,7 +50,7 @@ else
     GRAD_ACCUM=16
 fi
 
-DOMAINS=("math" "code" "medical" "science" "history" "philosophy" "law" "reasoning")
+DOMAINS=("math" "code" "medical" "science" "history" "philosophy")
 
 mkdir -p "$OUTPUT_DIR"
 

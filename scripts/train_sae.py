@@ -177,15 +177,26 @@ def train_sae_manual(
             module.register_forward_hook(hook_fn)
             break
 
-    # Stream training data — try real dataset, fall back to random tokens
-    try:
-        ds = load_dataset(dataset, dataset_config, split="train", streaming=True)
-        use_random = False
-        logger.info(f"Using dataset: {dataset}/{dataset_config}")
-    except Exception as e:
-        logger.warning(f"Cannot load {dataset}: {e}. Using random token inputs.")
-        use_random = True
-        ds = None
+    # Prefer local wikitext (offline cache), then fallback to streaming
+    from datasets import load_from_disk
+    local_wikitext = "/root/datasets/wikitext"
+    ds_obj = None
+    use_random = False
+    if os.path.isdir(local_wikitext):
+        try:
+            raw = load_from_disk(local_wikitext)
+            ds_obj = raw["train"] if hasattr(raw, "keys") and "train" in raw else raw
+            logger.info(f"Using local wikitext from {local_wikitext} ({len(ds_obj)} rows)")
+        except Exception as e:
+            logger.warning(f"Failed to load local wikitext: {e}")
+    if ds_obj is None:
+        try:
+            ds_obj = load_dataset(dataset, dataset_config, split="train", streaming=True)
+            logger.info(f"Using HF stream: {dataset}/{dataset_config}")
+        except Exception as e:
+            logger.warning(f"Cannot load {dataset}: {e}. Using random token inputs.")
+            use_random = True
+            ds_obj = None
 
     tokens_seen = 0
     step = 0
@@ -193,62 +204,90 @@ def train_sae_manual(
 
     logger.info(f"Training: d_model={d_model}, n_features={n_features}, k={k}")
 
+    # Batch multiple texts per forward for efficiency
+    BATCH_TEXTS = 8
+
     def data_iter():
-        """Yield tokenized inputs from dataset or random tokens."""
+        """Yield batched tokenized inputs."""
         if use_random:
             vocab_size = tokenizer.vocab_size
             while True:
-                random_ids = torch.randint(100, vocab_size - 100, (1, context_size)).to("cuda")
+                random_ids = torch.randint(100, vocab_size - 100, (BATCH_TEXTS, context_size)).to("cuda")
                 yield {"input_ids": random_ids, "attention_mask": torch.ones_like(random_ids)}
         else:
-            for example in ds:
+            buf = []
+            for example in ds_obj:
                 text = example.get("text", "")
-                if len(text) < 50:
+                if len(text) < 100:
                     continue
-                inputs = tokenizer(text, return_tensors="pt", truncation=True,
-                                  max_length=context_size, padding=False).to("cuda")
-                yield inputs
+                buf.append(text)
+                if len(buf) >= BATCH_TEXTS:
+                    inputs = tokenizer(buf, return_tensors="pt", truncation=True,
+                                      max_length=context_size, padding="max_length").to("cuda")
+                    buf = []
+                    yield inputs
 
-    for inputs in data_iter():
-        if tokens_seen >= training_tokens:
-            break
+    import sys
+    first_iter = True
+    try:
+        for inputs in data_iter():
+            if tokens_seen >= training_tokens:
+                break
 
-        activations.clear()
-        with torch.no_grad():
-            model(**{k: v for k, v in inputs.items() if k in ("input_ids", "attention_mask")})
+            activations.clear()
+            with torch.no_grad():
+                model(**{k: v for k, v in inputs.items() if k in ("input_ids", "attention_mask")})
 
-        if not activations:
-            continue
+            if first_iter:
+                logger.info(f"[iter0] forward OK, activations={len(activations)}, "
+                            f"shape={activations[0].shape if activations else 'empty'}, "
+                            f"dtype={activations[0].dtype if activations else 'n/a'}")
 
-        x = activations[0].reshape(-1, d_model)  # (seq_len, d_model)
-        n_tokens = x.shape[0]
-        tokens_seen += n_tokens
+            if not activations:
+                if first_iter:
+                    logger.warning("Hook did not fire")
+                continue
 
-        # SAE forward: encode → topk → decode
-        z = (x - b_dec) @ W_enc.T + b_enc  # (seq, n_features)
-        # TopK activation
-        topk_vals, topk_idx = z.topk(k, dim=-1)
-        f = torch.zeros_like(z)
-        f.scatter_(1, topk_idx, torch.relu(topk_vals))
-        x_hat = f @ W_dec + b_dec
+            x = activations[0].reshape(-1, d_model).float()
+            n_tokens = x.shape[0]
+            tokens_seen += n_tokens
 
-        # Loss: reconstruction + L1
-        recon_loss = (x - x_hat).pow(2).sum(dim=-1).mean()
-        l1_loss = f.abs().sum(dim=-1).mean()
-        loss = recon_loss + l1_coefficient * l1_loss
+            z = (x - b_dec) @ W_enc.T + b_enc
+            if first_iter:
+                logger.info(f"[iter0] z shape={z.shape}, dtype={z.dtype}")
+            topk_vals, topk_idx = z.topk(k, dim=-1)
+            f = torch.zeros_like(z)
+            f.scatter_(1, topk_idx, torch.relu(topk_vals))
+            x_hat = f @ W_dec + b_dec
 
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
+            recon_loss = (x - x_hat).pow(2).sum(dim=-1).mean()
+            l1_loss = f.abs().sum(dim=-1).mean()
+            loss = recon_loss + l1_coefficient * l1_loss
+            if first_iter:
+                logger.info(f"[iter0] loss={loss.item():.4f}, recon={recon_loss.item():.4f}, l1={l1_loss.item():.4f}")
 
-        # Normalize decoder
-        with torch.no_grad():
-            W_dec.data = W_dec.data / W_dec.data.norm(dim=1, keepdim=True).clamp(min=1e-8)
+            optimizer.zero_grad()
+            loss.backward()
+            if first_iter:
+                logger.info(f"[iter0] backward OK")
+            optimizer.step()
 
-        step += 1
-        if step % 500 == 0:
-            logger.info(f"  step={step}, tokens={tokens_seen/1e6:.1f}M, "
-                        f"recon={recon_loss.item():.4f}, l1={l1_loss.item():.4f}")
+            with torch.no_grad():
+                W_dec.data = W_dec.data / W_dec.data.norm(dim=1, keepdim=True).clamp(min=1e-8)
+
+            step += 1
+            if first_iter:
+                logger.info(f"[iter0] step complete, total_tokens={tokens_seen}")
+                first_iter = False
+
+            if step % 50 == 0:
+                logger.info(f"step={step}, tokens={tokens_seen/1e6:.2f}M, "
+                            f"recon={recon_loss.item():.4f}, l1={l1_loss.item():.4f}")
+                sys.stdout.flush()
+    except Exception as e:
+        logger.error(f"Training loop crashed: {type(e).__name__}: {e}")
+        import traceback; traceback.print_exc()
+        raise
 
     # Save
     output_path = Path(output_dir)
