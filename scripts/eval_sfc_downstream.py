@@ -459,7 +459,7 @@ def main():
         args.model, torch_dtype=torch.bfloat16, device_map="auto",
         attn_implementation="sdpa", trust_remote_code=True,
     )
-    device = "auto"
+    device = "cuda"
 
     # Load SAEs
     from scripts.run_sfc_pilot import load_saes
