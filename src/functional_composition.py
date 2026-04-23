@@ -38,7 +38,8 @@ def load_lora_delta_w(adapter_path: str) -> Dict[str, torch.Tensor]:
     for mod in sorted(modules):
         A = weights[mod + ".lora_A.weight"].float()
         B = weights[mod + ".lora_B.weight"].float()
-        delta_ws[mod] = B @ A
+        clean_mod = mod.replace("base_model.model.", "", 1)
+        delta_ws[clean_mod] = B @ A
     return delta_ws
 
 
