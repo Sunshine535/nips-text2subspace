@@ -264,10 +264,11 @@ def merge_ties(weights_a, weights_b, density=0.5):
         if dw_a is None or dw_b is None:
             continue
 
-        # Trim: zero out small-magnitude elements
+        # Trim: zero out small-magnitude elements (use kthvalue to avoid quantile size limit)
         for dw in [dw_a, dw_b]:
             flat = dw.abs().flatten()
-            threshold = torch.quantile(flat, 1 - density)
+            k = max(1, int(flat.numel() * density))
+            threshold = flat.kthvalue(flat.numel() - k + 1).values
             dw[dw.abs() < threshold] = 0
 
         # Elect sign: majority vote
