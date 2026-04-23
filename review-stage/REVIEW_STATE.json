@@ -1,0 +1,10 @@
+{
+  "round": 1,
+  "threadId": "019db651-3ea2-7e43-a4b9-a336489ff2a5",
+  "status": "in_progress",
+  "difficulty": "nightmare",
+  "last_score": 2.0,
+  "last_verdict": "not ready",
+  "pending_experiments": ["sae_training_layers_15_23", "sfc_downstream_eval"],
+  "timestamp": "2026-04-23T01:30:00"
+}
