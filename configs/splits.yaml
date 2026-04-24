@@ -1,0 +1,89 @@
+# Split manifest for train/calibration/test separation
+# Rule: training data must NEVER overlap with test data
+# MMLU-based domains are flagged as LEAKY because train_domain_lora.py
+# used SPLIT_OVERRIDES = {"cais/mmlu": "test"} for training
+
+domains:
+  math:
+    train_dataset: "TIGER-Lab/MathInstruct"
+    train_split: "train"
+    eval_dataset: "gsm8k"
+    eval_split: "test"
+    calib_dataset: "gsm8k"
+    calib_split: "train"
+    leakage_risk: false
+    notes: "Train and eval use completely different datasets"
+
+  code:
+    train_dataset: "sahil2801/CodeAlpaca-20k"
+    train_split: "train"
+    eval_dataset: "mbpp"
+    eval_split: "test"
+    calib_dataset: "mbpp"
+    calib_split: "train"
+    leakage_risk: false
+    notes: "Train and eval use different datasets"
+
+  medical:
+    train_dataset: "medalpaca/medical_meadow_medical_flashcards"
+    train_split: "train"
+    eval_dataset: "medmcqa"
+    eval_split: "validation"
+    calib_dataset: "medmcqa"
+    calib_split: "train"
+    leakage_risk: false
+    notes: "Train and eval use different datasets; eval uses validation not test (no labels in test)"
+
+  science:
+    train_dataset: "allenai/sciq"
+    train_split: "train"
+    eval_dataset: "arc_challenge"
+    eval_split: "test"
+    calib_dataset: "arc_challenge"
+    calib_split: "train"
+    leakage_risk: false
+    notes: "Train and eval use completely different datasets"
+
+  history:
+    train_dataset: "cais/mmlu"
+    train_split: "test"  # BUG: was training on test split
+    eval_dataset: "cais/mmlu"
+    eval_split: "test"
+    calib_dataset: "cais/mmlu"
+    calib_split: "dev"
+    leakage_risk: true
+    leakage_reason: "Train script SPLIT_OVERRIDES set cais/mmlu to test; eval also uses test"
+
+  philosophy:
+    train_dataset: "cais/mmlu"
+    train_split: "test"  # BUG: was training on test split
+    eval_dataset: "cais/mmlu"
+    eval_split: "test"
+    calib_dataset: "cais/mmlu"
+    calib_split: "dev"
+    leakage_risk: true
+    leakage_reason: "Train script SPLIT_OVERRIDES set cais/mmlu to test; eval also uses test"
+
+  geography:
+    train_dataset: "cais/mmlu"
+    train_split: "test"  # BUG: was training on test split
+    eval_dataset: "cais/mmlu"
+    eval_split: "test"
+    calib_dataset: "cais/mmlu"
+    calib_split: "dev"
+    leakage_risk: true
+    leakage_reason: "Train script SPLIT_OVERRIDES set cais/mmlu to test; eval also uses test"
+
+  psychology:
+    train_dataset: "cais/mmlu"
+    train_split: "test"  # BUG: was training on test split
+    eval_dataset: "cais/mmlu"
+    eval_split: "test"
+    calib_dataset: "cais/mmlu"
+    calib_split: "dev"
+    leakage_risk: true
+    leakage_reason: "Train script SPLIT_OVERRIDES set cais/mmlu to test; eval also uses test"
+
+# Safe domains for CARR evaluation (no leakage risk):
+# science, medical, math, code
+# Primary CARR test pair: science + medical

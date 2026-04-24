@@ -1,0 +1,53 @@
+# CARR Minimal Configuration
+# For initial verification experiments on non-leaky domain pairs
+
+base_model: "Qwen/Qwen3.5-9B"  # or local path /root/models/Qwen3.5-9B
+adapter_dir: "results/sfc_loras_test"  # or /root/nips-text2subspace/results/sfc_loras_test
+
+carr:
+  n_adapters: 2
+  d_model: 4096
+  gate_hidden_dim: 128
+  use_reliability: true
+  use_conflict: true
+  use_base_fallback: true
+  top_k: 1
+  temperature: 1.0
+
+  # Loss weights
+  base_kl_weight: 0.1
+  conflict_weight: 0.05
+  sparsity_weight: 0.01
+
+  # Training
+  lr: 1e-3
+  max_steps: 500
+  calib_samples: 200
+  batch_size: 4
+  max_length: 128
+
+# Evaluation
+eval:
+  max_samples: 100
+  metric_mode: "generation"  # or "logprob_mcq" when available
+  seeds: [1, 2, 3]
+
+# Safe domain pairs (no train/test leakage)
+safe_pairs:
+  - ["science", "medical"]
+  - ["science", "math"]
+  - ["medical", "math"]
+
+# Leaky pairs (DO NOT use for strong evidence)
+leaky_pairs:
+  - ["history", "philosophy"]
+  - ["psychology", "geography"]
+
+# Modes for A/B/C comparison
+modes:
+  static_only: "TA or TIES merge, no router"
+  carr_no_reliability_conflict: "Router architecture but reliability/conflict features zeroed"
+  carr_full: "Full CARR with reliability + conflict + base fallback"
+  no_reliability: "CARR without reliability features"
+  no_conflict: "CARR without conflict features"
+  no_base_fallback: "CARR without base gate"

@@ -107,7 +107,8 @@ def format_example(example: dict, system_prompt: str, domain: str) -> dict:
 
 
 SPLIT_OVERRIDES = {
-    "cais/mmlu": "test",  # cais/mmlu: test has 237-311 samples; dev/validation too small
+    "cais/mmlu": "auxiliary_train",  # FIXED: was "test" causing train/test leakage
+    # auxiliary_train has ~99k samples; test/validation/dev are reserved for evaluation
 }
 
 
