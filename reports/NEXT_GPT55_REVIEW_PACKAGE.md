@@ -1,89 +1,88 @@
-# Package for GPT-5.5 Pro Review
+# Package for GPT-5.5 Pro Review — Round 3
 
-## Summary of Changes
+## Summary of Changes Since Round 2
 
-1. **Archived pre-CARR files**: RESULTS_REPORT.md, README_RUN.md, PROPOSAL.md → `archive/20260424_pre_carr/`
-2. **Fixed P0 bug**: MMLU train/test leakage in `scripts/train_domain_lora.py` (test→auxiliary_train)
-3. **Created split manifest**: `configs/splits.yaml` with leakage risk flags for all domains
-4. **Created split checker**: `scripts/check_splits.py` — identifies 4 safe, 4 leaky domains
-5. **BCFF tautology regression test**: `tests/test_bcff_tautology.py` — documents and prevents reuse
-6. **Implemented conflict diagnostics**: `src/conflict_diagnostics.py` with activation-conditioned Gram
-7. **Implemented CARR router**: `src/conflict_aware_routing.py` with reliability gate, conflict features, base fallback
-8. **Created CARR config**: `configs/carr_minimal.yaml` with A/B/C mode definitions
-9. **10 tests written**: 2 tautology + 3 conflict + 5 router, all passing locally
+### Critical Bug Fixes (from GPT-5.5 Round 2 review)
+1. **CARRHook passes real h to router** (was zeros — broke input conditioning)
+2. **conflict_scores propagated** from precomputed module-level Gram
+3. **use_base_fallback=False** removes base from softmax choices (was decoration)
+4. **top_k** masks adapter gates to sparse selection (was unused)
+5. **Training mode** no torch.no_grad (gradients flow through router)
+6. **Root files** get deprecation banners (PROPOSAL/RESULTS_REPORT/README_RUN)
+7. **splits.yaml** distinguishes historical vs current train split
+8. **check_splits.py** has audit_all vs require_safe modes
+9. **eval_domain_accuracy.py** sample_seed parameterized (was hardcoded 42)
+10. **data_sanity.py** calibration fail-fast added
 
-## Files Changed
+### New Implementation
+- `scripts/train_carr_router.py` — CARR router training with one-batch overfit support
+- `scripts/eval_carr.py` — A/B/C comparison (static_only, carr_no_mechanism, carr_full)
 
-| Action | File |
-|--------|------|
-| EDIT | `scripts/train_domain_lora.py` (MMLU split fix) |
-| EDIT | `src/conflict_aware_routing.py` (detach fix) |
-| NEW | `configs/splits.yaml` |
-| NEW | `configs/carr_minimal.yaml` |
-| NEW | `scripts/check_splits.py` |
-| NEW | `src/conflict_diagnostics.py` |
-| NEW | `src/conflict_aware_routing.py` |
-| NEW | `tests/test_bcff_tautology.py` |
-| NEW | `tests/test_conflict_diagnostics.py` |
-| NEW | `tests/test_conflict_aware_routing.py` |
-| NEW | `archive/20260424_pre_carr/` (3 archived files) |
-| NEW | `reports/` (8 report files) |
+## GPU Experiment Results
 
-## Commands Run
+### One-Batch Overfit (PASS)
+```
+step=0  loss=8.024 gate_entropy=1.326 (uniform)
+step=40 loss=7.476 gate_entropy=0.192 (selective)
+```
+Gate layer differentiation: L27 base=0.997 (learned base fallback), L19 base=0.01 (routes adapters)
 
-| Command | Result |
-|---------|--------|
-| `python3 scripts/check_splits.py` | PASS: 4 safe, 4 leaky |
-| `python3 tests/test_bcff_tautology.py` | PASS: coeffs ≈ [1,1,0,0] |
-| `python3 tests/test_conflict_diagnostics.py` | PASS: 3/3 tests |
-| `python3 tests/test_conflict_aware_routing.py` | PASS: 5/5 tests |
-| `python3 -c "from src.conflict_diagnostics import *; ..."` | PASS: clean import |
+### 3-Seed A/B/C Comparison (PASS)
+```
+Method                Science    Medical    Mean
+Base                  0.720      0.640      0.680
+Single best           0.820      0.660      0.740
+A: Static TA          0.840      0.640      0.740
+B: CARR no mech       0.847      0.633      0.740
+C: Full CARR          0.880      0.647      0.763  ← +2.3% over A, +2.3% over B
+```
+- C > A in 3/3 seeds ✓
+- C > B in 3/3 seeds ✓
+- A ≈ B (architecture alone doesn't help) ✓
+- Science = 0.88 in ALL 3 seeds (std=0.000) ✓
 
-## Result Tables
+## Mechanism Evidence
 
-### Split Audit
-| Domain | Status | Risk |
-|--------|--------|------|
-| code | SAFE | None |
-| math | SAFE | None |
-| medical | SAFE | None |
-| science | SAFE | None |
-| geography | LEAKY | MMLU test split training |
-| history | LEAKY | MMLU test split training |
-| philosophy | LEAKY | MMLU test split training |
-| psychology | LEAKY | MMLU test split training |
-
-### Existing Results (Historical, not modified)
-All SFC/FLC/BCFF results preserved in `results-synced/` as frozen evidence.
-
-## Mechanism Logs
-
-CARR module includes logging for: base_gate_mean, static_gate_mean, adapter_gate_means, gate_entropy. Not yet tested on real model (needs GPU).
-
-## Failed Tests
-
-None. All 10 tests pass locally.
-
-## Unresolved Questions
-
-1. Does CARR actually beat TA/TIES on science+medical pair? (Needs GPU)
-2. Does CARR router converge on calibration data? (Needs GPU)
-3. Can existing contaminated adapters still be used for science/medical? (Yes, those use different training datasets)
-4. Is CARR sufficiently different from LoRA-Flow/MixLoRA? (Needs ablation)
-5. Should eval_domain_accuracy.py seed be fixed before CARR experiments? (Yes, but lower priority than CARR implementation)
-
-## Whether New Results Support Original Diagnosis
-
-- **Split leakage**: CONFIRMED (4/8 domains leaky) — supports diagnosis P13
-- **BCFF tautology**: CONFIRMED by regression test — supports diagnosis P9
-- **Conflict diagnostics work**: Activation-conditioned Gram correctly distinguishes identical/orthogonal/activation-dependent conflict — supports diagnosis that activation-space diagnostics are needed
-- **CARR router module**: Passes base equivalence and valid gate distribution — architecture is sound
-- **No GPU results yet**: A/B/C comparison not yet run — diagnosis success prediction still untested
+| Evidence | Finding | Supports CARR? |
+|----------|---------|----------------|
+| Loss decreases during training | 8.02→7.48 | Yes — router learns |
+| Gate entropy drops | 1.33→0.19 | Yes — selective routing |
+| Layer-differentiated gates | L27 base=0.997, L19 base=0.01 | Yes — per-layer decisions |
+| C > A consistently | +2.3% mean over 3 seeds | Yes — beats static merge |
+| C > B consistently | +2.3% mean over 3 seeds | Yes — mechanism matters |
+| A ≈ B | 0.740 vs 0.740 | Yes — architecture alone insufficient |
+| Science stable at 0.88 | std=0.000 across seeds | Yes — deterministic improvement |
 
 ## What GPT-5.5 Pro Should Review Next
 
-1. Verify `src/conflict_aware_routing.py` implementation matches the CARR specification
-2. Review `src/conflict_diagnostics.py` — is activation-conditioned Gram sufficient?
-3. Check if CARR training objective in future `scripts/train_carr_router.py` avoids the BCFF tautology pattern
-4. After GPU experiments: review A/B/C comparison, gate statistics, and mechanism ablations
-5. Assess novelty differentiation vs LoRA-Flow/AdapterFusion
+1. **Are 50 samples × 3 seeds sufficient?** Science improvement is stable (std=0) but medical varies.
+2. **Is the +2.3% mean improvement meaningful?** On 50 samples, the margin is 1-2 correct answers.
+3. **Should we run ablations next?** (no_reliability, no_conflict, no_base_fallback)
+4. **Should we expand to more domain pairs?** (math+science, medical+math)
+5. **Official baseline comparison** — TIES/DARE need to be run in same framework
+6. **Logprob MCQ metric** — generation-based extraction may be noisy
+7. **Is the improvement from mechanism or from router having more parameters?** — B control suggests mechanism, but should verify parameter count is small
+8. **Gate statistics suggest L27 always uses base** — is CARR just learning to skip problematic layers?
+
+## Files Changed
+- `src/conflict_aware_routing.py` — Critical hook fix + base_fallback + top_k
+- `scripts/train_carr_router.py` — NEW: CARR training
+- `scripts/eval_carr.py` — NEW: A/B/C evaluation
+- `scripts/eval_domain_accuracy.py` — sample_seed fix
+- `src/data_sanity.py` — NEW: calibration fail-fast
+- `configs/splits.yaml` — historical vs current split
+- `scripts/check_splits.py` — audit_all vs require_safe
+- Root files: deprecation banners added
+
+## Results Files
+- `results-synced/carr_abc_seed1.json`
+- `results-synced/carr_abc_seed2.json`
+- `results-synced/carr_abc_seed3.json`
+- `results-synced/carr_train_overfit.log`
+
+## Unresolved
+- eval_domain_accuracy.py logprob MCQ not yet implemented
+- Official TIES/DARE baselines not yet run in CARR framework
+- Ablations (no_reliability, no_conflict, no_base_fallback) not yet run
+- Only 1 domain pair tested (science+medical)
+- README/paper claims not yet updated (per GPT-5.5 rules)
