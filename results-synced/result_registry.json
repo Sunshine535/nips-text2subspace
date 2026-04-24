@@ -1,0 +1,106 @@
+{
+  "registry_version": "1.0",
+  "created": "2026-04-25",
+  "results": [
+    {
+      "id": "CARR-ABC-seed1",
+      "method": "CARR A/B/C comparison",
+      "file": "results-synced/carr_abc_seed1.json",
+      "model": "Qwen3.5-9B",
+      "domains": ["science", "medical"],
+      "seed": 1,
+      "train_steps": 200,
+      "eval_samples": 50,
+      "metric": "accuracy (generation first-char)",
+      "results": {
+        "base": {"science": 0.72, "medical": 0.64, "mean": 0.68},
+        "single_best": {"science": 0.82, "medical": 0.66, "mean": 0.74},
+        "A_static_ta": {"science": 0.84, "medical": 0.64, "mean": 0.74},
+        "B_carr_no_mech": {"science": 0.84, "medical": 0.64, "mean": 0.74},
+        "C_carr_full": {"science": 0.88, "medical": 0.66, "mean": 0.77}
+      },
+      "reliability": "medium",
+      "notes": "First positive CARR result. C>A, C>B."
+    },
+    {
+      "id": "CARR-ABC-seed2",
+      "method": "CARR A/B/C comparison",
+      "file": "results-synced/carr_abc_seed2.json",
+      "model": "Qwen3.5-9B",
+      "domains": ["science", "medical"],
+      "seed": 2,
+      "train_steps": 200,
+      "eval_samples": 50,
+      "metric": "accuracy (generation first-char)",
+      "results": {
+        "base": {"science": 0.72, "medical": 0.64, "mean": 0.68},
+        "single_best": {"science": 0.82, "medical": 0.66, "mean": 0.74},
+        "A_static_ta": {"science": 0.84, "medical": 0.64, "mean": 0.74},
+        "B_carr_no_mech": {"science": 0.86, "medical": 0.60, "mean": 0.73},
+        "C_carr_full": {"science": 0.88, "medical": 0.64, "mean": 0.76}
+      },
+      "reliability": "medium",
+      "notes": "C>A, C>B confirmed."
+    },
+    {
+      "id": "CARR-ABC-seed3",
+      "method": "CARR A/B/C comparison",
+      "file": "results-synced/carr_abc_seed3.json",
+      "model": "Qwen3.5-9B",
+      "domains": ["science", "medical"],
+      "seed": 3,
+      "train_steps": 200,
+      "eval_samples": 50,
+      "metric": "accuracy (generation first-char)",
+      "results": {
+        "base": {"science": 0.72, "medical": 0.64, "mean": 0.68},
+        "single_best": {"science": 0.82, "medical": 0.66, "mean": 0.74},
+        "A_static_ta": {"science": 0.84, "medical": 0.64, "mean": 0.74},
+        "B_carr_no_mech": {"science": 0.84, "medical": 0.66, "mean": 0.75},
+        "C_carr_full": {"science": 0.88, "medical": 0.64, "mean": 0.76}
+      },
+      "reliability": "medium",
+      "notes": "C>A, C>B confirmed. Science=0.88 stable across all 3 seeds."
+    },
+    {
+      "id": "CARR-overfit",
+      "method": "CARR one-batch overfit",
+      "file": "results-synced/carr_train_overfit.log",
+      "model": "Qwen3.5-9B",
+      "domains": ["science", "medical"],
+      "seed": 1,
+      "train_steps": 50,
+      "metric": "loss + gate_entropy",
+      "results": {
+        "loss_start": 8.024, "loss_end": 7.476,
+        "entropy_start": 1.326, "entropy_end": 0.192
+      },
+      "reliability": "high",
+      "notes": "Router learns: loss decreases, gates become selective."
+    },
+    {
+      "id": "SFC-downstream",
+      "method": "SFC vs TA/TIES",
+      "file": "results-synced/sfc_remaining.json",
+      "model": "Qwen3.5-9B",
+      "domains": ["math", "medical", "science", "philosophy"],
+      "seed": "unknown",
+      "eval_samples": 50,
+      "metric": "accuracy (generation first-char)",
+      "reliability": "low (historical negative evidence)",
+      "notes": "SFC underperforms TA/TIES on all pairs. Archived as negative evidence."
+    },
+    {
+      "id": "BCFF-downstream",
+      "method": "BCFF vs TA/TIES",
+      "file": "results-synced/bcff_results.json",
+      "model": "Qwen3.5-9B",
+      "domains": ["math", "medical", "science", "philosophy"],
+      "seed": "unknown",
+      "eval_samples": 50,
+      "metric": "accuracy (generation first-char)",
+      "reliability": "low (tautological bug — see tests/test_bcff_tautology.py)",
+      "notes": "BCFF coefficients always [1,1,0,0] due to tautological target. Not a valid method."
+    }
+  ]
+}

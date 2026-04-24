@@ -692,16 +692,16 @@ class MergingBaselines:
 
     @staticmethod
     def dare_merging(
-        loras: List[LoRAWeights], drop_rate: float = 0.5, scaling: float = 1.0
+        loras: List[LoRAWeights], drop_rate: float = 0.5, scaling: float = 1.0,
+        seed: int = 42,
     ) -> Dict[str, torch.Tensor]:
-        # GPU-accelerated, one layer at a time
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         all_keys = set()
         for lora in loras:
             all_keys |= set(lora.lora_A.keys()) & set(lora.lora_B.keys())
         merged = {}
         gen = torch.Generator(device=device)
-        gen.manual_seed(42)
+        gen.manual_seed(seed)
         for key in sorted(all_keys):
             layer_deltas = []
             for lora in loras:

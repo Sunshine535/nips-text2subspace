@@ -30,7 +30,7 @@ def parse_args():
     p.add_argument("--adapter_dir", default="/root/nips-text2subspace/results/sfc_loras_test")
     p.add_argument("--dataset_dir", default="/root/datasets")
     p.add_argument("--domains", default="science,medical")
-    p.add_argument("--mode", default="all", choices=["static_only","carr_full","carr_no_mechanism","all"])
+    p.add_argument("--mode", default="all", choices=["static_only","carr_full","carr_no_mechanism","no_reliability","no_conflict","no_base_fallback","all","ablations"])
     p.add_argument("--carr_checkpoint", default="/root/nips-text2subspace/results/carr_checkpoints/carr_router.pt")
     p.add_argument("--max_samples", type=int, default=50)
     p.add_argument("--seed", type=int, default=1)
@@ -104,7 +104,12 @@ def main():
         adapter_delta_ws[0][mod] = dw1
         adapter_delta_ws[1][mod] = dw2
 
-    modes_to_run = ["static_only", "carr_full", "carr_no_mechanism"] if args.mode == "all" else [args.mode]
+    if args.mode == "all":
+        modes_to_run = ["static_only", "carr_full", "carr_no_mechanism"]
+    elif args.mode == "ablations":
+        modes_to_run = ["carr_full", "no_reliability", "no_conflict", "no_base_fallback"]
+    else:
+        modes_to_run = [args.mode]
 
     for mode in modes_to_run:
         log.info("\n=== Mode: %s ===", mode)
@@ -138,12 +143,15 @@ def main():
 
             d_model = model.config.hidden_size
 
-            if mode == "carr_no_mechanism":
-                config = CARRConfig(n_adapters=2, d_model=d_model, gate_hidden_dim=128,
-                                   use_reliability=False, use_conflict=False, use_base_fallback=True)
-            else:
-                config = CARRConfig(n_adapters=2, d_model=d_model, gate_hidden_dim=128,
-                                   use_reliability=True, use_conflict=True, use_base_fallback=True)
+            mode_configs = {
+                "carr_full": dict(use_reliability=True, use_conflict=True, use_base_fallback=True),
+                "carr_no_mechanism": dict(use_reliability=False, use_conflict=False, use_base_fallback=True),
+                "no_reliability": dict(use_reliability=False, use_conflict=True, use_base_fallback=True),
+                "no_conflict": dict(use_reliability=True, use_conflict=False, use_base_fallback=True),
+                "no_base_fallback": dict(use_reliability=True, use_conflict=True, use_base_fallback=False),
+            }
+            mcfg = mode_configs.get(mode, mode_configs["carr_full"])
+            config = CARRConfig(n_adapters=2, d_model=d_model, gate_hidden_dim=128, **mcfg)
 
             router = ConflictAwareResidualRouter(config).cuda()
 
