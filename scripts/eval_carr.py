@@ -197,10 +197,14 @@ def main():
     # For backwards-compatible "single best" aggregate (diagonal)
     results["single"] = {d: single_scores[f"single_{d}"][d] for d in domains}
 
-    # Load adapter factors
-    from src.cross_factor_fusion import load_lora_factors_v2
+    # Load adapter factors. Apply PEFT scaling alpha/r so (B@A)*scale matches
+    # PeftModel single-adapter forward.
+    from src.cross_factor_fusion import load_lora_factors_v2, get_lora_scaling
     f1 = load_lora_factors_v2(os.path.join(adapter_dir, d1))
     f2 = load_lora_factors_v2(os.path.join(adapter_dir, d2))
+    scale1 = get_lora_scaling(os.path.join(adapter_dir, d1))
+    scale2 = get_lora_scaling(os.path.join(adapter_dir, d2))
+    log.info("LoRA scaling: %s=%.3f  %s=%.3f", d1, scale1, d2, scale2)
     target_modules = sorted(f1.keys())
 
     static_delta_ws = {}
@@ -208,8 +212,8 @@ def main():
     for mod in target_modules:
         B1, A1 = f1[mod]
         B2, A2 = f2[mod]
-        dw1 = (B1 @ A1).cuda()
-        dw2 = (B2 @ A2).cuda()
+        dw1 = (scale1 * (B1 @ A1)).cuda()
+        dw2 = (scale2 * (B2 @ A2)).cuda()
         static_delta_ws[mod] = (dw1 + dw2) / 2
         adapter_delta_ws[0][mod] = dw1
         adapter_delta_ws[1][mod] = dw2

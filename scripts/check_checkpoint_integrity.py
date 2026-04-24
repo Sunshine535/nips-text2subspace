@@ -120,7 +120,7 @@ def main():
 
     from transformers import AutoModelForCausalLM, AutoTokenizer
     from peft import PeftModel
-    from src.cross_factor_fusion import load_lora_factors_v2
+    from src.cross_factor_fusion import load_lora_factors_v2, get_lora_scaling
     from src.conflict_aware_routing import (
         CARRConfig, ConflictAwareResidualRouter, CARRHook,
     )
@@ -142,18 +142,22 @@ def main():
     with torch.no_grad():
         base_out = model(**enc).logits.float().cpu()
 
-    # Load adapter factors (for CARR hook)
+    # Load adapter factors (scaled by alpha/r to match PEFT inference)
     d1, d2 = domains[0], domains[1]
     f1 = load_lora_factors_v2(os.path.join(adapter_dir, d1))
     f2 = load_lora_factors_v2(os.path.join(adapter_dir, d2))
+    s1 = get_lora_scaling(os.path.join(adapter_dir, d1))
+    s2 = get_lora_scaling(os.path.join(adapter_dir, d2))
+    log.info("LoRA scaling: %s=%.3f  %s=%.3f", d1, s1, d2, s2)
+    report["lora_scaling"] = {d1: s1, d2: s2}
     target_modules = sorted(f1.keys())
     static_dw = {}
     adapter_dws = [{}, {}]
     for mod in target_modules:
         B1, A1 = f1[mod]
         B2, A2 = f2[mod]
-        dw1 = (B1 @ A1).cuda()
-        dw2 = (B2 @ A2).cuda()
+        dw1 = (s1 * (B1 @ A1)).cuda()
+        dw2 = (s2 * (B2 @ A2)).cuda()
         static_dw[mod] = (dw1 + dw2) / 2
         adapter_dws[0][mod] = dw1
         adapter_dws[1][mod] = dw2

@@ -118,10 +118,13 @@ def main():
         attn_implementation="sdpa", trust_remote_code=True)
     model.eval()
 
-    from src.cross_factor_fusion import load_lora_factors_v2
+    from src.cross_factor_fusion import load_lora_factors_v2, get_lora_scaling
     log.info("Loading adapter factors: %s, %s", d1, d2)
     f1 = load_lora_factors_v2(os.path.join(adapter_dir, d1))
     f2 = load_lora_factors_v2(os.path.join(adapter_dir, d2))
+    scale1 = get_lora_scaling(os.path.join(adapter_dir, d1))
+    scale2 = get_lora_scaling(os.path.join(adapter_dir, d2))
+    log.info("LoRA scaling: %s=%.3f  %s=%.3f", d1, scale1, d2, scale2)
     target_modules = sorted(f1.keys())
     log.info("Target modules: %d", len(target_modules))
 
@@ -129,14 +132,16 @@ def main():
     for mod in target_modules:
         B1, A1 = f1[mod]
         B2, A2 = f2[mod]
-        static_delta_ws[mod] = ((B1 @ A1 + B2 @ A2) / 2).to(args.device)
+        static_delta_ws[mod] = (
+            (scale1 * (B1 @ A1) + scale2 * (B2 @ A2)) / 2
+        ).to(args.device)
 
     adapter_delta_ws = []
-    for factors in [f1, f2]:
+    for factors, s in [(f1, scale1), (f2, scale2)]:
         dws = {}
         for mod in target_modules:
             B, A = factors[mod]
-            dws[mod] = (B @ A).to(args.device)
+            dws[mod] = (s * (B @ A)).to(args.device)
         adapter_delta_ws.append(dws)
 
     log.info("Computing conflict diagnostics...")

@@ -49,7 +49,11 @@ def load_lora_factors(adapter_path: str) -> Dict[str, Tuple[torch.Tensor, torch.
 
 
 def load_lora_factors_v2(adapter_path: str) -> Dict[str, Tuple[torch.Tensor, torch.Tensor]]:
-    """Load raw LoRA A and B factors — robust version."""
+    """Load raw LoRA A and B factors — robust version. Factors are UNSCALED.
+
+    Use get_lora_scaling(adapter_path) + scale B by alpha/r before using (B @ A)
+    as a substitute for the LoRA output.
+    """
     p = Path(adapter_path)
     if (p / "adapter_model.safetensors").exists():
         weights = load_file(str(p / "adapter_model.safetensors"))
@@ -65,6 +69,31 @@ def load_lora_factors_v2(adapter_path: str) -> Dict[str, Tuple[torch.Tensor, tor
             if b_key in weights:
                 modules[mod_clean] = (weights[b_key].float(), weights[key].float())
     return modules
+
+
+def get_lora_scaling(adapter_path: str) -> float:
+    """Return lora_alpha / r (the PEFT scaling factor) from adapter_config.json.
+
+    CARR hook / eval_carr / train_carr_router must apply this factor to
+    (B @ A) to match PEFT single-adapter inference.
+    """
+    import json as _json
+    cfg_path = Path(adapter_path) / "adapter_config.json"
+    if not cfg_path.is_file():
+        logger.warning("No adapter_config.json at %s; assuming scale=1.0", adapter_path)
+        return 1.0
+    with cfg_path.open() as f:
+        cfg = _json.load(f)
+    alpha = float(cfg.get("lora_alpha", 1))
+    r = float(cfg.get("r", 1) or 1)
+    return alpha / max(r, 1.0)
+
+
+def load_scaled_delta_ws(adapter_path: str) -> Dict[str, "torch.Tensor"]:
+    """Convenience: returns {module_name: (B @ A) * (alpha / r)} matching PEFT output."""
+    factors = load_lora_factors_v2(adapter_path)
+    scale = get_lora_scaling(adapter_path)
+    return {mod: (B @ A) * scale for mod, (B, A) in factors.items()}
 
 
 def collect_module_inputs_for_bcff(
