@@ -233,7 +233,7 @@ def evaluate_code_execution(model, tokenizer, bench_cfg: dict) -> dict:
         return {"accuracy": 0.0, "total": 0, "error": str(e)}
 
     if len(ds) > max_samples:
-        ds = ds.shuffle(seed=42).select(range(max_samples))
+        ds = ds.shuffle(seed=sample_seed).select(range(max_samples))
 
     correct, total = 0, 0
     t0 = time.time()
@@ -257,7 +257,7 @@ def evaluate_code_execution(model, tokenizer, bench_cfg: dict) -> dict:
     }
 
 
-def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dict:
+def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str, sample_seed: int = 42) -> dict:
     """Evaluate model on a single benchmark."""
     if bench_cfg.get("synthetic"):
         return evaluate_synthetic(model, tokenizer, domain, bench_cfg.get("max_samples", 100))
@@ -283,7 +283,7 @@ def evaluate_on_benchmark(model, tokenizer, bench_cfg: dict, domain: str) -> dic
         return {"accuracy": 0.0, "total": 0, "error": str(e)}
 
     if len(ds) > max_samples:
-        ds = ds.shuffle(seed=42).select(range(max_samples))
+        ds = ds.shuffle(seed=sample_seed).select(range(max_samples))
 
     correct, total, total_tokens = 0, 0, 0
     t0 = time.time()
