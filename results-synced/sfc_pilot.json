@@ -1,0 +1,335 @@
+{
+  "config": {
+    "model": "/root/models/Qwen3.5-9B",
+    "sae_repo": "/root/saes/qwen3.5-9b",
+    "sae_width": "16k",
+    "layers": "7,15,23",
+    "adapter_dir": "results/sfc_loras_test",
+    "probe_size": 16,
+    "threshold_multiplier": 3.0,
+    "output": "results/sfc_pilot.json",
+    "device": "auto",
+    "batch_size": 1,
+    "max_length": 64,
+    "train_adapters": false,
+    "train_samples": 5000,
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "train_epochs": 2,
+    "only_domain": null
+  },
+  "timestamp": "2026-04-22T04:21:52",
+  "device": "cuda",
+  "adapters_found": [
+    "math",
+    "code",
+    "medical",
+    "science",
+    "history",
+    "philosophy"
+  ],
+  "sae_layers": [
+    "model.layers.7",
+    "model.layers.15",
+    "model.layers.23"
+  ],
+  "sae_features_per_layer": {
+    "model.layers.7": 4096,
+    "model.layers.15": 4096,
+    "model.layers.23": 4096
+  },
+  "probe_size": 16,
+  "base_activation_shapes": {
+    "model.layers.7": [
+      1024,
+      4096
+    ],
+    "model.layers.15": [
+      1024,
+      4096
+    ],
+    "model.layers.23": [
+      1024,
+      4096
+    ]
+  },
+  "sparsity": {
+    "math": {
+      "global_sparsity": 0.006266276041666667,
+      "total_active": 77,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 55,
+          "total": 4096,
+          "sparsity": 0.013427734375
+        },
+        "model.layers.15": {
+          "active": 17,
+          "total": 4096,
+          "sparsity": 0.004150390625
+        },
+        "model.layers.23": {
+          "active": 5,
+          "total": 4096,
+          "sparsity": 0.001220703125
+        }
+      }
+    },
+    "code": {
+      "global_sparsity": 0.005045572916666667,
+      "total_active": 62,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 38,
+          "total": 4096,
+          "sparsity": 0.00927734375
+        },
+        "model.layers.15": {
+          "active": 19,
+          "total": 4096,
+          "sparsity": 0.004638671875
+        },
+        "model.layers.23": {
+          "active": 5,
+          "total": 4096,
+          "sparsity": 0.001220703125
+        }
+      }
+    },
+    "medical": {
+      "global_sparsity": 0.002685546875,
+      "total_active": 33,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 25,
+          "total": 4096,
+          "sparsity": 0.006103515625
+        },
+        "model.layers.15": {
+          "active": 7,
+          "total": 4096,
+          "sparsity": 0.001708984375
+        },
+        "model.layers.23": {
+          "active": 1,
+          "total": 4096,
+          "sparsity": 0.000244140625
+        }
+      }
+    },
+    "science": {
+      "global_sparsity": 0.008138020833333334,
+      "total_active": 100,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 65,
+          "total": 4096,
+          "sparsity": 0.015869140625
+        },
+        "model.layers.15": {
+          "active": 25,
+          "total": 4096,
+          "sparsity": 0.006103515625
+        },
+        "model.layers.23": {
+          "active": 10,
+          "total": 4096,
+          "sparsity": 0.00244140625
+        }
+      }
+    },
+    "history": {
+      "global_sparsity": 0.006591796875,
+      "total_active": 81,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 43,
+          "total": 4096,
+          "sparsity": 0.010498046875
+        },
+        "model.layers.15": {
+          "active": 30,
+          "total": 4096,
+          "sparsity": 0.00732421875
+        },
+        "model.layers.23": {
+          "active": 8,
+          "total": 4096,
+          "sparsity": 0.001953125
+        }
+      }
+    },
+    "philosophy": {
+      "global_sparsity": 0.006184895833333333,
+      "total_active": 76,
+      "total_features": 12288,
+      "per_layer": {
+        "model.layers.7": {
+          "active": 35,
+          "total": 4096,
+          "sparsity": 0.008544921875
+        },
+        "model.layers.15": {
+          "active": 36,
+          "total": 4096,
+          "sparsity": 0.0087890625
+        },
+        "model.layers.23": {
+          "active": 5,
+          "total": 4096,
+          "sparsity": 0.001220703125
+        }
+      }
+    }
+  },
+  "fds_matrix": {
+    "names": [
+      "math",
+      "code",
+      "medical",
+      "science",
+      "history",
+      "philosophy"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.905511811023622,
+        1.0,
+        0.9943181818181818,
+        0.9324324324324325,
+        0.9148936170212766
+      ],
+      [
+        0.905511811023622,
+        1.0,
+        1.0,
+        0.9937888198757764,
+        0.9562043795620438,
+        0.9624060150375939
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.9769230769230769,
+        0.9541284403669725,
+        0.9519230769230769
+      ],
+      [
+        0.9943181818181818,
+        0.9937888198757764,
+        0.9769230769230769,
+        1.0,
+        0.9415204678362573,
+        0.9585798816568047
+      ],
+      [
+        0.9324324324324325,
+        0.9562043795620438,
+        0.9541284403669725,
+        0.9415204678362573,
+        1.0,
+        0.5462962962962963
+      ],
+      [
+        0.9148936170212766,
+        0.9624060150375939,
+        0.9519230769230769,
+        0.9585798816568047,
+        0.5462962962962963,
+        1.0
+      ]
+    ]
+  },
+  "fds_pairs": {
+    "math+code": {
+      "global_fds": 0.905511811023622,
+      "total_overlap": 12,
+      "total_union": 127
+    },
+    "math+medical": {
+      "global_fds": 1.0,
+      "total_overlap": 0,
+      "total_union": 110
+    },
+    "math+science": {
+      "global_fds": 0.9943181818181818,
+      "total_overlap": 1,
+      "total_union": 176
+    },
+    "math+history": {
+      "global_fds": 0.9324324324324325,
+      "total_overlap": 10,
+      "total_union": 148
+    },
+    "math+philosophy": {
+      "global_fds": 0.9148936170212766,
+      "total_overlap": 12,
+      "total_union": 141
+    },
+    "code+medical": {
+      "global_fds": 1.0,
+      "total_overlap": 0,
+      "total_union": 95
+    },
+    "code+science": {
+      "global_fds": 0.9937888198757764,
+      "total_overlap": 1,
+      "total_union": 161
+    },
+    "code+history": {
+      "global_fds": 0.9562043795620438,
+      "total_overlap": 6,
+      "total_union": 137
+    },
+    "code+philosophy": {
+      "global_fds": 0.9624060150375939,
+      "total_overlap": 5,
+      "total_union": 133
+    },
+    "medical+science": {
+      "global_fds": 0.9769230769230769,
+      "total_overlap": 3,
+      "total_union": 130
+    },
+    "medical+history": {
+      "global_fds": 0.9541284403669725,
+      "total_overlap": 5,
+      "total_union": 109
+    },
+    "medical+philosophy": {
+      "global_fds": 0.9519230769230769,
+      "total_overlap": 5,
+      "total_union": 104
+    },
+    "science+history": {
+      "global_fds": 0.9415204678362573,
+      "total_overlap": 10,
+      "total_union": 171
+    },
+    "science+philosophy": {
+      "global_fds": 0.9585798816568047,
+      "total_overlap": 7,
+      "total_union": 169
+    },
+    "history+philosophy": {
+      "global_fds": 0.5462962962962963,
+      "total_overlap": 49,
+      "total_union": 108
+    }
+  },
+  "summary": {
+    "mean_sparsity": 0.005818684895833333,
+    "max_sparsity": 0.008138020833333334,
+    "mean_pairwise_fds": 0.9325950997848941,
+    "kill_criterion_sparsity": "True",
+    "kill_criterion_verdict": "PASS",
+    "elapsed_seconds": 349.7939291000366
+  }
+}

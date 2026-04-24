@@ -1,0 +1,336 @@
+2026-04-22 20:29:02,298 [INFO] train_sae: Model: /root/models/Qwen3.5-9B
+2026-04-22 20:29:02,298 [INFO] train_sae: Layers: [7, 15, 23]
+2026-04-22 20:29:02,298 [INFO] train_sae: Features: 16384
+2026-04-22 20:29:02,298 [INFO] train_sae: Training tokens: 10M
+2026-04-22 20:29:02,298 [INFO] train_sae: GPUs available: 4
+2026-04-22 20:29:03,852 [INFO] train_sae: [GPU 0] Training SAE for layer 7: 16384 features, 10M tokens
+2026-04-22 20:29:07,316 [INFO] train_sae: Manual SAE training for layer 7
+`torch_dtype` is deprecated! Use `dtype` instead!
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:06<44:59,  6.34s/it]Loading weights:   1%|          | 4/427 [00:06<08:39,  1.23s/it]Loading weights:   3%|▎         | 13/427 [00:06<02:06,  3.27it/s]Loading weights:   4%|▎         | 16/427 [00:07<01:41,  4.06it/s]Loading weights:   6%|▌         | 24/427 [00:07<00:59,  6.79it/s]Loading weights:   9%|▉         | 40/427 [00:07<00:26, 14.65it/s]Loading weights:  10%|█         | 44/427 [00:07<00:24, 15.46it/s]Loading weights:  11%|█         | 48/427 [00:08<00:24, 15.18it/s]Loading weights:  12%|█▏        | 53/427 [00:08<00:20, 18.31it/s]Loading weights:  15%|█▌        | 65/427 [00:08<00:12, 29.61it/s]Loading weights:  17%|█▋        | 71/427 [00:08<00:13, 26.96it/s]Loading weights:  18%|█▊        | 77/427 [00:08<00:12, 27.05it/s]Loading weights:  19%|█▉        | 82/427 [00:09<00:12, 26.94it/s]Loading weights:  22%|██▏       | 93/427 [00:09<00:08, 38.44it/s]Loading weights:  23%|██▎       | 99/427 [00:09<00:12, 25.78it/s]Loading weights:  24%|██▍       | 103/427 [00:09<00:12, 26.54it/s]Loading weights:  25%|██▌       | 107/427 [00:09<00:12, 26.01it/s]Loading weights:  28%|██▊       | 119/427 [00:10<00:08, 34.80it/s]Loading weights:  30%|██▉       | 128/427 [00:10<00:07, 38.35it/s]Loading weights:  31%|███       | 133/427 [00:10<00:08, 33.59it/s]Loading weights:  33%|███▎      | 141/427 [00:10<00:07, 37.88it/s]Loading weights:  34%|███▍      | 147/427 [00:10<00:07, 38.11it/s]Loading weights:  36%|███▌      | 152/427 [00:11<00:09, 29.97it/s]Loading weights:  37%|███▋      | 156/427 [00:11<00:10, 27.08it/s]Loading weights:  37%|███▋      | 160/427 [00:11<00:09, 28.72it/s]Loading weights:  40%|███▉      | 170/427 [00:11<00:06, 42.44it/s]Loading weights:  41%|████      | 176/427 [00:11<00:07, 31.73it/s]Loading weights:  43%|████▎     | 185/427 [00:12<00:07, 34.48it/s]Loading weights:  44%|████▍     | 190/427 [00:12<00:07, 32.25it/s]Loading weights:  47%|████▋     | 199/427 [00:12<00:06, 34.85it/s]Loading weights:  48%|████▊     | 203/427 [00:12<00:07, 31.02it/s]Loading weights:  48%|████▊     | 207/427 [00:13<00:08, 24.68it/s]Loading weights:  49%|████▉     | 211/427 [00:13<00:07, 27.05it/s]Loading weights:  52%|█████▏    | 222/427 [00:13<00:04, 41.81it/s]Loading weights:  53%|█████▎    | 228/427 [00:13<00:06, 31.16it/s]Loading weights:  56%|█████▌    | 238/427 [00:13<00:04, 40.75it/s]Loading weights:  57%|█████▋    | 244/427 [00:13<00:05, 33.03it/s]Loading weights:  59%|█████▉    | 251/427 [00:14<00:04, 37.42it/s]Loading weights:  60%|█████▉    | 256/427 [00:14<00:05, 29.66it/s]Loading weights:  61%|██████    | 260/427 [00:14<00:06, 24.10it/s]Loading weights:  62%|██████▏   | 264/427 [00:14<00:06, 26.08it/s]Loading weights:  65%|██████▍   | 277/427 [00:14<00:03, 42.29it/s]Loading weights:  66%|██████▋   | 283/427 [00:15<00:04, 33.47it/s]Loading weights:  68%|██████▊   | 291/427 [00:15<00:03, 39.35it/s]Loading weights:  69%|██████▉   | 296/427 [00:15<00:04, 30.61it/s]Loading weights:  71%|███████   | 304/427 [00:15<00:04, 28.31it/s]Loading weights:  73%|███████▎  | 310/427 [00:16<00:04, 29.06it/s]Loading weights:  74%|███████▎  | 314/427 [00:16<00:04, 27.05it/s]Loading weights:  75%|███████▍  | 319/427 [00:16<00:03, 30.67it/s]Loading weights:  77%|███████▋  | 328/427 [00:16<00:02, 41.39it/s]Loading weights:  78%|███████▊  | 334/427 [00:16<00:03, 30.95it/s]Loading weights:  80%|████████  | 342/427 [00:17<00:02, 28.69it/s]Loading weights:  83%|████████▎ | 353/427 [00:17<00:01, 37.44it/s]Loading weights:  84%|████████▍ | 359/427 [00:17<00:01, 37.42it/s]Loading weights:  85%|████████▌ | 364/427 [00:17<00:02, 26.94it/s]Loading weights:  87%|████████▋ | 370/427 [00:17<00:01, 30.16it/s]Loading weights:  89%|████████▉ | 379/427 [00:18<00:01, 38.66it/s]Loading weights:  90%|████████▉ | 384/427 [00:18<00:01, 33.80it/s]Loading weights:  91%|█████████ | 389/427 [00:18<00:01, 27.01it/s]Loading weights:  92%|█████████▏| 394/427 [00:18<00:01, 28.24it/s]Loading weights:  93%|█████████▎| 398/427 [00:18<00:01, 25.89it/s]Loading weights:  94%|█████████▍| 401/427 [00:19<00:01, 19.95it/s]Loading weights:  95%|█████████▍| 405/427 [00:19<00:01, 21.63it/s]Loading weights:  96%|█████████▋| 412/427 [00:19<00:00, 26.20it/s]Loading weights:  97%|█████████▋| 415/427 [00:20<00:00, 14.67it/s]Loading weights:  98%|█████████▊| 418/427 [00:20<00:00, 15.73it/s]Loading weights: 100%|█████████▉| 425/427 [00:20<00:00, 21.75it/s]Loading weights: 100%|██████████| 427/427 [00:20<00:00, 20.86it/s]
+2026-04-22 20:29:30,928 [INFO] train_sae: Using local wikitext from /root/datasets/wikitext (1801350 rows)
+2026-04-22 20:29:30,928 [INFO] train_sae: Training: d_model=4096, n_features=16384, k=163
+2026-04-22 20:29:33,490 [INFO] train_sae: [iter0] forward OK, activations=1, shape=torch.Size([8, 256, 4096]), dtype=torch.float32
+2026-04-22 20:29:33,495 [INFO] train_sae: [iter0] z shape=torch.Size([2048, 16384]), dtype=torch.float32
+2026-04-22 20:29:33,514 [INFO] train_sae: [iter0] loss=5785.3926, recon=5553.2778, l1=232.1148
+2026-04-22 20:29:33,526 [INFO] train_sae: [iter0] backward OK
+2026-04-22 20:29:33,662 [INFO] train_sae: [iter0] step complete, total_tokens=2048
+2026-04-22 20:31:34,098 [INFO] train_sae: step=50, tokens=0.10M, recon=443.3463, l1=545.9557
+2026-04-22 20:33:36,103 [INFO] train_sae: step=100, tokens=0.20M, recon=194.4735, l1=245.3694
+2026-04-22 20:35:35,104 [INFO] train_sae: step=150, tokens=0.31M, recon=184.1419, l1=410.8500
+2026-04-22 20:37:35,608 [INFO] train_sae: step=200, tokens=0.41M, recon=210.1454, l1=282.5433
+2026-04-22 20:39:33,600 [INFO] train_sae: step=250, tokens=0.51M, recon=148.7743, l1=208.2290
+2026-04-22 20:41:34,898 [INFO] train_sae: step=300, tokens=0.61M, recon=220.9860, l1=184.4596
+2026-04-22 20:43:34,790 [INFO] train_sae: step=350, tokens=0.72M, recon=124.9766, l1=135.7562
+2026-04-22 20:45:36,003 [INFO] train_sae: step=400, tokens=0.82M, recon=97.1025, l1=178.7823
+2026-04-22 20:47:36,308 [INFO] train_sae: step=450, tokens=0.92M, recon=121.1186, l1=138.5122
+2026-04-22 20:49:38,900 [INFO] train_sae: step=500, tokens=1.02M, recon=127.3163, l1=156.5721
+2026-04-22 20:51:45,103 [INFO] train_sae: step=550, tokens=1.13M, recon=117.4404, l1=93.3834
+2026-04-22 20:53:49,686 [INFO] train_sae: step=600, tokens=1.23M, recon=119.1051, l1=124.1394
+2026-04-22 20:55:47,302 [INFO] train_sae: step=650, tokens=1.33M, recon=116.2188, l1=97.3728
+2026-04-22 20:57:44,202 [INFO] train_sae: step=700, tokens=1.43M, recon=101.3478, l1=124.4184
+2026-04-22 20:59:48,192 [INFO] train_sae: step=750, tokens=1.54M, recon=112.8242, l1=94.7794
+2026-04-22 21:01:47,785 [INFO] train_sae: step=800, tokens=1.64M, recon=104.4433, l1=120.2369
+2026-04-22 21:03:44,290 [INFO] train_sae: step=850, tokens=1.74M, recon=163.6799, l1=117.4425
+2026-04-22 21:05:39,900 [INFO] train_sae: step=900, tokens=1.84M, recon=92.2204, l1=77.4300
+2026-04-22 21:07:42,700 [INFO] train_sae: step=950, tokens=1.95M, recon=104.8259, l1=90.9877
+2026-04-22 21:09:44,803 [INFO] train_sae: step=1000, tokens=2.05M, recon=104.9640, l1=93.8827
+2026-04-22 21:11:38,683 [INFO] train_sae: step=1050, tokens=2.15M, recon=116.9480, l1=76.5262
+2026-04-22 21:13:33,608 [INFO] train_sae: step=1100, tokens=2.25M, recon=92.6224, l1=83.2585
+2026-04-22 21:15:28,898 [INFO] train_sae: step=1150, tokens=2.36M, recon=116.2518, l1=84.9424
+2026-04-22 21:17:32,103 [INFO] train_sae: step=1200, tokens=2.46M, recon=114.7953, l1=106.4308
+2026-04-22 21:19:33,990 [INFO] train_sae: step=1250, tokens=2.56M, recon=98.4771, l1=105.9105
+2026-04-22 21:21:34,001 [INFO] train_sae: step=1300, tokens=2.66M, recon=103.5790, l1=48.6690
+2026-04-22 21:23:29,297 [INFO] train_sae: step=1350, tokens=2.76M, recon=90.3140, l1=75.3019
+2026-04-22 21:25:29,599 [INFO] train_sae: step=1400, tokens=2.87M, recon=105.6656, l1=96.9560
+2026-04-22 21:27:27,492 [INFO] train_sae: step=1450, tokens=2.97M, recon=130.8958, l1=98.1345
+2026-04-22 21:29:26,401 [INFO] train_sae: step=1500, tokens=3.07M, recon=100.5730, l1=54.7710
+2026-04-22 21:31:28,282 [INFO] train_sae: step=1550, tokens=3.17M, recon=96.3010, l1=56.3173
+2026-04-22 21:33:41,122 [INFO] train_sae: step=1600, tokens=3.28M, recon=115.4951, l1=66.4536
+2026-04-22 21:35:48,702 [INFO] train_sae: step=1650, tokens=3.38M, recon=95.7779, l1=63.6831
+2026-04-22 21:37:59,482 [INFO] train_sae: step=1700, tokens=3.48M, recon=90.9583, l1=85.1432
+2026-04-22 21:40:06,983 [INFO] train_sae: step=1750, tokens=3.58M, recon=90.2689, l1=70.1492
+2026-04-22 21:42:16,282 [INFO] train_sae: step=1800, tokens=3.69M, recon=116.8915, l1=73.4990
+2026-04-22 21:44:24,782 [INFO] train_sae: step=1850, tokens=3.79M, recon=76.1922, l1=83.4469
+2026-04-22 21:46:37,290 [INFO] train_sae: step=1900, tokens=3.89M, recon=108.0032, l1=45.0145
+2026-04-22 21:48:47,083 [INFO] train_sae: step=1950, tokens=3.99M, recon=103.9620, l1=58.9840
+2026-04-22 21:50:53,525 [INFO] train_sae: step=2000, tokens=4.10M, recon=97.7901, l1=65.1050
+2026-04-22 21:52:56,720 [INFO] train_sae: step=2050, tokens=4.20M, recon=216.1647, l1=102.4548
+2026-04-22 21:55:05,103 [INFO] train_sae: step=2100, tokens=4.30M, recon=115.0190, l1=81.3792
+2026-04-22 21:57:12,582 [INFO] train_sae: step=2150, tokens=4.40M, recon=89.6373, l1=67.4613
+2026-04-22 21:59:18,721 [INFO] train_sae: step=2200, tokens=4.51M, recon=99.5183, l1=59.1875
+2026-04-22 22:01:28,991 [INFO] train_sae: step=2250, tokens=4.61M, recon=127.1348, l1=68.2476
+2026-04-22 22:03:33,382 [INFO] train_sae: step=2300, tokens=4.71M, recon=94.6889, l1=66.3005
+2026-04-22 22:05:41,526 [INFO] train_sae: step=2350, tokens=4.81M, recon=97.4842, l1=78.0974
+2026-04-22 22:07:45,521 [INFO] train_sae: step=2400, tokens=4.92M, recon=96.1297, l1=68.3358
+2026-04-22 22:09:53,297 [INFO] train_sae: step=2450, tokens=5.02M, recon=106.7233, l1=61.0110
+2026-04-22 22:12:08,183 [INFO] train_sae: step=2500, tokens=5.12M, recon=113.9003, l1=68.6482
+2026-04-22 22:14:13,483 [INFO] train_sae: step=2550, tokens=5.22M, recon=116.1207, l1=75.7631
+2026-04-22 22:16:23,190 [INFO] train_sae: step=2600, tokens=5.32M, recon=99.9620, l1=73.9696
+2026-04-22 22:18:27,082 [INFO] train_sae: step=2650, tokens=5.43M, recon=89.7209, l1=72.0068
+2026-04-22 22:20:37,727 [INFO] train_sae: step=2700, tokens=5.53M, recon=95.1496, l1=84.2744
+2026-04-22 22:22:48,003 [INFO] train_sae: step=2750, tokens=5.63M, recon=98.8960, l1=74.6178
+2026-04-22 22:24:48,583 [INFO] train_sae: step=2800, tokens=5.73M, recon=108.0089, l1=85.8764
+2026-04-22 22:26:56,704 [INFO] train_sae: step=2850, tokens=5.84M, recon=91.1202, l1=38.4448
+2026-04-22 22:29:09,298 [INFO] train_sae: step=2900, tokens=5.94M, recon=91.8189, l1=57.6166
+2026-04-22 22:31:16,503 [INFO] train_sae: step=2950, tokens=6.04M, recon=94.5784, l1=46.3074
+2026-04-22 22:33:20,290 [INFO] train_sae: step=3000, tokens=6.14M, recon=96.0327, l1=65.2308
+2026-04-22 22:35:29,917 [INFO] train_sae: step=3050, tokens=6.25M, recon=94.7871, l1=77.2861
+2026-04-22 22:37:37,816 [INFO] train_sae: step=3100, tokens=6.35M, recon=83.7396, l1=85.1938
+2026-04-22 22:39:43,606 [INFO] train_sae: step=3150, tokens=6.45M, recon=87.2924, l1=73.4662
+2026-04-22 22:41:45,190 [INFO] train_sae: step=3200, tokens=6.55M, recon=90.0228, l1=68.1418
+2026-04-22 22:43:57,099 [INFO] train_sae: step=3250, tokens=6.66M, recon=134.0374, l1=93.7424
+2026-04-22 22:46:08,826 [INFO] train_sae: step=3300, tokens=6.76M, recon=92.4596, l1=65.8449
+2026-04-22 22:48:18,608 [INFO] train_sae: step=3350, tokens=6.86M, recon=93.7174, l1=54.0670
+2026-04-22 22:50:29,303 [INFO] train_sae: step=3400, tokens=6.96M, recon=113.8826, l1=61.7937
+2026-04-22 22:52:40,026 [INFO] train_sae: step=3450, tokens=7.07M, recon=101.8476, l1=53.2244
+2026-04-22 22:54:51,702 [INFO] train_sae: step=3500, tokens=7.17M, recon=103.1708, l1=65.2350
+2026-04-22 22:57:01,283 [INFO] train_sae: step=3550, tokens=7.27M, recon=70.4962, l1=85.5928
+2026-04-22 22:59:08,989 [INFO] train_sae: step=3600, tokens=7.37M, recon=89.6908, l1=51.3122
+2026-04-22 23:01:22,922 [INFO] train_sae: step=3650, tokens=7.48M, recon=140.8287, l1=94.7417
+2026-04-22 23:03:33,003 [INFO] train_sae: step=3700, tokens=7.58M, recon=103.3961, l1=61.8779
+2026-04-22 23:05:44,582 [INFO] train_sae: step=3750, tokens=7.68M, recon=97.0606, l1=61.9959
+2026-04-22 23:07:49,084 [INFO] train_sae: step=3800, tokens=7.78M, recon=93.3310, l1=74.6030
+2026-04-22 23:09:53,198 [INFO] train_sae: step=3850, tokens=7.88M, recon=117.2411, l1=64.8780
+2026-04-22 23:12:03,609 [INFO] train_sae: step=3900, tokens=7.99M, recon=84.1059, l1=92.0588
+2026-04-22 23:14:07,982 [INFO] train_sae: step=3950, tokens=8.09M, recon=117.7243, l1=90.7851
+2026-04-22 23:16:17,125 [INFO] train_sae: step=4000, tokens=8.19M, recon=92.9639, l1=53.7482
+2026-04-22 23:18:28,382 [INFO] train_sae: step=4050, tokens=8.29M, recon=113.1158, l1=66.1827
+2026-04-22 23:20:38,783 [INFO] train_sae: step=4100, tokens=8.40M, recon=97.1410, l1=58.3251
+2026-04-22 23:22:47,428 [INFO] train_sae: step=4150, tokens=8.50M, recon=95.5821, l1=81.4004
+2026-04-22 23:24:57,603 [INFO] train_sae: step=4200, tokens=8.60M, recon=89.4172, l1=83.4802
+2026-04-22 23:27:09,618 [INFO] train_sae: step=4250, tokens=8.70M, recon=90.4579, l1=61.1835
+2026-04-22 23:29:17,897 [INFO] train_sae: step=4300, tokens=8.81M, recon=95.2699, l1=82.5216
+2026-04-22 23:31:26,602 [INFO] train_sae: step=4350, tokens=8.91M, recon=108.4318, l1=77.1540
+2026-04-22 23:33:36,483 [INFO] train_sae: step=4400, tokens=9.01M, recon=115.1086, l1=93.3817
+2026-04-22 23:35:45,301 [INFO] train_sae: step=4450, tokens=9.11M, recon=108.5880, l1=72.2481
+2026-04-22 23:37:45,703 [INFO] train_sae: step=4500, tokens=9.22M, recon=121.9060, l1=70.1917
+2026-04-22 23:39:54,582 [INFO] train_sae: step=4550, tokens=9.32M, recon=96.4147, l1=52.4341
+2026-04-22 23:41:59,482 [INFO] train_sae: step=4600, tokens=9.42M, recon=79.7020, l1=36.4928
+2026-04-22 23:44:11,702 [INFO] train_sae: step=4650, tokens=9.52M, recon=100.5556, l1=86.0187
+2026-04-22 23:46:21,412 [INFO] train_sae: step=4700, tokens=9.63M, recon=84.7186, l1=64.0975
+2026-04-22 23:48:31,422 [INFO] train_sae: step=4750, tokens=9.73M, recon=95.8637, l1=71.1357
+2026-04-22 23:50:35,098 [INFO] train_sae: step=4800, tokens=9.83M, recon=96.5364, l1=66.2456
+2026-04-22 23:52:41,002 [INFO] train_sae: step=4850, tokens=9.93M, recon=101.1960, l1=66.6436
+2026-04-22 23:54:09,328 [INFO] train_sae: SAE saved to /root/saes/qwen3.5-9b/layer_7 (10.0M tokens)
+2026-04-22 23:54:09,446 [INFO] train_sae: [GPU 0] Training SAE for layer 15: 16384 features, 10M tokens
+2026-04-22 23:54:09,447 [INFO] train_sae: Manual SAE training for layer 15
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:02<15:51,  2.23s/it]Loading weights:   0%|          | 2/427 [00:05<18:30,  2.61s/it]Loading weights:   2%|▏         | 9/427 [00:05<02:43,  2.55it/s]Loading weights:   3%|▎         | 13/427 [00:05<01:45,  3.91it/s]Loading weights:   4%|▎         | 16/427 [00:05<01:25,  4.82it/s]Loading weights:   5%|▌         | 22/427 [00:05<00:48,  8.42it/s]Loading weights:   6%|▋         | 27/427 [00:06<00:37, 10.69it/s]Loading weights:   7%|▋         | 30/427 [00:06<00:37, 10.62it/s]Loading weights:   9%|▊         | 37/427 [00:06<00:24, 16.15it/s]Loading weights:  10%|▉         | 41/427 [00:06<00:22, 17.18it/s]Loading weights:  10%|█         | 44/427 [00:07<00:25, 14.95it/s]Loading weights:  11%|█         | 47/427 [00:07<00:27, 13.65it/s]Loading weights:  11%|█▏        | 49/427 [00:07<00:27, 13.73it/s]Loading weights:  13%|█▎        | 54/427 [00:07<00:21, 17.72it/s]Loading weights:  14%|█▍        | 61/427 [00:07<00:14, 25.97it/s]Loading weights:  15%|█▌        | 66/427 [00:07<00:14, 24.31it/s]Loading weights:  16%|█▋        | 70/427 [00:08<00:17, 20.04it/s]Loading weights:  18%|█▊        | 77/427 [00:08<00:13, 26.17it/s]Loading weights:  19%|█▉        | 81/427 [00:08<00:21, 15.78it/s]Loading weights:  21%|██        | 89/427 [00:09<00:15, 22.11it/s]Loading weights:  22%|██▏       | 94/427 [00:09<00:14, 23.15it/s]Loading weights:  23%|██▎       | 98/427 [00:09<00:21, 15.18it/s]Loading weights:  24%|██▎       | 101/427 [00:09<00:20, 16.17it/s]Loading weights:  25%|██▌       | 107/427 [00:10<00:15, 20.64it/s]Loading weights:  27%|██▋       | 115/427 [00:10<00:10, 29.40it/s]Loading weights:  28%|██▊       | 120/427 [00:10<00:13, 22.17it/s]Loading weights:  29%|██▉       | 124/427 [00:10<00:12, 24.75it/s]Loading weights:  31%|███       | 132/427 [00:10<00:09, 32.77it/s]Loading weights:  32%|███▏      | 137/427 [00:11<00:10, 27.22it/s]Loading weights:  34%|███▎      | 144/427 [00:11<00:08, 32.87it/s]Loading weights:  35%|███▍      | 149/427 [00:11<00:12, 22.63it/s]Loading weights:  36%|███▌      | 153/427 [00:11<00:14, 18.67it/s]Loading weights:  37%|███▋      | 156/427 [00:12<00:16, 16.94it/s]Loading weights:  37%|███▋      | 160/427 [00:12<00:14, 18.53it/s]Loading weights:  39%|███▉      | 167/427 [00:12<00:09, 26.18it/s]Loading weights:  40%|████      | 172/427 [00:12<00:10, 24.36it/s]Loading weights:  41%|████      | 176/427 [00:13<00:12, 20.28it/s]Loading weights:  43%|████▎     | 183/427 [00:13<00:09, 26.15it/s]Loading weights:  44%|████▍     | 187/427 [00:13<00:11, 20.58it/s]Loading weights:  44%|████▍     | 190/427 [00:13<00:11, 20.70it/s]Loading weights:  46%|████▌     | 197/427 [00:13<00:09, 25.41it/s]Loading weights:  47%|████▋     | 200/427 [00:13<00:09, 24.63it/s]Loading weights:  48%|████▊     | 203/427 [00:14<00:11, 19.40it/s]Loading weights:  48%|████▊     | 206/427 [00:14<00:13, 16.18it/s]Loading weights:  49%|████▊     | 208/427 [00:14<00:13, 15.71it/s]Loading weights:  50%|████▉     | 213/427 [00:14<00:10, 20.36it/s]Loading weights:  52%|█████▏    | 221/427 [00:15<00:07, 26.16it/s]Loading weights:  53%|█████▎    | 225/427 [00:15<00:07, 26.14it/s]Loading weights:  53%|█████▎    | 228/427 [00:15<00:09, 20.20it/s]Loading weights:  55%|█████▌    | 236/427 [00:15<00:06, 28.18it/s]Loading weights:  56%|█████▌    | 240/427 [00:15<00:08, 21.09it/s]Loading weights:  57%|█████▋    | 243/427 [00:16<00:08, 21.30it/s]Loading weights:  59%|█████▊    | 250/427 [00:16<00:06, 25.87it/s]Loading weights:  59%|█████▉    | 253/427 [00:16<00:06, 25.19it/s]Loading weights:  60%|█████▉    | 256/427 [00:16<00:09, 18.75it/s]Loading weights:  61%|██████    | 259/427 [00:16<00:10, 15.33it/s]Loading weights:  61%|██████    | 261/427 [00:17<00:10, 15.30it/s]Loading weights:  62%|██████▏   | 266/427 [00:17<00:08, 19.32it/s]Loading weights:  63%|██████▎   | 269/427 [00:17<00:07, 21.02it/s]Loading weights:  65%|██████▌   | 278/427 [00:17<00:05, 27.35it/s]Loading weights:  66%|██████▌   | 281/427 [00:17<00:06, 21.12it/s]Loading weights:  68%|██████▊   | 289/427 [00:18<00:04, 29.93it/s]Loading weights:  69%|██████▊   | 293/427 [00:18<00:06, 21.76it/s]Loading weights:  69%|██████▉   | 296/427 [00:18<00:06, 21.41it/s]Loading weights:  71%|███████   | 303/427 [00:18<00:04, 27.51it/s]Loading weights:  72%|███████▏  | 307/427 [00:18<00:05, 20.78it/s]Loading weights:  73%|███████▎  | 310/427 [00:19<00:05, 20.72it/s]Loading weights:  73%|███████▎  | 313/427 [00:19<00:08, 13.96it/s]Loading weights:  74%|███████▍  | 317/427 [00:19<00:06, 15.72it/s]Loading weights:  76%|███████▋  | 326/427 [00:20<00:05, 19.10it/s]Loading weights:  78%|███████▊  | 332/427 [00:20<00:04, 22.90it/s]Loading weights:  78%|███████▊  | 335/427 [00:20<00:04, 21.46it/s]Loading weights:  80%|███████▉  | 341/427 [00:20<00:03, 27.35it/s]Loading weights:  81%|████████  | 345/427 [00:20<00:03, 23.02it/s]Loading weights:  81%|████████▏ | 348/427 [00:21<00:04, 17.37it/s]Loading weights:  82%|████████▏ | 352/427 [00:21<00:03, 20.59it/s]Loading weights:  84%|████████▍ | 358/427 [00:21<00:02, 27.06it/s]Loading weights:  85%|████████▍ | 362/427 [00:21<00:03, 17.37it/s]Loading weights:  85%|████████▌ | 365/427 [00:22<00:04, 14.96it/s]Loading weights:  86%|████████▌ | 368/427 [00:22<00:03, 15.91it/s]Loading weights:  87%|████████▋ | 372/427 [00:22<00:03, 17.31it/s]Loading weights:  89%|████████▉ | 380/427 [00:22<00:01, 24.67it/s]Loading weights:  90%|████████▉ | 384/427 [00:22<00:01, 23.20it/s]Loading weights:  91%|█████████ | 387/427 [00:23<00:02, 17.28it/s]Loading weights:  92%|█████████▏| 393/427 [00:23<00:01, 21.52it/s]Loading weights:  93%|█████████▎| 398/427 [00:23<00:01, 22.31it/s]Loading weights:  94%|█████████▍| 401/427 [00:23<00:01, 17.42it/s]Loading weights:  96%|█████████▌| 408/427 [00:24<00:00, 23.09it/s]Loading weights:  96%|█████████▋| 412/427 [00:24<00:00, 22.03it/s]Loading weights:  97%|█████████▋| 415/427 [00:24<00:00, 17.27it/s]Loading weights:  98%|█████████▊| 418/427 [00:24<00:00, 14.68it/s]Loading weights:  98%|█████████▊| 420/427 [00:25<00:00, 14.22it/s]Loading weights: 100%|█████████▉| 425/427 [00:25<00:00, 17.94it/s]Loading weights: 100%|██████████| 427/427 [00:25<00:00, 16.94it/s]
+2026-04-22 23:54:36,507 [INFO] train_sae: Using local wikitext from /root/datasets/wikitext (1801350 rows)
+2026-04-22 23:54:36,507 [INFO] train_sae: Training: d_model=4096, n_features=16384, k=163
+2026-04-22 23:54:39,002 [INFO] train_sae: [iter0] forward OK, activations=1, shape=torch.Size([8, 256, 4096]), dtype=torch.float32
+2026-04-22 23:54:39,002 [INFO] train_sae: [iter0] z shape=torch.Size([2048, 16384]), dtype=torch.float32
+2026-04-22 23:54:39,083 [INFO] train_sae: [iter0] loss=7857.0566, recon=7561.9277, l1=295.1290
+2026-04-22 23:54:39,085 [INFO] train_sae: [iter0] backward OK
+2026-04-22 23:54:39,087 [INFO] train_sae: [iter0] step complete, total_tokens=2048
+2026-04-22 23:56:47,402 [INFO] train_sae: step=50, tokens=0.10M, recon=544.4899, l1=628.8137
+2026-04-22 23:59:00,299 [INFO] train_sae: step=100, tokens=0.20M, recon=421.0938, l1=347.3355
+2026-04-23 00:01:10,603 [INFO] train_sae: step=150, tokens=0.31M, recon=330.6608, l1=496.6482
+2026-04-23 00:03:19,623 [INFO] train_sae: step=200, tokens=0.41M, recon=398.4587, l1=354.0703
+2026-04-23 00:05:32,201 [INFO] train_sae: step=250, tokens=0.51M, recon=398.9895, l1=279.0806
+2026-04-23 00:07:35,400 [INFO] train_sae: step=300, tokens=0.61M, recon=404.5591, l1=243.7330
+2026-04-23 00:09:40,399 [INFO] train_sae: step=350, tokens=0.72M, recon=308.0003, l1=193.2095
+2026-04-23 00:11:51,524 [INFO] train_sae: step=400, tokens=0.82M, recon=250.9962, l1=220.7949
+2026-04-23 00:14:01,085 [INFO] train_sae: step=450, tokens=0.92M, recon=275.3900, l1=180.7926
+2026-04-23 00:16:10,603 [INFO] train_sae: step=500, tokens=1.02M, recon=296.4357, l1=194.0458
+2026-04-23 00:18:19,598 [INFO] train_sae: step=550, tokens=1.13M, recon=313.7136, l1=139.2558
+2026-04-23 00:20:27,089 [INFO] train_sae: step=600, tokens=1.23M, recon=248.7532, l1=160.3535
+2026-04-23 00:22:32,689 [INFO] train_sae: step=650, tokens=1.33M, recon=269.4077, l1=140.5622
+2026-04-23 00:24:42,924 [INFO] train_sae: step=700, tokens=1.43M, recon=219.8848, l1=159.0045
+2026-04-23 00:26:50,898 [INFO] train_sae: step=750, tokens=1.54M, recon=264.3608, l1=135.5156
+2026-04-23 00:29:02,906 [INFO] train_sae: step=800, tokens=1.64M, recon=221.3259, l1=155.4105
+2026-04-23 00:31:10,889 [INFO] train_sae: step=850, tokens=1.74M, recon=320.7203, l1=149.8400
+2026-04-23 00:33:25,401 [INFO] train_sae: step=900, tokens=1.84M, recon=231.8879, l1=121.9498
+2026-04-23 00:35:28,608 [INFO] train_sae: step=950, tokens=1.95M, recon=237.6084, l1=130.6245
+2026-04-23 00:37:33,306 [INFO] train_sae: step=1000, tokens=2.05M, recon=256.9188, l1=131.7125
+2026-04-23 00:39:41,383 [INFO] train_sae: step=1050, tokens=2.15M, recon=258.4319, l1=119.1452
+2026-04-23 00:41:48,282 [INFO] train_sae: step=1100, tokens=2.25M, recon=217.4635, l1=121.9507
+2026-04-23 00:43:50,797 [INFO] train_sae: step=1150, tokens=2.36M, recon=269.8190, l1=124.5042
+2026-04-23 00:46:01,725 [INFO] train_sae: step=1200, tokens=2.46M, recon=249.6662, l1=138.4412
+2026-04-23 00:48:05,424 [INFO] train_sae: step=1250, tokens=2.56M, recon=198.2573, l1=137.6067
+2026-04-23 00:50:11,203 [INFO] train_sae: step=1300, tokens=2.66M, recon=259.6391, l1=97.3771
+2026-04-23 00:52:21,324 [INFO] train_sae: step=1350, tokens=2.76M, recon=227.3597, l1=115.5626
+2026-04-23 00:54:26,099 [INFO] train_sae: step=1400, tokens=2.87M, recon=223.0788, l1=130.4708
+2026-04-23 00:56:35,509 [INFO] train_sae: step=1450, tokens=2.97M, recon=278.2784, l1=130.8560
+2026-04-23 00:58:45,790 [INFO] train_sae: step=1500, tokens=3.07M, recon=256.8055, l1=100.3873
+2026-04-23 01:00:57,231 [INFO] train_sae: step=1550, tokens=3.17M, recon=241.3136, l1=99.9352
+2026-04-23 01:03:05,685 [INFO] train_sae: step=1600, tokens=3.28M, recon=279.1315, l1=106.9831
+2026-04-23 01:05:14,189 [INFO] train_sae: step=1650, tokens=3.38M, recon=243.0956, l1=104.3285
+2026-04-23 01:07:23,523 [INFO] train_sae: step=1700, tokens=3.48M, recon=218.7629, l1=121.2224
+2026-04-23 01:09:30,202 [INFO] train_sae: step=1750, tokens=3.58M, recon=220.9741, l1=107.9704
+2026-04-23 01:11:33,406 [INFO] train_sae: step=1800, tokens=3.69M, recon=259.3875, l1=111.4225
+2026-04-23 01:13:39,699 [INFO] train_sae: step=1850, tokens=3.79M, recon=183.9138, l1=115.8489
+2026-04-23 01:15:46,183 [INFO] train_sae: step=1900, tokens=3.89M, recon=256.6149, l1=88.7766
+2026-04-23 01:17:55,009 [INFO] train_sae: step=1950, tokens=3.99M, recon=246.6804, l1=99.3724
+2026-04-23 01:20:05,082 [INFO] train_sae: step=2000, tokens=4.10M, recon=244.6552, l1=101.4061
+2026-04-23 01:22:11,599 [INFO] train_sae: step=2050, tokens=4.20M, recon=383.1205, l1=126.3602
+2026-04-23 01:24:11,082 [INFO] train_sae: step=2100, tokens=4.30M, recon=243.5848, l1=113.5950
+2026-04-23 01:26:16,583 [INFO] train_sae: step=2150, tokens=4.40M, recon=217.7047, l1=104.3018
+2026-04-23 01:28:23,404 [INFO] train_sae: step=2200, tokens=4.51M, recon=231.0094, l1=98.8479
+2026-04-23 01:30:28,100 [INFO] train_sae: step=2250, tokens=4.61M, recon=272.8025, l1=103.0354
+2026-04-23 01:32:36,109 [INFO] train_sae: step=2300, tokens=4.71M, recon=224.9982, l1=102.1101
+2026-04-23 01:34:49,624 [INFO] train_sae: step=2350, tokens=4.81M, recon=223.9846, l1=109.0224
+2026-04-23 01:36:52,497 [INFO] train_sae: step=2400, tokens=4.92M, recon=236.1912, l1=100.8974
+2026-04-23 01:38:58,603 [INFO] train_sae: step=2450, tokens=5.02M, recon=243.9410, l1=97.7140
+2026-04-23 01:41:02,604 [INFO] train_sae: step=2500, tokens=5.12M, recon=255.4667, l1=102.4137
+2026-04-23 01:43:10,823 [INFO] train_sae: step=2550, tokens=5.22M, recon=286.6636, l1=109.5983
+2026-04-23 01:45:21,703 [INFO] train_sae: step=2600, tokens=5.32M, recon=229.1188, l1=105.2661
+2026-04-23 01:47:29,582 [INFO] train_sae: step=2650, tokens=5.43M, recon=205.4043, l1=105.3141
+2026-04-23 01:49:25,297 [INFO] train_sae: step=2700, tokens=5.53M, recon=218.1807, l1=113.4069
+2026-04-23 01:51:39,099 [INFO] train_sae: step=2750, tokens=5.63M, recon=219.7186, l1=108.3503
+2026-04-23 01:53:45,108 [INFO] train_sae: step=2800, tokens=5.73M, recon=229.2037, l1=112.6039
+2026-04-23 01:55:54,207 [INFO] train_sae: step=2850, tokens=5.84M, recon=231.0599, l1=81.4465
+2026-04-23 01:58:04,722 [INFO] train_sae: step=2900, tokens=5.94M, recon=227.9949, l1=94.4971
+2026-04-23 02:00:03,098 [INFO] train_sae: step=2950, tokens=6.04M, recon=234.2684, l1=87.7468
+2026-04-23 02:02:09,383 [INFO] train_sae: step=3000, tokens=6.14M, recon=212.9816, l1=100.3241
+2026-04-23 02:04:16,709 [INFO] train_sae: step=3050, tokens=6.25M, recon=227.6091, l1=110.9319
+2026-04-23 02:06:25,003 [INFO] train_sae: step=3100, tokens=6.35M, recon=173.3177, l1=115.4111
+2026-04-23 02:08:35,529 [INFO] train_sae: step=3150, tokens=6.45M, recon=196.6124, l1=106.0602
+2026-04-23 02:10:38,418 [INFO] train_sae: step=3200, tokens=6.55M, recon=215.9902, l1=102.5240
+2026-04-23 02:12:46,589 [INFO] train_sae: step=3250, tokens=6.66M, recon=245.4934, l1=119.3066
+2026-04-23 02:14:50,626 [INFO] train_sae: step=3300, tokens=6.76M, recon=226.3014, l1=100.2291
+2026-04-23 02:16:57,783 [INFO] train_sae: step=3350, tokens=6.86M, recon=229.6447, l1=92.8163
+2026-04-23 02:19:02,698 [INFO] train_sae: step=3400, tokens=6.96M, recon=257.8049, l1=97.8103
+2026-04-23 02:21:06,599 [INFO] train_sae: step=3450, tokens=7.07M, recon=244.2534, l1=91.5954
+2026-04-23 02:23:12,199 [INFO] train_sae: step=3500, tokens=7.17M, recon=246.9088, l1=102.9978
+2026-04-23 02:25:23,422 [INFO] train_sae: step=3550, tokens=7.27M, recon=173.3561, l1=111.5382
+2026-04-23 02:27:29,998 [INFO] train_sae: step=3600, tokens=7.37M, recon=225.6867, l1=89.8620
+2026-04-23 02:29:35,302 [INFO] train_sae: step=3650, tokens=7.48M, recon=272.7873, l1=123.4614
+2026-04-23 02:31:39,689 [INFO] train_sae: step=3700, tokens=7.58M, recon=250.1793, l1=97.7160
+2026-04-23 02:33:44,017 [INFO] train_sae: step=3750, tokens=7.68M, recon=236.8123, l1=99.5357
+2026-04-23 02:35:47,018 [INFO] train_sae: step=3800, tokens=7.78M, recon=199.6161, l1=106.7626
+2026-04-23 02:37:58,202 [INFO] train_sae: step=3850, tokens=7.88M, recon=261.9069, l1=99.4318
+2026-04-23 02:40:02,803 [INFO] train_sae: step=3900, tokens=7.99M, recon=169.8829, l1=118.4548
+2026-04-23 02:42:09,724 [INFO] train_sae: step=3950, tokens=8.09M, recon=225.2437, l1=117.1340
+2026-04-23 02:44:19,989 [INFO] train_sae: step=4000, tokens=8.19M, recon=215.3174, l1=91.2578
+2026-04-23 02:46:23,492 [INFO] train_sae: step=4050, tokens=8.29M, recon=254.7956, l1=100.5087
+2026-04-23 02:48:28,003 [INFO] train_sae: step=4100, tokens=8.40M, recon=229.2085, l1=96.1674
+2026-04-23 02:50:28,605 [INFO] train_sae: step=4150, tokens=8.50M, recon=202.4458, l1=112.3934
+2026-04-23 02:52:38,782 [INFO] train_sae: step=4200, tokens=8.60M, recon=187.6963, l1=112.9618
+2026-04-23 02:54:47,203 [INFO] train_sae: step=4250, tokens=8.70M, recon=213.8921, l1=95.6366
+2026-04-23 02:56:54,183 [INFO] train_sae: step=4300, tokens=8.81M, recon=205.2578, l1=112.1147
+2026-04-23 02:59:03,990 [INFO] train_sae: step=4350, tokens=8.91M, recon=227.7421, l1=108.2813
+2026-04-23 03:01:14,313 [INFO] train_sae: step=4400, tokens=9.01M, recon=220.5924, l1=120.7896
+2026-04-23 03:03:23,706 [INFO] train_sae: step=4450, tokens=9.11M, recon=228.3185, l1=105.4535
+2026-04-23 03:05:34,423 [INFO] train_sae: step=4500, tokens=9.22M, recon=257.5328, l1=103.7934
+2026-04-23 03:07:42,826 [INFO] train_sae: step=4550, tokens=9.32M, recon=239.7795, l1=89.8170
+2026-04-23 03:09:51,202 [INFO] train_sae: step=4600, tokens=9.42M, recon=218.9887, l1=77.9207
+2026-04-23 03:12:00,725 [INFO] train_sae: step=4650, tokens=9.52M, recon=185.4190, l1=113.9718
+2026-04-23 03:14:09,900 [INFO] train_sae: step=4700, tokens=9.63M, recon=201.0429, l1=96.9679
+2026-04-23 03:16:22,499 [INFO] train_sae: step=4750, tokens=9.73M, recon=226.6882, l1=105.4686
+2026-04-23 03:18:26,782 [INFO] train_sae: step=4800, tokens=9.83M, recon=228.2446, l1=100.7089
+2026-04-23 03:20:36,328 [INFO] train_sae: step=4850, tokens=9.93M, recon=204.9002, l1=98.7228
+2026-04-23 03:22:05,543 [INFO] train_sae: SAE saved to /root/saes/qwen3.5-9b/layer_15 (10.0M tokens)
+2026-04-23 03:22:05,721 [INFO] train_sae: [GPU 0] Training SAE for layer 23: 16384 features, 10M tokens
+2026-04-23 03:22:05,722 [INFO] train_sae: Manual SAE training for layer 23
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:02<19:14,  2.71s/it]Loading weights:   0%|          | 2/427 [00:05<19:49,  2.80s/it]Loading weights:   2%|▏         | 9/427 [00:05<02:55,  2.39it/s]Loading weights:   3%|▎         | 13/427 [00:06<02:05,  3.29it/s]Loading weights:   4%|▎         | 16/427 [00:06<01:34,  4.36it/s]Loading weights:   5%|▌         | 22/427 [00:06<00:53,  7.62it/s]Loading weights:   6%|▋         | 27/427 [00:06<00:40,  9.84it/s]Loading weights:   7%|▋         | 30/427 [00:07<00:39,  9.95it/s]Loading weights:   9%|▉         | 38/427 [00:07<00:24, 16.20it/s]Loading weights:  10%|▉         | 42/427 [00:07<00:25, 14.90it/s]Loading weights:  11%|█         | 45/427 [00:07<00:24, 15.78it/s]Loading weights:  11%|█         | 48/427 [00:08<00:31, 12.03it/s]Loading weights:  13%|█▎        | 54/427 [00:08<00:22, 16.34it/s]Loading weights:  14%|█▍        | 61/427 [00:08<00:16, 22.66it/s]Loading weights:  15%|█▌        | 65/427 [00:08<00:21, 16.97it/s]Loading weights:  16%|█▌        | 68/427 [00:08<00:20, 17.59it/s]Loading weights:  18%|█▊        | 76/427 [00:09<00:14, 24.98it/s]Loading weights:  19%|█▊        | 80/427 [00:09<00:14, 23.71it/s]Loading weights:  19%|█▉        | 83/427 [00:09<00:18, 18.67it/s]Loading weights:  21%|██▏       | 91/427 [00:09<00:16, 20.37it/s]Loading weights:  22%|██▏       | 95/427 [00:10<00:15, 21.69it/s]Loading weights:  23%|██▎       | 98/427 [00:10<00:15, 21.43it/s]Loading weights:  24%|██▎       | 101/427 [00:10<00:22, 14.45it/s]Loading weights:  25%|██▌       | 107/427 [00:10<00:17, 18.68it/s]Loading weights:  27%|██▋       | 114/427 [00:11<00:13, 23.87it/s]Loading weights:  28%|██▊       | 119/427 [00:11<00:12, 23.87it/s]Loading weights:  29%|██▊       | 122/427 [00:11<00:16, 18.76it/s]Loading weights:  30%|██▉       | 128/427 [00:11<00:12, 24.80it/s]Loading weights:  31%|███       | 132/427 [00:11<00:10, 27.44it/s]Loading weights:  32%|███▏      | 136/427 [00:12<00:16, 17.72it/s]Loading weights:  33%|███▎      | 143/427 [00:12<00:12, 23.53it/s]Loading weights:  34%|███▍      | 147/427 [00:12<00:12, 22.47it/s]Loading weights:  35%|███▌      | 150/427 [00:12<00:15, 17.87it/s]Loading weights:  36%|███▌      | 153/427 [00:13<00:18, 15.04it/s]Loading weights:  36%|███▋      | 155/427 [00:13<00:18, 14.59it/s]Loading weights:  37%|███▋      | 160/427 [00:13<00:14, 18.24it/s]Loading weights:  39%|███▉      | 168/427 [00:13<00:10, 24.89it/s]Loading weights:  40%|████      | 172/427 [00:13<00:10, 23.49it/s]Loading weights:  41%|████      | 175/427 [00:14<00:13, 18.07it/s]Loading weights:  43%|████▎     | 182/427 [00:14<00:10, 24.11it/s]Loading weights:  44%|████▎     | 186/427 [00:14<00:10, 22.86it/s]Loading weights:  44%|████▍     | 189/427 [00:14<00:13, 18.02it/s]Loading weights:  46%|████▌     | 196/427 [00:14<00:09, 24.09it/s]Loading weights:  47%|████▋     | 200/427 [00:15<00:09, 22.88it/s]Loading weights:  48%|████▊     | 203/427 [00:15<00:12, 17.51it/s]Loading weights:  48%|████▊     | 206/427 [00:15<00:13, 16.40it/s]Loading weights:  49%|████▊     | 208/427 [00:15<00:13, 16.67it/s]Loading weights:  50%|████▉     | 213/427 [00:15<00:09, 21.98it/s]Loading weights:  52%|█████▏    | 222/427 [00:16<00:05, 34.47it/s]Loading weights:  53%|█████▎    | 227/427 [00:16<00:09, 22.15it/s]Loading weights:  54%|█████▍    | 231/427 [00:16<00:07, 24.84it/s]Loading weights:  56%|█████▌    | 238/427 [00:16<00:05, 32.87it/s]Loading weights:  57%|█████▋    | 243/427 [00:17<00:08, 21.34it/s]Loading weights:  58%|█████▊    | 248/427 [00:17<00:07, 23.77it/s]Loading weights:  59%|█████▉    | 253/427 [00:17<00:07, 24.15it/s]Loading weights:  60%|██████    | 257/427 [00:17<00:08, 20.18it/s]Loading weights:  61%|██████    | 260/427 [00:18<00:11, 14.19it/s]Loading weights:  62%|██████▏   | 266/427 [00:18<00:08, 18.39it/s]Loading weights:  64%|██████▍   | 274/427 [00:18<00:05, 26.61it/s]Loading weights:  65%|██████▌   | 278/427 [00:18<00:06, 23.12it/s]Loading weights:  66%|██████▌   | 282/427 [00:19<00:07, 19.59it/s]Loading weights:  67%|██████▋   | 288/427 [00:19<00:08, 16.94it/s]Loading weights:  69%|██████▉   | 294/427 [00:19<00:06, 19.86it/s]Loading weights:  71%|███████   | 302/427 [00:19<00:04, 27.94it/s]Loading weights:  72%|███████▏  | 307/427 [00:20<00:05, 20.69it/s]Loading weights:  73%|███████▎  | 311/427 [00:20<00:07, 15.59it/s]Loading weights:  74%|███████▎  | 314/427 [00:20<00:06, 16.24it/s]Loading weights:  74%|███████▍  | 318/427 [00:21<00:06, 17.46it/s]Loading weights:  77%|███████▋  | 327/427 [00:21<00:03, 25.33it/s]Loading weights:  78%|███████▊  | 331/427 [00:21<00:04, 23.26it/s]Loading weights:  78%|███████▊  | 334/427 [00:21<00:05, 17.41it/s]Loading weights:  80%|███████▉  | 340/427 [00:21<00:03, 23.09it/s]Loading weights:  81%|████████  | 344/427 [00:22<00:05, 15.48it/s]Loading weights:  81%|████████▏ | 347/427 [00:22<00:05, 15.37it/s]Loading weights:  83%|████████▎ | 355/427 [00:22<00:03, 23.27it/s]Loading weights:  84%|████████▍ | 359/427 [00:23<00:03, 20.35it/s]Loading weights:  85%|████████▍ | 362/427 [00:23<00:03, 16.65it/s]Loading weights:  85%|████████▌ | 365/427 [00:23<00:05, 11.07it/s]Loading weights:  87%|████████▋ | 372/427 [00:24<00:03, 16.96it/s]Loading weights:  89%|████████▉ | 380/427 [00:24<00:02, 22.83it/s]Loading weights:  90%|████████▉ | 384/427 [00:24<00:02, 17.71it/s]Loading weights:  91%|█████████ | 387/427 [00:24<00:02, 17.72it/s]Loading weights:  92%|█████████▏| 393/427 [00:24<00:01, 21.43it/s]Loading weights:  93%|█████████▎| 398/427 [00:25<00:01, 22.05it/s]Loading weights:  94%|█████████▍| 401/427 [00:25<00:01, 16.91it/s]Loading weights:  95%|█████████▌| 407/427 [00:25<00:00, 20.91it/s]Loading weights:  96%|█████████▋| 411/427 [00:25<00:00, 19.54it/s]Loading weights:  97%|█████████▋| 414/427 [00:26<00:00, 15.16it/s]Loading weights:  98%|█████████▊| 417/427 [00:26<00:00, 15.85it/s]Loading weights:  98%|█████████▊| 419/427 [00:26<00:00, 11.59it/s]Loading weights:  99%|█████████▉| 424/427 [00:26<00:00, 15.20it/s]Loading weights: 100%|██████████| 427/427 [00:26<00:00, 15.83it/s]
+2026-04-23 03:22:34,799 [INFO] train_sae: Using local wikitext from /root/datasets/wikitext (1801350 rows)
+2026-04-23 03:22:34,799 [INFO] train_sae: Training: d_model=4096, n_features=16384, k=163
+2026-04-23 03:22:37,385 [INFO] train_sae: [iter0] forward OK, activations=1, shape=torch.Size([8, 256, 4096]), dtype=torch.float32
+2026-04-23 03:22:37,385 [INFO] train_sae: [iter0] z shape=torch.Size([2048, 16384]), dtype=torch.float32
+2026-04-23 03:22:37,404 [INFO] train_sae: [iter0] loss=13081.5664, recon=12624.7168, l1=456.8501
+2026-04-23 03:22:37,406 [INFO] train_sae: [iter0] backward OK
+2026-04-23 03:22:37,408 [INFO] train_sae: [iter0] step complete, total_tokens=2048
+2026-04-23 03:24:39,582 [INFO] train_sae: step=50, tokens=0.10M, recon=2389.5737, l1=588.5740
+2026-04-23 03:26:51,108 [INFO] train_sae: step=100, tokens=0.20M, recon=3865.2759, l1=451.2840
+2026-04-23 03:29:05,516 [INFO] train_sae: step=150, tokens=0.31M, recon=1602.9977, l1=471.8651
+2026-04-23 03:31:14,090 [INFO] train_sae: step=200, tokens=0.41M, recon=2586.4111, l1=396.7979
+2026-04-23 03:33:18,785 [INFO] train_sae: step=250, tokens=0.51M, recon=3415.5908, l1=368.6277
+2026-04-23 03:35:31,617 [INFO] train_sae: step=300, tokens=0.61M, recon=2173.8555, l1=357.0870
+2026-04-23 03:37:41,100 [INFO] train_sae: step=350, tokens=0.72M, recon=3108.9558, l1=390.7296
+2026-04-23 03:39:49,004 [INFO] train_sae: step=400, tokens=0.82M, recon=1715.2054, l1=319.7231
+2026-04-23 03:41:57,926 [INFO] train_sae: step=450, tokens=0.92M, recon=1921.6781, l1=319.8854
+2026-04-23 03:44:05,622 [INFO] train_sae: step=500, tokens=1.02M, recon=2298.4712, l1=301.4081
+2026-04-23 03:46:09,482 [INFO] train_sae: step=550, tokens=1.13M, recon=2981.3511, l1=364.8233
+2026-04-23 03:48:22,003 [INFO] train_sae: step=600, tokens=1.23M, recon=1652.7799, l1=299.0154
+2026-04-23 03:50:30,322 [INFO] train_sae: step=650, tokens=1.33M, recon=2014.2214, l1=308.6855
+2026-04-23 03:52:38,922 [INFO] train_sae: step=700, tokens=1.43M, recon=1315.4216, l1=258.8495
+2026-04-23 03:54:47,203 [INFO] train_sae: step=750, tokens=1.54M, recon=1876.4447, l1=298.4860
+2026-04-23 03:56:54,503 [INFO] train_sae: step=800, tokens=1.64M, recon=1155.2041, l1=240.3430
+2026-04-23 03:59:04,821 [INFO] train_sae: step=850, tokens=1.74M, recon=1677.7787, l1=245.0846
+2026-04-23 04:01:12,603 [INFO] train_sae: step=900, tokens=1.84M, recon=1453.3978, l1=293.0288
+2026-04-23 04:03:19,783 [INFO] train_sae: step=950, tokens=1.95M, recon=1621.8909, l1=277.5494
+2026-04-23 04:05:27,423 [INFO] train_sae: step=1000, tokens=2.05M, recon=1454.3354, l1=267.4268
+2026-04-23 04:07:33,089 [INFO] train_sae: step=1050, tokens=2.15M, recon=1677.7084, l1=273.5950
+2026-04-23 04:09:42,099 [INFO] train_sae: step=1100, tokens=2.25M, recon=1394.5132, l1=282.0046
+2026-04-23 04:11:52,725 [INFO] train_sae: step=1150, tokens=2.36M, recon=1719.1196, l1=257.5576
+2026-04-23 04:14:04,501 [INFO] train_sae: step=1200, tokens=2.46M, recon=1001.2211, l1=227.1923
+2026-04-23 04:16:15,722 [INFO] train_sae: step=1250, tokens=2.56M, recon=829.0970, l1=219.0872
+2026-04-23 04:18:25,392 [INFO] train_sae: step=1300, tokens=2.66M, recon=1858.6259, l1=338.6368
+2026-04-23 04:20:27,603 [INFO] train_sae: step=1350, tokens=2.76M, recon=1426.9801, l1=247.4162
+2026-04-23 04:22:36,920 [INFO] train_sae: step=1400, tokens=2.87M, recon=1007.8257, l1=222.3961
+2026-04-23 04:24:42,225 [INFO] train_sae: step=1450, tokens=2.97M, recon=1555.3241, l1=225.4348
+2026-04-23 04:26:52,992 [INFO] train_sae: step=1500, tokens=3.07M, recon=1997.9639, l1=325.8753
+2026-04-23 04:29:03,183 [INFO] train_sae: step=1550, tokens=3.17M, recon=1686.9954, l1=302.2684
+2026-04-23 04:31:05,226 [INFO] train_sae: step=1600, tokens=3.28M, recon=1945.5947, l1=304.1382
+2026-04-23 04:33:10,999 [INFO] train_sae: step=1650, tokens=3.38M, recon=1423.5378, l1=286.6752
+2026-04-23 04:35:20,298 [INFO] train_sae: step=1700, tokens=3.48M, recon=1129.7135, l1=233.2800
+2026-04-23 04:37:31,283 [INFO] train_sae: step=1750, tokens=3.58M, recon=1164.1401, l1=257.9501
+2026-04-23 04:39:38,097 [INFO] train_sae: step=1800, tokens=3.69M, recon=1331.9829, l1=249.4718
+2026-04-23 04:41:49,800 [INFO] train_sae: step=1850, tokens=3.79M, recon=1051.7734, l1=245.7157
+2026-04-23 04:43:54,922 [INFO] train_sae: step=1900, tokens=3.89M, recon=1739.4769, l1=316.8438
+2026-04-23 04:46:03,383 [INFO] train_sae: step=1950, tokens=3.99M, recon=1691.3252, l1=295.2160
+2026-04-23 04:48:10,483 [INFO] train_sae: step=2000, tokens=4.10M, recon=1584.8717, l1=282.5725
+2026-04-23 04:50:18,725 [INFO] train_sae: step=2050, tokens=4.20M, recon=882.7027, l1=176.8436
+2026-04-23 04:52:27,285 [INFO] train_sae: step=2100, tokens=4.30M, recon=1067.2209, l1=240.8167
+2026-04-23 04:54:33,403 [INFO] train_sae: step=2150, tokens=4.40M, recon=1419.2019, l1=285.1707
+2026-04-23 04:56:37,908 [INFO] train_sae: step=2200, tokens=4.51M, recon=1534.0879, l1=296.1876
+2026-04-23 04:58:49,626 [INFO] train_sae: step=2250, tokens=4.61M, recon=1840.1588, l1=256.3603
+2026-04-23 05:00:56,183 [INFO] train_sae: step=2300, tokens=4.71M, recon=1206.5804, l1=256.8535
+2026-04-23 05:03:04,109 [INFO] train_sae: step=2350, tokens=4.81M, recon=1062.6472, l1=262.3522
+2026-04-23 05:05:14,422 [INFO] train_sae: step=2400, tokens=4.92M, recon=1349.1580, l1=278.7728
+2026-04-23 05:07:21,416 [INFO] train_sae: step=2450, tokens=5.02M, recon=1405.7356, l1=283.7047
+2026-04-23 05:09:31,002 [INFO] train_sae: step=2500, tokens=5.12M, recon=1316.1685, l1=266.8536
+2026-04-23 05:11:37,725 [INFO] train_sae: step=2550, tokens=5.22M, recon=1776.5701, l1=252.9458
+2026-04-23 05:13:44,818 [INFO] train_sae: step=2600, tokens=5.32M, recon=1086.8967, l1=252.5968
+2026-04-23 05:15:52,290 [INFO] train_sae: step=2650, tokens=5.43M, recon=1090.9443, l1=263.7877
+2026-04-23 05:17:59,289 [INFO] train_sae: step=2700, tokens=5.53M, recon=1005.0406, l1=232.4996
+2026-04-23 05:20:04,301 [INFO] train_sae: step=2750, tokens=5.63M, recon=1092.6738, l1=241.5035
+2026-04-23 05:22:08,724 [INFO] train_sae: step=2800, tokens=5.73M, recon=941.1763, l1=219.3914
+2026-04-23 05:24:15,483 [INFO] train_sae: step=2850, tokens=5.84M, recon=1756.7957, l1=285.2064
+2026-04-23 05:26:21,602 [INFO] train_sae: step=2900, tokens=5.94M, recon=1422.2853, l1=308.2993
+2026-04-23 05:28:28,810 [INFO] train_sae: step=2950, tokens=6.04M, recon=1668.0577, l1=322.3019
+2026-04-23 05:30:36,625 [INFO] train_sae: step=3000, tokens=6.14M, recon=1220.3118, l1=262.6365
+2026-04-23 05:32:41,689 [INFO] train_sae: step=3050, tokens=6.25M, recon=1294.2178, l1=259.4880
+2026-04-23 05:34:43,801 [INFO] train_sae: step=3100, tokens=6.35M, recon=839.6129, l1=226.0667
+2026-04-23 05:36:54,383 [INFO] train_sae: step=3150, tokens=6.45M, recon=1052.2253, l1=256.5917
+2026-04-23 05:39:00,229 [INFO] train_sae: step=3200, tokens=6.55M, recon=1132.7341, l1=271.7624
+2026-04-23 05:41:04,924 [INFO] train_sae: step=3250, tokens=6.66M, recon=1071.4980, l1=209.9026
+2026-04-23 05:43:13,991 [INFO] train_sae: step=3300, tokens=6.76M, recon=1134.7064, l1=258.1812
+2026-04-23 05:45:19,427 [INFO] train_sae: step=3350, tokens=6.86M, recon=1381.5709, l1=295.9978
+2026-04-23 05:47:29,005 [INFO] train_sae: step=3400, tokens=6.96M, recon=1445.4554, l1=291.8029
+2026-04-23 05:49:38,801 [INFO] train_sae: step=3450, tokens=7.07M, recon=1501.8252, l1=324.2976
+2026-04-23 05:51:47,830 [INFO] train_sae: step=3500, tokens=7.17M, recon=1284.7864, l1=292.3341
+2026-04-23 05:53:58,913 [INFO] train_sae: step=3550, tokens=7.27M, recon=749.1348, l1=218.2253
+2026-04-23 05:56:06,225 [INFO] train_sae: step=3600, tokens=7.37M, recon=1183.4977, l1=282.0947
+2026-04-23 05:58:14,599 [INFO] train_sae: step=3650, tokens=7.48M, recon=985.1003, l1=215.1961
+2026-04-23 06:00:21,385 [INFO] train_sae: step=3700, tokens=7.58M, recon=1554.0801, l1=293.6933
+2026-04-23 06:02:27,482 [INFO] train_sae: step=3750, tokens=7.68M, recon=1536.7008, l1=288.5159
+2026-04-23 06:04:35,982 [INFO] train_sae: step=3800, tokens=7.78M, recon=933.0471, l1=253.2408
+2026-04-23 06:06:44,083 [INFO] train_sae: step=3850, tokens=7.88M, recon=2158.1411, l1=376.9717
+2026-04-23 06:08:56,123 [INFO] train_sae: step=3900, tokens=7.99M, recon=619.4026, l1=201.2581
+2026-04-23 06:11:02,520 [INFO] train_sae: step=3950, tokens=8.09M, recon=832.7911, l1=224.2723
+2026-04-23 06:13:02,426 [INFO] train_sae: step=4000, tokens=8.19M, recon=1307.9315, l1=298.9427
+2026-04-23 06:15:11,199 [INFO] train_sae: step=4050, tokens=8.29M, recon=1475.3657, l1=280.1256
+2026-04-23 06:17:17,299 [INFO] train_sae: step=4100, tokens=8.40M, recon=1623.3690, l1=298.1042
+2026-04-23 06:19:20,482 [INFO] train_sae: step=4150, tokens=8.50M, recon=1083.6257, l1=239.7627
+2026-04-23 06:21:31,303 [INFO] train_sae: step=4200, tokens=8.60M, recon=931.5965, l1=234.5253
+2026-04-23 06:23:36,003 [INFO] train_sae: step=4250, tokens=8.70M, recon=1221.0652, l1=266.1417
+2026-04-23 06:25:44,403 [INFO] train_sae: step=4300, tokens=8.81M, recon=906.7585, l1=251.2831
+2026-04-23 06:27:50,110 [INFO] train_sae: step=4350, tokens=8.91M, recon=1109.9556, l1=262.4782
+2026-04-23 06:29:58,623 [INFO] train_sae: step=4400, tokens=9.01M, recon=960.5497, l1=216.9128
+2026-04-23 06:32:07,901 [INFO] train_sae: step=4450, tokens=9.11M, recon=1258.0217, l1=274.4350
+2026-04-23 06:34:13,703 [INFO] train_sae: step=4500, tokens=9.22M, recon=1608.6281, l1=253.9771
+2026-04-23 06:36:20,901 [INFO] train_sae: step=4550, tokens=9.32M, recon=1406.8301, l1=278.9991
+2026-04-23 06:38:29,697 [INFO] train_sae: step=4600, tokens=9.42M, recon=1403.7950, l1=327.9845
+2026-04-23 06:40:38,990 [INFO] train_sae: step=4650, tokens=9.52M, recon=826.3923, l1=219.1393
+2026-04-23 06:42:48,383 [INFO] train_sae: step=4700, tokens=9.63M, recon=1079.6549, l1=267.0226
+2026-04-23 06:44:54,923 [INFO] train_sae: step=4750, tokens=9.73M, recon=1144.5966, l1=265.7318
+2026-04-23 06:47:01,790 [INFO] train_sae: step=4800, tokens=9.83M, recon=1285.2148, l1=276.0370
+2026-04-23 06:49:10,409 [INFO] train_sae: step=4850, tokens=9.93M, recon=969.4305, l1=249.7562
+2026-04-23 06:50:37,508 [INFO] train_sae: SAE saved to /root/saes/qwen3.5-9b/layer_23 (10.0M tokens)
+2026-04-23 06:50:37,696 [INFO] train_sae: 
+=== Training Summary ===
+2026-04-23 06:50:37,697 [INFO] train_sae:   Layer 7: ✓ OK
+2026-04-23 06:50:37,697 [INFO] train_sae:   Layer 15: ✓ OK
+2026-04-23 06:50:37,698 [INFO] train_sae:   Layer 23: ✓ OK

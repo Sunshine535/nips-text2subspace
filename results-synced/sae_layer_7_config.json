@@ -1,0 +1,9 @@
+{
+  "model_name": "/root/models/Qwen3.5-9B",
+  "layer": 7,
+  "n_features": 16384,
+  "d_model": 4096,
+  "training_tokens": 10000384,
+  "l1_coefficient": 1.0,
+  "topk": 163
+}

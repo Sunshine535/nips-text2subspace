@@ -1,0 +1,103 @@
+[
+  {
+    "pair": "math+medical",
+    "ties": {
+      "math": {
+        "accuracy": 0.02,
+        "correct": 1,
+        "total": 50
+      },
+      "medical": {
+        "accuracy": 0.66,
+        "correct": 33,
+        "total": 50
+      }
+    }
+  },
+  {
+    "pair": "math+science",
+    "ties": {
+      "math": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 50
+      },
+      "science": {
+        "accuracy": 0.86,
+        "correct": 43,
+        "total": 50
+      }
+    }
+  },
+  {
+    "pair": "science+philosophy",
+    "ties": {
+      "science": {
+        "accuracy": 0.82,
+        "correct": 41,
+        "total": 50
+      },
+      "philosophy": {
+        "accuracy": 0.42,
+        "correct": 21,
+        "total": 50
+      }
+    }
+  },
+  {
+    "pair": "math+science",
+    "sfc": {
+      "math": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 50
+      },
+      "science": {
+        "accuracy": 0.76,
+        "correct": 38,
+        "total": 50
+      }
+    },
+    "ta": {
+      "math": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 50
+      },
+      "science": {
+        "accuracy": 0.84,
+        "correct": 42,
+        "total": 50
+      }
+    },
+    "fds": 0.48571428571428577
+  },
+  {
+    "pair": "science+philosophy",
+    "sfc": {
+      "science": {
+        "accuracy": 0.66,
+        "correct": 33,
+        "total": 50
+      },
+      "philosophy": {
+        "accuracy": 0.4,
+        "correct": 20,
+        "total": 50
+      }
+    },
+    "ta": {
+      "science": {
+        "accuracy": 0.82,
+        "correct": 41,
+        "total": 50
+      },
+      "philosophy": {
+        "accuracy": 0.42,
+        "correct": 21,
+        "total": 50
+      }
+    },
+    "fds": 0.3023255813953488
+  }
+]
