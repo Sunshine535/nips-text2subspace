@@ -78,8 +78,8 @@ DOMAIN_EVAL = {
 CHOICE_LABELS = ["A", "B", "C", "D"]
 
 
-def load_eval_dataset(domain, dataset_dir, n_samples, split=None):
-    """Load evaluation dataset from local cache."""
+def load_eval_dataset(domain, dataset_dir, n_samples, split=None, sample_seed=42):
+    """Load evaluation dataset from local cache. sample_seed controls subset shuffle."""
     from datasets import load_from_disk
 
     cfg = DOMAIN_EVAL[domain]
@@ -96,7 +96,7 @@ def load_eval_dataset(domain, dataset_dir, n_samples, split=None):
         subjects = cfg["subject_filter"]
         ds = ds.filter(lambda x: x.get("subject", "") in subjects)
 
-    ds = ds.shuffle(seed=42)
+    ds = ds.shuffle(seed=int(sample_seed))
     return ds.select(range(min(n_samples, len(ds))))
 
 
@@ -149,8 +149,17 @@ def format_mcq_prompt(example, eval_type):
     return str(example), ""
 
 
-def evaluate_model_mcq(model, tokenizer, domain, dataset_dir, n_samples, device="cuda"):
-    """Evaluate model on domain MCQ benchmark. Returns accuracy and details."""
+def evaluate_model_mcq(
+    model, tokenizer, domain, dataset_dir, n_samples,
+    device="cuda", sample_seed=42, metric_mode="generation",
+    manifest_out=None, predictions_out=None,
+):
+    """Evaluate model on domain MCQ benchmark.
+
+    metric_mode:
+      - "generation": greedy generate, take first response character (legacy, fragile)
+      - "logprob_mcq": score each option by sum logprob, argmax (gsm8k still uses generation)
+    """
     cfg = DOMAIN_EVAL[domain]
     eval_type = cfg["type"]
 
@@ -158,8 +167,9 @@ def evaluate_model_mcq(model, tokenizer, domain, dataset_dir, n_samples, device=
         logger.info(f"  Skipping {domain} (code eval not supported in quick mode)")
         return {"accuracy": -1, "n_samples": 0, "skipped": True}
 
-    ds = load_eval_dataset(domain, dataset_dir, n_samples)
-    logger.info(f"  Evaluating {domain}: {len(ds)} samples, type={eval_type}")
+    ds = load_eval_dataset(domain, dataset_dir, n_samples, sample_seed=sample_seed)
+    logger.info(f"  Evaluating {domain}: {len(ds)} samples, type={eval_type}, "
+                f"metric={metric_mode}, sample_seed={sample_seed}")
 
     correct = 0
     total = 0
@@ -167,40 +177,101 @@ def evaluate_model_mcq(model, tokenizer, domain, dataset_dir, n_samples, device=
 
     input_device = next(model.parameters()).device
 
-    for example in ds:
+    manifest_rows = []
+    pred_rows = []
+
+    use_logprob = metric_mode == "logprob_mcq" and eval_type in ("arc", "medmcqa", "mmlu")
+
+    if use_logprob:
+        import torch.nn.functional as F_lp
+        cand_labels = CHOICE_LABELS
+
+    for row_idx, example in enumerate(ds):
         prompt, gold = format_mcq_prompt(example, eval_type)
         if not gold:
             continue
 
-        inputs = tokenizer(prompt, return_tensors="pt", truncation=True,
-                          max_length=512).to(input_device)
+        if manifest_out is not None:
+            try:
+                from src.carr_config_loader import build_manifest_entry
+                manifest_rows.append(build_manifest_entry(
+                    domain, row_idx, prompt, gold, sample_seed, eval_type))
+            except Exception:
+                pass
 
-        with torch.no_grad():
-            outputs = model.generate(
-                **inputs, max_new_tokens=32, do_sample=False,
-                pad_token_id=tokenizer.pad_token_id,
-            )
-
-        response = tokenizer.decode(
-            outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True
-        ).strip()
-
-        if eval_type == "gsm8k":
-            import re
-            nums = re.findall(r'-?\d+\.?\d*', response)
-            pred = nums[-1] if nums else ""
-            gold_clean = gold.replace(",", "").strip()
-            is_correct = pred == gold_clean
+        if use_logprob:
+            prompt_ids = tokenizer(prompt, return_tensors="pt", truncation=True,
+                                   max_length=1024).input_ids.to(input_device)
+            scores = []
+            with torch.no_grad():
+                for opt in cand_labels:
+                    opt_ids = tokenizer(" " + opt, add_special_tokens=False).input_ids
+                    if len(opt_ids) == 0:
+                        opt_ids = tokenizer(opt, add_special_tokens=False).input_ids
+                    opt_tensor = torch.tensor([opt_ids], device=input_device, dtype=prompt_ids.dtype)
+                    full = torch.cat([prompt_ids, opt_tensor], dim=-1)
+                    logits = model(full).logits
+                    target = full[:, prompt_ids.shape[1]:]
+                    log_probs = F_lp.log_softmax(
+                        logits[:, prompt_ids.shape[1] - 1:-1, :].float(), dim=-1)
+                    score = log_probs.gather(-1, target.unsqueeze(-1)).sum().item()
+                    scores.append(score / max(len(opt_ids), 1))
+            pred_idx = int(torch.tensor(scores).argmax().item())
+            pred = cand_labels[pred_idx]
+            is_correct = pred.upper() == gold.upper()
+            if predictions_out is not None:
+                pred_rows.append({"row_idx": row_idx, "gold": gold, "pred": pred,
+                                  "scores": scores})
         else:
-            pred = response.strip()[:1].upper()
-            is_correct = pred == gold.upper()
+            inputs = tokenizer(prompt, return_tensors="pt", truncation=True,
+                              max_length=512).to(input_device)
+            with torch.no_grad():
+                outputs = model.generate(
+                    **inputs, max_new_tokens=32, do_sample=False,
+                    pad_token_id=tokenizer.pad_token_id,
+                )
+            response = tokenizer.decode(
+                outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True
+            ).strip()
+            if eval_type == "gsm8k":
+                import re
+                nums = re.findall(r'-?\d+\.?\d*', response)
+                pred = nums[-1] if nums else ""
+                gold_clean = gold.replace(",", "").strip()
+                is_correct = pred == gold_clean
+            else:
+                pred = response.strip()[:1].upper()
+                is_correct = pred == gold.upper()
+            if predictions_out is not None:
+                pred_rows.append({"row_idx": row_idx, "gold": gold, "pred": pred,
+                                  "response": response})
 
         if is_correct:
             correct += 1
         total += 1
 
+    if manifest_out is not None and manifest_rows:
+        import json as _json, os as _os
+        _os.makedirs(_os.path.dirname(manifest_out), exist_ok=True)
+        with open(manifest_out, "a") as f:
+            for row in manifest_rows:
+                f.write(_json.dumps(row) + "\n")
+    if predictions_out is not None and pred_rows:
+        import json as _json, os as _os
+        _os.makedirs(_os.path.dirname(predictions_out), exist_ok=True)
+        with open(predictions_out, "a") as f:
+            for row in pred_rows:
+                row["domain"] = domain
+                f.write(_json.dumps(row) + "\n")
+
     acc = correct / max(total, 1)
-    return {"accuracy": float(acc), "correct": correct, "total": total}
+    return {
+        "accuracy": float(acc),
+        "correct": correct,
+        "total": total,
+        "metric_mode": metric_mode,
+        "sample_seed": int(sample_seed),
+    }
 
 
 # ---------------------------------------------------------------------------

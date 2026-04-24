@@ -1,8 +1,9 @@
 # CARR Minimal Configuration
 # For initial verification experiments on non-leaky domain pairs
 
-base_model: "Qwen/Qwen3.5-9B"  # or local path /root/models/Qwen3.5-9B
-adapter_dir: "results/sfc_loras_test"  # or /root/nips-text2subspace/results/sfc_loras_test
+base_model: "/root/models/Qwen3.5-9B"
+adapter_dir: "/root/nips-text2subspace/results/sfc_loras_test"
+dataset_dir: "/root/datasets"
 
 carr:
   n_adapters: 2
@@ -18,9 +19,11 @@ carr:
   base_kl_weight: 0.1
   conflict_weight: 0.05
   sparsity_weight: 0.01
+  calibration_weight: 0.1
+  task_weight: 1.0
 
   # Training
-  lr: 1e-3
+  lr: 0.001
   max_steps: 500
   calib_samples: 200
   batch_size: 4
@@ -29,8 +32,9 @@ carr:
 # Evaluation
 eval:
   max_samples: 100
-  metric_mode: "generation"  # or "logprob_mcq" when available
+  metric_mode: "logprob_mcq"  # Round 3: logprob MCQ is the verified metric
   seeds: [1, 2, 3]
+  sample_seeds: [1, 2, 3]
 
 # Safe domain pairs (no train/test leakage)
 safe_pairs:
