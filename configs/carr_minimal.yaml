@@ -14,6 +14,9 @@ carr:
   use_base_fallback: true
   top_k: 1
   temperature: 1.0
+  # "module": broadcast precomputed module-level interference_ratio (fast, weaker claim)
+  # "token":  per-token activation-effect cosine between adapter residuals (stronger claim)
+  conflict_mode: "module"
 
   # Loss weights
   base_kl_weight: 0.1

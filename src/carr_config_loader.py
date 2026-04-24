@@ -17,8 +17,9 @@ except ImportError:
 _CARR_FIELDS = {
     "n_adapters", "d_model", "gate_hidden_dim",
     "use_reliability", "use_conflict", "use_base_fallback",
-    "top_k", "temperature",
+    "top_k", "temperature", "conflict_mode",
     "base_kl_weight", "conflict_weight", "sparsity_weight",
+    "task_weight", "calibration_weight",
     "lr", "max_steps", "calib_samples", "batch_size", "max_length",
 }
 

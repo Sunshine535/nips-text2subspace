@@ -1,4 +1,23 @@
-# The Rank Bottleneck of Adapter Composition
+# Adapter Composition — CARR (Provisional)
+
+> ⚠️ **Provisional repository status (2026-04-25)**
+>
+> 主线方法 (CARR: Conflict-Aware Reliability-Gated Residual Routing) 尚未通过 full benchmark 验证。
+>
+> - 当前通过的验证：工程 sanity (router 单元、one-batch overfit、A/B/C seed-consistent direction)。
+> - 当前未达到的要求（见 [`reports/REMAINING_RISKS.md`](reports/REMAINING_RISKS.md)）：
+>   logprob MCQ 主指标 rerun、strongest static baseline (TA/TIES/DARE) 公平比较、
+>   multi-term objective 训练 rerun、reliability calibration (ECE/Brier) 验证、更大样本规模。
+> - 旧主线 (Rank Bottleneck / BAC / SFC / BCFF) 已降级为 **historical / negative-evidence archive**；
+>   其 claim 不应出现在 paper 主文中。
+>
+> 使用本仓库时请以 `reports/CORE_COMPARISON.md` 的当前状态为准，而非以下历史叙事。
+
+---
+
+## Historical note: Rank Bottleneck of Adapter Composition
+
+*本节为早期探索的归档说明，已被 CARR 取代。*
 
 LoRA adapter 组合的 rank bottleneck 理论 + Bottleneck-Aware Composition (BAC) 方法。
 

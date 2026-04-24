@@ -47,9 +47,10 @@ def parse_args():
     p.add_argument("--dataset_dir", default=None, help="override config.dataset_dir")
     p.add_argument("--domains", default="science,medical")
     p.add_argument("--mode", default="all",
-                   choices=["static_only", "carr_full", "carr_no_mechanism",
+                   choices=["static_only", "static_baselines",
+                            "carr_full", "carr_no_mechanism",
                             "no_reliability", "no_conflict", "no_base_fallback",
-                            "all", "ablations"])
+                            "all", "ablations", "full"])
     p.add_argument("--carr_checkpoint", default=None,
                    help="path to pretrained router.pt; if None, train fresh")
     p.add_argument("--max_samples", type=int, default=None, help="override config.eval.max_samples")
@@ -214,35 +215,70 @@ def main():
         adapter_delta_ws[1][mod] = dw2
 
     if args.mode == "all":
-        modes_to_run = ["static_only", "carr_full", "carr_no_mechanism"]
+        modes_to_run = ["static_baselines", "carr_full", "carr_no_mechanism"]
     elif args.mode == "ablations":
         modes_to_run = ["carr_full", "no_reliability", "no_conflict", "no_base_fallback"]
+    elif args.mode == "full":
+        modes_to_run = ["static_baselines", "carr_no_mechanism",
+                        "carr_full", "no_reliability", "no_conflict", "no_base_fallback"]
     else:
         modes_to_run = [args.mode]
 
     for mode in modes_to_run:
         log.info("\n=== Mode: %s ===", mode)
 
-        if mode == "static_only":
+        if mode in ("static_only", "static_baselines"):
             import tempfile
             from scripts.eval_sfc_downstream import (
-                load_adapter_weights, merge_task_arithmetic, save_merged_adapter,
+                load_adapter_weights, merge_task_arithmetic,
+                merge_ties, merge_dare, save_merged_adapter,
             )
             wa = load_adapter_weights(os.path.join(adapter_dir, d1))
             wb = load_adapter_weights(os.path.join(adapter_dir, d2))
-            merged = merge_task_arithmetic(wa, wb)
-            with tempfile.TemporaryDirectory() as tmp:
-                save_merged_adapter(merged, os.path.join(adapter_dir, d1), tmp)
-                del merged, wa, wb
-                gc.collect()
-                pm = PeftModel.from_pretrained(model, tmp)
-                scores = eval_on(pm, mode)
-                model = pm.merge_and_unload()
-                del model
-                gc.collect()
-                torch.cuda.empty_cache()
-                model = fresh_model()
-            results[mode] = scores
+
+            if mode == "static_only":
+                static_methods = [("TA", merge_task_arithmetic, {})]
+            else:
+                static_methods = [
+                    ("TA", merge_task_arithmetic, {}),
+                    ("TIES", merge_ties, {"density": 0.5}),
+                    ("DARE", merge_dare, {"drop_rate": 0.5}),
+                ]
+
+            all_static = {}
+            for mname, mfn, mkwargs in static_methods:
+                log.info("  static method: %s", mname)
+                merged = mfn(wa, wb, **mkwargs)
+                with tempfile.TemporaryDirectory() as tmp:
+                    save_merged_adapter(merged, os.path.join(adapter_dir, d1), tmp)
+                    del merged
+                    gc.collect()
+                    pm = PeftModel.from_pretrained(model, tmp)
+                    scores = eval_on(pm, f"static_{mname}")
+                    model = pm.merge_and_unload()
+                    del model
+                    gc.collect()
+                    torch.cuda.empty_cache()
+                    model = fresh_model()
+                all_static[mname] = scores
+
+            del wa, wb
+            gc.collect()
+
+            # Select strongest static by mean over domains (reported as A)
+            best_name = max(
+                all_static.keys(),
+                key=lambda k: sum(all_static[k][d]["accuracy"] for d in domains) / len(domains),
+            )
+            log.info("  strongest static baseline = %s", best_name)
+            if mode == "static_only":
+                # Back-compat: just TA
+                results["static_only"] = all_static["TA"]
+            else:
+                results["static_baselines"] = all_static
+                results["static_best_method"] = best_name
+                # Canonical A = strongest static
+                results["static_only"] = all_static[best_name]
 
         else:
             from src.conflict_aware_routing import (
@@ -262,7 +298,7 @@ def main():
             carr_valid = {
                 "n_adapters", "d_model", "gate_hidden_dim",
                 "use_reliability", "use_conflict", "use_base_fallback",
-                "top_k", "temperature",
+                "top_k", "temperature", "conflict_mode",
                 "base_kl_weight", "conflict_weight", "sparsity_weight",
             }
             carr_init_kwargs = {k: v for k, v in carr_kwargs.items() if k in carr_valid}

@@ -42,6 +42,10 @@ class CARRConfig:
     conflict_weight: float = 0.05
     sparsity_weight: float = 0.01
     temperature: float = 1.0
+    # Round 3 Task 6: conflict mode. "module" = precomputed module-level prior
+    # (broadcast to all tokens); "token" = per-token activation-effect cosine, computed
+    # inside CARRHook from adapter_residuals.
+    conflict_mode: str = "module"
 
 
 class ReliabilityFeatures(nn.Module):
@@ -201,6 +205,10 @@ class CARRHook:
         self.training = training
         self.handles: List = []
         self.gate_stats: Dict[str, List] = {}
+        # Round 3 Task 4: keep differentiable gate tensors per module for loss
+        self.last_gates: Dict[str, torch.Tensor] = {}
+        # Round 3 Task 5: keep reliability outputs per module for L_cal
+        self.last_reliability: Dict[str, torch.Tensor] = {}
 
     def _make_hook(self, module_name: str):
         static_dw = self.static_delta_ws.get(module_name)
@@ -241,14 +249,29 @@ class CARRHook:
 
             batch, seq = h_float.shape[0], h_float.shape[1]
             conflict_scores = None
-            if conflict_score_per_module is not None:
+            conflict_mode = getattr(router.config, "conflict_mode", "module")
+            if conflict_mode == "token" and len(adapter_residuals) == 2:
+                # Per-token activation-effect cosine conflict feature
+                d0 = adapter_residuals[0]
+                d1 = adapter_residuals[1]
+                d0_n = d0.norm(dim=-1, keepdim=True).clamp_min(1e-6)
+                d1_n = d1.norm(dim=-1, keepdim=True).clamp_min(1e-6)
+                cos = ((d0 * d1).sum(dim=-1, keepdim=True)) / (d0_n * d1_n)
+                interf = ((1.0 - cos) * 0.5).clamp(0.0, 1.0)  # (B, S, 1)
+                conflict_scores = torch.cat([interf, 1.0 - interf], dim=-1)
+            elif conflict_score_per_module is not None:
                 cs = conflict_score_per_module.to(device).float()
                 conflict_scores = cs.unsqueeze(0).unsqueeze(0).expand(batch, seq, -1)
 
             if is_training:
-                composed, stats = router.compute_composed_output(
-                    h_float, static_delta, adapter_residuals, conflict_scores
-                )
+                gates_tensor = router(h_float, conflict_scores=conflict_scores)
+                composed = self._compose_from_gates(
+                    gates_tensor, static_delta, adapter_residuals)
+                stats = router._compute_gate_stats(gates_tensor)
+                # Expose differentiable gates + reliability for multi-term loss
+                self.last_gates[module_name] = gates_tensor
+                if router.config.use_reliability:
+                    self.last_reliability[module_name] = router.reliability(h_float)
             else:
                 with torch.no_grad():
                     composed, stats = router.compute_composed_output(
@@ -266,6 +289,35 @@ class CARRHook:
             return modified
 
         return hook_fn
+
+    def _compose_from_gates(
+        self, gates: torch.Tensor,
+        static_delta: torch.Tensor,
+        adapter_residuals: List[torch.Tensor],
+    ) -> torch.Tensor:
+        g_static = gates[:, :, self.router.static_idx:self.router.static_idx + 1]
+        result = g_static * static_delta
+        for i in range(len(adapter_residuals)):
+            idx = self.router.adapter_start_idx + i
+            g_i = gates[:, :, idx:idx + 1]
+            result = result + g_i * adapter_residuals[i]
+        return result
+
+    def clear_step_buffers(self):
+        """Call this between training steps to release held tensors."""
+        self.last_gates.clear()
+        self.last_reliability.clear()
+        self.gate_stats.clear()
+
+    def mean_reliability_across_modules(self) -> Optional[torch.Tensor]:
+        """Mean of reliability head outputs (B, seq, n_adapters) across modules.
+
+        Returns (B, n_adapters) token-mean pooled, or None if reliability disabled.
+        """
+        if not self.last_reliability:
+            return None
+        stacked = torch.stack(list(self.last_reliability.values()), dim=0)  # (M,B,S,A)
+        return stacked.mean(dim=(0, 2))  # (B, A)
 
     def attach(self, model: nn.Module):
         for name, module in model.named_modules():
