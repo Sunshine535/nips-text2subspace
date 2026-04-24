@@ -1,3 +1,7 @@
+> **ARCHIVED — LOW CONFIDENCE HISTORICAL RESULTS** (2026-04-24)
+> Missing seed, command, checkpoint manifest. Cannot be used as strong evidence.
+> Archived copy: archive/20260424_pre_carr/RESULTS_REPORT.md
+
 # GrassMerge Experiment Results (Comprehensive)
 
 **Date**: 2026-04-07

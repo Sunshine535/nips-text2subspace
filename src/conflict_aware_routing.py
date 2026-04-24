@@ -8,10 +8,18 @@ Core new method from GPT-5.5 Pro diagnosis. Decomposes multi-adapter composition
 
 The router is a small module trained on calibration data while base model and
 adapters remain frozen.
+
+GPT-5.5 Pro Review Fixes (Round 2):
+- Hook passes real h to router (not zeros) — input-conditioned gate
+- conflict_scores propagated from precomputed module-level Gram
+- use_base_fallback=False removes base from softmax choices
+- top_k masks adapter gates to sparse selection
+- Training mode: no torch.no_grad wrapper (gradient flows through router)
+- Eval mode: torch.no_grad for inference-only stats
 """
 
 import logging
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
 import torch
@@ -29,7 +37,7 @@ class CARRConfig:
     use_reliability: bool = True
     use_conflict: bool = True
     use_base_fallback: bool = True
-    top_k: int = 1
+    top_k: int = 0
     base_kl_weight: float = 0.1
     conflict_weight: float = 0.05
     sparsity_weight: float = 0.01
@@ -47,12 +55,6 @@ class ReliabilityFeatures(nn.Module):
         ])
 
     def forward(self, h: torch.Tensor) -> torch.Tensor:
-        """
-        Args:
-            h: (batch, seq, d_model) hidden states
-        Returns:
-            reliability: (batch, seq, n_adapters) reliability scores in [0, 1]
-        """
         features = F.relu(self.proj(h))
         scores = torch.cat([head(features) for head in self.reliability_heads], dim=-1)
         return torch.sigmoid(scores)
@@ -62,18 +64,19 @@ class ConflictAwareResidualRouter(nn.Module):
     """
     CARR Router: decides per-input/token how to compose adapter residuals.
 
-    Outputs gates:
-    - g_base: probability of keeping base (no adapter)
-    - g_static: probability of using static merged component
-    - g_i: probability of routing adapter i's conflict residual
-
-    Gate is softmax over [base, static, adapter_1, ..., adapter_n].
+    Gate choices depend on config:
+    - use_base_fallback=True:  [base, static, adapter_0, ..., adapter_n-1]
+    - use_base_fallback=False: [static, adapter_0, ..., adapter_n-1]
     """
 
     def __init__(self, config: CARRConfig):
         super().__init__()
         self.config = config
-        n_choices = 2 + config.n_adapters
+
+        self.n_choices = (1 if config.use_base_fallback else 0) + 1 + config.n_adapters
+        self.base_idx = 0 if config.use_base_fallback else None
+        self.static_idx = 1 if config.use_base_fallback else 0
+        self.adapter_start_idx = self.static_idx + 1
 
         input_dim = config.d_model
         if config.use_reliability:
@@ -84,7 +87,7 @@ class ConflictAwareResidualRouter(nn.Module):
         self.gate_net = nn.Sequential(
             nn.Linear(input_dim, config.gate_hidden_dim),
             nn.ReLU(),
-            nn.Linear(config.gate_hidden_dim, n_choices),
+            nn.Linear(config.gate_hidden_dim, self.n_choices),
         )
 
         if config.use_reliability:
@@ -95,20 +98,17 @@ class ConflictAwareResidualRouter(nn.Module):
     def forward(
         self,
         h: torch.Tensor,
-        adapter_effects: Optional[List[torch.Tensor]] = None,
         conflict_scores: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
         """
-        Compute gate logits.
+        Compute gate probabilities. h MUST be the real input hidden states.
 
         Args:
-            h: (batch, seq, d_model) current hidden states
-            adapter_effects: optional list of (batch, seq, d_out) adapter residuals
-            conflict_scores: optional (batch, seq, n_adapters) conflict features
+            h: (batch, seq, d_model) current hidden states (NOT zeros)
+            conflict_scores: (batch, seq, n_adapters) precomputed conflict features
 
         Returns:
-            gates: (batch, seq, 2 + n_adapters) softmax probabilities
-                   [base, static, adapter_0, ..., adapter_n-1]
+            gates: (batch, seq, n_choices) softmax probabilities
         """
         features = [h]
 
@@ -116,16 +116,26 @@ class ConflictAwareResidualRouter(nn.Module):
             rel = self.reliability(h)
             features.append(rel)
 
-        if self.config.use_conflict and conflict_scores is not None:
-            features.append(conflict_scores)
-        elif self.config.use_conflict:
-            features.append(torch.zeros(
-                h.shape[0], h.shape[1], self.config.n_adapters,
-                device=h.device, dtype=h.dtype
-            ))
+        if self.config.use_conflict:
+            if conflict_scores is not None:
+                features.append(conflict_scores)
+            else:
+                logger.warning("use_conflict=True but conflict_scores is None; filling zeros")
+                features.append(torch.zeros(
+                    h.shape[0], h.shape[1], self.config.n_adapters,
+                    device=h.device, dtype=h.dtype
+                ))
 
         gate_input = torch.cat(features, dim=-1)
         logits = self.gate_net(gate_input) / self.config.temperature
+
+        if self.config.top_k > 0 and self.config.top_k < self.config.n_adapters:
+            adapter_logits = logits[:, :, self.adapter_start_idx:]
+            topk_vals, topk_idx = adapter_logits.topk(self.config.top_k, dim=-1)
+            mask = torch.full_like(adapter_logits, float('-inf'))
+            mask.scatter_(-1, topk_idx, 0.0)
+            logits = torch.cat([logits[:, :, :self.adapter_start_idx], adapter_logits + mask], dim=-1)
+
         gates = F.softmax(logits, dim=-1)
         return gates
 
@@ -135,48 +145,45 @@ class ConflictAwareResidualRouter(nn.Module):
         static_delta: torch.Tensor,
         adapter_residuals: List[torch.Tensor],
         conflict_scores: Optional[torch.Tensor] = None,
-    ) -> Tuple[torch.Tensor, Dict[str, torch.Tensor]]:
+    ) -> Tuple[torch.Tensor, Dict[str, float]]:
         """
-        Apply CARR routing to produce composed hidden states.
-
-        Args:
-            h: (batch, seq, d_model) base hidden states
-            static_delta: (batch, seq, d_model) static merge component
-            adapter_residuals: list of (batch, seq, d_model) per-adapter conflict residuals
-            conflict_scores: optional conflict features
-
-        Returns:
-            h_composed: (batch, seq, d_model) composed output
-            gate_stats: dict of gate diagnostics
+        Apply CARR routing. h is the REAL input hidden state for input-conditioned gating.
         """
         gates = self.forward(h, conflict_scores=conflict_scores)
 
-        g_base = gates[:, :, 0:1]
-        g_static = gates[:, :, 1:2]
-        g_adapters = [gates[:, :, 2+i:3+i] for i in range(len(adapter_residuals))]
+        g_static = gates[:, :, self.static_idx:self.static_idx+1]
+        result = g_static * static_delta
 
-        h_composed = h.clone()
-        h_composed = h_composed + g_static * static_delta
+        for i in range(len(adapter_residuals)):
+            idx = self.adapter_start_idx + i
+            g_i = gates[:, :, idx:idx+1]
+            result = result + g_i * adapter_residuals[i]
 
-        for i, g_i in enumerate(g_adapters):
-            h_composed = h_composed + g_i * adapter_residuals[i]
+        gate_stats = self._compute_gate_stats(gates)
+        return result, gate_stats
 
-        gate_stats = {
-            "base_gate_mean": float(g_base.detach().mean()),
-            "static_gate_mean": float(g_static.detach().mean()),
-            "adapter_gate_means": [float(g.detach().mean()) for g in g_adapters],
-            "gate_entropy": float(-(gates.detach() * (gates.detach() + 1e-10).log()).sum(-1).mean()),
+    def _compute_gate_stats(self, gates: torch.Tensor) -> Dict[str, float]:
+        g = gates.detach()
+        stats = {
+            "static_gate_mean": float(g[:, :, self.static_idx].mean()),
+            "adapter_gate_means": [
+                float(g[:, :, self.adapter_start_idx + i].mean())
+                for i in range(self.config.n_adapters)
+            ],
+            "gate_entropy": float(-(g * (g + 1e-10).log()).sum(-1).mean()),
+            "n_choices": self.n_choices,
         }
-
-        return h_composed, gate_stats
+        if self.base_idx is not None:
+            stats["base_gate_mean"] = float(g[:, :, self.base_idx].mean())
+        return stats
 
 
 class CARRHook:
     """
     Applies CARR routing at LoRA target modules during inference.
 
-    Intercepts the forward pass, computes adapter residuals,
-    routes them through the CARR gate, and modifies hidden states.
+    CRITICAL: passes REAL input hidden states to router for input-conditioned gating.
+    Precomputed per-module conflict scores are broadcast to all tokens.
     """
 
     def __init__(
@@ -184,10 +191,14 @@ class CARRHook:
         router: ConflictAwareResidualRouter,
         static_delta_ws: Dict[str, torch.Tensor],
         adapter_delta_ws: List[Dict[str, torch.Tensor]],
+        module_conflict_scores: Optional[Dict[str, torch.Tensor]] = None,
+        training: bool = False,
     ):
         self.router = router
         self.static_delta_ws = static_delta_ws
         self.adapter_delta_ws = adapter_delta_ws
+        self.module_conflict_scores = module_conflict_scores or {}
+        self.training = training
         self.handles: List = []
         self.gate_stats: Dict[str, List] = {}
 
@@ -196,9 +207,15 @@ class CARRHook:
         adapter_dws = [adw.get(module_name) for adw in self.adapter_delta_ws]
 
         if static_dw is None or any(dw is None for dw in adapter_dws):
+            logger.warning("Skipping %s: missing static or adapter delta_W", module_name)
             return None
 
+        d_out = static_dw.shape[0]
+        d_in = static_dw.shape[1]
         router = self.router
+        is_training = self.training
+
+        conflict_score_per_module = self.module_conflict_scores.get(module_name)
 
         def hook_fn(module, input, output):
             if isinstance(input, tuple):
@@ -213,21 +230,30 @@ class CARRHook:
                 out = output
                 rest = None
 
-            device = h.device
-            dtype = h.dtype
-            h_flat = h.float()
+            device = out.device
+            dtype = out.dtype
+            h_float = h.float()
 
-            static_delta = (h_flat @ static_dw.to(device).float().T)
+            static_delta = h_float @ static_dw.to(device).float().T
             adapter_residuals = [
-                (h_flat @ dw.to(device).float().T) for dw in adapter_dws
+                h_float @ dw.to(device).float().T for dw in adapter_dws
             ]
 
-            with torch.no_grad():
+            batch, seq = h_float.shape[0], h_float.shape[1]
+            conflict_scores = None
+            if conflict_score_per_module is not None:
+                cs = conflict_score_per_module.to(device).float()
+                conflict_scores = cs.unsqueeze(0).unsqueeze(0).expand(batch, seq, -1)
+
+            if is_training:
                 composed, stats = router.compute_composed_output(
-                    torch.zeros_like(h_flat),
-                    static_delta,
-                    adapter_residuals,
+                    h_float, static_delta, adapter_residuals, conflict_scores
                 )
+            else:
+                with torch.no_grad():
+                    composed, stats = router.compute_composed_output(
+                        h_float, static_delta, adapter_residuals, conflict_scores
+                    )
 
             modified = out + composed.to(dtype)
 
@@ -248,6 +274,7 @@ class CARRHook:
                     hook_fn = self._make_hook(target)
                     if hook_fn is not None:
                         self.handles.append(module.register_forward_hook(hook_fn))
+                        logger.info("CARR hook attached: %s → %s", name, target)
                     break
 
     def detach(self):
@@ -260,10 +287,11 @@ class CARRHook:
         for mod, stats_list in self.gate_stats.items():
             if not stats_list:
                 continue
+            n = len(stats_list)
             agg[mod] = {
-                "base_gate_mean": sum(s["base_gate_mean"] for s in stats_list) / len(stats_list),
-                "static_gate_mean": sum(s["static_gate_mean"] for s in stats_list) / len(stats_list),
-                "gate_entropy": sum(s["gate_entropy"] for s in stats_list) / len(stats_list),
-                "n_forward": len(stats_list),
+                "base_gate_mean": sum(s.get("base_gate_mean", 0) for s in stats_list) / n,
+                "static_gate_mean": sum(s["static_gate_mean"] for s in stats_list) / n,
+                "gate_entropy": sum(s["gate_entropy"] for s in stats_list) / n,
+                "n_forward": n,
             }
         return agg

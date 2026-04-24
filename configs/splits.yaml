@@ -46,7 +46,8 @@ domains:
 
   history:
     train_dataset: "cais/mmlu"
-    train_split: "test"  # BUG: was training on test split
+    historical_train_split: "test"  # BUG: old adapters trained on test split
+    current_train_split: "auxiliary_train"  # FIXED in train_domain_lora.py
     eval_dataset: "cais/mmlu"
     eval_split: "test"
     calib_dataset: "cais/mmlu"
@@ -56,7 +57,8 @@ domains:
 
   philosophy:
     train_dataset: "cais/mmlu"
-    train_split: "test"  # BUG: was training on test split
+    historical_train_split: "test"  # BUG: old adapters trained on test split
+    current_train_split: "auxiliary_train"  # FIXED
     eval_dataset: "cais/mmlu"
     eval_split: "test"
     calib_dataset: "cais/mmlu"
@@ -66,7 +68,8 @@ domains:
 
   geography:
     train_dataset: "cais/mmlu"
-    train_split: "test"  # BUG: was training on test split
+    historical_train_split: "test"  # BUG
+    current_train_split: "auxiliary_train"  # FIXED
     eval_dataset: "cais/mmlu"
     eval_split: "test"
     calib_dataset: "cais/mmlu"
@@ -76,7 +79,8 @@ domains:
 
   psychology:
     train_dataset: "cais/mmlu"
-    train_split: "test"  # BUG: was training on test split
+    historical_train_split: "test"  # BUG
+    current_train_split: "auxiliary_train"  # FIXED
     eval_dataset: "cais/mmlu"
     eval_split: "test"
     calib_dataset: "cais/mmlu"

@@ -1,3 +1,8 @@
+> **ARCHIVED — NOT CURRENT MAIN METHOD** (2026-04-24)
+> Core theorems invalidated by PROOF_AUDIT.md. SFC negative results documented in PROGRESS.md.
+> Preserved for historical reference only. Current method path: CARR (see src/conflict_aware_routing.py).
+> Archived copy: archive/20260424_pre_carr/PROPOSAL.md
+
 # Proposal: Compose Features, Not Weights — Interference-Free Adapter Merging via Sparse Feature Decomposition
 
 ## One-Sentence Summary
