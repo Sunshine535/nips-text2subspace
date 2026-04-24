@@ -1,0 +1,856 @@
+{
+  "seed": 1,
+  "domains": [
+    "science",
+    "medical"
+  ],
+  "timestamp": "2026-04-25T00:18:02",
+  "base": {
+    "science": {
+      "accuracy": 0.72,
+      "correct": 36,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.64,
+      "correct": 32,
+      "total": 50
+    }
+  },
+  "single": {
+    "science": {
+      "accuracy": 0.82,
+      "correct": 41,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.66,
+      "correct": 33,
+      "total": 50
+    }
+  },
+  "carr_full": {
+    "science": {
+      "accuracy": 0.86,
+      "correct": 43,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.62,
+      "correct": 31,
+      "total": 50
+    }
+  },
+  "carr_full_gate_stats": {
+    "model.layers.3.self_attn.q_proj": {
+      "base_gate_mean": 0.09177784385047574,
+      "static_gate_mean": 0.0030723315949605897,
+      "gate_entropy": 0.23782289476777368,
+      "n_forward": 2236
+    },
+    "model.layers.3.self_attn.k_proj": {
+      "base_gate_mean": 0.09208570651067947,
+      "static_gate_mean": 0.0030804661939607026,
+      "gate_entropy": 0.2383916864340943,
+      "n_forward": 2236
+    },
+    "model.layers.3.self_attn.v_proj": {
+      "base_gate_mean": 0.09143560700131104,
+      "static_gate_mean": 0.0030632707552060907,
+      "gate_entropy": 0.23718917884656882,
+      "n_forward": 2236
+    },
+    "model.layers.3.self_attn.o_proj": {
+      "base_gate_mean": 0.023881905628884734,
+      "static_gate_mean": 0.022792466608132694,
+      "gate_entropy": 0.28689915983736086,
+      "n_forward": 2236
+    },
+    "model.layers.7.self_attn.q_proj": {
+      "base_gate_mean": 0.6391751423928527,
+      "static_gate_mean": 0.007222038676134029,
+      "gate_entropy": 0.4238615780029082,
+      "n_forward": 2236
+    },
+    "model.layers.7.self_attn.k_proj": {
+      "base_gate_mean": 0.6413174827603696,
+      "static_gate_mean": 0.00723348848596557,
+      "gate_entropy": 0.4236992307726671,
+      "n_forward": 2236
+    },
+    "model.layers.7.self_attn.v_proj": {
+      "base_gate_mean": 0.6392320102465593,
+      "static_gate_mean": 0.007222345670068427,
+      "gate_entropy": 0.4238574700401872,
+      "n_forward": 2236
+    },
+    "model.layers.7.self_attn.o_proj": {
+      "base_gate_mean": 0.018975918255041416,
+      "static_gate_mean": 0.02399081534263303,
+      "gate_entropy": 0.270020512941465,
+      "n_forward": 2236
+    },
+    "model.layers.11.self_attn.q_proj": {
+      "base_gate_mean": 0.27670939145631335,
+      "static_gate_mean": 0.007592848208167992,
+      "gate_entropy": 0.3614963044832546,
+      "n_forward": 2236
+    },
+    "model.layers.11.self_attn.k_proj": {
+      "base_gate_mean": 0.2761734521288504,
+      "static_gate_mean": 0.007580463936336864,
+      "gate_entropy": 0.36105912164004395,
+      "n_forward": 2236
+    },
+    "model.layers.11.self_attn.v_proj": {
+      "base_gate_mean": 0.27670717844149584,
+      "static_gate_mean": 0.007592798709575852,
+      "gate_entropy": 0.36149452586089315,
+      "n_forward": 2236
+    },
+    "model.layers.11.self_attn.o_proj": {
+      "base_gate_mean": 0.15473549106249013,
+      "static_gate_mean": 0.036377725945406614,
+      "gate_entropy": 0.5809089228525851,
+      "n_forward": 2236
+    },
+    "model.layers.15.self_attn.q_proj": {
+      "base_gate_mean": 0.42195403161242384,
+      "static_gate_mean": 0.006349725254413661,
+      "gate_entropy": 0.35975108033863024,
+      "n_forward": 2236
+    },
+    "model.layers.15.self_attn.k_proj": {
+      "base_gate_mean": 0.4215814910732064,
+      "static_gate_mean": 0.0063459990601663656,
+      "gate_entropy": 0.35963798162505267,
+      "n_forward": 2236
+    },
+    "model.layers.15.self_attn.v_proj": {
+      "base_gate_mean": 0.42320922765123403,
+      "static_gate_mean": 0.006362269279492884,
+      "gate_entropy": 0.360130099414512,
+      "n_forward": 2236
+    },
+    "model.layers.15.self_attn.o_proj": {
+      "base_gate_mean": 0.050572792736132216,
+      "static_gate_mean": 0.04713458222640236,
+      "gate_entropy": 0.7849508202497303,
+      "n_forward": 2236
+    },
+    "model.layers.19.self_attn.q_proj": {
+      "base_gate_mean": 0.2875037497376014,
+      "static_gate_mean": 0.002911421408899866,
+      "gate_entropy": 0.2363231077973098,
+      "n_forward": 2236
+    },
+    "model.layers.19.self_attn.k_proj": {
+      "base_gate_mean": 0.28774232952446915,
+      "static_gate_mean": 0.0029136491961913448,
+      "gate_entropy": 0.2364686924657869,
+      "n_forward": 2236
+    },
+    "model.layers.19.self_attn.v_proj": {
+      "base_gate_mean": 0.28741627519483975,
+      "static_gate_mean": 0.002910600705100033,
+      "gate_entropy": 0.23626959529619854,
+      "n_forward": 2236
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "base_gate_mean": 0.005386288261976051,
+      "static_gate_mean": 0.005738027452035579,
+      "gate_entropy": 0.07692070952045928,
+      "n_forward": 2236
+    },
+    "model.layers.23.self_attn.q_proj": {
+      "base_gate_mean": 0.26341818874372636,
+      "static_gate_mean": 0.0029901225894810157,
+      "gate_entropy": 0.21012405121108607,
+      "n_forward": 2236
+    },
+    "model.layers.23.self_attn.k_proj": {
+      "base_gate_mean": 0.26355389032057835,
+      "static_gate_mean": 0.002991333366927995,
+      "gate_entropy": 0.2101840657205157,
+      "n_forward": 2236
+    },
+    "model.layers.23.self_attn.v_proj": {
+      "base_gate_mean": 0.2636261123624195,
+      "static_gate_mean": 0.0029919793034151425,
+      "gate_entropy": 0.21021610145514877,
+      "n_forward": 2236
+    },
+    "model.layers.23.self_attn.o_proj": {
+      "base_gate_mean": 0.0020206742257916706,
+      "static_gate_mean": 0.0015056949037766578,
+      "gate_entropy": 0.025075060391578585,
+      "n_forward": 2236
+    },
+    "model.layers.27.self_attn.q_proj": {
+      "base_gate_mean": 0.37504703049984917,
+      "static_gate_mean": 0.002777203443509913,
+      "gate_entropy": 0.21889280171303266,
+      "n_forward": 2236
+    },
+    "model.layers.27.self_attn.k_proj": {
+      "base_gate_mean": 0.37456594265539656,
+      "static_gate_mean": 0.0027746244406865253,
+      "gate_entropy": 0.21875730605465724,
+      "n_forward": 2236
+    },
+    "model.layers.27.self_attn.v_proj": {
+      "base_gate_mean": 0.3758081032290419,
+      "static_gate_mean": 0.0027812624619059493,
+      "gate_entropy": 0.21910647419371676,
+      "n_forward": 2236
+    },
+    "model.layers.27.self_attn.o_proj": {
+      "base_gate_mean": 0.998843792619347,
+      "static_gate_mean": 7.845093776462985e-05,
+      "gate_entropy": 0.007038469676704861,
+      "n_forward": 2236
+    },
+    "model.layers.31.self_attn.q_proj": {
+      "base_gate_mean": 0.432841295005172,
+      "static_gate_mean": 0.0007772922317484594,
+      "gate_entropy": 0.18665115357641202,
+      "n_forward": 2236
+    },
+    "model.layers.31.self_attn.k_proj": {
+      "base_gate_mean": 0.4321207710278567,
+      "static_gate_mean": 0.0007758999883533151,
+      "gate_entropy": 0.18654379505921345,
+      "n_forward": 2236
+    },
+    "model.layers.31.self_attn.v_proj": {
+      "base_gate_mean": 0.43374404512149034,
+      "static_gate_mean": 0.0007790271763972941,
+      "gate_entropy": 0.1867843393149921,
+      "n_forward": 2236
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "base_gate_mean": 2.364909738369938e-06,
+      "static_gate_mean": 7.807456528079283e-07,
+      "gate_entropy": 3.2085969969082724e-05,
+      "n_forward": 2236
+    }
+  },
+  "no_reliability": {
+    "science": {
+      "accuracy": 0.86,
+      "correct": 43,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.66,
+      "correct": 33,
+      "total": 50
+    }
+  },
+  "no_reliability_gate_stats": {
+    "model.layers.3.self_attn.q_proj": {
+      "base_gate_mean": 0.9747313684827928,
+      "static_gate_mean": 0.0004406922245067712,
+      "gate_entropy": 0.06357857649014909,
+      "n_forward": 1797
+    },
+    "model.layers.3.self_attn.k_proj": {
+      "base_gate_mean": 0.9748048465045943,
+      "static_gate_mean": 0.00044016613242272304,
+      "gate_entropy": 0.06343766769284558,
+      "n_forward": 1797
+    },
+    "model.layers.3.self_attn.v_proj": {
+      "base_gate_mean": 0.9746492608467456,
+      "static_gate_mean": 0.00044127771484750694,
+      "gate_entropy": 0.06373587105812134,
+      "n_forward": 1797
+    },
+    "model.layers.3.self_attn.o_proj": {
+      "base_gate_mean": 0.08546024322526351,
+      "static_gate_mean": 0.07843835745784197,
+      "gate_entropy": 0.6640120277271446,
+      "n_forward": 1797
+    },
+    "model.layers.7.self_attn.q_proj": {
+      "base_gate_mean": 0.9921743147858794,
+      "static_gate_mean": 0.00045721680066097885,
+      "gate_entropy": 0.029198179498679734,
+      "n_forward": 1797
+    },
+    "model.layers.7.self_attn.k_proj": {
+      "base_gate_mean": 0.9922616179114125,
+      "static_gate_mean": 0.00045501841359358013,
+      "gate_entropy": 0.02897138835526849,
+      "n_forward": 1797
+    },
+    "model.layers.7.self_attn.v_proj": {
+      "base_gate_mean": 0.9921766288358765,
+      "static_gate_mean": 0.00045715858180000725,
+      "gate_entropy": 0.02919216853962945,
+      "n_forward": 1797
+    },
+    "model.layers.7.self_attn.o_proj": {
+      "base_gate_mean": 0.08893273067937901,
+      "static_gate_mean": 0.10017181496443221,
+      "gate_entropy": 0.7546867727238268,
+      "n_forward": 1797
+    },
+    "model.layers.11.self_attn.q_proj": {
+      "base_gate_mean": 0.9063004153856371,
+      "static_gate_mean": 0.002667701481998772,
+      "gate_entropy": 0.15287854226166295,
+      "n_forward": 1797
+    },
+    "model.layers.11.self_attn.k_proj": {
+      "base_gate_mean": 0.9061251204637247,
+      "static_gate_mean": 0.0026697065360591662,
+      "gate_entropy": 0.15306645759024978,
+      "n_forward": 1797
+    },
+    "model.layers.11.self_attn.v_proj": {
+      "base_gate_mean": 0.9062996935741121,
+      "static_gate_mean": 0.0026677117110103935,
+      "gate_entropy": 0.15287934050323598,
+      "n_forward": 1797
+    },
+    "model.layers.11.self_attn.o_proj": {
+      "base_gate_mean": 0.26132255675904476,
+      "static_gate_mean": 0.06330841180490632,
+      "gate_entropy": 0.7690248945038651,
+      "n_forward": 1797
+    },
+    "model.layers.15.self_attn.q_proj": {
+      "base_gate_mean": 0.8324072390554441,
+      "static_gate_mean": 0.002602746420908278,
+      "gate_entropy": 0.19632834960505172,
+      "n_forward": 1797
+    },
+    "model.layers.15.self_attn.k_proj": {
+      "base_gate_mean": 0.8322451920874778,
+      "static_gate_mean": 0.0026033903974179923,
+      "gate_entropy": 0.19643100622359091,
+      "n_forward": 1797
+    },
+    "model.layers.15.self_attn.v_proj": {
+      "base_gate_mean": 0.8329523230657921,
+      "static_gate_mean": 0.002600585370282703,
+      "gate_entropy": 0.19598286467755768,
+      "n_forward": 1797
+    },
+    "model.layers.15.self_attn.o_proj": {
+      "base_gate_mean": 0.12908159749456471,
+      "static_gate_mean": 0.08646050472388797,
+      "gate_entropy": 1.0271844700430757,
+      "n_forward": 1797
+    },
+    "model.layers.19.self_attn.q_proj": {
+      "base_gate_mean": 0.5398003185449913,
+      "static_gate_mean": 0.001562659136238287,
+      "gate_entropy": 0.25867413293801433,
+      "n_forward": 1797
+    },
+    "model.layers.19.self_attn.k_proj": {
+      "base_gate_mean": 0.5400275066496676,
+      "static_gate_mean": 0.00156320060225142,
+      "gate_entropy": 0.2586684404820125,
+      "n_forward": 1797
+    },
+    "model.layers.19.self_attn.v_proj": {
+      "base_gate_mean": 0.5397168727786902,
+      "static_gate_mean": 0.0015624583879647344,
+      "gate_entropy": 0.25867617904812296,
+      "n_forward": 1797
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "base_gate_mean": 0.02108309739749592,
+      "static_gate_mean": 0.01730191145048577,
+      "gate_entropy": 0.1883694009567137,
+      "n_forward": 1797
+    },
+    "model.layers.23.self_attn.q_proj": {
+      "base_gate_mean": 0.5690403154063788,
+      "static_gate_mean": 0.0013308943493236735,
+      "gate_entropy": 0.20240752488012273,
+      "n_forward": 1797
+    },
+    "model.layers.23.self_attn.k_proj": {
+      "base_gate_mean": 0.5691535050147519,
+      "static_gate_mean": 0.0013311825503398642,
+      "gate_entropy": 0.20239150340109197,
+      "n_forward": 1797
+    },
+    "model.layers.23.self_attn.v_proj": {
+      "base_gate_mean": 0.5692138018348284,
+      "static_gate_mean": 0.001331335978214249,
+      "gate_entropy": 0.20238296084317284,
+      "n_forward": 1797
+    },
+    "model.layers.23.self_attn.o_proj": {
+      "base_gate_mean": 0.00732402848485538,
+      "static_gate_mean": 0.0026772224549567675,
+      "gate_entropy": 0.05246843368349932,
+      "n_forward": 1797
+    },
+    "model.layers.27.self_attn.q_proj": {
+      "base_gate_mean": 0.6867771823461595,
+      "static_gate_mean": 0.001050299123256846,
+      "gate_entropy": 0.15829642612228365,
+      "n_forward": 1797
+    },
+    "model.layers.27.self_attn.k_proj": {
+      "base_gate_mean": 0.6864819797108532,
+      "static_gate_mean": 0.0010495488759397198,
+      "gate_entropy": 0.1583523883326551,
+      "n_forward": 1797
+    },
+    "model.layers.27.self_attn.v_proj": {
+      "base_gate_mean": 0.6872437749538115,
+      "static_gate_mean": 0.001051483200711188,
+      "gate_entropy": 0.15820765502892067,
+      "n_forward": 1797
+    },
+    "model.layers.27.self_attn.o_proj": {
+      "base_gate_mean": 0.9985398923979246,
+      "static_gate_mean": 2.9083324593318962e-05,
+      "gate_entropy": 0.00546797816043649,
+      "n_forward": 1797
+    },
+    "model.layers.31.self_attn.q_proj": {
+      "base_gate_mean": 0.542749056517716,
+      "static_gate_mean": 0.0003598256382190493,
+      "gate_entropy": 0.1984812612300115,
+      "n_forward": 1797
+    },
+    "model.layers.31.self_attn.k_proj": {
+      "base_gate_mean": 0.5421367108887922,
+      "static_gate_mean": 0.000359136532182564,
+      "gate_entropy": 0.19853129656877752,
+      "n_forward": 1797
+    },
+    "model.layers.31.self_attn.v_proj": {
+      "base_gate_mean": 0.5435158201122869,
+      "static_gate_mean": 0.00036068803172146406,
+      "gate_entropy": 0.198418137221876,
+      "n_forward": 1797
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "base_gate_mean": 4.5819082893101886e-06,
+      "static_gate_mean": 1.464919782639842e-06,
+      "gate_entropy": 5.7687868481730344e-05,
+      "n_forward": 1797
+    }
+  },
+  "no_conflict": {
+    "science": {
+      "accuracy": 0.84,
+      "correct": 42,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.64,
+      "correct": 32,
+      "total": 50
+    }
+  },
+  "no_conflict_gate_stats": {
+    "model.layers.3.self_attn.q_proj": {
+      "base_gate_mean": 0.9125376060472669,
+      "static_gate_mean": 0.0035284831602245006,
+      "gate_entropy": 0.23362069564071655,
+      "n_forward": 1750
+    },
+    "model.layers.3.self_attn.k_proj": {
+      "base_gate_mean": 0.9125376060472669,
+      "static_gate_mean": 0.0035284831602245006,
+      "gate_entropy": 0.23362069564071655,
+      "n_forward": 1750
+    },
+    "model.layers.3.self_attn.v_proj": {
+      "base_gate_mean": 0.9125376060472669,
+      "static_gate_mean": 0.0035284831602245006,
+      "gate_entropy": 0.23362069564071655,
+      "n_forward": 1750
+    },
+    "model.layers.3.self_attn.o_proj": {
+      "base_gate_mean": 0.05051543254937444,
+      "static_gate_mean": 0.06008931121017252,
+      "gate_entropy": 0.5441392879060336,
+      "n_forward": 1750
+    },
+    "model.layers.7.self_attn.q_proj": {
+      "base_gate_mean": 0.9633903946025031,
+      "static_gate_mean": 0.0034921584662433573,
+      "gate_entropy": 0.14590719959865342,
+      "n_forward": 1750
+    },
+    "model.layers.7.self_attn.k_proj": {
+      "base_gate_mean": 0.9633903946025031,
+      "static_gate_mean": 0.0034921584662433573,
+      "gate_entropy": 0.14590719959865342,
+      "n_forward": 1750
+    },
+    "model.layers.7.self_attn.v_proj": {
+      "base_gate_mean": 0.9633903946025031,
+      "static_gate_mean": 0.0034921584662433573,
+      "gate_entropy": 0.14590719959865342,
+      "n_forward": 1750
+    },
+    "model.layers.7.self_attn.o_proj": {
+      "base_gate_mean": 0.042306179526927216,
+      "static_gate_mean": 0.06351569863674895,
+      "gate_entropy": 0.5360165668938841,
+      "n_forward": 1750
+    },
+    "model.layers.11.self_attn.q_proj": {
+      "base_gate_mean": 0.8982840672816549,
+      "static_gate_mean": 0.009362236305554949,
+      "gate_entropy": 0.29593958510213997,
+      "n_forward": 1750
+    },
+    "model.layers.11.self_attn.k_proj": {
+      "base_gate_mean": 0.8982840672816549,
+      "static_gate_mean": 0.009362236305554949,
+      "gate_entropy": 0.29593958510213997,
+      "n_forward": 1750
+    },
+    "model.layers.11.self_attn.v_proj": {
+      "base_gate_mean": 0.8982840672816549,
+      "static_gate_mean": 0.009362236305554949,
+      "gate_entropy": 0.29593958510213997,
+      "n_forward": 1750
+    },
+    "model.layers.11.self_attn.o_proj": {
+      "base_gate_mean": 0.2807562773872965,
+      "static_gate_mean": 0.06479515993914434,
+      "gate_entropy": 0.8622976600612913,
+      "n_forward": 1750
+    },
+    "model.layers.15.self_attn.q_proj": {
+      "base_gate_mean": 0.8567282054748918,
+      "static_gate_mean": 0.008283434659038968,
+      "gate_entropy": 0.31517233413953466,
+      "n_forward": 1750
+    },
+    "model.layers.15.self_attn.k_proj": {
+      "base_gate_mean": 0.8567282054748918,
+      "static_gate_mean": 0.008283434659038968,
+      "gate_entropy": 0.31517233413953466,
+      "n_forward": 1750
+    },
+    "model.layers.15.self_attn.v_proj": {
+      "base_gate_mean": 0.8567282054748918,
+      "static_gate_mean": 0.008283434659038968,
+      "gate_entropy": 0.31517233413953466,
+      "n_forward": 1750
+    },
+    "model.layers.15.self_attn.o_proj": {
+      "base_gate_mean": 0.06487835939201926,
+      "static_gate_mean": 0.07622090673686138,
+      "gate_entropy": 0.9379108261934348,
+      "n_forward": 1750
+    },
+    "model.layers.19.self_attn.q_proj": {
+      "base_gate_mean": 0.5380402299896336,
+      "static_gate_mean": 0.005762694731791376,
+      "gate_entropy": 0.3503867165083336,
+      "n_forward": 1750
+    },
+    "model.layers.19.self_attn.k_proj": {
+      "base_gate_mean": 0.5380402299896336,
+      "static_gate_mean": 0.005762694731791376,
+      "gate_entropy": 0.3503867165083336,
+      "n_forward": 1750
+    },
+    "model.layers.19.self_attn.v_proj": {
+      "base_gate_mean": 0.5380402299896336,
+      "static_gate_mean": 0.005762694731791376,
+      "gate_entropy": 0.3503867165083336,
+      "n_forward": 1750
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "base_gate_mean": 0.007842602771875103,
+      "static_gate_mean": 0.009360671328345234,
+      "gate_entropy": 0.12335384311881664,
+      "n_forward": 1750
+    },
+    "model.layers.23.self_attn.q_proj": {
+      "base_gate_mean": 0.40463257104032285,
+      "static_gate_mean": 0.0042230097264781795,
+      "gate_entropy": 0.3324891427013949,
+      "n_forward": 1750
+    },
+    "model.layers.23.self_attn.k_proj": {
+      "base_gate_mean": 0.40463257104032285,
+      "static_gate_mean": 0.0042230097264781795,
+      "gate_entropy": 0.3324891427013949,
+      "n_forward": 1750
+    },
+    "model.layers.23.self_attn.v_proj": {
+      "base_gate_mean": 0.40463257104032285,
+      "static_gate_mean": 0.0042230097264781795,
+      "gate_entropy": 0.3324891427013949,
+      "n_forward": 1750
+    },
+    "model.layers.23.self_attn.o_proj": {
+      "base_gate_mean": 0.002971979094704482,
+      "static_gate_mean": 0.002087613617701988,
+      "gate_entropy": 0.03987460426112583,
+      "n_forward": 1750
+    },
+    "model.layers.27.self_attn.q_proj": {
+      "base_gate_mean": 0.5859161502244137,
+      "static_gate_mean": 0.004194911059597863,
+      "gate_entropy": 0.3098584935704836,
+      "n_forward": 1750
+    },
+    "model.layers.27.self_attn.k_proj": {
+      "base_gate_mean": 0.5859161502244137,
+      "static_gate_mean": 0.004194911059597863,
+      "gate_entropy": 0.3098584935704836,
+      "n_forward": 1750
+    },
+    "model.layers.27.self_attn.v_proj": {
+      "base_gate_mean": 0.5859161502244137,
+      "static_gate_mean": 0.004194911059597863,
+      "gate_entropy": 0.3098584935704836,
+      "n_forward": 1750
+    },
+    "model.layers.27.self_attn.o_proj": {
+      "base_gate_mean": 0.661390522470652,
+      "static_gate_mean": 0.001414245419365914,
+      "gate_entropy": 0.2880871663790396,
+      "n_forward": 1750
+    },
+    "model.layers.31.self_attn.q_proj": {
+      "base_gate_mean": 0.44198154989536476,
+      "static_gate_mean": 0.001172420280100686,
+      "gate_entropy": 0.22275982605498412,
+      "n_forward": 1750
+    },
+    "model.layers.31.self_attn.k_proj": {
+      "base_gate_mean": 0.44198154989536476,
+      "static_gate_mean": 0.001172420280100686,
+      "gate_entropy": 0.22275982605498412,
+      "n_forward": 1750
+    },
+    "model.layers.31.self_attn.v_proj": {
+      "base_gate_mean": 0.44198154989536476,
+      "static_gate_mean": 0.001172420280100686,
+      "gate_entropy": 0.22275982605498412,
+      "n_forward": 1750
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "base_gate_mean": 1.2259472524870185e-07,
+      "static_gate_mean": 5.9334561849978296e-08,
+      "gate_entropy": 6.3328995399734595e-06,
+      "n_forward": 1750
+    }
+  },
+  "no_base_fallback": {
+    "science": {
+      "accuracy": 0.86,
+      "correct": 43,
+      "total": 50
+    },
+    "medical": {
+      "accuracy": 0.64,
+      "correct": 32,
+      "total": 50
+    }
+  },
+  "no_base_fallback_gate_stats": {
+    "model.layers.3.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008192824286630967,
+      "gate_entropy": 0.2744092697873215,
+      "n_forward": 2131
+    },
+    "model.layers.3.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008204147478387748,
+      "gate_entropy": 0.2747023990012074,
+      "n_forward": 2131
+    },
+    "model.layers.3.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008180202408632424,
+      "gate_entropy": 0.27408240250156196,
+      "n_forward": 2131
+    },
+    "model.layers.3.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.024805106666876096,
+      "gate_entropy": 0.23067784846066758,
+      "n_forward": 2131
+    },
+    "model.layers.7.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.019295426157782243,
+      "gate_entropy": 0.39118691354448853,
+      "n_forward": 2131
+    },
+    "model.layers.7.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.01934923466228088,
+      "gate_entropy": 0.3918419786893875,
+      "n_forward": 2131
+    },
+    "model.layers.7.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.01929686168683947,
+      "gate_entropy": 0.391204395303228,
+      "n_forward": 2131
+    },
+    "model.layers.7.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.01742142444761214,
+      "gate_entropy": 0.1613492069972206,
+      "n_forward": 2131
+    },
+    "model.layers.11.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.02657534259320777,
+      "gate_entropy": 0.4186635392020727,
+      "n_forward": 2131
+    },
+    "model.layers.11.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.026555402331977968,
+      "gate_entropy": 0.418472857316367,
+      "n_forward": 2131
+    },
+    "model.layers.11.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.026575269530282924,
+      "gate_entropy": 0.4186628042560576,
+      "n_forward": 2131
+    },
+    "model.layers.11.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.04996555535745965,
+      "gate_entropy": 0.5489515177481635,
+      "n_forward": 2131
+    },
+    "model.layers.15.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.018215562510993696,
+      "gate_entropy": 0.3749811308099491,
+      "n_forward": 2131
+    },
+    "model.layers.15.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.01820568781200574,
+      "gate_entropy": 0.3748664530549097,
+      "n_forward": 2131
+    },
+    "model.layers.15.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.01824890029560571,
+      "gate_entropy": 0.3753673986509655,
+      "n_forward": 2131
+    },
+    "model.layers.15.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.04511873848228888,
+      "gate_entropy": 0.629872019054147,
+      "n_forward": 2131
+    },
+    "model.layers.19.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.006661584177606804,
+      "gate_entropy": 0.21947203435158347,
+      "n_forward": 2131
+    },
+    "model.layers.19.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.0066661860692797765,
+      "gate_entropy": 0.2195484594405597,
+      "n_forward": 2131
+    },
+    "model.layers.19.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.006659890282413929,
+      "gate_entropy": 0.2194439321031424,
+      "n_forward": 2131
+    },
+    "model.layers.19.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.006658360858329201,
+      "gate_entropy": 0.07257290018854905,
+      "n_forward": 2131
+    },
+    "model.layers.23.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.005189958827830666,
+      "gate_entropy": 0.20231421173173741,
+      "n_forward": 2131
+    },
+    "model.layers.23.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.005192425285187688,
+      "gate_entropy": 0.20238572151032974,
+      "n_forward": 2131
+    },
+    "model.layers.23.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.005193742737017238,
+      "gate_entropy": 0.20242386977771376,
+      "n_forward": 2131
+    },
+    "model.layers.23.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.0020689027888458993,
+      "gate_entropy": 0.029909586587514327,
+      "n_forward": 2131
+    },
+    "model.layers.27.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008116959325826052,
+      "gate_entropy": 0.27722115797901364,
+      "n_forward": 2131
+    },
+    "model.layers.27.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008108003736296835,
+      "gate_entropy": 0.27708523491286285,
+      "n_forward": 2131
+    },
+    "model.layers.27.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.008131111367854547,
+      "gate_entropy": 0.27743559320831895,
+      "n_forward": 2131
+    },
+    "model.layers.27.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.001344390289758842,
+      "gate_entropy": 0.20521885809944224,
+      "n_forward": 2131
+    },
+    "model.layers.31.self_attn.q_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.002960307154561415,
+      "gate_entropy": 0.2586744636461596,
+      "n_forward": 2131
+    },
+    "model.layers.31.self_attn.k_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.0029542538163475594,
+      "gate_entropy": 0.25851786835421575,
+      "n_forward": 2131
+    },
+    "model.layers.31.self_attn.v_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 0.002967900084914809,
+      "gate_entropy": 0.25887000277856453,
+      "n_forward": 2131
+    },
+    "model.layers.31.self_attn.o_proj": {
+      "base_gate_mean": 0.0,
+      "static_gate_mean": 3.1267583199786594e-07,
+      "gate_entropy": 1.4617330650716662e-05,
+      "n_forward": 2131
+    }
+  }
+}

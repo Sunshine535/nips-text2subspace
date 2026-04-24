@@ -1,0 +1,325 @@
+2026-04-25 00:17:44,260 Loading model...
+[transformers] The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:01<11:30,  1.62s/it]Loading weights:   0%|          | 2/427 [00:03<11:35,  1.64s/it]Loading weights:   2%|▏         | 9/427 [00:03<01:48,  3.86it/s]Loading weights:   3%|▎         | 14/427 [00:03<01:03,  6.51it/s]Loading weights:   5%|▌         | 23/427 [00:03<00:31, 12.74it/s]Loading weights:   6%|▋         | 27/427 [00:04<00:31, 12.84it/s]Loading weights:   9%|▉         | 40/427 [00:04<00:15, 24.56it/s]Loading weights:  11%|█         | 46/427 [00:04<00:17, 22.28it/s]Loading weights:  12%|█▏        | 51/427 [00:04<00:16, 23.34it/s]Loading weights:  15%|█▍        | 62/427 [00:04<00:12, 30.41it/s]Loading weights:  16%|█▌        | 67/427 [00:05<00:11, 30.23it/s]Loading weights:  18%|█▊        | 75/427 [00:05<00:09, 35.48it/s]Loading weights:  19%|█▊        | 80/427 [00:05<00:09, 35.93it/s]Loading weights:  20%|█▉        | 85/427 [00:05<00:09, 34.25it/s]Loading weights:  22%|██▏       | 93/427 [00:05<00:07, 42.04it/s]Loading weights:  23%|██▎       | 98/427 [00:06<00:12, 26.14it/s]Loading weights:  25%|██▍       | 105/427 [00:06<00:10, 32.07it/s]Loading weights:  27%|██▋       | 115/427 [00:06<00:07, 42.65it/s]Loading weights:  28%|██▊       | 121/427 [00:06<00:09, 32.70it/s]Loading weights:  30%|███       | 130/427 [00:06<00:08, 36.28it/s]Loading weights:  32%|███▏      | 135/427 [00:06<00:08, 34.71it/s]Loading weights:  34%|███▍      | 146/427 [00:07<00:06, 40.87it/s]Loading weights:  35%|███▌      | 151/427 [00:07<00:09, 30.18it/s]Loading weights:  36%|███▋      | 155/427 [00:07<00:09, 29.12it/s]Loading weights:  39%|███▉      | 167/427 [00:07<00:06, 38.88it/s]Loading weights:  40%|████      | 172/427 [00:07<00:06, 40.23it/s]Loading weights:  41%|████▏     | 177/427 [00:08<00:06, 37.09it/s]Loading weights:  43%|████▎     | 185/427 [00:08<00:07, 33.57it/s]Loading weights:  46%|████▌     | 196/427 [00:08<00:05, 43.70it/s]Loading weights:  47%|████▋     | 201/427 [00:08<00:06, 36.65it/s]Loading weights:  48%|████▊     | 206/427 [00:09<00:07, 30.85it/s]Loading weights:  49%|████▉     | 211/427 [00:09<00:06, 33.22it/s]Loading weights:  52%|█████▏    | 220/427 [00:09<00:04, 42.38it/s]Loading weights:  53%|█████▎    | 225/427 [00:09<00:07, 27.45it/s]Loading weights:  55%|█████▌    | 235/427 [00:09<00:05, 36.35it/s]Loading weights:  56%|█████▌    | 240/427 [00:09<00:05, 32.04it/s]Loading weights:  58%|█████▊    | 247/427 [00:10<00:05, 35.83it/s]Loading weights:  59%|█████▉    | 252/427 [00:10<00:05, 31.25it/s]Loading weights:  60%|██████    | 257/427 [00:10<00:06, 25.90it/s]Loading weights:  62%|██████▏   | 266/427 [00:10<00:04, 34.09it/s]Loading weights:  65%|██████▍   | 277/427 [00:11<00:04, 35.67it/s]Loading weights:  67%|██████▋   | 287/427 [00:11<00:03, 43.07it/s]Loading weights:  68%|██████▊   | 292/427 [00:11<00:03, 36.43it/s]Loading weights:  70%|███████   | 300/427 [00:11<00:05, 25.18it/s]Loading weights:  73%|███████▎  | 313/427 [00:12<00:03, 35.25it/s]Loading weights:  74%|███████▍  | 318/427 [00:12<00:02, 37.25it/s]Loading weights:  77%|███████▋  | 329/427 [00:12<00:02, 48.31it/s]Loading weights:  79%|███████▊  | 336/427 [00:12<00:02, 40.97it/s]Loading weights:  80%|████████  | 343/427 [00:12<00:02, 39.71it/s]Loading weights:  81%|████████▏ | 348/427 [00:12<00:02, 37.62it/s]Loading weights:  84%|████████▍ | 358/427 [00:13<00:01, 48.16it/s]Loading weights:  85%|████████▌ | 364/427 [00:13<00:01, 34.92it/s]Loading weights:  86%|████████▋ | 369/427 [00:13<00:01, 33.70it/s]Loading weights:  89%|████████▉ | 380/427 [00:13<00:01, 43.89it/s]Loading weights:  90%|█████████ | 386/427 [00:13<00:01, 33.92it/s]Loading weights:  93%|█████████▎| 395/427 [00:14<00:00, 34.75it/s]Loading weights:  94%|█████████▎| 400/427 [00:14<00:00, 36.74it/s]Loading weights:  96%|█████████▋| 411/427 [00:14<00:00, 38.12it/s]Loading weights:  98%|█████████▊| 417/427 [00:14<00:00, 37.94it/s]Loading weights:  99%|█████████▉| 422/427 [00:14<00:00, 35.89it/s]Loading weights: 100%|██████████| 427/427 [00:15<00:00, 28.40it/s]
+2026-04-25 00:18:02,347 === Base Model ===
+2026-04-25 00:18:03,490   Evaluating science: 50 samples, type=arc
+2026-04-25 00:20:41,653   Base | science: 0.7200
+2026-04-25 00:20:41,728   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 00:23:49,108   Base | medical: 0.6400
+2026-04-25 00:23:49,108 === Single Adapters ===
+2026-04-25 00:23:52,837   Evaluating science: 50 samples, type=arc
+2026-04-25 00:27:14,343   Single(science) | science: 0.8200
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<04:51,  1.46it/s]Loading weights:   0%|          | 2/427 [00:01<05:02,  1.41it/s]Loading weights:   2%|▏         | 10/427 [00:01<00:45,  9.14it/s]Loading weights:   6%|▌         | 24/427 [00:01<00:17, 23.67it/s]Loading weights:   9%|▉         | 40/427 [00:01<00:09, 41.69it/s]Loading weights:  11%|█         | 48/427 [00:01<00:08, 44.71it/s]Loading weights:  15%|█▍        | 62/427 [00:02<00:06, 55.99it/s]Loading weights:  18%|█▊        | 77/427 [00:02<00:04, 73.61it/s]Loading weights:  20%|██        | 87/427 [00:02<00:04, 77.11it/s]Loading weights:  23%|██▎       | 97/427 [00:02<00:04, 72.45it/s]Loading weights:  25%|██▍       | 106/427 [00:02<00:04, 68.02it/s]Loading weights:  27%|██▋       | 116/427 [00:02<00:04, 68.05it/s]Loading weights:  31%|███       | 132/427 [00:02<00:03, 81.88it/s]Loading weights:  34%|███▎      | 144/427 [00:03<00:03, 75.98it/s]Loading weights:  36%|███▌      | 153/427 [00:03<00:03, 75.42it/s]Loading weights:  40%|███▉      | 169/427 [00:03<00:03, 76.92it/s]Loading weights:  44%|████▍     | 187/427 [00:03<00:02, 93.44it/s]Loading weights:  47%|████▋     | 199/427 [00:03<00:02, 87.30it/s]Loading weights:  49%|████▉     | 209/427 [00:03<00:02, 81.20it/s]Loading weights:  52%|█████▏    | 222/427 [00:04<00:02, 75.26it/s]Loading weights:  55%|█████▌    | 236/427 [00:04<00:02, 86.56it/s]Loading weights:  59%|█████▊    | 250/427 [00:04<00:02, 79.08it/s]Loading weights:  61%|██████    | 259/427 [00:04<00:02, 79.56it/s]Loading weights:  64%|██████▍   | 275/427 [00:04<00:01, 86.14it/s]Loading weights:  68%|██████▊   | 290/427 [00:04<00:01, 90.88it/s]Loading weights:  70%|███████   | 300/427 [00:04<00:01, 90.59it/s]Loading weights:  73%|███████▎  | 310/427 [00:05<00:01, 75.42it/s]Loading weights:  77%|███████▋  | 327/427 [00:05<00:01, 94.72it/s]Loading weights:  79%|███████▉  | 338/427 [00:05<00:00, 90.24it/s]Loading weights:  81%|████████▏ | 348/427 [00:05<00:00, 82.54it/s]Loading weights:  84%|████████▎ | 357/427 [00:05<00:00, 73.40it/s]Loading weights:  85%|████████▌ | 365/427 [00:05<00:00, 68.27it/s]Loading weights:  89%|████████▉ | 380/427 [00:05<00:00, 86.11it/s]Loading weights:  91%|█████████▏| 390/427 [00:06<00:00, 83.77it/s]Loading weights:  93%|█████████▎| 399/427 [00:06<00:00, 81.93it/s]Loading weights:  96%|█████████▋| 412/427 [00:06<00:00, 76.90it/s]Loading weights:  99%|█████████▊| 421/427 [00:06<00:00, 78.11it/s]Loading weights: 100%|██████████| 427/427 [00:06<00:00, 65.17it/s]
+2026-04-25 00:27:23,649   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 00:30:36,220   Single(medical) | medical: 0.6600
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights:   0%|          | 1/427 [00:00<04:51,  1.46it/s]Loading weights:   0%|          | 2/427 [00:01<05:01,  1.41it/s]Loading weights:   3%|▎         | 12/427 [00:01<00:35, 11.57it/s]Loading weights:   5%|▌         | 23/427 [00:01<00:17, 22.90it/s]Loading weights:   9%|▉         | 40/427 [00:01<00:09, 40.45it/s]Loading weights:  11%|█         | 47/427 [00:01<00:08, 44.49it/s]Loading weights:  14%|█▍        | 61/427 [00:02<00:07, 49.36it/s]Loading weights:  19%|█▉        | 81/427 [00:02<00:04, 72.58it/s]Loading weights:  22%|██▏       | 93/427 [00:02<00:04, 73.24it/s]Loading weights:  24%|██▍       | 102/427 [00:02<00:04, 69.91it/s]Loading weights:  28%|██▊       | 119/427 [00:02<00:04, 75.39it/s]Loading weights:  30%|██▉       | 128/427 [00:02<00:04, 74.69it/s]Loading weights:  34%|███▍      | 146/427 [00:03<00:03, 86.06it/s]Loading weights:  36%|███▋      | 155/427 [00:03<00:03, 79.49it/s]Loading weights:  40%|████      | 171/427 [00:03<00:03, 84.78it/s]Loading weights:  43%|████▎     | 185/427 [00:03<00:02, 85.64it/s]Loading weights:  47%|████▋     | 199/427 [00:03<00:02, 86.39it/s]Loading weights:  49%|████▊     | 208/427 [00:03<00:02, 79.66it/s]Loading weights:  52%|█████▏    | 222/427 [00:04<00:02, 82.78it/s]Loading weights:  55%|█████▌    | 236/427 [00:04<00:02, 88.49it/s]Loading weights:  58%|█████▊    | 246/427 [00:04<00:02, 88.41it/s]Loading weights:  60%|█████▉    | 255/427 [00:04<00:02, 84.69it/s]Loading weights:  62%|██████▏   | 264/427 [00:04<00:02, 80.41it/s]Loading weights:  64%|██████▍   | 275/427 [00:04<00:01, 79.76it/s]Loading weights:  68%|██████▊   | 290/427 [00:04<00:01, 96.62it/s]Loading weights:  70%|███████   | 301/427 [00:04<00:01, 91.70it/s]Loading weights:  73%|███████▎  | 311/427 [00:05<00:01, 73.73it/s]Loading weights:  77%|███████▋  | 327/427 [00:05<00:01, 91.17it/s]Loading weights:  79%|███████▉  | 338/427 [00:05<00:01, 81.95it/s]Loading weights:  81%|████████▏ | 348/427 [00:05<00:00, 82.93it/s]Loading weights:  84%|████████▍ | 358/427 [00:05<00:00, 83.83it/s]Loading weights:  86%|████████▌ | 367/427 [00:05<00:00, 76.93it/s]Loading weights:  89%|████████▉ | 379/427 [00:05<00:00, 79.07it/s]Loading weights:  93%|█████████▎| 397/427 [00:06<00:00, 89.26it/s]Loading weights:  96%|█████████▌| 408/427 [00:06<00:00, 92.98it/s]Loading weights:  98%|█████████▊| 418/427 [00:06<00:00, 84.51it/s]Loading weights: 100%|██████████| 427/427 [00:06<00:00, 66.53it/s]
+2026-04-25 00:30:49,766 
+=== Mode: carr_full ===
+2026-04-25 00:33:10,987   Training carr_full router (200 steps)...
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 00:33:10,988 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 00:33:10,989 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 00:33:13,234     step=0 loss=7.9871
+2026-04-25 00:34:57,735     step=50 loss=8.5684
+2026-04-25 00:36:42,506     step=100 loss=5.6170
+2026-04-25 00:38:27,923     step=150 loss=9.6801
+2026-04-25 00:40:11,113 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 00:40:11,113 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 00:40:11,114 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 00:40:11,115 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 00:40:11,116 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 00:40:11,128   Evaluating science: 50 samples, type=arc
+2026-04-25 00:49:27,747   carr_full | science: 0.8600
+2026-04-25 00:49:27,764   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 01:02:01,823   carr_full | medical: 0.6200
+2026-04-25 01:02:02,057 
+=== Mode: no_reliability ===
+2026-04-25 01:04:16,226   Training no_reliability router (200 steps)...
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 01:04:16,227 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 01:04:16,228 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 01:04:16,229 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 01:04:16,229 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 01:04:16,229 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 01:04:16,229 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 01:04:18,174     step=0 loss=8.0164
+2026-04-25 01:06:02,964     step=50 loss=8.4941
+2026-04-25 01:07:48,148     step=100 loss=5.6551
+2026-04-25 01:09:33,043     step=150 loss=9.6221
+2026-04-25 01:11:15,791 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 01:11:15,792 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 01:11:15,793 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 01:11:15,794 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 01:11:15,806   Evaluating science: 50 samples, type=arc
+2026-04-25 01:18:27,703   no_reliability | science: 0.8600
+2026-04-25 01:18:27,722   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 01:29:41,013   no_reliability | medical: 0.6600
+2026-04-25 01:29:41,345 
+=== Mode: no_conflict ===
+2026-04-25 01:29:41,368   Training no_conflict router (200 steps)...
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 01:29:41,368 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 01:29:41,369 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 01:29:41,370 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 01:29:41,370 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 01:29:41,370 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 01:29:43,520     step=0 loss=8.0113
+2026-04-25 01:31:27,222     step=50 loss=8.5130
+2026-04-25 01:33:10,019     step=100 loss=5.6422
+2026-04-25 01:34:55,524     step=150 loss=9.6302
+2026-04-25 01:36:35,336 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 01:36:35,337 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 01:36:35,337 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 01:36:35,337 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 01:36:35,338 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 01:36:35,339 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 01:36:35,351   Evaluating science: 50 samples, type=arc
+2026-04-25 01:42:44,745   no_conflict | science: 0.8400
+2026-04-25 01:42:44,764   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 01:51:59,427   no_conflict | medical: 0.6400
+2026-04-25 01:51:59,650 
+=== Mode: no_base_fallback ===
+2026-04-25 01:54:06,183   Training no_base_fallback router (200 steps)...
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 01:54:06,184 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 01:54:06,185 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 01:54:08,336     step=0 loss=7.9594
+2026-04-25 01:55:53,719     step=50 loss=8.5420
+2026-04-25 01:57:36,519     step=100 loss=5.7171
+2026-04-25 01:59:19,922     step=150 loss=9.5741
+2026-04-25 02:01:02,376 CARR hook attached: model.layers.3.self_attn.q_proj → model.layers.3.self_attn.q_proj
+2026-04-25 02:01:02,377 CARR hook attached: model.layers.3.self_attn.k_proj → model.layers.3.self_attn.k_proj
+2026-04-25 02:01:02,377 CARR hook attached: model.layers.3.self_attn.v_proj → model.layers.3.self_attn.v_proj
+2026-04-25 02:01:02,377 CARR hook attached: model.layers.3.self_attn.o_proj → model.layers.3.self_attn.o_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.7.self_attn.q_proj → model.layers.7.self_attn.q_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.7.self_attn.k_proj → model.layers.7.self_attn.k_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.7.self_attn.v_proj → model.layers.7.self_attn.v_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.7.self_attn.o_proj → model.layers.7.self_attn.o_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.11.self_attn.q_proj → model.layers.11.self_attn.q_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.11.self_attn.k_proj → model.layers.11.self_attn.k_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.11.self_attn.v_proj → model.layers.11.self_attn.v_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.11.self_attn.o_proj → model.layers.11.self_attn.o_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.15.self_attn.q_proj → model.layers.15.self_attn.q_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.15.self_attn.k_proj → model.layers.15.self_attn.k_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.15.self_attn.v_proj → model.layers.15.self_attn.v_proj
+2026-04-25 02:01:02,378 CARR hook attached: model.layers.15.self_attn.o_proj → model.layers.15.self_attn.o_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.19.self_attn.q_proj → model.layers.19.self_attn.q_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.19.self_attn.k_proj → model.layers.19.self_attn.k_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.19.self_attn.v_proj → model.layers.19.self_attn.v_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.19.self_attn.o_proj → model.layers.19.self_attn.o_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.23.self_attn.q_proj → model.layers.23.self_attn.q_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.23.self_attn.k_proj → model.layers.23.self_attn.k_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.23.self_attn.v_proj → model.layers.23.self_attn.v_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.23.self_attn.o_proj → model.layers.23.self_attn.o_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.27.self_attn.q_proj → model.layers.27.self_attn.q_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.27.self_attn.k_proj → model.layers.27.self_attn.k_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.27.self_attn.v_proj → model.layers.27.self_attn.v_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.27.self_attn.o_proj → model.layers.27.self_attn.o_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.31.self_attn.q_proj → model.layers.31.self_attn.q_proj
+2026-04-25 02:01:02,379 CARR hook attached: model.layers.31.self_attn.k_proj → model.layers.31.self_attn.k_proj
+2026-04-25 02:01:02,380 CARR hook attached: model.layers.31.self_attn.v_proj → model.layers.31.self_attn.v_proj
+2026-04-25 02:01:02,380 CARR hook attached: model.layers.31.self_attn.o_proj → model.layers.31.self_attn.o_proj
+2026-04-25 02:01:02,393   Evaluating science: 50 samples, type=arc
+2026-04-25 02:08:42,657   no_base_fallback | science: 0.8600
+2026-04-25 02:08:42,675   Evaluating medical: 50 samples, type=medmcqa
+2026-04-25 02:19:55,254   no_base_fallback | medical: 0.6400
+2026-04-25 02:19:55,489 
+============================================================
+2026-04-25 02:19:55,489 A/B/C COMPARISON (seed=1)
+2026-04-25 02:19:55,489 ============================================================
+2026-04-25 02:19:55,489 Method                    science      medical      Mean    
+2026-04-25 02:19:55,489 ---------------------------------------------------------
+2026-04-25 02:19:55,489 Base                      0.7200       0.6400       0.6800  
+2026-04-25 02:19:55,489 Single best               0.8200       0.6600       0.7400  
+2026-04-25 02:19:55,490 C: Full CARR              0.8600       0.6200       0.7400  
+2026-04-25 02:19:55,495 Results saved to results/carr_ablations.json
