@@ -363,3 +363,113 @@ def compute_ece(predictions: torch.Tensor, targets: torch.Tensor, n_bins: int = 
 
 def compute_brier(predictions: torch.Tensor, targets: torch.Tensor) -> float:
     return float(((predictions - targets.float()) ** 2).mean().item())
+
+
+# ---------------------------------------------------------------------------
+# Shared multi-term training loop (used by train_carr_router.py and eval_carr.py)
+# ---------------------------------------------------------------------------
+
+
+def train_router_multiterm(
+    model,
+    hook,           # CARRHook (already attached)
+    router,         # ConflictAwareResidualRouter
+    calib_items: List[CalibItem],
+    base_option_lps: torch.Tensor,         # (n_items, n_options)
+    rel_labels: ReliabilityLabels,
+    module_conflict_scores: Dict[str, torch.Tensor],
+    weights: LossWeights,
+    max_steps: int,
+    lr: float,
+    device: str = "cuda",
+    overfit_one_batch: bool = False,
+    log_every: int = 10,
+    log_fn=None,
+) -> List[Dict]:
+    """One shared training loop. Returns loss history."""
+    if log_fn is None:
+        log_fn = lambda *a, **kw: None  # noqa: E731
+
+    optimizer = torch.optim.Adam(router.parameters(), lr=lr)
+    router.train()
+    history: List[Dict] = []
+
+    n_items = len(calib_items)
+    train_order = list(range(n_items))
+    if overfit_one_batch:
+        train_order = train_order[: max(1, min(n_items, 4))]
+
+    for step in range(max_steps):
+        item_idx = train_order[step % len(train_order)]
+        item = calib_items[item_idx]
+
+        option_lps = []
+        for opt_ids in item.option_token_ids:
+            hook.clear_step_buffers()
+            prompt_ids = item.prompt_ids.unsqueeze(0).to(device)
+            opt_tensor = torch.tensor(
+                [opt_ids], device=device, dtype=prompt_ids.dtype)
+            full = torch.cat([prompt_ids, opt_tensor], dim=-1)
+            logits = model(full).logits
+            target = full[:, prompt_ids.shape[1]:]
+            log_probs = F.log_softmax(
+                logits[:, prompt_ids.shape[1] - 1:-1, :].float(), dim=-1)
+            lp = log_probs.gather(-1, target.unsqueeze(-1)).sum() / max(len(opt_ids), 1)
+            option_lps.append(lp)
+        carr_lps = torch.stack(option_lps)
+
+        last_gates = {mod: g for mod, g in hook.last_gates.items()}
+        rel_pred = hook.mean_reliability_across_modules()
+
+        losses = carr_multi_term_loss(
+            carr_option_logprobs=carr_lps,
+            base_option_logprobs=base_option_lps[item_idx],
+            gold_idx=item.gold_idx,
+            last_gates=last_gates,
+            module_conflict_scores=module_conflict_scores,
+            reliability_pred=rel_pred,
+            reliability_label=rel_labels.correctness[item_idx]
+            if rel_labels is not None else None,
+            weights=weights,
+            adapter_start_idx=router.adapter_start_idx,
+            static_idx=router.static_idx,
+        )
+        optimizer.zero_grad()
+        losses["total"].backward()
+        optimizer.step()
+
+        rec = {
+            "step": step,
+            "total": float(losses["total"].item()),
+            "L_task": float(losses["L_task"].item()),
+            "L_base_KL": float(losses["L_base_KL"].item()),
+            "L_conf": float(losses["L_conf"].item()),
+            "L_sparse": float(losses["L_sparse"].item()),
+            "L_cal": float(losses["L_cal"].item()),
+            "item_idx": item_idx, "domain": item.domain,
+        }
+        history.append(rec)
+        if step % log_every == 0:
+            log_fn("    step=%d total=%.4f task=%.4f kl=%.4f conf=%.4f sparse=%.4f cal=%.4f",
+                   step, rec["total"], rec["L_task"], rec["L_base_KL"],
+                   rec["L_conf"], rec["L_sparse"], rec["L_cal"])
+        if overfit_one_batch and step >= 49:
+            break
+    return history
+
+
+def precompute_base_option_logprobs(
+    model, calib_items: List[CalibItem], device: str = "cuda"
+) -> torch.Tensor:
+    """Compute (n_items, n_options) length-normalized sum logprobs under base model.
+
+    Caller must detach any CARR hooks before calling.
+    """
+    model.eval()
+    base_lps = []
+    with torch.no_grad():
+        for it in calib_items:
+            lp = compute_option_logprobs(model, it, device=device, require_grad=False)
+            base_lps.append(lp.cpu())
+    return torch.stack(base_lps)
+
