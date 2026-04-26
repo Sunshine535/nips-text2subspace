@@ -1,0 +1,109 @@
+{
+  "source_yaml": "/root/nips-text2subspace/configs/carr_minimal.yaml",
+  "base_model": "/root/models/Qwen3.5-9B",
+  "adapter_dir": "/root/nips-text2subspace/results/sfc_loras_test",
+  "dataset_dir": "/root/datasets",
+  "carr": {
+    "n_adapters": 2,
+    "d_model": 4096,
+    "gate_hidden_dim": 128,
+    "use_reliability": true,
+    "use_conflict": true,
+    "use_base_fallback": true,
+    "top_k": 1,
+    "temperature": 1.0,
+    "conflict_mode": "module",
+    "base_kl_weight": 0.1,
+    "conflict_weight": 0.05,
+    "sparsity_weight": 0.01,
+    "calibration_weight": 0.1,
+    "task_weight": 1.0,
+    "lr": 0.001,
+    "max_steps": 500,
+    "calib_samples": 200,
+    "batch_size": 4,
+    "max_length": 128
+  },
+  "eval": {
+    "max_samples": 100,
+    "metric_mode": "logprob_mcq",
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "sample_seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "safe_pairs": [
+    [
+      "science",
+      "medical"
+    ],
+    [
+      "science",
+      "math"
+    ],
+    [
+      "medical",
+      "math"
+    ]
+  ],
+  "leaky_pairs": [
+    [
+      "history",
+      "philosophy"
+    ],
+    [
+      "psychology",
+      "geography"
+    ]
+  ],
+  "extra": {
+    "cli_args": {
+      "config": "configs/carr_minimal.yaml",
+      "model": null,
+      "adapter_dir": null,
+      "dataset_dir": null,
+      "domains": "science,medical",
+      "mode": "full",
+      "carr_checkpoint": null,
+      "max_samples": 50,
+      "metric_mode": "logprob_mcq",
+      "seeds": "1,2,3",
+      "sample_seeds": "1,2,3",
+      "seed": null,
+      "sample_seed": null,
+      "calib_samples": null,
+      "train_steps": null,
+      "reliability_calib_samples": 60,
+      "objective": "carr_full",
+      "output_dir": "/root/nips-text2subspace/results-synced/carr_minimal_verified",
+      "dry_run_effective_config": false,
+      "dry_run_samples": false
+    },
+    "resolved": {
+      "base_model": "/root/models/Qwen3.5-9B",
+      "adapter_dir": "/root/nips-text2subspace/results/sfc_loras_test",
+      "dataset_dir": "/root/datasets",
+      "max_samples": 50,
+      "metric_mode": "logprob_mcq",
+      "calib_samples": 200,
+      "train_steps": 500,
+      "seed": 1,
+      "sample_seed": 1,
+      "objective": "carr_full",
+      "modes_to_run": [
+        "static_baselines",
+        "carr_no_mechanism",
+        "carr_full",
+        "no_reliability",
+        "no_conflict",
+        "no_base_fallback"
+      ]
+    }
+  }
+}
