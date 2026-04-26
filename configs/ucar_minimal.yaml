@@ -1,0 +1,50 @@
+# UCAR: Utility-Certified Abstentive Routing
+# Successor to CARR after logprob MCQ showed Base > Static > CARR.
+
+method: "UCAR"
+base_model: "/root/models/Qwen3.5-9B"
+adapter_dir: "/root/nips-text2subspace/results/sfc_loras_test"
+dataset_dir: "/root/datasets"
+metric_mode: "logprob_mcq"
+
+candidates:
+  - "base"
+  - "single_science"
+  - "single_medical"
+  - "static_TA"
+  - "static_TIES"
+  - "static_DARE"
+  - "carr_no_conflict"
+  - "carr_full"
+
+domains:
+  - "science"
+  - "medical"
+
+eval:
+  max_samples: 50
+  seeds: [1, 2, 3]
+  sample_seeds: [1, 2, 3]
+
+calibration:
+  samples_per_domain: 100
+  max_length: 384
+
+# UCAR-specific
+ucar:
+  abstention_thresholds: [0.0, 0.02, 0.05]
+  certifier_hidden_dim: 64
+  certifier_lr: 0.001
+  certifier_max_steps: 200
+  certifier_loss: "regret"  # regret | brier
+  calibration_weight: 0.1
+
+# Logging
+logging:
+  oracle_gap: true
+  abstention_rate: true
+  false_route_rate: true
+  regret: true
+  calibration_ece_brier: true
+
+output_dir: "results-synced/ucar_minimal"
